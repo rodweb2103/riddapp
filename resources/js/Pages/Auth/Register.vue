@@ -1,5 +1,5 @@
 <template>
-  <Head title="Register" />
+  <Head title="Création de compte" />
   
   
 
@@ -7,7 +7,7 @@
    <div class="container hero">
       <nav class="navbar navbar-light navbar-expand-lg d-xl-flex navigation-clean" style="background: rgba(177,30,44,0);padding-top: 0;padding-bottom: 0;margin-top: -41px;">
          <div class="container">
-            <a class="navbar-brand" href="#"><img class="img-fluid" src="/img/logo-ridd.jpg" style="width: 115px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <a class="navbar-brand" href="#"><img class="img-fluid" src="/img/LG-RIDD@2x.png" style="width: 115px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-2">
                <ul class="navbar-nav ms-auto">
                   <li class="nav-item"><a class="nav-link active" href="#" style="font-size: 18px;">Accueil</a></li>
@@ -40,7 +40,7 @@
       <section class="highlight-blue" style="background: rgba(30,106,221,0);">
          <div class="container">
             <div class="intro">
-               <h2 class="text-center" style="font-family: Montserrat, sans-serif;font-size: 55.44px;font-weight: bold;margin-top: 14px;line-height: 73.16px;">Création compte candidat</h2>
+               <h2 class="text-center" style="font-family: Montserrat, sans-serif;font-size: 55.44px;font-weight: bold;margin-top: 14px;line-height: 73.16px;">Création compte</h2>
             </div>
             <div class="buttons"></div>
          </div>
@@ -52,7 +52,7 @@
       <div class="row justify-content-center">
          <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
             <div class="px-0 pt-4 pb-0 mt-3 mb-3">
-               <h2 id="heading">Informations de votre compte {{ step == 4 }}</h2>
+               <h2 id="heading">Informations de votre compte</h2>
                <p></p>
                <form id="msform">
                   <!-- progressbar -->
@@ -77,7 +77,7 @@
                         </div>
                         <label for="email" lass="fieldlabels"></label> <input type="text" name="email" placeholder="Identifiant" /> <label class="fieldlabels"></label> <input type="text" name="uname" placeholder="UserName" style="display:none;"/> <label class="fieldlabels"></label> <input type="password" name="pwd" placeholder="Mot de passe" /> <label class="fieldlabels"></label> <input type="password" name="cpwd" placeholder="Confirmer le mot de passe" />
                      </div>
-                     <input type="button" name="next" class="next action-button"  @click="step = step + 1" value="Suivant" />
+                     <input type="button" name="next" class="next action-button"  @click="validateStep1" value="Suivant" />
                   </fieldset>
                   <fieldset style="background: transparent;" v-if="step == 2">
                      <div class="form-card">
@@ -367,7 +367,7 @@
                         <label class="fieldlabels"></label> <input type="text" name="ville" placeholder="Ville" />
                         <label class="fieldlabels" style="margin-top:20px;margin-bottom:30px;">Votre photo</label> <input type="file" name="pic" accept="image/*">
                      </div>
-                     <input type="button" name="next" @click="step = step + 1" class="next action-button" value="Suivant" />  <input type="button" name="previous" class="previous action-button-previous" value="Retour" @click="step = step - 1" />
+                     <input type="button" name="next" @click="validateStep2" class="next action-button" value="Suivant" />  <input type="button" name="previous" class="previous action-button-previous" value="Retour" @click="step = step - 1" />
                   </fieldset>
                   <fieldset style="background: transparent;" v-if="account_type == 2 && step == 3">
                      <div class="form-card">
@@ -441,15 +441,15 @@
                            <option value="2">Stage</option>
                         </select>
                         <label class="fieldlabels"></label> 
-                        <select class="form-select" aria-label="Default select example">
+                        <!--<select class="form-select" aria-label="Default select example">
                            <option selected>Choix du métier</option>
                            <option value="1">One</option>
                            <option value="2">Two</option>
                            <option value="3">Three</option>
-                        </select>
+                        </select>-->
                         <label class="fieldlabels" style="margin-top:20px;margin-bottom:30px;">Votre CV</label> <input type="file" name="pic" accept="image/*"> 
                      </div>
-                     <input type="button" name="next" @click="step = step + 1" class="next action-button" value="Suivant" />  <input type="button" name="previous" class="previous action-button-previous" value="Retour" @click="step = step - 1" /><br/>
+                     <input type="button" name="next" @click="validateStep3" class="next action-button" value="Suivant" />  <input type="button" name="previous" class="previous action-button-previous" value="Retour" @click="step = step - 1" /><br/>
                      <!--<div class="form-check" style="margin-top:35px;margin-bottom:20px;">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="form-check-label" for="flexCheckDefault" style="color:black;position:absolute;left:30px;">
@@ -637,6 +637,21 @@ export default defineComponent({
   },
 
   methods: {
+	validateStep1(){
+		
+		this.step = this.step + 1;
+		///validate/step/1
+	},
+	validateStep2(){
+		
+		this.step = this.step + 1;
+		///validate/step/1
+	},
+	validateStep3(){
+		
+		this.step = this.step + 1;
+		///validate/step/1
+	},
     submit() {
       this.form.post(this.route('register'), {
         onFinish: () => this.form.reset('password', 'password_confirmation'),

@@ -3,8 +3,9 @@
 
   <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 920.27px;background: linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255);padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
         <div class="container hero" style="height: 710px;">
-            <div class="row justify-content-center" style="margin-top: 44px;height: 666px;">
+            <div class="row justify-content-center" style="height: 666px;">
                 <div class="col-md-9 col-lg-12 col-xl-12" style="margin-top: 0px;">
+	                <img src="/img/LG-RIDD@2x.png" style="width: 150px;" class="rounded mx-auto d-block">
                     <div class="card shadow-lg o-hidden border-0 my-5" style="height: 570px;padding-top: 32px;">
                         <div class="card-body p-0">
                             <div class="row">

@@ -15,17 +15,50 @@ use Inertia\Inertia;
 |
 */
 
+Route::post('/create/user/account',[UserController::class, 'create_user_account']);
+Route::post('/validate/step/1',[UserController::class, 'validate_step1']);
+Route::post('/validate/step/2',[UserController::class, 'validate_step2']);
+Route::post('/validate/step/3',[UserController::class, 'validate_step3']);
+
 Route::get('/', function () {
-    /*return Inertia::render('Welcome', [
+        return view('index', [
+            'data' => [],
+    ]);
+})->name('welcome');
+
+Route::get('/offres', function () {
+    return Inertia::render('Offers', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-    ]);*/
-    return view('index', [
-            'data' => [],
     ]);
-});
+    
+})->name('offres');
+
+
+
+Route::get('/offres/recruteur', function () {
+    return Inertia::render('OffersEmployer', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+    
+})->name('offres-recruteur');
+
+Route::get('/offre/details', function () {
+    return Inertia::render('OffersDetails', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+    
+})->name('offres-details');
+
+
 
 Route::middleware([
     'auth:sanctum',
