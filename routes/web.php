@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,10 @@ use Inertia\Inertia;
 */
 
 Route::post('/create/user/account',[UserController::class, 'create_user_account']);
-Route::post('/validate/step/1',[UserController::class, 'validate_step1']);
-Route::post('/validate/step/2',[UserController::class, 'validate_step2']);
-Route::post('/validate/step/3',[UserController::class, 'validate_step3']);
+Route::post('/validate/step/1',[UserController::class, 'validate_step1'])->name('validate1');
+Route::post('/validate/step/2',[UserController::class, 'validate_step2'])->name('validate2');
+Route::post('/validate/step/3',[UserController::class, 'validate_step3'])->name('validate3');
+Route::get('/countries',[UserController::class, 'get_countries'])->name('countries');
 
 Route::get('/', function () {
         return view('index', [
