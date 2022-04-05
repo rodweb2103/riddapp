@@ -16,11 +16,15 @@ use App\Http\Controllers\UserController;
 |
 */
 
+
+
 Route::post('/create/user/account',[UserController::class, 'create_user_account']);
 Route::post('/validate/step/1',[UserController::class, 'validate_step1'])->name('validate1');
 Route::post('/validate/step/2',[UserController::class, 'validate_step2'])->name('validate2');
 Route::post('/validate/step/3',[UserController::class, 'validate_step3'])->name('validate3');
 Route::get('/countries',[UserController::class, 'get_countries'])->name('countries');
+Route::get('/study/level',[UserController::class, 'study_level'])->name('study_level');
+Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name('study_level');
 
 Route::get('/', function () {
         return view('index', [

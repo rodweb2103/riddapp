@@ -3,15 +3,65 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Countries;
+use App\Models\StudyLevel;
+use App\Models\ActivitySector;
+
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+use App\Models\User;
+
 
 class UserController extends Controller
 {
     //
     
+    public function create_user_account(){
+	    
+	    exit;
+	    if($request->input('account_type') == 1){
+		    
+		    $role = Role::where('name', 'Candidate')->first(); 
+		    
+		    $user = new User;
+		    $user->first_name = $request->input('first_name');
+		    $user->last_name = $request->input('last_name');
+		    $user->phone_number = $request->input('phone_number');
+		    $user->user_name = $request->input('user_name');
+		    $user->city = $request->input('city');
+		    $user->email = $request->input('email');
+		    $user->candidate_activity_sector = $request->input('activity_sector');
+		    $user->candidate_study_level = $request->input('study_level');
+		    //$user->email = $request->input('email');
+		    //$user->first_name = "";
+		    $user->save();
+		    $user->assignRole($role);
+		      
+	    }else{
+		    
+		    
+		    $role = Role::where('name', 'Employer')->first();
+	    }
+	    
+	    //$role = Role::create(['name' => 'Candidate']);
+	    //$role = Role::create(['name' => 'Employer']);
+	    //$role = Role::create(['name' => 'Admin']);
+	    //return redirect()->back();
+	    
+    }
     public function get_countries(Request $request){
 	      
 	      //name, iso2, dialCode
 	      return Countries::orderBy('name', 'ASC')->selectRaw('name,code AS iso2,phone AS dialCode')->get(); 
+    }
+    
+    public function study_level(Request $request){
+	    
+	      return StudyLevel::orderBy('level', 'ASC')->selectRaw('id,level AS text')->get(); 
+    }
+    
+     public function activity_sector(Request $request){
+	    
+	      return ActivitySector::orderBy('activity_sector_name', 'ASC')->selectRaw('id,activity_sector_name AS text')->get(); 
     }
     
     public function validate_step1(Request $request){
@@ -71,6 +121,23 @@ class UserController extends Controller
 	}
 	
 	public function validate_step3(Request $request){
-	
+	    
+	    $request->validate([
+		    'study_level' => 'required',
+		    'activity_sector' => 'required',
+		    'policy' => 'required',
+		    //'email' => 'required|unique:users',
+		    //'phone_number' => 'required',
+		    //'country' => 'required',
+		    //'city' => 'required'
+        ],[
+			    'study_level.required'=> 'Votre niveau d\'étude est requis',
+			    'activity_sector.required'=> 'Votre domaine de formation est requis',
+			    'policy.required'=> 'Veuillez cocher les conditions générales d\'utilisation',
+			    			    //'first_name.unique'=> 'Le pseudonyme existe déjà',
+			    //'password.required'=> 'Le mot de passe est requis',
+			    //'password.same'=> 'Les mots de passe doivent être identiques',
+         ]);
+         return redirect()->back();
 	}
 }
