@@ -3,9 +3,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
+        
+        <style type="text/css">
+	      /*.spinner-border{
+		      
+		      display: unset !important;
+	      }*/
+	    
+	    </style>
 
         <!-- Fonts -->
         <!--<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">-->
@@ -83,12 +90,12 @@
 	    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" defer></script>
 	    <script src="{{ asset('/js/Image-Tab-Gallery-Vertical.js') }}" defer></script>
 	    <script src="{{ asset('/js/Lightbox-Gallery.js') }}" defer></script>
-	    <script src="{{ asset('/js/Multi-step-form.js') }}?<?php echo uniqid(); ?>"></script>
-	    <script src="{{ asset('/js/MUSA_form-wizard.js') }}" defer></script>
-	    <script src="{{ asset('/js/PJansari---Horizontal-Stepper-with-Redial-Progress-Bar.js') }}" defer></script>
+	    <!--<script src="{{ asset('/js/Multi-step-form.js') }}?<?php echo uniqid(); ?>"></script>-->
+	    <!--<script src="{{ asset('/js/MUSA_form-wizard.js') }}" defer></script>--->
+	    <!--<script src="{{ asset('/js/PJansari---Horizontal-Stepper-with-Redial-Progress-Bar.js') }}" defer></script>-->
 	    <script src="{{ asset('/js/slick-animation.min.js') }}" defer></script>
 	    <script src="{{ asset('/js/slick.min.js') }}" defer></script>
-	    <script src="{{ asset('/js/step-form.js') }}" defer></script>
+	    <!--<script src="{{ asset('/js/step-form.js') }}" defer></script>-->
 	    <script src="{{ asset('/js/Video-Parallax-Background.js') }}" defer></script>
     </body>
 </html>

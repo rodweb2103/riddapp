@@ -11,9 +11,7 @@
       <div class="mb-2">
         This is a secure area of the application. Please confirm your password before continuing.
       </div>
-
       <jet-validation-errors class="mb-2" />
-
       <form @submit.prevent="submit">
         <div class="mb-3">
           <jet-label for="password" value="Password" />
@@ -59,6 +57,7 @@ export default defineComponent({
     return {
       form: this.$inertia.form({
         password: '',
+        is_admin: 0
       })
     }
   },

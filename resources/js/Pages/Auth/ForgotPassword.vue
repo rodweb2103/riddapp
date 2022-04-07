@@ -13,7 +13,11 @@
                                     <div class="flex-grow-1 bg-login-image" style="background: url(/img/student-pc.jpg);background-size: cover;"></div>
                                 </div>
                                 <div class="col-lg-6">
+	                                
                                     <div class="mx-xs-5 mx-lg-5" style="margin-top: 90px;">
+	                                    <div v-if="status" class="alert alert-success" role="alert">
+								           {{ status }}
+								        </div>
                                         <div class="text-center">
                                             <h4 class="text-dark mb-4">Vous recevrez par e-mail un lien de réinitialisation de mot de passe</h4>
                                         </div>
@@ -38,6 +42,11 @@
 									            <div v-if="!form.processing">Recevoir le lien de réinitialisation</div>
 									          
 									          </button>
+									        </div>
+									        <div class="text-center" style="margin-top: 11px;">
+										        <Link  :href="route('login')" class="small">
+								                     Se connecter
+								                </Link>
 									        </div>
                                         </form>
                                     </div>
@@ -87,7 +96,7 @@
 
 <script>
 import { defineComponent } from 'vue'
-import { Head } from '@inertiajs/inertia-vue3';
+import { Head,Link } from '@inertiajs/inertia-vue3';
 import JetAuthenticationCard from '@/Jetstream/AuthenticationCard.vue'
 import JetAuthenticationCardLogo from '@/Jetstream/AuthenticationCardLogo.vue'
 import JetButton from '@/Jetstream/Button.vue'
@@ -103,7 +112,8 @@ export default defineComponent({
     JetButton,
     JetInput,
     JetLabel,
-    JetValidationErrors
+    JetValidationErrors,
+    Link
   },
 
   props: {

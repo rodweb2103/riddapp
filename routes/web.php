@@ -3,7 +3,12 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Http\Controllers\UserController;
+use App\Notifications\EmailNotification;
+use App\Models\User;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Http\Request;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,16 +20,158 @@ use Inertia\Inertia;
 |
 */
 
+
+//Auth::routes(['verify' => true]);
 Route::post('/create/user/account',[UserController::class, 'create_user_account']);
-Route::post('/validate/step/1',[UserController::class, 'validate_step1']);
-Route::post('/validate/step/2',[UserController::class, 'validate_step2']);
-Route::post('/validate/step/3',[UserController::class, 'validate_step3']);
+Route::post('/validate/step/1',[UserController::class, 'validate_step1'])->name('validate1');
+Route::post('/validate/step/2',[UserController::class, 'validate_step2'])->name('validate2');
+Route::post('/validate/step/3',[UserController::class, 'validate_step3'])->name('validate3');
+Route::get('/countries',[UserController::class, 'get_countries'])->name('countries');
+Route::get('/study/level',[UserController::class, 'study_level'])->name('study_level');
+Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name('study_level');
+
+/********* admin LINK *********/
+$limiter = config('fortify.limiters.login');
+Route::post('/admin/login', [LoginController::class, 'store'])
+        ->middleware(array_filter([
+            'guest',
+            'admin_or_not',
+            $limiter ? 'throttle:'.$limiter : null,
+        ]));
+
+Route::get('/admin/forgot-password', function () {
+    return Inertia::render('Auth/Admin/ForgotPassword');
+})->middleware('guest')->name('admin.password.request');
+
+
+Route::post('/admin/reset-password', function (Request $request) {
+    $request->validate([
+        'token' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|min:8|confirmed',
+    ]);
+ 
+    $status = Password::reset(
+        $request->only('email', 'password', 'password_confirmation', 'token'),
+        function ($user, $password) {
+            $user->forceFill([
+                'password' => Hash::make($password)
+            ])->setRememberToken(Str::random(60));
+ 
+            $user->save();
+ 
+            event(new PasswordReset($user));
+        }
+    );
+ 
+    return $status === Password::PASSWORD_RESET
+                ? redirect()->route('login')->with('status', __($status))
+                : back()->withErrors(['email' => [__($status)]]);
+})->middleware(['guest','admin_or_not'])->name('admin.password.update');
+
+Route::get('/admin/login', function () {
+    return Inertia::render('Auth/Admin/Login');
+})->middleware(['guest','admin_or_not'])->name('admin.login');
+
+
+//Route::post('/admin/login',[])->middleware(['guest','admin_or_not'])->name('admin.login');
+/*$limiter = config('fortify.limiters.login');
+Route::post('/admin/login', [AuthenticatedSessionController::class, 'store'])
+    ->middleware(array_filter([
+        'guest',
+        'admin_or_not',
+        $limiter ? 'throttle:'.$limiter : null,
+    ]))->name('admin.login');*/
+
+Route::get('/admin/reset-password/{token}/{email}', function ($token,$email) {
+        return Inertia::render('Auth/Admin/ResetPassword',[
+	    'token' => $token,
+	    'email' => $email
+    ]);
+})->middleware(['guest','admin_or_not'])->name('admin.password.reset');
+
+Route::post('/admin/forgot-password', function (Request $request) {
+    $request->validate(['email' => 'required|email']);
+ 
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+ 
+    return $status === Password::RESET_LINK_SENT
+                ? back()->with(['status' => __($status)])
+                : back()->withErrors(['email' => __($status)]);
+})->middleware(['guest','admin_or_not'])->name('admin.password.email');
+
+/********* USER LINK *********/
+
+$limiter = config('fortify.limiters.login');
+Route::post('/login', [LoginController::class, 'store'])
+        ->middleware(array_filter([
+            'guest',
+            $limiter ? 'throttle:'.$limiter : null,
+        ]));
+
+Route::get('/reset-password/{token}/{email}', function ($token,$email) {
+        return Inertia::render('Auth/ResetPassword',[
+	    'token' => $token,
+	    'email' => $email
+    ]);
+})->middleware('guest')->name('password.reset');
+
+Route::post('/forgot-password', function (Request $request) {
+    $request->validate(['email' => 'required|email']);
+ 
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+ 
+    return $status === Password::RESET_LINK_SENT
+                ? back()->with(['status' => __($status)])
+                : back()->withErrors(['email' => __($status)]);
+})->middleware('guest')->name('password.email');
+
+Route::get('/email/verify', function () {
+    return Inertia::render('Auth/VerifyEmail');
+})->middleware('auth')->name('verification.notice');
+
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('status', 'verification-link-sent');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect('/dashboard');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::get('/', function () {
         return view('index', [
             'data' => [],
     ]);
 })->name('welcome');
+
+/*Route::get('/mail', function () {
+        return view('email', [
+            'data' => [],
+    ]);
+})->name('welcome');*/
+
+Route::get('/mail', function()
+{
+	$user = User::first();
+	$project = [
+            'greeting' => 'Hi '.$user->first_name.',',
+            'body' => 'This is the project assigned to you.',
+            'thanks' => 'test',
+            'actionText' => 'View Project',
+            'actionURL' => url('/'),
+            'id' => 57
+    ];
+     
+    //$user->sendEmailVerification();
+    //Notification::send($user, new EmailNotification($project));
+
+})->middleware('verified');
 
 Route::get('/offres', function () {
     return Inertia::render('Offers', [
@@ -60,11 +207,7 @@ Route::get('/offre/details', function () {
 
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
+Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');

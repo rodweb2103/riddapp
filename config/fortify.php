@@ -119,6 +119,14 @@ return [
     */
 
     'views' => true,
+    'redirects' => [
+	    //'login' => 'dashboard',
+	    'logout' => '/login',
+	    //'password-confirmation' => null,
+	    //'register' => 'dashboard',
+	    //'email-verification' => null,
+	    //'password-reset' => null,
+    ],
 
     /*
     |--------------------------------------------------------------------------

@@ -1,5 +1,5 @@
 <template>
-  <Head title="Log in" />
+  <Head title="Connexion" />
   
   <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 920.27px;background: linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255);padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
 	      
@@ -16,12 +16,15 @@
                                 <div class="col-lg-6">
                                     <div class="p-5" style="margin-top: 26px;">
 	                                    <jet-validation-errors class="mb-3" />
+	                                    <div v-if="status" class="alert alert-success" role="alert">
+								           {{ status }}
+								        </div>
                                         <div class="text-center">
                                             <h4 class="text-dark mb-4">Bienvenue</h4>
                                         </div>
                                         <form @submit.prevent="submit">
-                                            <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Identifiant ou email" name="email"></div>
-                                            <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Mot de passe" name="password"></div>
+                                            <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Identifiant ou email" name="email" v-model="form.email"></div>
+                                            <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Mot de passe" name="password" v-model="form.password"></div>
                                             <div class="mb-3">
                                                 <div class="custom-control custom-checkbox small">
                                                     <!--<div class="form-check">-->
@@ -153,7 +156,8 @@ export default defineComponent({
       form: this.$inertia.form({
         email: '',
         password: '',
-        remember: false
+        remember: false,
+        is_admin:0
       })
     }
   },

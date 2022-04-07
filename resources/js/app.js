@@ -9,6 +9,9 @@ import { InertiaProgress } from '@inertiajs/progress';
 import jQuery from 'jquery';
 window.jQuery = window.$ = jQuery
 
+import VueTelInput from 'vue-tel-input';
+import 'vue-tel-input/dist/vue-tel-input.css';
+
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {dom, library} from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -64,6 +67,7 @@ createInertiaApp({
         return createApp({ render: () => h(app, props) })
             .component("font-awesome-icon", FontAwesomeIcon)
             .use(plugin)
+            .use(VueTelInput)
             .mixin({ methods: { route } })
             .mount(el);
     },
