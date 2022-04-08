@@ -1,7 +1,9 @@
 <template>
-  <Head title="Welcome" />
+  <Head title="Bienvenue" />
+  
+  
 
-  <div>
+  <!--<div>
     <div class="container-fluid fixed-top p-4">
       <div class="col-12">
         <div v-if="canLogin" class="d-flex justify-content-end">
@@ -134,7 +136,533 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
+  
+   <div class="container-fluid">
+       
+        <div class="row">
+          <div class="col-md-12 pt-5">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="card-title">Monthly Recap Report</h5>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                      <i class="fas fa-wrench"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                      <a href="#" class="dropdown-item">Action</a>
+                      <a href="#" class="dropdown-item">Another action</a>
+                      <a href="#" class="dropdown-item">Something else here</a>
+                      <a class="dropdown-divider"></a>
+                      <a href="#" class="dropdown-item">Separated link</a>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+	                  
+	                <div class="card bg-gradient-info">
+			              <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
+			                <h3 class="card-title">
+			                  <i class="fas fa-th mr-1"></i>
+			                  Sales Graph
+			                </h3>
+			
+			                <div class="card-tools">
+			                  <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
+			                    <i class="fas fa-minus"></i>
+			                  </button>
+			                  <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
+			                    <i class="fas fa-times"></i>
+			                  </button>
+			                </div>
+			              </div>
+			              <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+			                <canvas class="chart chartjs-render-monitor" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 575px;" width="1150" height="500"></canvas>
+			              </div>
+			              <!-- /.card-body -->
+			              <div class="card-footer bg-transparent">
+			                <div class="row">
+			                  <div class="col-4 text-center">
+			                    <div style="display:inline;width:60px;height:60px;"><canvas style="width: 60px; height: 60px;" width="120" height="120"></canvas><input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; appearance: none;"></div>
+			
+			                    <div class="text-white">Mail-Orders</div>
+			                  </div>
+			                  <!-- ./col -->
+			                  <div class="col-4 text-center">
+			                    <div style="display:inline;width:60px;height:60px;"><canvas style="width: 60px; height: 60px;" width="120" height="120"></canvas><input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; appearance: none;"></div>
+			
+			                    <div class="text-white">Online</div>
+			                  </div>
+			                  <!-- ./col -->
+			                  <div class="col-4 text-center">
+			                    <div style="display:inline;width:60px;height:60px;"><canvas style="width: 60px; height: 60px;" width="120" height="120"></canvas><input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; appearance: none;"></div>
+			
+			                    <div class="text-white">In-Store</div>
+			                  </div>
+			                  <!-- ./col -->
+			                </div>
+			                <!-- /.row -->
+			              </div>
+			              <!-- /.card-footer -->
+			            </div>
+	                  
+                  </div>
+                  <!-- /.col -->
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- ./card-body -->
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Main row -->
+        <div class="row">
+          <!-- Left col -->
+          <div class="col-md-8">
+            <!-- /.card -->
+            <div class="row">
+             
+              <!-- /.col -->
+              <div class="col-md-6">
+                <!-- USERS LIST -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Nouveaux recruteurs</h3>
+
+                    <div class="card-tools">
+                      <span class="badge badge-danger">8 New Members</span>
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body p-0">
+                    <ul class="users-list clearfix">
+                      <li>
+                        <img src="/img/user1-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Alexander Pierce</a>
+                        <span class="users-list-date">Today</span>
+                      </li>
+                      <li>
+                        <img src="/img/user8-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Norman</a>
+                        <span class="users-list-date">Yesterday</span>
+                      </li>
+                      <li>
+                        <img src="/img/user7-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Jane</a>
+                        <span class="users-list-date">12 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user6-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">John</a>
+                        <span class="users-list-date">12 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user2-160x160.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Alexander</a>
+                        <span class="users-list-date">13 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user5-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Sarah</a>
+                        <span class="users-list-date">14 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user4-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Nora</a>
+                        <span class="users-list-date">15 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user3-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Nadia</a>
+                        <span class="users-list-date">15 Jan</span>
+                      </li>
+                    </ul>
+                    <!-- /.users-list -->
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer text-center">
+                    <a href="javascript:">View All Users</a>
+                  </div>
+                  <!-- /.card-footer -->
+                </div>
+                <!--/.card -->
+              </div>
+              <div class="col-md-6">
+                <!-- USERS LIST -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Nouveaux Candidats</h3>
+
+                    <div class="card-tools">
+                      <span class="badge badge-danger">8 New Members</span>
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body p-0">
+                    <ul class="users-list clearfix">
+                      <li>
+                        <img src="/img/user1-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Alexander Pierce</a>
+                        <span class="users-list-date">Today</span>
+                      </li>
+                      <li>
+                        <img src="/img/user8-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Norman</a>
+                        <span class="users-list-date">Yesterday</span>
+                      </li>
+                      <li>
+                        <img src="/img/user7-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Jane</a>
+                        <span class="users-list-date">12 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user6-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">John</a>
+                        <span class="users-list-date">12 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user2-160x160.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Alexander</a>
+                        <span class="users-list-date">13 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user5-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Sarah</a>
+                        <span class="users-list-date">14 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user4-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Nora</a>
+                        <span class="users-list-date">15 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user3-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Nadia</a>
+                        <span class="users-list-date">15 Jan</span>
+                      </li>
+                    </ul>
+                    <!-- /.users-list -->
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer text-center">
+                    <a href="javascript:">View All Users</a>
+                  </div>
+                  <!-- /.card-footer -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.row -->
+
+            <!-- TABLE: LATEST ORDERS -->
+            <div class="card">
+              <div class="card-header border-transparent">
+                <h3 class="card-title">Dernières Offres</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table m-0">
+                    <thead>
+                    <tr>
+                      <th>Order ID</th>
+                      <th>Item</th>
+                      <th>Status</th>
+                      <th>Popularity</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                      <td>Call of Duty IV</td>
+                      <td><span class="badge badge-success">Shipped</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                      <td>Samsung Smart TV</td>
+                      <td><span class="badge badge-warning">Pending</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                      <td>iPhone 6 Plus</td>
+                      <td><span class="badge badge-danger">Delivered</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                      <td>Samsung Smart TV</td>
+                      <td><span class="badge badge-info">Processing</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                      <td>Samsung Smart TV</td>
+                      <td><span class="badge badge-warning">Pending</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                      <td>iPhone 6 Plus</td>
+                      <td><span class="badge badge-danger">Delivered</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                      <td>Call of Duty IV</td>
+                      <td><span class="badge badge-success">Shipped</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+
+          <div class="col-md-4">
+            <!-- Info Boxes Style 2 -->
+            <div class="info-box mb-3 bg-warning">
+              <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Candidats</span>
+                <span class="info-box-number">5,200</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-success">
+              <span class="info-box-icon"><i class="far fa-heart"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Recruteurs</span>
+                <span class="info-box-number">92,050</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-danger">
+              <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Offres postées</span>
+                <span class="info-box-number">114,381</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+            <div class="info-box mb-3 bg-info">
+              <span class="info-box-icon"><i class="far fa-comment"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Direct Messages</span>
+                <span class="info-box-number">163,921</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            
+            <div class="row">
+             
+              <!-- /.col -->
+              <div class="col-md-12">
+                <!-- USERS LIST -->
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">Comptes staff</h3>
+
+                    <div class="card-tools">
+                      <span class="badge badge-danger">8 New Members</span>
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body p-0">
+                    <ul class="users-list clearfix">
+                      <li>
+                        <img src="/img/user1-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Alexander Pierce</a>
+                        <span class="users-list-date">Today</span>
+                      </li>
+                      <li>
+                        <img src="/img/user8-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Norman</a>
+                        <span class="users-list-date">Yesterday</span>
+                      </li>
+                      <li>
+                        <img src="/img/user7-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Jane</a>
+                        <span class="users-list-date">12 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user6-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">John</a>
+                        <span class="users-list-date">12 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user2-160x160.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Alexander</a>
+                        <span class="users-list-date">13 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user5-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Sarah</a>
+                        <span class="users-list-date">14 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user4-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Nora</a>
+                        <span class="users-list-date">15 Jan</span>
+                      </li>
+                      <li>
+                        <img src="/img/user3-128x128.jpg" alt="User Image">
+                        <a class="users-list-name" href="#">Nadia</a>
+                        <span class="users-list-date">15 Jan</span>
+                      </li>
+                    </ul>
+                    <!-- /.users-list -->
+                  </div>
+                  <!-- /.card-body -->
+                  <div class="card-footer text-center">
+                    <a href="javascript:">View All Users</a>
+                  </div>
+                  <!-- /.card-footer -->
+                </div>
+                <!--/.card -->
+              </div>
+              <!-- /.col -->
+            </div>
+            <!-- /.info-box -->
+            
+            
+
+            <!--<div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Browser Usage</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row">
+	                
+	                
+                  
+                </div>
+              </div>
+              <div class="card-footer p-0">
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      United States of America
+                      <span class="float-right text-danger">
+                        <i class="fas fa-arrow-down text-sm"></i>
+                        12%</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      India
+                      <span class="float-right text-success">
+                        <i class="fas fa-arrow-up text-sm"></i> 4%
+                      </span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      China
+                      <span class="float-right text-warning">
+                        <i class="fas fa-arrow-left text-sm"></i> 0%
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>-->
+            <!-- /.card -->
+            
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!--/. container-fluid -->
+  
 </template>
 
 <style scoped>

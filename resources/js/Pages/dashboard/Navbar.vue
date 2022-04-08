@@ -9,102 +9,88 @@
           
         </a>
       </li>
-      <!--<li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index3.html" class="nav-link">Accueil</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
-      </li>-->
-    </ul>
-    
-    
-    <!--<Link :href="route('profile.show')">
-		                <span class="icon"><i class="mdi mdi-account"></i></span>
-                        <span>Profile</span>
-                  </Link>
-		           
-                  <form @submit.prevent="logout">
-                        <jet-dropdown-link as="button">
-                            <span class="icon"><i class="mdi mdi-logout"></i></span>
-                            <span>Log Out</span>
-                        </jet-dropdown-link>
-                  </form>-->
-    
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <!--<i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>-->
-          Account
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-	      <!--<Link :href="route('profile.show')" class="dropdown-item">-->
-	      <jet-dropdown-link :href="route('profile.show')" class="dropdown-item">
-	         <i class="far fa-comments"></i>
-	         Profile
-            <!--<div class="media">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>-->
-          </jet-dropdown-link>
-          <div class="dropdown-divider"></div>
-          <form @submit.prevent="logout">
-            <jet-dropdown-link as="button">
-                <i class="far fa-comments"></i>
-                Log Out
-            </jet-dropdown-link>
-          </form>
-          <!--<a href="#" class="dropdown-item">
-	         <i class="far fa-comments"></i>
-	         Logout
-            <div class="media">
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-              </div>
-            </div>
-          </a>-->
-          <!--<a href="#" class="dropdown-item dropdown-footer">See All Messages</a>-->
-        </div>
+        <a href="#" class="nav-link">Offres</a>
       </li>
     </ul>
 
-   
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      
+
+      <!-- Messages Dropdown Menu -->
+      
+      <!-- Notifications Dropdown Menu -->
+      
+      <li class="nav-item">
+        <!--<form @submit.prevent="submit">-->
+		        <div class="d-flex justify-content-between">
+		          <Link
+		                @click="submit"
+			            method="post"
+			            as="button"
+			            class="btn btn-link nav-link"
+			            ><i class="fas fa-sign-out-alt"></i></Link
+                    >
+		        </div>
+	     <!--</form>-->
+        <!--<a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <i class="fas fa-expand-arrows-alt"></i>
+        </a>-->
+      </li>
+      
+    </ul>
   </nav>
   <!-- /.navbar -->
 </template>
 
 <script>
-import { Head, Link } from '@inertiajs/inertia-vue3'
-import JetDropdownLink from '@/Jetstream/DropdownLink.vue'
-export default {
+import { defineComponent } from "vue";
+//import JetAuthenticationCard from "@/Jetstream/AuthenticationCard.vue"
+//import JetAuthenticationCardLogo from "@/Jetstream/AuthenticationCardLogo.vue"
+//import JetDropdownLink from '@/Jetstream/DropdownLink.vue'
+//import JetButton from "@/Jetstream/Button.vue"
+import { Head, Link } from "@inertiajs/inertia-vue3"
+
+export default defineComponent({
   components: {
     Head,
-    Link,
-    JetDropdownLink
-    
-  },
-  methods: {
-	
-    logout() {
-      this.$inertia.post(route('logout'))
-      
-    },
+    //JetAuthenticationCard,
+    //JetAuthenticationCardLogo,
+    //JetButton,
+    //JetDropdownLink,
+    Link
   },
 
-}
+  props: {
+    status: String
+  },
+
+  data() {
+    return {
+      form: this.$inertia.form({
+	      is_admin: 0
+      })
+    };
+  },
+
+  methods: {
+	
+    submit() {
+      this.form.post(this.route("logout"));
+    }
+  },
+
+  
+  
+  
+  
+  
+})
 </script>
 
 <style>
-
 </style>

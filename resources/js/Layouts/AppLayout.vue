@@ -12,14 +12,14 @@
 	        <!--<ContentHeader></ContentHeader>-->
 	
 	        <section class="content">
-	          <div class="container-fluid my-5">
+	          <!--<div class="container-fluid my-5">-->
 	            
 	            <!-- Page Content -->
 			    <!--<main class="container my-5">-->
 			      <slot></slot>
 			    <!--</main>-->
 	            
-	          </div>
+	          <!--</div>-->
 	        </section>
 	        
 	      </div>

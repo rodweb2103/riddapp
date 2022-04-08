@@ -2,22 +2,28 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
+    <!--<a href="index3.html" class="brand-link">
+      <img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>-->
     <a href="index3.html" class="brand-link" style="text-align: center;">
-      <svg width="64" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.395 44.428C4.557 40.198 0 32.632 0 24 0 10.745 10.745 0 24 0a23.891 23.891 0 0113.997 4.502c-.2 17.907-11.097 33.245-26.602 39.926z" fill="#6875F5"></path><path d="M14.134 45.885A23.914 23.914 0 0024 48c13.255 0 24-10.745 24-24 0-3.516-.756-6.856-2.115-9.866-4.659 15.143-16.608 27.092-31.75 31.751z" fill="#6875F5"></path></svg>
-      <div class="brand-text font-weight-light mt-4">LEADS MANAGEMENT</div>
+      <img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;float:unset !important;max-height: 90px !important;">
     </a>
-
+    
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <!--<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="/assets/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
         </div>
-        <div class="info">
-          <a href="#" class="d-block">Carlos Carvalho</a>
+        <div class="info" style="width: 200px;">
+          <span>
+            <a href="#" class="" style="margin: unset !important;padding: 8px;">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</a>
+            <!--<a href="#"><i class="fas fa-sign-out-alt"></i></a></span>-->
+          </span>
         </div>
-      </div>-->
+      </div>
 
       <!-- SidebarSearch Form -->
       <!--<div class="form-inline">
@@ -32,59 +38,8 @@
       </div>-->
 
       <!-- Sidebar Menu -->
-      
-      <!--<li v-bind:class="{'active': route().current('load')}">
-	        
-	        <jet-nav-link :href="route('load')"  style="border-bottom: unset !important;color: #fff !important;">
-	                <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-                    <span class="menu-item-label">LOAD</span>
-            </jet-nav-link>
-	      </li>-->
-	      
-	      <!--<li v-bind:class="{'active': route().current('search')}">
-	       
-	        <jet-nav-link :href="route('search')"  style="border-bottom: unset !important;color: #fff !important;">
-	                <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-                    <span class="menu-item-label">SEARCH</span>
-            </jet-nav-link>
-	      </li>
-	      <li v-bind:class="{'active': route().current('savelist')}">
-	       
-	        <jet-nav-link :href="route('savelist')" style="border-bottom: unset !important;color: #fff !important;">
-	                <span class="icon"><i class="mdi mdi-desktop-mac"></i></span>
-                    <span class="menu-item-label">SAVE LIST</span>
-            </jet-nav-link>
-	      </li>-->
-      
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-	      
-	       <li class="nav-item">
-	        <Link :href="route('load')" v-bind:class="{'active': route().current('load'),'nav-link':true}" style="border-bottom: unset !important;color: #fff !important;">
-	                 <i class="nav-icon fas fa-columns"></i>
-                     <p>
-                        LOAD
-                     </p>
-            </Link>
-	       </li>
-            <li class="nav-item">
-          
-	        <Link :href="route('search')" v-bind:class="{'active': route().current('search'),'nav-link':true}">
-	                 <i class="nav-icon fas fa-columns"></i>
-                     <p>
-                        SEARCH
-                     </p>
-            </Link>
-            </li>
-            <li class="nav-item">
-            
-            <Link :href="route('savelist')" v-bind:class="{'active': route().current('savelist'),'nav-link':true}">
-	                 <i class="nav-icon fas fa-columns"></i>
-                     <p>
-                        SAVE LISTS
-                     </p>
-            </Link>
-            </li>
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <!--<li class="nav-item menu-open">
@@ -115,8 +70,50 @@
                 </a>
               </li>
             </ul>
+          </li>-->
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Candidats
+              </p>
+            </a>
           </li>
           <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Recruteurs
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Offres
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Abonnements
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Comptes staff
+              </p>
+            </a>
+          </li>
+          <!--<li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
@@ -726,26 +723,10 @@
   </aside>
 </template>
 
-
 <script>
-import JetNavLink from '@/Jetstream/NavLink.vue';
-import { Head, Link } from '@inertiajs/inertia-vue3';
 export default {
-  components: {
-    
-    JetNavLink,
-    Link
-    
-  },
 }
 </script>
 
 <style>
-	
-	li.active{
-		
-		background-color: #007bff;
-		border-radius: .25rem;
-	}
-
 </style>

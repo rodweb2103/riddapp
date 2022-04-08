@@ -11,6 +11,11 @@
 		      
 		      display: unset !important;
 	      }*/
+	      
+	      .main-sidebar .nav-item p{
+		      
+		      color: #fff !important;
+	      }
 	    
 	    </style>
 
@@ -68,6 +73,12 @@
 	    <link rel="stylesheet" href="{{ asset('/css/video-background.css') }}">
 	    <link rel="stylesheet" href="{{ asset('/css/Video-Parallax-Background.css') }}">
 	    <link rel="stylesheet" href="{{ asset('/css/Video-Responsive.css') }}">
+	    
+	    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+        <!-- overlayScrollbars -->
+        <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
 
         
 
@@ -97,5 +108,26 @@
 	    <script src="{{ asset('/js/slick.min.js') }}" defer></script>
 	    <!--<script src="{{ asset('/js/step-form.js') }}" defer></script>-->
 	    <script src="{{ asset('/js/Video-Parallax-Background.js') }}" defer></script>
+	    
+	    
+	    <!--<script src="{{ asset('plugins/sparklines/sparkline.js') }}"></script>-->
+	    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+		<!-- Bootstrap -->
+		<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<!-- overlayScrollbars -->
+		<script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
+		<!-- AdminLTE App -->
+		<script src="{{ asset('js/adminlte.js') }}"></script>
+		
+		<!-- PAGE PLUGINS -->
+		<!-- jQuery Mapael -->
+		<script src="{{ asset('plugins/jquery-mousewheel/jquery.mousewheel.js') }}"></script>
+		<script src="{{ asset('plugins/raphael/raphael.min.js') }}"></script>
+		<script src="{{ asset('plugins/jquery-mapael/jquery.mapael.min.js') }}"></script>
+		<script src="{{ asset('plugins/jquery-mapael/maps/usa_states.min.js') }}"></script>
+		<!-- ChartJS -->
+		<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+		<!--<script src="{{ asset('js/demo.js') }}"></script>-->
+	    
     </body>
 </html>

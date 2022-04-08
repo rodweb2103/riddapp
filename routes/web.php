@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\LoginController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,13 +32,38 @@ Route::get('/study/level',[UserController::class, 'study_level'])->name('study_l
 Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name('study_level');
 
 /********* admin LINK *********/
+
+Route::get('/admin',function(){
+	
+    return Inertia::render('Admin/Dashboard');
+
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.dashboard');
+
+Route::get('/account',function(){
+	
+	if (Auth::user()->hasRole('Candidate')) {
+	   return Inertia::render('User/DashboardCandidate');
+	}else{
+	   return Inertia::render('User/Dashboard');
+	}
+    //return Inertia::render('User/Dashboard');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Candidate|Employer'])->name('user.dashboard');
+
+
+
+//Route::get('/admin/profile',function(){
+	
+//    return Inertia::render('Admin/Profile');
+//});
+
+
 $limiter = config('fortify.limiters.login');
 Route::post('/admin/login', [LoginController::class, 'store'])
         ->middleware(array_filter([
             'guest',
             'admin_or_not',
             $limiter ? 'throttle:'.$limiter : null,
-        ]));
+        ]))->name("admin.login");
 
 Route::get('/admin/forgot-password', function () {
     return Inertia::render('Auth/Admin/ForgotPassword');
@@ -109,7 +135,7 @@ Route::post('/login', [LoginController::class, 'store'])
         ->middleware(array_filter([
             'guest',
             $limiter ? 'throttle:'.$limiter : null,
-        ]));
+        ]))->name("user.login");
 
 Route::get('/reset-password/{token}/{email}', function ($token,$email) {
         return Inertia::render('Auth/ResetPassword',[

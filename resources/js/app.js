@@ -12,16 +12,18 @@ window.jQuery = window.$ = jQuery
 import VueTelInput from 'vue-tel-input';
 import 'vue-tel-input/dist/vue-tel-input.css';
 
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+/*import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {dom, library} from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 import {faLock, faEnvelope} from '@fortawesome/free-solid-svg-icons';
-import {faFacebook, faGooglePlus} from '@fortawesome/free-brands-svg-icons';
+import {faFacebook, faGooglePlus} from '@fortawesome/free-brands-svg-icons';*/
 
 
-import "../../node_modules/admin-lte/dist/js/adminlte.min.js"
+import "../../node_modules/admin-lte/plugins/select2/js/select2.full.min.js"
+
+/*import "../../node_modules/admin-lte/dist/js/adminlte.min.js"
 import "../../node_modules/admin-lte/plugins/select2/js/select2.full.min.js"
 import "../../node_modules/admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js"
 import "../../node_modules/admin-lte/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"
@@ -53,10 +55,10 @@ import "../../node_modules/admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.m
 import "../../node_modules/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
 import "../../node_modules/admin-lte/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css"
 import "../../node_modules/admin-lte/plugins/bs-stepper/css/bs-stepper.min.css"
-import "../../node_modules/admin-lte/plugins/dropzone/min/dropzone.min.css"
+import "../../node_modules/admin-lte/plugins/dropzone/min/dropzone.min.css"*/
 
-library.add(fas, fab, far, faLock, faEnvelope, faFacebook, faGooglePlus);
-dom.watch()
+//library.add(fas, fab, far, faLock, faEnvelope, faFacebook, faGooglePlus);
+//dom.watch()
 
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
@@ -65,7 +67,7 @@ createInertiaApp({
     resolve: (name) => require(`./Pages/${name}.vue`),
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
-            .component("font-awesome-icon", FontAwesomeIcon)
+            //.component("font-awesome-icon", FontAwesomeIcon)
             .use(plugin)
             .use(VueTelInput)
             .mixin({ methods: { route } })
