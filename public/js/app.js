@@ -25607,6 +25607,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Candidate.vue?vue&type=script&lang=js":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Candidate.vue?vue&type=script&lang=js ***!
+  \****************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
+
+ //import Welcome from "@/Pages/Welcome.vue"
+//import Welcome from "@/Jetstream/Welcome.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  components: {
+    AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"] //Welcome
+
+  }
+}));
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Dashboard.vue?vue&type=script&lang=js":
 /*!****************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Dashboard.vue?vue&type=script&lang=js ***!
@@ -25629,6 +25655,58 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     Welcome: _Pages_Welcome_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }
+}));
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Employer.vue?vue&type=script&lang=js":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Employer.vue?vue&type=script&lang=js ***!
+  \***************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
+
+ //import Welcome from "@/Pages/Welcome.vue"
+//import Welcome from "@/Jetstream/Welcome.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  components: {
+    AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"] //Welcome
+
+  }
+}));
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Offers.vue?vue&type=script&lang=js":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Offers.vue?vue&type=script&lang=js ***!
+  \*************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
+
+ //import Welcome from "@/Pages/Welcome.vue"
+//import Welcome from "@/Jetstream/Welcome.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  components: {
+    AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"] //Welcome
+
   }
 }));
 
@@ -27708,6 +27786,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Offers.vue?vue&type=script&lang=js":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Offers.vue?vue&type=script&lang=js ***!
+  \************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/Layouts/AppLayout.vue */ "./resources/js/Layouts/AppLayout.vue");
+
+ //import Welcome from "@/Pages/Welcome.vue"
+//import Welcome from "@/Jetstream/Welcome.vue"
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
+  components: {
+    AppLayout: _Layouts_AppLayout_vue__WEBPACK_IMPORTED_MODULE_1__["default"] //Welcome
+
+  }
+}));
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=script&lang=js":
 /*!********************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=script&lang=js ***!
@@ -27781,18 +27885,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+/* harmony import */ var _Jetstream_ActionSection_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/Jetstream/ActionSection.vue */ "./resources/js/Jetstream/ActionSection.vue");
+/* harmony import */ var _Jetstream_DialogModal_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/Jetstream/DialogModal.vue */ "./resources/js/Jetstream/DialogModal.vue");
+/* harmony import */ var _Jetstream_DangerButton_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/Jetstream/DangerButton.vue */ "./resources/js/Jetstream/DangerButton.vue");
+/* harmony import */ var _Jetstream_Input_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/Jetstream/Input.vue */ "./resources/js/Jetstream/Input.vue");
+/* harmony import */ var _Jetstream_InputError_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/Jetstream/InputError.vue */ "./resources/js/Jetstream/InputError.vue");
+/* harmony import */ var _Jetstream_SecondaryButton_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @/Jetstream/SecondaryButton.vue */ "./resources/js/Jetstream/SecondaryButton.vue");
+/* harmony import */ var _Jetstream_Button_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @/Jetstream/Button.vue */ "./resources/js/Jetstream/Button.vue");
+
+
+
+
+
+
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
   components: {
     Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Head,
-    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_1__.Link,
+    JetActionSection: _Jetstream_ActionSection_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    JetDangerButton: _Jetstream_DangerButton_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    JetDialogModal: _Jetstream_DialogModal_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    JetInput: _Jetstream_Input_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    JetInputError: _Jetstream_InputError_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    JetSecondaryButton: _Jetstream_SecondaryButton_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    JetButton: _Jetstream_Button_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
   },
   props: {
     canLogin: Boolean,
     canRegister: Boolean,
     laravelVersion: String,
     phpVersion: String
+  },
+  data: function data() {
+    return {
+      modal: null,
+      form: this.$inertia.form({
+        password: ''
+      })
+    };
+  },
+  methods: {
+    openOfferForm: function openOfferForm() {
+      //this.form.password = '';
+      var el = document.querySelector('#openOffer');
+      this.modal = new bootstrap.Modal(el);
+      this.modal.show(); //setTimeout(() => this.$refs.password.focus(), 250)
+    },
+    closeModal: function closeModal() {},
+    deleteUser: function deleteUser() {}
   }
 }));
 
@@ -27877,7 +28020,7 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       form: this.$inertia.form({
-        is_admin: 0
+        is_admin: this.$page.props.is_admin
       })
     };
   },
@@ -27916,7 +28059,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony import */ var _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @inertiajs/inertia-vue3 */ "./node_modules/@inertiajs/inertia-vue3/dist/index.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    Head: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Head,
+    Link: _inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.Link
+  }
+});
 
 /***/ }),
 
@@ -29117,7 +29267,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: $props.title
   }, null, 8
   /* PROPS */
-  , ["title"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<Preloader></Preloader>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Navbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Sidebar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<ContentHeader></ContentHeader>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"container-fluid my-5\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<main class=\"container my-5\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("</main>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("</div>")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ControlSidebar)])]);
+  , ["title"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"alert-box\" style=\"background: linear-gradient(74deg, rgb(255, 115, 0) 27%, rgb(255, 199, 0)), rgb(255, 255, 255);\">\n           <span class=\"badge\">Announcement</span> Some Text\n    </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<Preloader></Preloader>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Navbar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Sidebar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<ContentHeader></ContentHeader>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("section", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"container-fluid my-5\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Page Content "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<main class=\"container my-5\">"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderSlot)(_ctx.$slots, "default"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("</main>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("</div>")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Footer), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ControlSidebar)])]);
 }
 
 /***/ }),
@@ -29606,6 +29756,117 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Candidate.vue?vue&type=template&id=68ec12ec":
+/*!********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Candidate.vue?vue&type=template&id=68ec12ec ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "container-fluid"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main row "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "row pt-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Left col "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-12"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TABLE: LATEST ORDERS "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-header border-transparent"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  "class": "card-title"
+}, "Liste des candidats"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-tools"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\">\n                    <i class=\"fas fa-minus\"></i>\n                  </button>\n                  <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\">\n                    <i class=\"fas fa-times\"></i>\n                  </button>")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-body p-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "table-responsive"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", {
+  "class": "table m-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Order ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Item"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Status"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Popularity")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR9842")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Call of Duty IV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-success"
+}, "Shipped")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00a65a",
+  "data-height": "20"
+}, "90,80,90,-70,61,-83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR1848")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-warning"
+}, "Pending")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f39c12",
+  "data-height": "20"
+}, "90,80,-90,70,61,-83,68")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "iPhone 6 Plus"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-danger"
+}, "Delivered")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f56954",
+  "data-height": "20"
+}, "90,-80,90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-info"
+}, "Processing")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00c0ef",
+  "data-height": "20"
+}, "90,80,-90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR1848")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-warning"
+}, "Pending")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f39c12",
+  "data-height": "20"
+}, "90,80,-90,70,61,-83,68")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "iPhone 6 Plus"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-danger"
+}, "Delivered")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f56954",
+  "data-height": "20"
+}, "90,-80,90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR9842")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Call of Duty IV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-success"
+}, "Shipped")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00a65a",
+  "data-height": "20"
+}, "90,80,90,-70,61,-83,63")])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.table-responsive ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.col "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.col ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row ")], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_app_layout, {
+    title: "Gestion compte employeur"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/. container-fluid ")];
+    }),
+    _: 1
+    /* STABLE */
+
+  });
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Dashboard.vue?vue&type=template&id=4dff49ca":
 /*!********************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Dashboard.vue?vue&type=template&id=4dff49ca ***!
@@ -29629,6 +29890,228 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<template #header>\n      <h2 class=\"h4 font-weight-bold\">\n        Dashboard\n      </h2>\n    </template>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_welcome)];
+    }),
+    _: 1
+    /* STABLE */
+
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Employer.vue?vue&type=template&id=15976204":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Employer.vue?vue&type=template&id=15976204 ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "container-fluid"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main row "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "row pt-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Left col "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-12"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TABLE: LATEST ORDERS "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-header border-transparent"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  "class": "card-title"
+}, "Liste des recruteurs"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-tools"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\">\n                    <i class=\"fas fa-minus\"></i>\n                  </button>\n                  <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\">\n                    <i class=\"fas fa-times\"></i>\n                  </button>")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-body p-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "table-responsive"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", {
+  "class": "table m-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Order ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Item"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Status"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Popularity")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR9842")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Call of Duty IV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-success"
+}, "Shipped")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00a65a",
+  "data-height": "20"
+}, "90,80,90,-70,61,-83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR1848")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-warning"
+}, "Pending")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f39c12",
+  "data-height": "20"
+}, "90,80,-90,70,61,-83,68")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "iPhone 6 Plus"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-danger"
+}, "Delivered")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f56954",
+  "data-height": "20"
+}, "90,-80,90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-info"
+}, "Processing")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00c0ef",
+  "data-height": "20"
+}, "90,80,-90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR1848")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-warning"
+}, "Pending")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f39c12",
+  "data-height": "20"
+}, "90,80,-90,70,61,-83,68")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "iPhone 6 Plus"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-danger"
+}, "Delivered")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f56954",
+  "data-height": "20"
+}, "90,-80,90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR9842")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Call of Duty IV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-success"
+}, "Shipped")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00a65a",
+  "data-height": "20"
+}, "90,80,90,-70,61,-83,63")])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.table-responsive ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.col "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.col ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row ")], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_app_layout, {
+    title: "Gestion compte employeur"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/. container-fluid ")];
+    }),
+    _: 1
+    /* STABLE */
+
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Offers.vue?vue&type=template&id=81d291c0":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Offers.vue?vue&type=template&id=81d291c0 ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "container-fluid"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main row "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "row pt-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Left col "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-12"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TABLE: LATEST ORDERS "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-header border-transparent"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  "class": "card-title"
+}, "Liste des candidats"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-tools"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\">\n                    <i class=\"fas fa-minus\"></i>\n                  </button>\n                  <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\">\n                    <i class=\"fas fa-times\"></i>\n                  </button>")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-body p-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "table-responsive"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", {
+  "class": "table m-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Order ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Item"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Status"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Popularity")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR9842")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Call of Duty IV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-success"
+}, "Shipped")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00a65a",
+  "data-height": "20"
+}, "90,80,90,-70,61,-83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR1848")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-warning"
+}, "Pending")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f39c12",
+  "data-height": "20"
+}, "90,80,-90,70,61,-83,68")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "iPhone 6 Plus"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-danger"
+}, "Delivered")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f56954",
+  "data-height": "20"
+}, "90,-80,90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-info"
+}, "Processing")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00c0ef",
+  "data-height": "20"
+}, "90,80,-90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR1848")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-warning"
+}, "Pending")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f39c12",
+  "data-height": "20"
+}, "90,80,-90,70,61,-83,68")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "iPhone 6 Plus"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-danger"
+}, "Delivered")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f56954",
+  "data-height": "20"
+}, "90,-80,90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR9842")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Call of Duty IV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-success"
+}, "Shipped")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00a65a",
+  "data-height": "20"
+}, "90,80,90,-70,61,-83,63")])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.table-responsive ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-body "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-footer ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.col "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.col ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row ")], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_app_layout, {
+    title: "Gestion des offres"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/. container-fluid ")];
     }),
     _: 1
     /* STABLE */
@@ -29988,7 +30471,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "d-xxl-flex order-2 align-items-xxl-start header-blue",
   style: {
-    "height": "920.27px",
+    "height": "930.27px",
     "background": "#000",
     "padding-bottom": "0px",
     "transform-style": "preserve-3d",
@@ -30565,7 +31048,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "d-xxl-flex order-2 align-items-xxl-start header-blue",
   style: {
-    "height": "920.27px",
+    "height": "930.27px",
     "background": "linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255)",
     "padding-bottom": "0px",
     "transform-style": "preserve-3d",
@@ -30940,7 +31423,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "d-xxl-flex order-2 align-items-xxl-start header-blue",
   style: {
-    "height": "920.27px",
+    "height": "930.27px",
     "background": "linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255)",
     "padding-bottom": "0px",
     "transform-style": "preserve-3d",
@@ -32459,7 +32942,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "d-xxl-flex order-2 align-items-xxl-start header-blue",
   style: {
-    "height": "920.27px",
+    "height": "930.27px",
     "background": "linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255)",
     "padding-bottom": "0px",
     "transform-style": "preserve-3d",
@@ -37069,6 +37552,117 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Offers.vue?vue&type=template&id=30b86be2":
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Offers.vue?vue&type=template&id=30b86be2 ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "container-fluid"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main row "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "row pt-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Left col "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "col-md-12"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" TABLE: LATEST ORDERS "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-header border-transparent"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", {
+  "class": "card-title"
+}, "Liste des offres"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-tools"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\">\n                    <i class=\"fas fa-minus\"></i>\n                  </button>\n                  <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\">\n                    <i class=\"fas fa-times\"></i>\n                  </button>")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "card-body p-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "table-responsive"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", {
+  "class": "table m-0"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("thead", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Order ID"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Item"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Status"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", null, "Popularity")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tbody", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR9842")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Call of Duty IV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-success"
+}, "Shipped")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00a65a",
+  "data-height": "20"
+}, "90,80,90,-70,61,-83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR1848")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-warning"
+}, "Pending")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f39c12",
+  "data-height": "20"
+}, "90,80,-90,70,61,-83,68")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "iPhone 6 Plus"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-danger"
+}, "Delivered")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f56954",
+  "data-height": "20"
+}, "90,-80,90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-info"
+}, "Processing")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00c0ef",
+  "data-height": "20"
+}, "90,80,-90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR1848")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Samsung Smart TV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-warning"
+}, "Pending")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f39c12",
+  "data-height": "20"
+}, "90,80,-90,70,61,-83,68")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR7429")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "iPhone 6 Plus"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-danger"
+}, "Delivered")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#f56954",
+  "data-height": "20"
+}, "90,-80,90,70,-61,83,63")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "pages/examples/invoice.html"
+}, "OR9842")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, "Call of Duty IV"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "badge badge-success"
+}, "Shipped")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "sparkbar",
+  "data-color": "#00a65a",
+  "data-height": "20"
+}, "90,80,90,-70,61,-83,63")])])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.table-responsive ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-body "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-footer ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.col "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.col ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row ")], -1
+/* HOISTED */
+);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_app_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("app-layout");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_app_layout, {
+    title: "Gestion des offres"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/. container-fluid ")];
+    }),
+    _: 1
+    /* STABLE */
+
+  });
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e":
 /*!************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e ***!
@@ -37335,19 +37929,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "card-tools"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "badge badge-danger"
-}, "8 New Members"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-tool",
-  "data-card-widget": "collapse"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-minus"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-tool",
-  "data-card-widget": "remove"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-times"
-})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, "8 New Members"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\">\n                        <i class=\"fas fa-minus\"></i>\n                      </button>\n                      <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\">\n                        <i class=\"fas fa-times\"></i>\n                      </button>")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "card-body p-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "users-list clearfix"
@@ -37431,19 +38013,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "card-tools"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "badge badge-danger"
-}, "8 New Members"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-tool",
-  "data-card-widget": "collapse"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-minus"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-tool",
-  "data-card-widget": "remove"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-times"
-})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, "8 New Members"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\">\n                        <i class=\"fas fa-minus\"></i>\n                      </button>\n                      <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\">\n                        <i class=\"fas fa-times\"></i>\n                      </button>")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "card-body p-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "users-list clearfix"
@@ -37523,19 +38093,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "card-title"
 }, "Dernières Offres"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "card-tools"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-tool",
-  "data-card-widget": "collapse"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-minus"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-tool",
-  "data-card-widget": "remove"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-times"
-})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\">\n                    <i class=\"fas fa-minus\"></i>\n                  </button>\n                  <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\">\n                    <i class=\"fas fa-times\"></i>\n                  </button>")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "card-body p-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "table-responsive"
@@ -37669,19 +38227,7 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "card-tools"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "badge badge-danger"
-}, "8 New Members"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-tool",
-  "data-card-widget": "collapse"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-minus"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  type: "button",
-  "class": "btn btn-tool",
-  "data-card-widget": "remove"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-times"
-})])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, "8 New Members"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\">\n                        <i class=\"fas fa-minus\"></i>\n                      </button>\n                      <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\">\n                        <i class=\"fas fa-times\"></i>\n                      </button>")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-header "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "card-body p-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "users-list clearfix"
@@ -37810,15 +38356,104 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "container-fluid"
+};
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-fluid\"><!-- /.row --><div class=\"row pt-2\"><div class=\"col-md-3\"><!-- Info Boxes Style 2 --><div class=\"info-box mb-3 bg-warning\"><span class=\"info-box-icon\"><i class=\"fas fa-tag\"></i></span><div class=\"info-box-content\"><span class=\"info-box-text\">Candidats</span><span class=\"info-box-number\">5,200</span></div><!-- /.info-box-content --></div></div><div class=\"col-md-3\"><div class=\"info-box mb-3 bg-danger\"><span class=\"info-box-icon\"><i class=\"fas fa-cloud-download-alt\"></i></span><div class=\"info-box-content\"><span class=\"info-box-text\">Offres postées</span><span class=\"info-box-number\">114,381</span></div><!-- /.info-box-content --></div></div><!-- /.info-box --><!--&lt;div class=&quot;card&quot;&gt;\n              &lt;div class=&quot;card-header&quot;&gt;\n                &lt;h3 class=&quot;card-title&quot;&gt;Browser Usage&lt;/h3&gt;\n\n                &lt;div class=&quot;card-tools&quot;&gt;\n                  &lt;button type=&quot;button&quot; class=&quot;btn btn-tool&quot; data-card-widget=&quot;collapse&quot;&gt;\n                    &lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;\n                  &lt;/button&gt;\n                  &lt;button type=&quot;button&quot; class=&quot;btn btn-tool&quot; data-card-widget=&quot;remove&quot;&gt;\n                    &lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;\n                  &lt;/button&gt;\n                &lt;/div&gt;\n              &lt;/div&gt;\n              &lt;div class=&quot;card-body&quot;&gt;\n                &lt;div class=&quot;row&quot;&gt;\n\t                \n\t                \n                  \n                &lt;/div&gt;\n              &lt;/div&gt;\n              &lt;div class=&quot;card-footer p-0&quot;&gt;\n                &lt;ul class=&quot;nav nav-pills flex-column&quot;&gt;\n                  &lt;li class=&quot;nav-item&quot;&gt;\n                    &lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;\n                      United States of America\n                      &lt;span class=&quot;float-right text-danger&quot;&gt;\n                        &lt;i class=&quot;fas fa-arrow-down text-sm&quot;&gt;&lt;/i&gt;\n                        12%&lt;/span&gt;\n                    &lt;/a&gt;\n                  &lt;/li&gt;\n                  &lt;li class=&quot;nav-item&quot;&gt;\n                    &lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;\n                      India\n                      &lt;span class=&quot;float-right text-success&quot;&gt;\n                        &lt;i class=&quot;fas fa-arrow-up text-sm&quot;&gt;&lt;/i&gt; 4%\n                      &lt;/span&gt;\n                    &lt;/a&gt;\n                  &lt;/li&gt;\n                  &lt;li class=&quot;nav-item&quot;&gt;\n                    &lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;\n                      China\n                      &lt;span class=&quot;float-right text-warning&quot;&gt;\n                        &lt;i class=&quot;fas fa-arrow-left text-sm&quot;&gt;&lt;/i&gt; 0%\n                      &lt;/span&gt;\n                    &lt;/a&gt;\n                  &lt;/li&gt;\n                &lt;/ul&gt;\n              &lt;/div&gt;\n            &lt;/div&gt;--><!-- /.card --><!-- /.card --></div><!-- Main row --><div class=\"row pt-2\"><!-- Left col --><div class=\"col-md-12\"><!-- /.card --><!-- /.row --><!-- TABLE: LATEST ORDERS --><div class=\"card\"><div class=\"card-header border-transparent\"><h3 class=\"card-title\">Dernières Offres</h3><div class=\"card-tools\"><button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"><i class=\"fas fa-minus\"></i></button><button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"><i class=\"fas fa-times\"></i></button></div></div><!-- /.card-header --><div class=\"card-body p-0\"><div class=\"table-responsive\"><table class=\"table m-0\"><thead><tr><th>Order ID</th><th>Item</th><th>Status</th><th>Popularity</th></tr></thead><tbody><tr><td><a href=\"pages/examples/invoice.html\">OR9842</a></td><td>Call of Duty IV</td><td><span class=\"badge badge-success\">Shipped</span></td><td><div class=\"sparkbar\" data-color=\"#00a65a\" data-height=\"20\">90,80,90,-70,61,-83,63</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR1848</a></td><td>Samsung Smart TV</td><td><span class=\"badge badge-warning\">Pending</span></td><td><div class=\"sparkbar\" data-color=\"#f39c12\" data-height=\"20\">90,80,-90,70,61,-83,68</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR7429</a></td><td>iPhone 6 Plus</td><td><span class=\"badge badge-danger\">Delivered</span></td><td><div class=\"sparkbar\" data-color=\"#f56954\" data-height=\"20\">90,-80,90,70,-61,83,63</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR7429</a></td><td>Samsung Smart TV</td><td><span class=\"badge badge-info\">Processing</span></td><td><div class=\"sparkbar\" data-color=\"#00c0ef\" data-height=\"20\">90,80,-90,70,-61,83,63</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR1848</a></td><td>Samsung Smart TV</td><td><span class=\"badge badge-warning\">Pending</span></td><td><div class=\"sparkbar\" data-color=\"#f39c12\" data-height=\"20\">90,80,-90,70,61,-83,68</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR7429</a></td><td>iPhone 6 Plus</td><td><span class=\"badge badge-danger\">Delivered</span></td><td><div class=\"sparkbar\" data-color=\"#f56954\" data-height=\"20\">90,-80,90,70,-61,83,63</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR9842</a></td><td>Call of Duty IV</td><td><span class=\"badge badge-success\">Shipped</span></td><td><div class=\"sparkbar\" data-color=\"#00a65a\" data-height=\"20\">90,80,90,-70,61,-83,63</div></td></tr></tbody></table></div><!-- /.table-responsive --></div><!-- /.card-body --><div class=\"card-footer clearfix\"><a href=\"javascript:void(0)\" class=\"btn btn-sm btn-info float-left\">Place New Order</a><a href=\"javascript:void(0)\" class=\"btn btn-sm btn-secondary float-right\">View All Orders</a></div><!-- /.card-footer --></div><!-- /.card --></div><!-- /.col --><!-- /.col --></div><!-- /.row --></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Créer une annonce ");
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mt-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<jet-input type=\"password\" placeholder=\"Password\"\n                       ref=\"password\"\n                       v-model=\"form.password\"\n                       :class=\"{ 'is-invalid': form.errors.password }\"\n                       @keyup.enter=\"deleteUser\" />\n\n            <jet-input-error :message=\"form.errors.password\" />")], -1
+/* HOISTED */
+);
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Annuler ");
+
+var _hoisted_5 = {
+  "class": "spinner-border spinner-border-sm",
+  role: "status"
+};
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "visually-hidden"
+}, "Loading...", -1
+/* HOISTED */
+);
+
+var _hoisted_7 = [_hoisted_6];
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Confirmer ");
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row pt-2\"><div class=\"col-md-3\"><!-- Info Boxes Style 2 --><div class=\"info-box mb-3 bg-warning\"><span class=\"info-box-icon\"><i class=\"fas fa-tag\"></i></span><div class=\"info-box-content\"><span class=\"info-box-text\">Candidats</span><span class=\"info-box-number\">5,200</span></div><!-- /.info-box-content --></div></div><div class=\"col-md-3\"><div class=\"info-box mb-3 bg-danger\"><span class=\"info-box-icon\"><i class=\"fas fa-cloud-download-alt\"></i></span><div class=\"info-box-content\"><span class=\"info-box-text\">Offres postées</span><span class=\"info-box-number\">114,381</span></div><!-- /.info-box-content --></div></div><!-- /.info-box --><!--&lt;div class=&quot;card&quot;&gt;\n              &lt;div class=&quot;card-header&quot;&gt;\n                &lt;h3 class=&quot;card-title&quot;&gt;Browser Usage&lt;/h3&gt;\n\n                &lt;div class=&quot;card-tools&quot;&gt;\n                  &lt;button type=&quot;button&quot; class=&quot;btn btn-tool&quot; data-card-widget=&quot;collapse&quot;&gt;\n                    &lt;i class=&quot;fas fa-minus&quot;&gt;&lt;/i&gt;\n                  &lt;/button&gt;\n                  &lt;button type=&quot;button&quot; class=&quot;btn btn-tool&quot; data-card-widget=&quot;remove&quot;&gt;\n                    &lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;\n                  &lt;/button&gt;\n                &lt;/div&gt;\n              &lt;/div&gt;\n              &lt;div class=&quot;card-body&quot;&gt;\n                &lt;div class=&quot;row&quot;&gt;\n\t                \n\t                \n                  \n                &lt;/div&gt;\n              &lt;/div&gt;\n              &lt;div class=&quot;card-footer p-0&quot;&gt;\n                &lt;ul class=&quot;nav nav-pills flex-column&quot;&gt;\n                  &lt;li class=&quot;nav-item&quot;&gt;\n                    &lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;\n                      United States of America\n                      &lt;span class=&quot;float-right text-danger&quot;&gt;\n                        &lt;i class=&quot;fas fa-arrow-down text-sm&quot;&gt;&lt;/i&gt;\n                        12%&lt;/span&gt;\n                    &lt;/a&gt;\n                  &lt;/li&gt;\n                  &lt;li class=&quot;nav-item&quot;&gt;\n                    &lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;\n                      India\n                      &lt;span class=&quot;float-right text-success&quot;&gt;\n                        &lt;i class=&quot;fas fa-arrow-up text-sm&quot;&gt;&lt;/i&gt; 4%\n                      &lt;/span&gt;\n                    &lt;/a&gt;\n                  &lt;/li&gt;\n                  &lt;li class=&quot;nav-item&quot;&gt;\n                    &lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;\n                      China\n                      &lt;span class=&quot;float-right text-warning&quot;&gt;\n                        &lt;i class=&quot;fas fa-arrow-left text-sm&quot;&gt;&lt;/i&gt; 0%\n                      &lt;/span&gt;\n                    &lt;/a&gt;\n                  &lt;/li&gt;\n                &lt;/ul&gt;\n              &lt;/div&gt;\n            &lt;/div&gt;--><!-- /.card --><!-- /.card --></div>", 1);
+
+var _hoisted_10 = {
+  "class": "clearfix"
+};
+
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"row pt-2\"><!-- Left col --><div class=\"col-md-12\"><!-- /.card --><!-- /.row --><!-- TABLE: LATEST ORDERS --><div class=\"card\"><div class=\"card-header border-transparent\"><h3 class=\"card-title\">Dernières Offres</h3><div class=\"card-tools\"><button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"><i class=\"fas fa-minus\"></i></button><button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"><i class=\"fas fa-times\"></i></button></div></div><!-- /.card-header --><div class=\"card-body p-0\"><div class=\"table-responsive\"><table class=\"table m-0\"><thead><tr><th>Order ID</th><th>Item</th><th>Status</th><th>Popularity</th></tr></thead><tbody><tr><td><a href=\"pages/examples/invoice.html\">OR9842</a></td><td>Call of Duty IV</td><td><span class=\"badge badge-success\">Shipped</span></td><td><div class=\"sparkbar\" data-color=\"#00a65a\" data-height=\"20\">90,80,90,-70,61,-83,63</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR1848</a></td><td>Samsung Smart TV</td><td><span class=\"badge badge-warning\">Pending</span></td><td><div class=\"sparkbar\" data-color=\"#f39c12\" data-height=\"20\">90,80,-90,70,61,-83,68</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR7429</a></td><td>iPhone 6 Plus</td><td><span class=\"badge badge-danger\">Delivered</span></td><td><div class=\"sparkbar\" data-color=\"#f56954\" data-height=\"20\">90,-80,90,70,-61,83,63</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR7429</a></td><td>Samsung Smart TV</td><td><span class=\"badge badge-info\">Processing</span></td><td><div class=\"sparkbar\" data-color=\"#00c0ef\" data-height=\"20\">90,80,-90,70,-61,83,63</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR1848</a></td><td>Samsung Smart TV</td><td><span class=\"badge badge-warning\">Pending</span></td><td><div class=\"sparkbar\" data-color=\"#f39c12\" data-height=\"20\">90,80,-90,70,61,-83,68</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR7429</a></td><td>iPhone 6 Plus</td><td><span class=\"badge badge-danger\">Delivered</span></td><td><div class=\"sparkbar\" data-color=\"#f56954\" data-height=\"20\">90,-80,90,70,-61,83,63</div></td></tr><tr><td><a href=\"pages/examples/invoice.html\">OR9842</a></td><td>Call of Duty IV</td><td><span class=\"badge badge-success\">Shipped</span></td><td><div class=\"sparkbar\" data-color=\"#00a65a\" data-height=\"20\">90,80,90,-70,61,-83,63</div></td></tr></tbody></table></div><!-- /.table-responsive --></div><!-- /.card-footer --></div><!-- /.card --></div><!-- /.col --><!-- /.col --></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Head = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Head");
 
+  var _component_jet_secondary_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-secondary-button");
+
+  var _component_jet_button = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-button");
+
+  var _component_jet_dialog_modal = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("jet-dialog-modal");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Head, {
     title: "Compte"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div>\n    <div class=\"container-fluid fixed-top p-4\">\n      <div class=\"col-12\">\n        <div v-if=\"canLogin\" class=\"d-flex justify-content-end\">\n          <div>\n            <Link v-if=\"$page.props.user\" :href=\"route('dashboard')\" class=\"text-muted\">\n              Dashboard\n            </Link>\n\n            <template v-else>\n              <Link :href=\"route('login')\" class=\"text-muted\">\n                Log in\n              </Link>\n\n              <Link v-if=\"canRegister\" :href=\"route('register')\" class=\"ms-4 text-muted\">\n                Register\n              </Link>\n            </template>\n          </div>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"container-fluid my-5 pt-5 px-5\">\n      <div class=\"row justify-content-center px-4\">\n        <div class=\"col-md-12 col-lg-9\">\n          <svg viewBox=\"0 0 651 192\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"my-4\" style=\"width: 271px\">\n            <g clip-path=\"url(#clip0)\" fill=\"#EF3B2D\">\n              <path d=\"M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z\"/>\n            </g>\n          </svg>\n\n          <div class=\"card shadow-sm\">\n            <div class=\"row\">\n              <div class=\"col-md-6 pe-0\">\n                <div class=\"card-body border-right border-bottom p-3 h-100\">\n                  <div class=\"d-flex flex-row bd-highlight pt-2\">\n                    <div>\n                      <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"text-muted\" width=\"32\"><path d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\"></path></svg>\n                    </div>\n                    <div class=\"ps-3\">\n                      <div class=\"mb-2\">\n                        <a href=\"https://laravel.com/docs\" class=\"h5 font-weight-bolder text-dark\">Documentation</a>\n                      </div>\n                      <p class=\"text-muted small\">\n                        Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.\n                      </p>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"col-md-6 ps-0\">\n                <div class=\"card-body border-bottom p-3 h-100\">\n                  <div class=\"d-flex flex-row bd-highlight pt-2\">\n                    <div>\n                      <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"text-muted\" width=\"32\"><path d=\"M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z\"></path><path d=\"M15 13a3 3 0 11-6 0 3 3 0 016 0z\"></path></svg>\n                    </div>\n                    <div class=\"ps-3\">\n                      <div class=\"mb-2\">\n                        <a href=\"https://laracasts.com\" class=\"h5 font-weight-bolder text-dark\">Laracasts</a>\n                      </div>\n                      <p class=\"text-muted small\">\n                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.\n                      </p>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"col-md-6 pe-0\">\n                <div class=\"card-body border-right p-3 h-100\">\n                  <div class=\"d-flex flex-row bd-highlight pt-2\">\n                    <div>\n                      <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"text-muted\" width=\"32\"><path d=\"M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z\"></path></svg>\n                    </div>\n                    <div class=\"ps-3 text-sm\">\n                      <div class=\"mb-2\">\n                        <a href=\"https://laravel-news.com/\" class=\"h5 font-weight-bolder text-dark\">Laravel News</a>\n                      </div>\n                      <p class=\"text-muted small\">\n                        Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.\n                      </p>\n                    </div>\n                  </div>\n                </div>\n              </div>\n              <div class=\"col-md-6 ps-0\">\n                <div class=\"card-body p-3 h-100\">\n                  <div class=\"d-flex flex-row bd-highlight pt-2\">\n                    <div>\n                      <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"text-muted\" width=\"32\"><path d=\"M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z\"></path></svg>\n                    </div>\n                    <div class=\"ps-3\">\n                      <div class=\"mb-2\">\n                        <span class=\"h5 font-weight-bolder text-dark\">Vibrant Ecosystem</span>\n                      </div>\n                      <p class=\"text-muted small\">\n                        Laravel's robust library of first-party tools and libraries, such as <a href=\"https://forge.laravel.com\" class=\"text-muted\">Forge</a>, <a href=\"https://vapor.laravel.com\" class=\"text-muted\">Vapor</a>, <a href=\"https://nova.laravel.com\" class=\"text-muted\">Nova</a>, and <a href=\"https://envoyer.io\" class=\"text-muted\">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href=\"https://laravel.com/docs/billing\" class=\"text-muted\">Cashier</a>, <a href=\"https://laravel.com/docs/dusk\" class=\"text-muted\">Dusk</a>, <a href=\"https://laravel.com/docs/broadcasting\" class=\"text-muted\">Echo</a>, <a href=\"https://laravel.com/docs/horizon\" class=\"text-muted\">Horizon</a>, <a href=\"https://laravel.com/docs/sanctum\" class=\"text-muted\">Sanctum</a>, <a href=\"https://laravel.com/docs/telescope\" class=\"text-muted\">Telescope</a>, and more.\n                      </p>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"d-flex justify-content-between mt-3\">\n            <div class=\"text-sm text-muted\">\n              <div class=\"flex align-content-center\">\n                <svg fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" class=\"text-muted\" style=\"width: 18px\">\n                  <path d=\"M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z\"></path>\n                </svg>\n\n                <a href=\"https://laravel.bigcartel.com\" class=\"text-muted\">\n                  Shop\n                </a>\n\n                <svg fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" viewBox=\"0 0 24 24\" class=\"ms-4 text-muted\" style=\"width: 18px\">\n                  <path d=\"M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z\"></path>\n                </svg>\n\n                <a href=\"https://github.com/sponsors/taylorotwell\" class=\"text-muted\">\n                  Sponsor\n                </a>\n              </div>\n            </div>\n\n            <div class=\"text-sm text-muted\">\n              Laravel v{{ laravelVersion }} (PHP v{{ phpVersion }})\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>"), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/. container-fluid ")], 64
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_dialog_modal, {
+    id: "openOffer"
+  }, {
+    title: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_2];
+    }),
+    content: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_3];
+    }),
+    footer: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_secondary_button, {
+        "data-dismiss": "modal",
+        onClick: _ctx.closeModal
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [_hoisted_4];
+        }),
+        _: 1
+        /* STABLE */
+
+      }, 8
+      /* PROPS */
+      , ["onClick"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_button, {
+        "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["btn btn-primary", {
+          'text-white-50': _ctx.form.processing
+        }]),
+        onClick: _ctx.deleteUser,
+        disabled: _ctx.form.processing
+      }, {
+        "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+          return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, _hoisted_7, 512
+          /* NEED_PATCH */
+          ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, _ctx.form.processing]]), _hoisted_8];
+        }),
+        _: 1
+        /* STABLE */
+
+      }, 8
+      /* PROPS */
+      , ["onClick", "class", "disabled"])];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row "), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.card-body "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    onClick: _cache[0] || (_cache[0] = function () {
+      return _ctx.openOfferForm && _ctx.openOfferForm.apply(_ctx, arguments);
+    }),
+    "class": "btn btn-sm btn-info float-left"
+  }, "Créer une annonce")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main row "), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.row ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("/. container-fluid ")], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -38098,57 +38733,156 @@ var _hoisted_7 = {
     "padding": "8px"
   }
 };
-
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", {
+var _hoisted_8 = {
   "class": "mt-2"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+};
+var _hoisted_9 = {
   "class": "nav nav-pills nav-sidebar flex-column",
   "data-widget": "treeview",
   role: "menu",
   "data-accordion": "false"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Add icons to the links using the .nav-icon class\n               with font-awesome or any other icon font library "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<li class=\"nav-item menu-open\">\n            <a href=\"#\" class=\"nav-link active\">\n              <i class=\"nav-icon fas fa-tachometer-alt\"></i>\n              <p>\n                Dashboard\n                <i class=\"right fas fa-angle-left\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"./index.html\" class=\"nav-link active\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Dashboard v1</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"./index2.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Dashboard v2</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"./index3.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Dashboard v3</p>\n                </a>\n              </li>\n            </ul>\n          </li>"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "nav-item"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "pages/widgets.html",
+  href: "#",
   "class": "nav-link"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "nav-icon fas fa-th"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Candidats ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Abonnement ")])], -1
+/* HOISTED */
+);
+
+var _hoisted_11 = {
+  "class": "nav-item"
+};
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "nav-icon fas fa-th"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Candidats ", -1
+/* HOISTED */
+);
+
+var _hoisted_14 = {
+  "class": "nav-item"
+};
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "nav-icon fas fa-th"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Recruteurs ", -1
+/* HOISTED */
+);
+
+var _hoisted_17 = {
+  "class": "nav-item"
+};
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "nav-icon fas fa-th"
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Offres ", -1
+/* HOISTED */
+);
+
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "nav-item"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "pages/widgets.html",
+  href: "#",
   "class": "nav-link"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "nav-icon fas fa-th"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Recruteurs ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Abonnements ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<Link  :href=\"route('admin.accounts.staff')\" class=\"nav-link\">\n\t\t\t\t\t<i class=\"nav-icon fas fa-th\"></i>\n\t\t\t\t\t<p>\n\t                   Abonnements\n\t                </p>\n\t\t\t\t </Link>")], -1
+/* HOISTED */
+);
+
+var _hoisted_21 = {
   "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "pages/widgets.html",
-  "class": "nav-link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+};
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "nav-icon fas fa-th"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Offres ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "pages/widgets.html",
-  "class": "nav-link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "nav-icon fas fa-th"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Abonnements ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "nav-item"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "pages/widgets.html",
-  "class": "nav-link"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "nav-icon fas fa-th"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Comptes staff ")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<li class=\"nav-item\">\n            <a href=\"pages/widgets.html\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-th\"></i>\n              <p>\n                Widgets\n                <span class=\"right badge badge-danger\">New</span>\n              </p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-copy\"></i>\n              <p>\n                Layout Options\n                <i class=\"fas fa-angle-left right\"></i>\n                <span class=\"badge badge-info right\">6</span>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/top-nav.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Top Navigation</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/top-nav-sidebar.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Top Navigation + Sidebar</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/boxed.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Boxed</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/fixed-sidebar.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Fixed Sidebar</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/fixed-sidebar-custom.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Fixed Sidebar <small>+ Custom Area</small></p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/fixed-topnav.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Fixed Navbar</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/fixed-footer.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Fixed Footer</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/collapsed-sidebar.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Collapsed Sidebar</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-chart-pie\"></i>\n              <p>\n                Charts\n                <i class=\"right fas fa-angle-left\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/charts/chartjs.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>ChartJS</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/charts/flot.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Flot</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/charts/inline.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Inline</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/charts/uplot.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>uPlot</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-tree\"></i>\n              <p>\n                UI Elements\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/general.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>General</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/icons.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Icons</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/buttons.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Buttons</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/sliders.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Sliders</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/modals.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Modals & Alerts</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/navbar.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Navbar & Tabs</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/timeline.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Timeline</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/ribbons.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Ribbons</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-edit\"></i>\n              <p>\n                Forms\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/forms/general.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>General Elements</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/forms/advanced.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Advanced Elements</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/forms/editors.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Editors</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/forms/validation.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Validation</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-table\"></i>\n              <p>\n                Tables\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/tables/simple.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Simple Tables</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/tables/data.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>DataTables</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/tables/jsgrid.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>jsGrid</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-header\">EXAMPLES</li>\n          <li class=\"nav-item\">\n            <a href=\"pages/calendar.html\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-calendar-alt\"></i>\n              <p>\n                Calendar\n                <span class=\"badge badge-info right\">2</span>\n              </p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"pages/gallery.html\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-image\"></i>\n              <p>\n                Gallery\n              </p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"pages/kanban.html\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-columns\"></i>\n              <p>\n                Kanban Board\n              </p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-envelope\"></i>\n              <p>\n                Mailbox\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/mailbox/mailbox.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Inbox</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/mailbox/compose.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Compose</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/mailbox/read-mail.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Read</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-book\"></i>\n              <p>\n                Pages\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/invoice.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Invoice</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/profile.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Profile</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/e-commerce.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>E-commerce</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/projects.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Projects</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/project-add.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Project Add</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/project-edit.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Project Edit</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/project-detail.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Project Detail</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/contacts.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Contacts</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/faq.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>FAQ</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/contact-us.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Contact us</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-plus-square\"></i>\n              <p>\n                Extras\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>\n                    Login & Register v1\n                    <i class=\"fas fa-angle-left right\"></i>\n                  </p>\n                </a>\n                <ul class=\"nav nav-treeview\">\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/login.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Login v1</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/register.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Register v1</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/forgot-password.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Forgot Password v1</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/recover-password.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Recover Password v1</p>\n                    </a>\n                  </li>\n                </ul>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>\n                    Login & Register v2\n                    <i class=\"fas fa-angle-left right\"></i>\n                  </p>\n                </a>\n                <ul class=\"nav nav-treeview\">\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/login-v2.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Login v2</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/register-v2.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Register v2</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/forgot-password-v2.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Forgot Password v2</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/recover-password-v2.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Recover Password v2</p>\n                    </a>\n                  </li>\n                </ul>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/lockscreen.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Lockscreen</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/legacy-user-menu.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Legacy User Menu</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/language-menu.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Language Menu</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/404.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Error 404</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/500.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Error 500</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/pace.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Pace</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/blank.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Blank Page</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"starter.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Starter Page</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-search\"></i>\n              <p>\n                Search\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/search/simple.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Simple Search</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/search/enhanced.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Enhanced</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-header\">MISCELLANEOUS</li>\n          <li class=\"nav-item\">\n            <a href=\"iframe.html\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-ellipsis-h\"></i>\n              <p>Tabbed IFrame Plugin</p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://adminlte.io/docs/3.1/\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-file\"></i>\n              <p>Documentation</p>\n            </a>\n          </li>\n          <li class=\"nav-header\">MULTI LEVEL EXAMPLE</li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"fas fa-circle nav-icon\"></i>\n              <p>Level 1</p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-circle\"></i>\n              <p>\n                Level 1\n                <i class=\"right fas fa-angle-left\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Level 2</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>\n                    Level 2\n                    <i class=\"right fas fa-angle-left\"></i>\n                  </p>\n                </a>\n                <ul class=\"nav nav-treeview\">\n                  <li class=\"nav-item\">\n                    <a href=\"#\" class=\"nav-link\">\n                      <i class=\"far fa-dot-circle nav-icon\"></i>\n                      <p>Level 3</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"#\" class=\"nav-link\">\n                      <i class=\"far fa-dot-circle nav-icon\"></i>\n                      <p>Level 3</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"#\" class=\"nav-link\">\n                      <i class=\"far fa-dot-circle nav-icon\"></i>\n                      <p>Level 3</p>\n                    </a>\n                  </li>\n                </ul>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Level 2</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"fas fa-circle nav-icon\"></i>\n              <p>Level 1</p>\n            </a>\n          </li>\n          <li class=\"nav-header\">LABELS</li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-circle text-danger\"></i>\n              <p class=\"text\">Important</p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-circle text-warning\"></i>\n              <p>Warning</p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-circle text-info\"></i>\n              <p>Informational</p>\n            </a>\n          </li>")])], -1
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Comptes staff ", -1
 /* HOISTED */
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Link");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main Sidebar Container "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("aside", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Brand Logo "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<a href=\"index3.html\" class=\"brand-link\">\n      <img src=\"/img/LG-RIDD@2x.png\" alt=\"AdminLTE Logo\" class=\"brand-image img-circle elevation-3\" style=\"opacity: .8\">\n      <span class=\"brand-text font-weight-light\">AdminLTE 3</span>\n    </a>"), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar user panel (optional) "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.$page.props.user['first_name'] + ' ' + _ctx.$page.props.user['last_name']), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<a href=\"#\"><i class=\"fas fa-sign-out-alt\"></i></a></span>")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SidebarSearch Form "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"form-inline\">\n        <div class=\"input-group\" data-widget=\"sidebar-search\">\n          <input class=\"form-control form-control-sidebar\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-append\">\n            <button class=\"btn btn-sidebar\">\n              <i class=\"fas fa-search fa-fw\"></i>\n            </button>\n          </div>\n        </div>\n      </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar Menu "), _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.sidebar-menu ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.sidebar ")])], 2112
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<Link  :href=\"route('admin.profile')\" class=\"\" style=\"margin: unset !important;padding: 8px;\">\n\t\t\t\t{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}\n\t\t\t</Link>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<a href=\"#\"><i class=\"fas fa-sign-out-alt\"></i></a></span>")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" SidebarSearch Form "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<div class=\"form-inline\">\n        <div class=\"input-group\" data-widget=\"sidebar-search\">\n          <input class=\"form-control form-control-sidebar\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-append\">\n            <button class=\"btn btn-sidebar\">\n              <i class=\"fas fa-search fa-fw\"></i>\n            </button>\n          </div>\n        </div>\n      </div>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar Menu "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Add icons to the links using the .nav-icon class\n               with font-awesome or any other icon font library "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<li class=\"nav-item menu-open\">\n            <a href=\"#\" class=\"nav-link active\">\n              <i class=\"nav-icon fas fa-tachometer-alt\"></i>\n              <p>\n                Dashboard\n                <i class=\"right fas fa-angle-left\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"./index.html\" class=\"nav-link active\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Dashboard v1</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"./index2.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Dashboard v2</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"./index3.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Dashboard v3</p>\n                </a>\n              </li>\n            </ul>\n          </li>"), _ctx.$page.props.is_employer == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 0
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<li class=\"nav-item\">\n\t            \n\t            <Link  href=\"#\" class=\"nav-link\">\n\t\t\t\t\t<i class=\"nav-icon fas fa-th\"></i>\n\t\t\t\t\t<p>\n\t                   Offres\n\t                </p>\n\t\t\t\t </Link>\n\t        </li>"), _hoisted_10], 2112
+  /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<template v-if=\"$page.props.candidate == 1\">\n          \n            <li class=\"nav-item\">\n\t            \n\t            <Link  href=\"#\" class=\"nav-link\">\n\t\t\t\t\t<i class=\"nav-icon fas fa-th\"></i>\n\t\t\t\t\t<p>\n\t                   Offres\n\t                </p>\n\t\t\t\t </Link>\n\t        </li>\n          \n          </template>"), _ctx.$page.props.is_admin == 1 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    key: 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('admin.candidate'),
+    "class": "nav-link"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_12, _hoisted_13];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<a :href=\"route('admin.candidate')\" class=\"nav-link\">\n\t              <i class=\"nav-icon fas fa-th\"></i>\n\t              <p>\n\t                Candidats\n\t              </p>\n\t            </a>")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_14, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<a href=\"pages/widgets.html\" class=\"nav-link\">\n\t              <i class=\"nav-icon fas fa-th\"></i>\n\t              <p>\n\t                Recruteurs\n\t              </p>\n\t            </a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('admin.employer'),
+    "class": "nav-link"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_15, _hoisted_16];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<a href=\"pages/widgets.html\" class=\"nav-link\">\n\t              <i class=\"nav-icon fas fa-th\"></i>\n\t              <p>\n\t                Offres\n\t              </p>\n\t            </a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('admin.offers'),
+    "class": "nav-link"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_18, _hoisted_19];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])]), _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_21, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<a href=\"pages/widgets.html\" class=\"nav-link\">\n\t              <i class=\"nav-icon fas fa-th\"></i>\n\t              <p>\n\t                Comptes staff\n\t              </p>\n\t            </a>"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Link, {
+    href: _ctx.route('admin.accounts.staff'),
+    "class": "nav-link"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_22, _hoisted_23];
+    }),
+    _: 1
+    /* STABLE */
+
+  }, 8
+  /* PROPS */
+  , ["href"])])], 64
+  /* STABLE_FRAGMENT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("<li class=\"nav-item\">\n            <a href=\"pages/widgets.html\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-th\"></i>\n              <p>\n                Widgets\n                <span class=\"right badge badge-danger\">New</span>\n              </p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-copy\"></i>\n              <p>\n                Layout Options\n                <i class=\"fas fa-angle-left right\"></i>\n                <span class=\"badge badge-info right\">6</span>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/top-nav.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Top Navigation</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/top-nav-sidebar.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Top Navigation + Sidebar</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/boxed.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Boxed</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/fixed-sidebar.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Fixed Sidebar</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/fixed-sidebar-custom.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Fixed Sidebar <small>+ Custom Area</small></p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/fixed-topnav.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Fixed Navbar</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/fixed-footer.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Fixed Footer</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/layout/collapsed-sidebar.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Collapsed Sidebar</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-chart-pie\"></i>\n              <p>\n                Charts\n                <i class=\"right fas fa-angle-left\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/charts/chartjs.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>ChartJS</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/charts/flot.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Flot</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/charts/inline.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Inline</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/charts/uplot.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>uPlot</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-tree\"></i>\n              <p>\n                UI Elements\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/general.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>General</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/icons.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Icons</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/buttons.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Buttons</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/sliders.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Sliders</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/modals.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Modals & Alerts</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/navbar.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Navbar & Tabs</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/timeline.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Timeline</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/UI/ribbons.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Ribbons</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-edit\"></i>\n              <p>\n                Forms\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/forms/general.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>General Elements</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/forms/advanced.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Advanced Elements</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/forms/editors.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Editors</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/forms/validation.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Validation</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-table\"></i>\n              <p>\n                Tables\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/tables/simple.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Simple Tables</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/tables/data.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>DataTables</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/tables/jsgrid.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>jsGrid</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-header\">EXAMPLES</li>\n          <li class=\"nav-item\">\n            <a href=\"pages/calendar.html\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-calendar-alt\"></i>\n              <p>\n                Calendar\n                <span class=\"badge badge-info right\">2</span>\n              </p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"pages/gallery.html\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-image\"></i>\n              <p>\n                Gallery\n              </p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"pages/kanban.html\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-columns\"></i>\n              <p>\n                Kanban Board\n              </p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-envelope\"></i>\n              <p>\n                Mailbox\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/mailbox/mailbox.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Inbox</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/mailbox/compose.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Compose</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/mailbox/read-mail.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Read</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-book\"></i>\n              <p>\n                Pages\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/invoice.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Invoice</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/profile.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Profile</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/e-commerce.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>E-commerce</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/projects.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Projects</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/project-add.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Project Add</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/project-edit.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Project Edit</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/project-detail.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Project Detail</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/contacts.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Contacts</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/faq.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>FAQ</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/contact-us.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Contact us</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-plus-square\"></i>\n              <p>\n                Extras\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>\n                    Login & Register v1\n                    <i class=\"fas fa-angle-left right\"></i>\n                  </p>\n                </a>\n                <ul class=\"nav nav-treeview\">\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/login.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Login v1</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/register.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Register v1</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/forgot-password.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Forgot Password v1</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/recover-password.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Recover Password v1</p>\n                    </a>\n                  </li>\n                </ul>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>\n                    Login & Register v2\n                    <i class=\"fas fa-angle-left right\"></i>\n                  </p>\n                </a>\n                <ul class=\"nav nav-treeview\">\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/login-v2.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Login v2</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/register-v2.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Register v2</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/forgot-password-v2.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Forgot Password v2</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"pages/examples/recover-password-v2.html\" class=\"nav-link\">\n                      <i class=\"far fa-circle nav-icon\"></i>\n                      <p>Recover Password v2</p>\n                    </a>\n                  </li>\n                </ul>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/lockscreen.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Lockscreen</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/legacy-user-menu.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Legacy User Menu</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/language-menu.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Language Menu</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/404.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Error 404</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/500.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Error 500</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/pace.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Pace</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/examples/blank.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Blank Page</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"starter.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Starter Page</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-search\"></i>\n              <p>\n                Search\n                <i class=\"fas fa-angle-left right\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"pages/search/simple.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Simple Search</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"pages/search/enhanced.html\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Enhanced</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-header\">MISCELLANEOUS</li>\n          <li class=\"nav-item\">\n            <a href=\"iframe.html\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-ellipsis-h\"></i>\n              <p>Tabbed IFrame Plugin</p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://adminlte.io/docs/3.1/\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-file\"></i>\n              <p>Documentation</p>\n            </a>\n          </li>\n          <li class=\"nav-header\">MULTI LEVEL EXAMPLE</li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"fas fa-circle nav-icon\"></i>\n              <p>Level 1</p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon fas fa-circle\"></i>\n              <p>\n                Level 1\n                <i class=\"right fas fa-angle-left\"></i>\n              </p>\n            </a>\n            <ul class=\"nav nav-treeview\">\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Level 2</p>\n                </a>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>\n                    Level 2\n                    <i class=\"right fas fa-angle-left\"></i>\n                  </p>\n                </a>\n                <ul class=\"nav nav-treeview\">\n                  <li class=\"nav-item\">\n                    <a href=\"#\" class=\"nav-link\">\n                      <i class=\"far fa-dot-circle nav-icon\"></i>\n                      <p>Level 3</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"#\" class=\"nav-link\">\n                      <i class=\"far fa-dot-circle nav-icon\"></i>\n                      <p>Level 3</p>\n                    </a>\n                  </li>\n                  <li class=\"nav-item\">\n                    <a href=\"#\" class=\"nav-link\">\n                      <i class=\"far fa-dot-circle nav-icon\"></i>\n                      <p>Level 3</p>\n                    </a>\n                  </li>\n                </ul>\n              </li>\n              <li class=\"nav-item\">\n                <a href=\"#\" class=\"nav-link\">\n                  <i class=\"far fa-circle nav-icon\"></i>\n                  <p>Level 2</p>\n                </a>\n              </li>\n            </ul>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"fas fa-circle nav-icon\"></i>\n              <p>Level 1</p>\n            </a>\n          </li>\n          <li class=\"nav-header\">LABELS</li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-circle text-danger\"></i>\n              <p class=\"text\">Important</p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-circle text-warning\"></i>\n              <p>Warning</p>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"#\" class=\"nav-link\">\n              <i class=\"nav-icon far fa-circle text-info\"></i>\n              <p>Informational</p>\n            </a>\n          </li>")])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.sidebar-menu ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" /.sidebar ")])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
   );
 }
@@ -86703,6 +87437,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Admin/Candidate.vue":
+/*!************************************************!*\
+  !*** ./resources/js/Pages/Admin/Candidate.vue ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Candidate_vue_vue_type_template_id_68ec12ec__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Candidate.vue?vue&type=template&id=68ec12ec */ "./resources/js/Pages/Admin/Candidate.vue?vue&type=template&id=68ec12ec");
+/* harmony import */ var _Candidate_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Candidate.vue?vue&type=script&lang=js */ "./resources/js/Pages/Admin/Candidate.vue?vue&type=script&lang=js");
+/* harmony import */ var _var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Candidate_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Candidate_vue_vue_type_template_id_68ec12ec__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Admin/Candidate.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Admin/Dashboard.vue":
 /*!************************************************!*\
   !*** ./resources/js/Pages/Admin/Dashboard.vue ***!
@@ -86723,6 +87485,62 @@ __webpack_require__.r(__webpack_exports__);
 
 ;
 const __exports__ = /*#__PURE__*/(0,_var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Dashboard_vue_vue_type_template_id_4dff49ca__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Admin/Dashboard.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Admin/Employer.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/Pages/Admin/Employer.vue ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Employer_vue_vue_type_template_id_15976204__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Employer.vue?vue&type=template&id=15976204 */ "./resources/js/Pages/Admin/Employer.vue?vue&type=template&id=15976204");
+/* harmony import */ var _Employer_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Employer.vue?vue&type=script&lang=js */ "./resources/js/Pages/Admin/Employer.vue?vue&type=script&lang=js");
+/* harmony import */ var _var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Employer_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Employer_vue_vue_type_template_id_15976204__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Admin/Employer.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Admin/Offers.vue":
+/*!*********************************************!*\
+  !*** ./resources/js/Pages/Admin/Offers.vue ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Offers_vue_vue_type_template_id_81d291c0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Offers.vue?vue&type=template&id=81d291c0 */ "./resources/js/Pages/Admin/Offers.vue?vue&type=template&id=81d291c0");
+/* harmony import */ var _Offers_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Offers.vue?vue&type=script&lang=js */ "./resources/js/Pages/Admin/Offers.vue?vue&type=script&lang=js");
+/* harmony import */ var _var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Offers_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Offers_vue_vue_type_template_id_81d291c0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Admin/Offers.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -86754,6 +87572,27 @@ const __exports__ = /*#__PURE__*/(0,_var_www_html_ridd_node_modules_vue_loader_d
 /* hot reload */
 if (false) {}
 
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Admin/Staff.vue":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/Admin/Staff.vue ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,_var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/Pages/Admin/Staff.vue"]])
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
 
@@ -87667,6 +88506,34 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Pages/User/Offers.vue":
+/*!********************************************!*\
+  !*** ./resources/js/Pages/User/Offers.vue ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Offers_vue_vue_type_template_id_30b86be2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Offers.vue?vue&type=template&id=30b86be2 */ "./resources/js/Pages/User/Offers.vue?vue&type=template&id=30b86be2");
+/* harmony import */ var _Offers_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Offers.vue?vue&type=script&lang=js */ "./resources/js/Pages/User/Offers.vue?vue&type=script&lang=js");
+/* harmony import */ var _var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_var_www_html_ridd_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Offers_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Offers_vue_vue_type_template_id_30b86be2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/User/Offers.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Welcome.vue":
 /*!****************************************!*\
   !*** ./resources/js/Pages/Welcome.vue ***!
@@ -88319,6 +89186,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Admin/Candidate.vue?vue&type=script&lang=js":
+/*!************************************************************************!*\
+  !*** ./resources/js/Pages/Admin/Candidate.vue?vue&type=script&lang=js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Candidate_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Candidate_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Candidate.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Candidate.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Admin/Dashboard.vue?vue&type=script&lang=js":
 /*!************************************************************************!*\
   !*** ./resources/js/Pages/Admin/Dashboard.vue?vue&type=script&lang=js ***!
@@ -88331,6 +89214,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Dashboard.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Dashboard.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Admin/Employer.vue?vue&type=script&lang=js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/Pages/Admin/Employer.vue?vue&type=script&lang=js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Employer_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Employer_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Employer.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Employer.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Admin/Offers.vue?vue&type=script&lang=js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/Pages/Admin/Offers.vue?vue&type=script&lang=js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Offers_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Offers_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Offers.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Offers.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -88859,6 +89774,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DashboardCandidate_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_DashboardCandidate_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./DashboardCandidate.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/DashboardCandidate.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/User/Offers.vue?vue&type=script&lang=js":
+/*!********************************************************************!*\
+  !*** ./resources/js/Pages/User/Offers.vue?vue&type=script&lang=js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Offers_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Offers_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Offers.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Offers.vue?vue&type=script&lang=js");
  
 
 /***/ }),
@@ -89487,6 +90418,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Admin/Candidate.vue?vue&type=template&id=68ec12ec":
+/*!******************************************************************************!*\
+  !*** ./resources/js/Pages/Admin/Candidate.vue?vue&type=template&id=68ec12ec ***!
+  \******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Candidate_vue_vue_type_template_id_68ec12ec__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Candidate_vue_vue_type_template_id_68ec12ec__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Candidate.vue?vue&type=template&id=68ec12ec */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Candidate.vue?vue&type=template&id=68ec12ec");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Admin/Dashboard.vue?vue&type=template&id=4dff49ca":
 /*!******************************************************************************!*\
   !*** ./resources/js/Pages/Admin/Dashboard.vue?vue&type=template&id=4dff49ca ***!
@@ -89499,6 +90446,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_4dff49ca__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Dashboard_vue_vue_type_template_id_4dff49ca__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Dashboard.vue?vue&type=template&id=4dff49ca */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Dashboard.vue?vue&type=template&id=4dff49ca");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Admin/Employer.vue?vue&type=template&id=15976204":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/Pages/Admin/Employer.vue?vue&type=template&id=15976204 ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Employer_vue_vue_type_template_id_15976204__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Employer_vue_vue_type_template_id_15976204__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Employer.vue?vue&type=template&id=15976204 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Employer.vue?vue&type=template&id=15976204");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Admin/Offers.vue?vue&type=template&id=81d291c0":
+/*!***************************************************************************!*\
+  !*** ./resources/js/Pages/Admin/Offers.vue?vue&type=template&id=81d291c0 ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Offers_vue_vue_type_template_id_81d291c0__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Offers_vue_vue_type_template_id_81d291c0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Offers.vue?vue&type=template&id=81d291c0 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Admin/Offers.vue?vue&type=template&id=81d291c0");
 
 
 /***/ }),
@@ -90031,6 +91010,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/User/Offers.vue?vue&type=template&id=30b86be2":
+/*!**************************************************************************!*\
+  !*** ./resources/js/Pages/User/Offers.vue?vue&type=template&id=30b86be2 ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Offers_vue_vue_type_template_id_30b86be2__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Offers_vue_vue_type_template_id_30b86be2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Offers.vue?vue&type=template&id=30b86be2 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/User/Offers.vue?vue&type=template&id=30b86be2");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e":
 /*!**********************************************************************!*\
   !*** ./resources/js/Pages/Welcome.vue?vue&type=template&id=317d1a6e ***!
@@ -90549,8 +91544,12 @@ function compileToFunction(template, options) {
 var map = {
 	"./API/Index.vue": "./resources/js/Pages/API/Index.vue",
 	"./API/Partials/ApiTokenManager.vue": "./resources/js/Pages/API/Partials/ApiTokenManager.vue",
+	"./Admin/Candidate.vue": "./resources/js/Pages/Admin/Candidate.vue",
 	"./Admin/Dashboard.vue": "./resources/js/Pages/Admin/Dashboard.vue",
+	"./Admin/Employer.vue": "./resources/js/Pages/Admin/Employer.vue",
+	"./Admin/Offers.vue": "./resources/js/Pages/Admin/Offers.vue",
 	"./Admin/Profile.vue": "./resources/js/Pages/Admin/Profile.vue",
+	"./Admin/Staff.vue": "./resources/js/Pages/Admin/Staff.vue",
 	"./Auth/Admin/ForgotPassword.vue": "./resources/js/Pages/Auth/Admin/ForgotPassword.vue",
 	"./Auth/Admin/Login.vue": "./resources/js/Pages/Auth/Admin/Login.vue",
 	"./Auth/Admin/ResetPassword.vue": "./resources/js/Pages/Auth/Admin/ResetPassword.vue",
@@ -90583,6 +91582,7 @@ var map = {
 	"./TermsOfService.vue": "./resources/js/Pages/TermsOfService.vue",
 	"./User/Dashboard.vue": "./resources/js/Pages/User/Dashboard.vue",
 	"./User/DashboardCandidate.vue": "./resources/js/Pages/User/DashboardCandidate.vue",
+	"./User/Offers.vue": "./resources/js/Pages/User/Offers.vue",
 	"./Welcome.vue": "./resources/js/Pages/Welcome.vue",
 	"./WelcomeCandidate.vue": "./resources/js/Pages/WelcomeCandidate.vue",
 	"./WelcomeEmployer.vue": "./resources/js/Pages/WelcomeEmployer.vue",

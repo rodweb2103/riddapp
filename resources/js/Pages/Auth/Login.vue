@@ -1,7 +1,7 @@
 <template>
   <Head title="Connexion" />
   
-  <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 920.27px;background: linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255);padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
+  <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 930.27px;background: linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255);padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
 	      
         <div class="container hero" style="height: 710px;">
             <div class="row justify-content-center" style="height: 666px;">

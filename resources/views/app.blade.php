@@ -88,6 +88,9 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body class="bg-light">
+	    
+	     
+	    
         @inertia
 
         @env ('local')

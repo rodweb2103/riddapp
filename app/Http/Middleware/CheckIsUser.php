@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
-class CheckUserIsAdminOrNot
+class CheckIsUser
 {
     /**
      * Handle an incoming request.
@@ -24,9 +24,8 @@ class CheckUserIsAdminOrNot
         $user = new User;
         $user = $user->where('email',$request->input('email'))->first();
         
-        //if()
         
-        $user_exist = User::whereHas("roles", function($q) use($request) { $q->where("name", "Admin")->where("email",$request->input('email')); })->get();
+        $user_exist = User::whereHas("roles", function($q) use($request) { $q->where("name","!=","Admin")->where("email",$request->input('email')); })->get();
         
         
         //var_dump(count($user_exist) == 0 && $request->input('email')!="" && $request->input('is_admin') == 1);exit;

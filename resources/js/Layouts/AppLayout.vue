@@ -1,6 +1,9 @@
 <template>
   <div>
     <Head :title="title" />
+    <!--<div class="alert-box" style="background: linear-gradient(74deg, rgb(255, 115, 0) 27%, rgb(255, 199, 0)), rgb(255, 255, 255);">
+           <span class="badge">Announcement</span> Some Text
+    </div>-->
     <div class="wrapper">
       
 	      <!--<Preloader></Preloader>-->

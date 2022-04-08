@@ -16,7 +16,6 @@
         <a href="#" class="nav-link">Offres</a>
       </li>
     </ul>
-
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       
@@ -72,7 +71,7 @@ export default defineComponent({
   data() {
     return {
       form: this.$inertia.form({
-	      is_admin: 0
+	      is_admin: this.$page.props.is_admin
       })
     };
   },

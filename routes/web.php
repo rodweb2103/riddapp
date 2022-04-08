@@ -39,6 +39,23 @@ Route::get('/admin',function(){
 
 })->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.dashboard');
 
+
+Route::get('/admin/employer',function(){
+    return Inertia::render('Admin/Employer');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.employer');
+
+Route::get('/admin/candidate',function(){
+    return Inertia::render('Admin/Candidate');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.candidate');
+
+Route::get('/admin/offers',function(){
+    return Inertia::render('Admin/Offers');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.offers');
+
+Route::get('/admin/accounts/staff',function(){
+    return Inertia::render('Admin/Staff');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.accounts.staff');
+
 Route::get('/account',function(){
 	
 	if (Auth::user()->hasRole('Candidate')) {
@@ -49,6 +66,13 @@ Route::get('/account',function(){
     //return Inertia::render('User/Dashboard');
 })->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Candidate|Employer'])->name('user.dashboard');
 
+//Route::get('/offers',function(){
+//    return Inertia::render('User/Offers');
+//})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Employer|Candidate'])->name('employer.offers');
+
+Route::get('/membership',function(){
+    return Inertia::render('User/Membership');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Employer'])->name('employer.membership');
 
 
 //Route::get('/admin/profile',function(){
@@ -134,6 +158,7 @@ $limiter = config('fortify.limiters.login');
 Route::post('/login', [LoginController::class, 'store'])
         ->middleware(array_filter([
             'guest',
+            'is_user',
             $limiter ? 'throttle:'.$limiter : null,
         ]))->name("user.login");
 

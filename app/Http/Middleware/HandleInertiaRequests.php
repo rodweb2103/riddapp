@@ -41,7 +41,9 @@ class HandleInertiaRequests extends Middleware
             
                 'status' => fn () => $request->session()->get('status'),
                 'appName' => config('app.name'),
-                //'is_admin' => auth()->user()->hasRole('Admin')
+                'is_admin' => auth()->user() ? auth()->user()->hasRole('Admin') ? 1 : 0 : 0,
+                'is_employer' => auth()->user() ? auth()->user()->hasRole('Employer') ? 1 : 0 : 0,
+                'is_candidate' => auth()->user() ? auth()->user()->hasRole('Candidate') ? 1 : 0 : 0,
 	            'auth.user' => fn () => $request->user()
 	                ? $request->user()->only('id', 'name', 'email')
 	                : null,

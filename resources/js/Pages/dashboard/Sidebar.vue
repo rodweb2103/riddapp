@@ -20,6 +20,11 @@
         <div class="info" style="width: 200px;">
           <span>
             <a href="#" class="" style="margin: unset !important;padding: 8px;">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</a>
+            
+            <!--<Link  :href="route('admin.profile')" class="" style="margin: unset !important;padding: 8px;">
+				{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}
+			</Link>-->
+            
             <!--<a href="#"><i class="fas fa-sign-out-alt"></i></a></span>-->
           </span>
         </div>
@@ -71,48 +76,119 @@
               </li>
             </ul>
           </li>-->
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Candidats
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Recruteurs
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Offres
-              </p>
-            </a>
-          </li>
           
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Abonnements
-              </p>
-            </a>
-          </li>
+          <template v-if="$page.props.is_employer == 1">
           
-          <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Comptes staff
-              </p>
-            </a>
-          </li>
+            <!--<li class="nav-item">
+	            
+	            <Link  href="#" class="nav-link">
+					<i class="nav-icon fas fa-th"></i>
+					<p>
+	                   Offres
+	                </p>
+				 </Link>
+	        </li>-->
+	        
+	        <li class="nav-item">
+	            <a href="#" class="nav-link">
+	              <i class="nav-icon fas fa-th"></i>
+	              <p>
+	                Abonnement
+	              </p>
+	            </a>
+	        </li>
+          
+          </template>
+          
+          <!--<template v-if="$page.props.candidate == 1">
+          
+            <li class="nav-item">
+	            
+	            <Link  href="#" class="nav-link">
+					<i class="nav-icon fas fa-th"></i>
+					<p>
+	                   Offres
+	                </p>
+				 </Link>
+	        </li>
+          
+          </template>-->
+          
+          <template v-if="$page.props.is_admin == 1">
+              
+	          <li class="nav-item">
+	             <Link  :href="route('admin.candidate')" class="nav-link">
+					<i class="nav-icon fas fa-th"></i>
+					<p>
+	                   Candidats
+	                </p>
+				 </Link>
+	            <!--<a :href="route('admin.candidate')" class="nav-link">
+	              <i class="nav-icon fas fa-th"></i>
+	              <p>
+	                Candidats
+	              </p>
+	            </a>-->
+	          </li>
+	          <li class="nav-item">
+	            <!--<a href="pages/widgets.html" class="nav-link">
+	              <i class="nav-icon fas fa-th"></i>
+	              <p>
+	                Recruteurs
+	              </p>
+	            </a>-->
+	            <Link  :href="route('admin.employer')" class="nav-link">
+					<i class="nav-icon fas fa-th"></i>
+					<p>
+	                   Recruteurs
+	                </p>
+				 </Link>
+	          </li>
+	          <li class="nav-item">
+	            <!--<a href="pages/widgets.html" class="nav-link">
+	              <i class="nav-icon fas fa-th"></i>
+	              <p>
+	                Offres
+	              </p>
+	            </a>-->
+	            <Link  :href="route('admin.offers')" class="nav-link">
+					<i class="nav-icon fas fa-th"></i>
+					<p>
+	                   Offres
+	                </p>
+				 </Link>
+	          </li>
+	          
+	          <li class="nav-item">
+	            <a href="#" class="nav-link">
+	              <i class="nav-icon fas fa-th"></i>
+	              <p>
+	                Abonnements
+	              </p>
+	            </a>
+	            <!--<Link  :href="route('admin.accounts.staff')" class="nav-link">
+					<i class="nav-icon fas fa-th"></i>
+					<p>
+	                   Abonnements
+	                </p>
+				 </Link>-->
+	          </li>
+	          
+	          <li class="nav-item">
+	            <!--<a href="pages/widgets.html" class="nav-link">
+	              <i class="nav-icon fas fa-th"></i>
+	              <p>
+	                Comptes staff
+	              </p>
+	            </a>-->
+	            <Link  :href="route('admin.accounts.staff')" class="nav-link">
+					<i class="nav-icon fas fa-th"></i>
+					<p>
+	                   Comptes staff
+	                </p>
+				 </Link>
+	          </li>
+          </template>
           <!--<li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
@@ -724,7 +800,12 @@
 </template>
 
 <script>
+import { Head,Link } from '@inertiajs/inertia-vue3';
 export default {
+  components: {
+    Head,
+    Link
+  },
 }
 </script>
 
