@@ -2,7 +2,7 @@
   <Head title="Compte" />
    <div class="container-fluid">
 	   
-	   <jet-dialog-modal id="openOffer">
+	   <jet-dialog-modal id="openOffer" maxWidth="lg">
         <template #title>
           Créer une annonce
         </template>
@@ -11,6 +11,89 @@
           
 
           <div class="mt-4">
+	          
+	       <form>
+		      <div class="row"> 
+		       
+		        <div class="col-6">
+				  <div class="mb-3">
+				    <label for="exampleInputEmail1" class="form-label">TITRE ANNONCE</label>
+				    <input type="text" v-model="form.offer_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				    <jet-input-error :message="form.errors.offer_title" />
+				  </div>
+		        </div>
+		        <div class="col-6">  
+				  <div class="mb-3 form-check">
+				    <label class="" for="exampleCheck1">SECTEUR D'ACTIVITÉ</label>
+				    <select class="form-control" v-model="form.activity_sector">
+				    </select>
+				    <jet-input-error :message="form.errors.activity_sector" />
+				  </div>
+		        </div>
+		      </div>
+			  
+			  <div class="row">
+				  
+				 <div class="col-6">
+			  
+					  <div class="">
+					    <label class="" for="exampleCheck1">LOCALISATION</label>
+					    <input type="text" v-model="form.location" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+					    <jet-input-error :message="form.errors.location" />
+					  </div>
+				 </div>
+				 
+				 <div class="col-6">
+				  
+					  <div class="mb-3 form-check">
+					    <label class="" for="exampleCheck1">TYPE DE CONTRAT</label>
+					    <select class="form-control" v-model="form.contract_type">
+					    </select>
+					    <jet-input-error :message="form.errors.contract_type" />
+					  </div>
+				 </div>
+			  
+			  
+			  </div>
+			  
+			  <div class="row">
+			    
+			    <div class="col-6">
+				  <div class="mb-3">
+				    <label for="exampleInputPassword1" class="form-label">DURÉE CONTRAT</label>
+				    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
+				    <select class="form-control"  v-model="form.contract_duration">
+					    <option selected disabled value>--</option>
+					    <option value="CDD">CDD</option>
+					    <option value="CDI">CDI</option>
+				    </select>
+				    <jet-input-error :message="form.errors.contract_duration" />
+				  </div>
+			    </div>
+			    <div class="col-6">  
+				  <div class="mb-3 form-check">
+					    <label for="exampleInputEmail1" class="form-label">NIVEAU D'ÉTUDE</label>
+					    <select class="form-control" v-model="form.study_level">
+					    </select>
+					    <jet-input-error :message="form.errors.study_level" />
+			      </div>
+			    </div>
+			  
+			  </div>
+			  
+			  <div class="row">
+			    <div class="col-12">
+				  <div class="mb-3">
+				    <label for="exampleInputPassword1" class="form-label">DETAILS DE L'OFFRE</label>
+				    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
+				    <textarea class="form-control" v-model="form.offer_details" rows="10"></textarea>
+				    <jet-input-error :message="form.errors.offer_details" />
+				  </div>
+			    </div>
+			  </div>
+			  
+           </form>
+	          
             <!--<jet-input type="password" placeholder="Password"
                        ref="password"
                        v-model="form.password"
@@ -26,7 +109,7 @@
             Annuler
           </jet-secondary-button>
 
-          <jet-button class="btn btn-primary" @click="deleteUser" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+          <jet-button class="btn btn-primary" @click="createOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
@@ -244,7 +327,10 @@
 </template>
 
 <style scoped>
-
+  .invalid-feedback{
+	  
+	  display: block !important;
+  }
 </style>
 
 <script>
@@ -282,10 +368,36 @@ export default defineComponent({
   data() {
     return {
       modal: null,
+      activity_sector : [],
+      study_level : [],
       form: this.$inertia.form({
-        password: '',
+        //password: '',
+        offer_title:'',
+        activity_sector:'',
+        location:'',
+        contract_type:'',
+        contract_duration:'',
+        offer_details:'',
+        study_level:''
+        
       })
     }
+  },
+  mounted(){
+	  
+	  axios.get('/activity/sector').then(response => {
+		  
+		  
+		  this.activity_sector = response.data;
+      });
+      
+      
+      
+      axios.get('/study/level').then(response => {
+		  
+		  
+		  this.study_level = response.data;
+      });  
   },
   methods:{
 	  
@@ -300,9 +412,17 @@ export default defineComponent({
       },
 	  closeModal(){
 		  
+		  this.form.reset()
+          this.modal.hide()
 	  },
-	  deleteUser(){
+	  createOffer(){
 		  
+		  this.form.post(route('employer.create.offer'), {
+	        preserveScroll: true,
+	        onSuccess: () => this.closeModal(),
+	        //onError: () => this.$refs.password.focus(),
+	        onFinish: () => this.form.reset(),
+          });
 	  }
   }
 })

@@ -4,6 +4,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\UserController;
+
+use App\Http\Controllers\OfferController;
+
 use App\Notifications\EmailNotification;
 use App\Models\User;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -23,6 +26,8 @@ use Illuminate\Support\Facades\Auth;
 
 
 //Auth::routes(['verify' => true]);
+
+
 Route::post('/create/user/account',[UserController::class, 'create_user_account']);
 Route::post('/validate/step/1',[UserController::class, 'validate_step1'])->name('validate1');
 Route::post('/validate/step/2',[UserController::class, 'validate_step2'])->name('validate2');
@@ -30,6 +35,20 @@ Route::post('/validate/step/3',[UserController::class, 'validate_step3'])->name(
 Route::get('/countries',[UserController::class, 'get_countries'])->name('countries');
 Route::get('/study/level',[UserController::class, 'study_level'])->name('study_level');
 Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name('study_level');
+
+
+
+
+Route::post('/create/offer',[OfferController::class, 'create_offer'])->name('employer.create.offer');
+Route::get('/view/offer/1',[OfferController::class, 'edit_offer'])->name('employer.view.offer');
+Route::post('/edit/offer/1',[OfferController::class, 'edit_offer'])->name('employer.edit.offer');
+Route::post('/delete/offer/1',[OfferController::class, 'delete_offer'])->name('employer.delete.offer');
+
+
+Route::post('/publish/offer/1',[OfferController::class, 'publish_offer'])->name('employer.publish.offer');
+Route::post('/unpublish/offer/1',[OfferController::class, 'unpublish_offer'])->name('employer.unpublish.offer');
+
+
 
 /********* admin LINK *********/
 

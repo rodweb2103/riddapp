@@ -86,9 +86,11 @@
                         <div class="fields">
                            <input type="password" name="pwd" placeholder="Mot de passe" v-model="form.password"/> 
                            <div v-if="errors.password" style="color:red;">{{ errors.password }}</div>
+                           
                         </div>
                         <div class="fields">
                            <input type="password" name="cpwd" placeholder="Confirmer le mot de passe" v-model="form.password_confirmation"/>
+                           <div v-if="errors.password_confirmation" style="color:red;">{{ errors.password_confirmation }}</div>
                         </div>
                      </div>
                      <!--<button class="next action-button" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">OK</button>-->
@@ -155,24 +157,27 @@
                         
 						<!--@{{ countries }}-->
 						 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number" :ignoredCountries="['ci']" enabledCountryCode="true" @validate="validate" v-if="form.account_type == 1"></vue-tel-input>
+						 
+						 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true" @validate="validate" v-if="form.account_type == 2"></vue-tel-input>
+						 
 						 <!--<vue-phone-number-input v-model="form.phone_number"/>-->
 						 <!--<div v-if="errors.country" style="color:red;">{{ errors.country }}</div>-->
 						 <div v-if="errors.phone_number" style="color:red;">{{ errors.phone_number }}</div>
                         </div>
                         
                         <div class="fields">
-                            <input type="text" name="ville" placeholder="Ville" v-model="form.city" v-if="form.account_type == 1"/>
+                            <input type="text" name="ville" placeholder="Ville" v-model="form.city"/>
                             <div v-if="errors.city" style="color:red;">{{ errors.city }}</div>
                         </div>
                         
-                        <div class="fields" v-if="form.account_type == 1">
+                        <div class="fields">
 	                        <label class="fieldlabels" style="margin-top:20px;margin-bottom:30px;">Votre photo</label> 
 	                        <input type="file" @input="form.profile_photo = $event.target.files[0]" accept="image/*"/>
 	                        <!--<input type="file" name="pic" accept="image/*">-->
                         </div>
                      </div>
                      <!--<input type="button" name="next" @click="validateStep2" class="next action-button" value="Suivant" />  <input type="button" name="previous" class="previous action-button-previous" value="Retour" @click="step = step - 1" />-->
-                     <jet-button class="next action-button" :class="{ 'text-white-50': form.processing }" :disabled="form.processing || (isValid == false && form.account_type == 1)">
+                     <jet-button class="next action-button" :class="{ 'text-white-50': form.processing }" :disabled="form.processing || (isValid == false || form.account_type == 0)">
 			              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
 			                <span class="visually-hidden">Loading...</span>
 			              </div>
@@ -263,11 +268,12 @@
                            </div>
                         </div>
                          <div class="fields">
-                           <Select2 v-model="form.study_level" :options="study_level" :settings="{ settingOption: value, settingOption: value,placeholder:'Selectionner votre niveau d\'étude' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+	                         {{ study_level }}
+                           <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'Selectionner votre niveau d\'étude' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
                            <div v-if="errors.study_level" style="color:red;">{{ errors.study_level }}</div>
                         </div>
                          <div class="fields">
-                           <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{ settingOption: value, settingOption: value,placeholder:'Selectionner votre domaine de formation' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+                           <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{placeholder:'Selectionner votre domaine de formation' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
                            <div v-if="errors.activity_sector" style="color:red;">{{ errors.activity_sector }}</div>
                          </div>
                           <div class="fields">
@@ -522,8 +528,8 @@ export default defineComponent({
   data() {
     return {
 	  
-	  study_level : [],
-	  activity_sector : [],
+	  study_level : {},
+	  activity_sector : {},
 	  step : 1,
 	  isLoading: false,
       fullPage: true,
@@ -539,7 +545,7 @@ export default defineComponent({
         company_location:'',
         company_about:'',
         company_website:'',
-        ccode : '',
+        ccode : 33,
         account_type:'',
         phone_number:'',
         email:'',
