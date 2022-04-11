@@ -34,19 +34,20 @@ Route::post('/validate/step/2',[UserController::class, 'validate_step2'])->name(
 Route::post('/validate/step/3',[UserController::class, 'validate_step3'])->name('validate3');
 Route::get('/countries',[UserController::class, 'get_countries'])->name('countries');
 Route::get('/study/level',[UserController::class, 'study_level'])->name('study_level');
-Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name('study_level');
+Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name('activity_sector');
+Route::get('/contract/types',[UserController::class, 'contract_types'])->name('contract_types');
 
 
-
+Route::get('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
 
 Route::post('/create/offer',[OfferController::class, 'create_offer'])->name('employer.create.offer');
-Route::get('/view/offer/1',[OfferController::class, 'edit_offer'])->name('employer.view.offer');
-Route::post('/edit/offer/1',[OfferController::class, 'edit_offer'])->name('employer.edit.offer');
-Route::post('/delete/offer/1',[OfferController::class, 'delete_offer'])->name('employer.delete.offer');
+Route::get('/view/offer/{id}',[OfferController::class, 'view_offer'])->name('employer.view.offer');
+Route::post('/edit/offer',[OfferController::class, 'edit_offer'])->name('employer.edit.offer');
+Route::post('/delete/offer',[OfferController::class, 'delete_offer'])->name('employer.delete.offer');
 
 
-Route::post('/publish/offer/1',[OfferController::class, 'publish_offer'])->name('employer.publish.offer');
-Route::post('/unpublish/offer/1',[OfferController::class, 'unpublish_offer'])->name('employer.unpublish.offer');
+Route::post('/publish/offer',[OfferController::class, 'publish_offer'])->name('employer.publish.offer');
+Route::post('/unpublish/offer',[OfferController::class, 'unpublish_offer'])->name('employer.unpublish.offer');
 
 
 

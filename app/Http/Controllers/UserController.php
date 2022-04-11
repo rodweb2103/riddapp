@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Models\StudyLevel;
 use App\Models\ActivitySector;
+use App\Models\ContractType;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -21,6 +22,11 @@ class UserController extends Controller
     public function study_level(Request $request){
 	    
 	     return StudyLevel::selectRaw('id,level AS text')->get();
+    }
+    
+    public function contract_types(Request $request){
+	    
+	    return ContractType::selectRaw('id,contract AS text')->get();
     }
     
     public function validate_step1(Request $request){

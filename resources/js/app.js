@@ -11,6 +11,8 @@ window.jQuery = window.$ = jQuery
 
 import VueTelInput from 'vue-tel-input';
 import 'vue-tel-input/dist/vue-tel-input.css';
+import Select2 from 'vue3-select2-component';
+import LaravelVuePagination from 'laravel-vue-pagination';
 
 /*import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {dom, library} from '@fortawesome/fontawesome-svg-core';
@@ -21,7 +23,7 @@ import {faLock, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import {faFacebook, faGooglePlus} from '@fortawesome/free-brands-svg-icons';*/
 
 
-import "../../node_modules/admin-lte/plugins/select2/js/select2.full.min.js"
+//import "../../node_modules/admin-lte/plugins/select2/js/select2.full.min.js"
 
 /*import "../../node_modules/admin-lte/dist/js/adminlte.min.js"
 import "../../node_modules/admin-lte/plugins/select2/js/select2.full.min.js"
@@ -70,6 +72,8 @@ createInertiaApp({
             //.component("font-awesome-icon", FontAwesomeIcon)
             .use(plugin)
             .use(VueTelInput)
+            .component('Select2', Select2)
+            .component('Pagination', LaravelVuePagination)
             .mixin({ methods: { route } })
             .mount(el);
     },

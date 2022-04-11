@@ -268,7 +268,6 @@
                            </div>
                         </div>
                          <div class="fields">
-	                         {{ study_level }}
                            <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'Selectionner votre niveau d\'étude' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
                            <div v-if="errors.study_level" style="color:red;">{{ errors.study_level }}</div>
                         </div>
@@ -489,7 +488,7 @@
 </style>
 <script>
 
-import Select2 from 'vue3-select2-component';
+//import Select2 from 'vue3-select2-component';
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 //import VuePhoneNumberInput from 'vue-phone-number-input';
@@ -520,7 +519,7 @@ export default defineComponent({
     JetLabel,
     JetValidationErrors,
     Link,
-    Select2,
+    //Select2,
     Loading
     //VuePhoneNumberInput
   },
@@ -530,7 +529,7 @@ export default defineComponent({
 	  
 	  study_level : {},
 	  activity_sector : {},
-	  step : 1,
+	  step : 3,
 	  isLoading: false,
       fullPage: true,
       isValid : false,
@@ -546,7 +545,7 @@ export default defineComponent({
         company_about:'',
         company_website:'',
         ccode : 33,
-        account_type:'',
+        account_type:1,
         phone_number:'',
         email:'',
         study_level:'',

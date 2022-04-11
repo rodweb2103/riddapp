@@ -1,32 +1,32 @@
 <template>
   <Head title="Compte" />
+  
    <div class="container-fluid">
 	   
 	   <jet-dialog-modal id="openOffer" maxWidth="lg">
         <template #title>
-          Créer une annonce
+          Éditer une annonce
         </template>
 
         <template #content>
           
-
           <div class="mt-4">
 	          
-	       <form>
+	       <form id="msform">
 		      <div class="row"> 
 		       
 		        <div class="col-6">
 				  <div class="mb-3">
-				    <label for="exampleInputEmail1" class="form-label">TITRE ANNONCE</label>
-				    <input type="text" v-model="form.offer_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				    <input type="text" placeholder="Titre annonce" v-model="form.offer_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
 				    <jet-input-error :message="form.errors.offer_title" />
 				  </div>
 		        </div>
 		        <div class="col-6">  
-				  <div class="mb-3 form-check">
-				    <label class="" for="exampleCheck1">SECTEUR D'ACTIVITÉ</label>
-				    <select class="form-control" v-model="form.activity_sector">
-				    </select>
+				  <div class="mb-3">
+				    <!--<select class="form-control" v-model="form.activity_sector">
+					    <option selected disabled value>--Secteur d'activité--</option>
+				    </select>-->
+				    <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{placeholder:'-Secteur d\'activité--',width:'100%'}"/>
 				    <jet-input-error :message="form.errors.activity_sector" />
 				  </div>
 		        </div>
@@ -34,59 +34,82 @@
 			  
 			  <div class="row">
 				  
-				 <div class="col-6">
+				 <!--<div class="col-6">
 			  
-					  <div class="">
-					    <label class="" for="exampleCheck1">LOCALISATION</label>
-					    <input type="text" v-model="form.location" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+					  <div class="mb-3">
+					    <textarea class="form-control" placeholder="Localisation" v-model="form.location" rows="5" style="margin-bottom: 0px;"></textarea>
 					    <jet-input-error :message="form.errors.location" />
 					  </div>
+				 </div>-->
+				 
+				 <div class="col-4">
+				  
+					 
+					    <Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%'}"/>
+					    <jet-input-error :message="form.errors.contract_type" />
 				 </div>
 				 
-				 <div class="col-6">
-				  
-					  <div class="mb-3 form-check">
-					    <label class="" for="exampleCheck1">TYPE DE CONTRAT</label>
-					    <select class="form-control" v-model="form.contract_type">
-					    </select>
-					    <jet-input-error :message="form.errors.contract_type" />
+				 <div class="col-4">
+					  <div class="mb-3">
+					    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
+					    <!--<select class="form-control"  v-model="form.contract_duration">
+						    <option selected disabled value>--Durée du contrat--</option>
+						    <option value="CDD">CDD</option>
+						    <option value="CDI">CDI</option>
+					    </select>-->
+					    <Select2 v-model="form.contract_duration" :options="contract_duration" :settings="{placeholder:'--Durée du contrat--',width:'100%'}"/>
+					    <jet-input-error :message="form.errors.contract_duration" />
 					  </div>
-				 </div>
+			    </div>
+			    
+			     <div class="col-4">  
+					    <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%'}"/>
+					    <jet-input-error :message="form.errors.study_level" />
+			    </div>
 			  
 			  
 			  </div>
 			  
-			  <div class="row">
+			  <!--<div class="row">
 			    
 			    <div class="col-6">
 				  <div class="mb-3">
-				    <label for="exampleInputPassword1" class="form-label">DURÉE CONTRAT</label>
-				    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
-				    <select class="form-control"  v-model="form.contract_duration">
-					    <option selected disabled value>--</option>
-					    <option value="CDD">CDD</option>
-					    <option value="CDI">CDI</option>
-				    </select>
+				  
+				    <Select2 v-model="form.contract_duration" :options="contract_duration" :settings="{placeholder:'--Durée du contrat--',width:'100%'}"/>
 				    <jet-input-error :message="form.errors.contract_duration" />
 				  </div>
 			    </div>
 			    <div class="col-6">  
-				  <div class="mb-3 form-check">
-					    <label for="exampleInputEmail1" class="form-label">NIVEAU D'ÉTUDE</label>
-					    <select class="form-control" v-model="form.study_level">
-					    </select>
+					    <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%'}"/>
 					    <jet-input-error :message="form.errors.study_level" />
-			      </div>
 			    </div>
 			  
-			  </div>
+			  </div>-->
+			   <div class="row">
+				  
+				 <div class="col-12">
 			  
+					  <div class="mb-3">
+					    
+					    <textarea class="form-control" placeholder="Localisation" v-model="form.location" rows="5" style="margin-bottom: 0px;"></textarea>
+					    <jet-input-error :message="form.errors.location" />
+					  </div>
+				 </div>
+				 
+				 <!--<div class="col-6">
+				  
+					 
+					    <Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%'}"/>
+					    <jet-input-error :message="form.errors.contract_type" />
+				 </div>-->
+			  
+			  
+			  </div>
 			  <div class="row">
 			    <div class="col-12">
 				  <div class="mb-3">
-				    <label for="exampleInputPassword1" class="form-label">DETAILS DE L'OFFRE</label>
 				    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
-				    <textarea class="form-control" v-model="form.offer_details" rows="10"></textarea>
+				    <textarea class="form-control" placeholder="Détails de l'offre" v-model="form.offer_details" rows="10" style="margin-bottom: 0px;"></textarea>
 				    <jet-input-error :message="form.errors.offer_details" />
 				  </div>
 			    </div>
@@ -109,23 +132,31 @@
             Annuler
           </jet-secondary-button>
 
-          <jet-button class="btn btn-primary" @click="createOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+          <jet-button v-if="editMode == 0" class="btn btn-primary" @click="createOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
 
             Confirmer
           </jet-button>
+          
+          <jet-button v-if="editMode == 1" class="btn btn-primary" @click="editOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>
+          
         </template>
       </jet-dialog-modal>
 
        
         <!-- /.row -->
         
-        <div class="row pt-2">
+        <!--<div class="row pt-2">
 	        
 	        <div class="col-md-3">
-            <!-- Info Boxes Style 2 -->
             <div class="info-box mb-3 bg-warning">
               <span class="info-box-icon"><i class="fas fa-tag"></i></span>
 
@@ -133,7 +164,6 @@
                 <span class="info-box-text">Candidats</span>
                 <span class="info-box-number">5,200</span>
               </div>
-              <!-- /.info-box-content -->
             </div>
            
 	        </div>
@@ -146,74 +176,15 @@
 	                <span class="info-box-text">Offres postées</span>
 	                <span class="info-box-number">114,381</span>
 	              </div>
-	              <!-- /.info-box-content -->
 	            </div>
 	        </div>
             
-            
-            <!-- /.info-box -->
-            
-            
-
-            <!--<div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Browser Usage</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="row">
-	                
-	                
-                  
-                </div>
-              </div>
-              <div class="card-footer p-0">
-                <ul class="nav nav-pills flex-column">
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      United States of America
-                      <span class="float-right text-danger">
-                        <i class="fas fa-arrow-down text-sm"></i>
-                        12%</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      India
-                      <span class="float-right text-success">
-                        <i class="fas fa-arrow-up text-sm"></i> 4%
-                      </span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      China
-                      <span class="float-right text-warning">
-                        <i class="fas fa-arrow-left text-sm"></i> 0%
-                      </span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>-->
-            <!-- /.card -->
-            
-            <!-- /.card -->
-          
-	        
-        </div>
+            	        
+        </div>-->
         
         <!-- /.card-body -->
-              <div class="clearfix">
-                <a @click="openOfferForm" class="btn btn-sm btn-info float-left">Créer une annonce</a>
+              <div class="clearfix mt-4">
+                <a @click="openOfferForm" class="btn btn-sm btn-info float-left">Éditer une annonce</a>
               </div>
         
         <!-- Main row -->
@@ -226,16 +197,16 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Dernières Offres</h3>
+                <h3 class="card-title">Offres</h3>
 
-                <div class="card-tools">
+                <!--<div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
                   </button>
                   <button type="button" class="btn btn-tool" data-card-widget="remove">
                     <i class="fas fa-times"></i>
                   </button>
-                </div>
+                </div>-->
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
@@ -243,14 +214,32 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Order ID</th>
-                      <th>Item</th>
-                      <th>Status</th>
-                      <th>Popularity</th>
+                      <th>ID Annonce</th>
+                      <th>Titre Annonce</th>
+                      <th>Libellé Annonce</th>
+                      <th>Statut annonce</th>
+                      <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
+	                    <tr v-for="data in offerData">
+		                    <td>{{ data.id }}</td>
+		                    <td>{{ data.title }}</td>
+		                    <td>{{ data.offers_details }}</td>
+		                    
+		                    <td>
+			                    
+			                    <span class="badge badge-success" v-if="data.publish_status == 1">Publié</span>
+			                    <span class="badge badge-warning" v-if="data.publish_status == 0">En attente</span>
+			                    
+		                    </td>
+		                    <td>
+			                    <a href="#" @click="loadOffer(data.id)"><i class="fas fa-eye" style="padding: 10px;"></i></a>
+			                    <a href="#" @click="deleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 10px;"></i></a>
+			               </td>
+		                    
+	                    </tr>
+                    <!--<tr>
                       <td><a href="pages/examples/invoice.html">OR9842</a></td>
                       <td>Call of Duty IV</td>
                       <td><span class="badge badge-success">Shipped</span></td>
@@ -305,12 +294,13 @@
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
                       </td>
-                    </tr>
+                    </tr>-->
                     </tbody>
                   </table>
                 </div>
                 <!-- /.table-responsive -->
               </div>
+              <Pagination :data="offerData" @pagination-change-page="getResults" />
               
               <!-- /.card-footer -->
             </div>
@@ -326,14 +316,27 @@
   
 </template>
 
-<style scoped>
+<style>
   .invalid-feedback{
 	  
 	  display: block !important;
   }
+  .select2-container .select2-selection--single .select2--container{
+     margin-top: -8px !important;
+     background: red !important;
+  }
+  
+  .select2-selection{
+	  
+	  height: 40px !important;
+  }
+  
+  
+  
 </style>
 
 <script>
+//import Select2 from 'vue3-select2-component';
 import { defineComponent } from "vue"
 import { Head, Link } from '@inertiajs/inertia-vue3';
 
@@ -346,6 +349,7 @@ import JetInputError from '@/Jetstream/InputError.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 import JetButton from '@/Jetstream/Button.vue'
 
+
 export default defineComponent({
   components: {
     Head,
@@ -356,7 +360,8 @@ export default defineComponent({
     JetInput,
     JetInputError,
     JetSecondaryButton,
-    JetButton
+    JetButton,
+    //Select2
   },
 
   props: {
@@ -368,22 +373,31 @@ export default defineComponent({
   data() {
     return {
       modal: null,
-      activity_sector : [],
-      study_level : [],
+      activity_sector : {},
+      study_level : {},
+      contract_type: {},
+      contract_duration: ['CDD', 'CDI'],
+      offerData: {},
+      editMode : 0,
       form: this.$inertia.form({
         //password: '',
+        id : 0,
         offer_title:'',
         activity_sector:'',
         location:'',
         contract_type:'',
         contract_duration:'',
         offer_details:'',
-        study_level:''
+        study_level:'',
+        offer_details:''
         
       })
     }
   },
   mounted(){
+	  
+	  
+	  this.getResults();
 	  
 	  axios.get('/activity/sector').then(response => {
 		  
@@ -397,10 +411,28 @@ export default defineComponent({
 		  
 		  
 		  this.study_level = response.data;
+      }); 
+      
+      
+      axios.get('/contract/types').then(response => {
+		  
+		  
+		  this.contract_type = response.data;
       });  
+      
+      
   },
   methods:{
 	  
+	  getResults(page = 1) {
+		    let vm = this;
+            axios.get('/offers?page=' + page)
+                .then(response => {
+	                
+	                //console.log(response.data);
+                    vm.offerData = response.data['data'];
+            });
+      },
 	  openOfferForm() {
 	      //this.form.password = '';
 	
@@ -410,18 +442,58 @@ export default defineComponent({
 	
 	      //setTimeout(() => this.$refs.password.focus(), 250)
       },
+      loadOffer(id){
+	     
+	     this.editMode = 1;
+	     axios.get('/view/offer/'+id)
+                .then(response => {
+	                
+	                this.form.offer_title=response.data['data'][0]['title'];
+	                this.form.activity_sector=response.data['data'][0]['activity_sector'];
+	                this.form.location=response.data['data'][0]['location'];
+	                this.form.contract_type=response.data['data'][0]['contract_type'];
+	                this.form.contract_duration=response.data['data'][0]['contract_duration'];
+	                this.form.offer_details=response.data['data'][0]['offers_details'];
+	                this.form.study_level=response.data['data'][0]['study_level'];
+	                //this.form.offer_details=response.data['data'][0]['offer_details'];
+	                console.log(response.data);
+	                //this.editMode = 0;
+                    //vm.offerData = response.data['data'];
+         });
+	     
+	     this.openOfferForm();  
+      },
 	  closeModal(){
 		  
 		  this.form.reset()
           this.modal.hide()
 	  },
+	  editOffer(id){
+         this.form['id'] = id;
+         this.form.post(route('employer.edit.offer'), {
+	        preserveScroll: true,
+	        onSuccess: () => { this.closeModal(); this.form.reset();this.editOffer=0;},
+	        //onError: () => this.$refs.password.focus(),
+	        onFinish: () => {}/*this.form.reset()*/,
+          });
+      },
+	  deleteOffer(id){
+		  this.form['id'] = id;
+		  this.form.post(route('employer.delete.offer'), {
+	        preserveScroll: true,
+	        onSuccess: () => { this.closeModal(); this.form.reset()},
+	        //onError: () => this.$refs.password.focus(),
+	        onFinish: () => {}/*this.form.reset()*/,
+          });
+		  
+	  },
 	  createOffer(){
 		  
 		  this.form.post(route('employer.create.offer'), {
 	        preserveScroll: true,
-	        onSuccess: () => this.closeModal(),
+	        onSuccess: () => { this.closeModal(); this.form.reset()},
 	        //onError: () => this.$refs.password.focus(),
-	        onFinish: () => this.form.reset(),
+	        onFinish: () => {}/*this.form.reset()*/,
           });
 	  }
   }
