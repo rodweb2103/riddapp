@@ -9,10 +9,72 @@ use App\Models\StudyLevel;
 use App\Models\ActivitySector;
 use App\Models\ContractType;
 use Spatie\Permission\Models\Role;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
     //
+    
+    public function profile_update(Request $request){
+	    
+	    $request->validate([
+		    
+		    
+		        'email' => [
+				        'required',
+				        Rule::unique('users')->ignore(auth()->user()->id),
+                ],
+		    
+		    
+         ],[
+		      'email.required'=> 'Le courriel est requis', // custom message
+		      'email.unique'=> 'La courriel existe déjà', // custom message
+		      
+         ]);
+         
+         $user = User::where("email",$request->input('email'))->first();
+         if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
+         $user->save();
+         
+         
+         return redirect()->back();
+    }
+    
+    
+    public function profile_image_upload(Request $request){
+	    
+	    $validatedData = $request->validate([
+         'avatar' => 'required|image|mimes:png,jpeg,gif,svg|max:2048',
+ 
+        ]);
+        
+        //var_dump($request->all());exit;
+ 
+        $name = $request->file('avatar')->getClientOriginalName();
+        $path = $request->file('avatar')->store('public/profile');
+        
+        $check_image_exist = \DB::table("users")->where("id",\Auth::user()->id)->whereRaw("profile_photo_path!=''")->get();
+        
+        //var_dump(count($check_image_exist));exit;
+        
+        if(count($check_image_exist) > 0){
+	       
+	       $image_path = $check_image_exist[0]->profile_photo_path;
+	    }
+        
+	    $user = User::find(\Auth::user()->id);
+	    $user->profile_photo_path = $path;
+	    $user->save();
+	    
+	    $url = config('app.url').\Storage::url('profile/'.basename($path));
+	    
+	    //var_dump($url);exit;
+	    
+	    return redirect('/account/profile')->with('status',$url);
+	    
+        //$user = new User;
+	    
+    }
     
     public function activity_sector(Request $request){
 	    

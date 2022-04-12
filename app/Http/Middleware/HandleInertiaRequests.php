@@ -38,7 +38,7 @@ class HandleInertiaRequests extends Middleware
     {
         return array_merge(parent::share($request), [
             //
-            
+                'image_profile' => \Auth::user() ? \Auth::user()->profile_photo_path!="" ? config('app.url').\Storage::url('profile/'.basename(\Auth::user()->profile_photo_path)): "" : "",
                 'status' => fn () => $request->session()->get('status'),
                 'appName' => config('app.name'),
                 'is_admin' => auth()->user() ? auth()->user()->hasRole('Admin') ? 1 : 0 : 0,

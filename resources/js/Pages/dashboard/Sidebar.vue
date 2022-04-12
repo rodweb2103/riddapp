@@ -6,20 +6,29 @@
       <img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>-->
-    <a href="index3.html" class="brand-link" style="text-align: center;">
+    <!--<a href="index3.html" class="brand-link" style="text-align: center;">
       <img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;float:unset !important;max-height: 90px !important;">
-    </a>
+    </a>-->
+    
+     <Link class="brand-link" style="text-align: center;" href="/account" v-if="$page.props.is_employer == 1 || $page.props.is_candidate == 1"><img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;float:unset !important;max-height: 90px !important;"></Link>
+     <Link class="brand-link" style="text-align: center;" href="#" v-if="$page.props.is_admin == 1"><img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;float:unset !important;max-height: 90px !important;"></Link>
     
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="/assets/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
+          <img src="/assets/img/avatar5.png" v-if="$page.props['image_profile']==''" class="img-circle elevation-2" alt="User Image">
+          
+          <img :src="$page.props['image_profile']" v-if="$page.props['image_profile']!=''" class="img-circle elevation-2" alt="User Image">
+          
         </div>
         <div class="info" style="width: 200px;">
           <span>
-            <a href="#" class="" style="margin: unset !important;padding: 8px;">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</a>
+            <!--<a href="#" v-if="is_admin" class="" style="margin: unset !important;padding: 8px;">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</a>-->
+            <Link href="/account/profile" v-if="$page.props.is_employer == 1 || $page.props.is_candidate == 1">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</Link>
+            <Link href="#" v-if="$page.props.is_admin == 1">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</Link>
+            
             
             <!--<Link  :href="route('admin.profile')" class="" style="margin: unset !important;padding: 8px;">
 				{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}
@@ -79,15 +88,15 @@
           
           <template v-if="$page.props.is_employer == 1">
           
-            <!--<li class="nav-item">
+            <li class="nav-item">
 	            
-	            <Link  href="#" class="nav-link">
+	            <Link  href="/account" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>
 	                   Offres
 	                </p>
 				 </Link>
-	        </li>-->
+	        </li>
 	        
 	        <li class="nav-item">
 	            <a href="#" class="nav-link">
@@ -100,11 +109,11 @@
           
           </template>
           
-          <!--<template v-if="$page.props.candidate == 1">
+          <template v-if="$page.props.is_candidate == 1">
           
             <li class="nav-item">
 	            
-	            <Link  href="#" class="nav-link">
+	           <Link  href="/account" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>
 	                   Offres
@@ -112,7 +121,7 @@
 				 </Link>
 	        </li>
           
-          </template>-->
+          </template>
           
           <template v-if="$page.props.is_admin == 1">
               

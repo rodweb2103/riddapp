@@ -79,9 +79,24 @@ Route::get('/admin/accounts/staff',function(){
 Route::get('/account',function(){
 	
 	if (Auth::user()->hasRole('Candidate')) {
-	   return Inertia::render('User/DashboardCandidate');
+	   return Inertia::render('User/Candidate/Dashboard');
 	}else{
-	   return Inertia::render('User/Dashboard');
+	   return Inertia::render('User/Employer/Dashboard');
+	}
+    //return Inertia::render('User/Dashboard');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Candidate|Employer'])->name('user.dashboard');
+
+
+Route::post('/account/profile/image/upload',[UserController::class, 'profile_image_upload'])->name('profile.image.upload');
+Route::post('/account/profile/update',[UserController::class, 'profile_update'])->name('profile.update');
+
+Route::get('/account/profile',function(){
+	
+	//return Inertia::render('User/Profile');
+	if (Auth::user()->hasRole('Candidate')) {
+	   return Inertia::render('User/Candidate/Profile');
+	}else{
+	   return Inertia::render('User/Employer/Profile');
 	}
     //return Inertia::render('User/Dashboard');
 })->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Candidate|Employer'])->name('user.dashboard');
@@ -280,6 +295,15 @@ Route::get('/offre/details', function () {
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
+        
+        if (Auth::user()->hasRole('Candidate') || Auth::user()->hasRole('Employer')) {
+	       return redirect('/account/profile');
+           //return Inertia::render('Dashboard');
+        }
+        
+        if (Auth::user()->hasRole('Employer')) {
+           return redirect('/account');
+        }
+    
     })->name('dashboard');
 });

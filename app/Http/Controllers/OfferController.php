@@ -30,6 +30,21 @@ class OfferController extends Controller
          
          //var_dump($request->all());exit;
          
+         
+         /*$flight = Offers::create([
+            'title' => $request->input('offer_title'),
+            'activity_sector' => $request->input('activity_sector'),
+            'contract_type' => $request->input('contract_type'),
+            'contract_duration' => $request->input('contract_duration'),
+            'study_level' => $request->input('study_level'),
+            'location' => $request->input('location'),
+            'offers_details' => $request->input('offer_details'),
+            'publish_status' => 0,
+            'company_id' => \Auth::user()->id,
+            'publish_date' => \Carbon\Carbon::now(),
+            'expiry_date' => \Carbon\Carbon::now()->addDays(10),
+         ]);*/
+         
          $offer = new Offers;
          
          $offer->title=$request->input('offer_title');
@@ -59,8 +74,12 @@ class OfferController extends Controller
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()
 		        ->map(function($item) {
+			        //var_dump($item["id_offer"]);exit;
 		            return [
-		                'id' => $item->id,
+			            
+			            
+			            
+		                'id' => $item->id_offer,
 		                'title' => $item->title,
 		                'offers_details' => Str::of($item->offers_details)->limit(60),
 		                'publish_status' => $item->publish_status
@@ -94,7 +113,8 @@ class OfferController extends Controller
 		        ->getCollection()
 		        ->map(function($item) {
 		            return [
-		                'id' => $item->id,
+		                //'id' => $item->id,
+		                'id' => $item->id_offer,
 		                'title' => $item->title,
 		                'offers_details' => Str::of($item->offers_details)->limit(60),
 		                'publish_status' => $item->publish_status
@@ -126,7 +146,7 @@ class OfferController extends Controller
     
     public function view_offer(Request $request,$id){
 	    
-	     $itemsPaginated = Offers::where('id',$id)->paginate(15);
+	     $itemsPaginated = Offers::where('id_offer',$id)->paginate(15);
 	     
 	     return $itemsPaginated;
     }
@@ -153,7 +173,22 @@ class OfferController extends Controller
 		      'study_level.required'=> 'Le niveau d\'étude est requis' // custom message
          ]);
          
-         $offer = Offers::find($id);
+         $offer = Offers::where("id_offer",$id)->first();
+         
+         
+         /*Offers::where('id_offer',$id)
+           ->update([
+                 'title' => $request->input('offer_title'),
+                 'activity_sector' => $request->input('activity_sector'),
+                 'contract_type' => $request->input('contract_type'),
+                 'contract_duration' => $request->input('contract_duration'),
+                 'study_level' => $request->input('study_level'),
+                 'location' => $request->input('location'),
+                 'offers_details' => $request->input('offer_details'),
+                 'company_id' => \Auth::user()->id,
+           ]);*/
+         
+         //$offer = Offers::find($id);
          
          $offer->title=$request->input('offer_title');
          $offer->activity_sector=$request->input('activity_sector');
@@ -167,7 +202,7 @@ class OfferController extends Controller
          $offer->company_id = \Auth::user()->id;
          //$offer->publish_date = \Carbon\Carbon::now();
          //$offer->expiry_date = \Carbon\Carbon::now()->addDays(10);
-         $offer->update();
+         $offer->save();
          
          
          return redirect('/account');
@@ -183,8 +218,11 @@ class OfferController extends Controller
     }
     
     public function delete_offer(Request $request){
-	     
-	      Offers::where('id',$id)->delete();
+	      
+	      //var_dump($request->all());exit;
+	      $id = $request->input('id');
+	      Offers::where('id_offer',$id)->delete();
+	      return redirect('/account');
     }
     
     public function unpublish_offer(Request $request){
