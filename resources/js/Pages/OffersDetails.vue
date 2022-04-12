@@ -6,7 +6,40 @@
       </h2>
     </template>
     <welcome />-->
-    {{ offerDetails }}
+   
+    <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 360.27px;background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);padding-bottom: 0px;transform-style: preserve-3d;">
+        <div class="container hero">
+            <nav class="navbar navbar-light navbar-expand-lg d-xl-flex navigation-clean" style="background: rgba(177,30,44,0);padding-top: 0;padding-bottom: 0;margin-top: -41px;">
+                <div class="container"><a class="navbar-brand" href="#"><img class="img-fluid" src="assets/img/logo-ridd.jpg" style="width: 115px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-2">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link active" href="#" style="font-size: 18px;">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Offres</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Activités</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Actualités</a></li>
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);font-size: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle text-start" style="font-size: 33px;padding-right: 9px;color: rgb(255,255,255);margin-top: -5px;">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                                    </svg>Compte&nbsp;</a>
+                                <div class="dropdown-menu"><a class="dropdown-item" href="#">Connexion</a></div>
+                            </li>
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);font-size: 18px;"><i class="fa fa-language" style="font-size: 26px;padding-left: 0px;padding-right: 7px;margin-top: -2px;"></i>Langue&nbsp;</a>
+                                <div class="dropdown-menu"><a class="dropdown-item" href="#">Francais</a><a class="dropdown-item" href="#">Anglais</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section class="highlight-blue" style="background: rgba(30,106,221,0);">
+                <div class="container">
+                    <div class="intro">
+                        <h2 class="text-center" style="font-family: Montserrat, sans-serif;font-size: 47.44px;font-weight: bold;margin-top: -26px;">Les Offres du RIDD</h2>
+                    </div>
+                    <div class="buttons"></div>
+                </div>
+            </section>
+        </div>
+    </header>
     <section id="carousel" style="margin-top: 24px;">
         <div class="container">
             <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="carousel-1" style="height: 300px;">
@@ -20,32 +53,54 @@
         </div>
     </section>
     <section style="height: auto;padding-bottom: 42px;">
+	    <!--{{ offerDetails }}-->
         <div class="container">
             <div class="intro" style="margin-right: 0px;margin-left: 0;margin-bottom: 0px;">
                 <h1 class="text-center" style="margin-top: 55px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 43px;font-size: 26px;color: rgb(255,115,0);">{{ offerDetails['title'] }}</h1>
             </div>
             <div class="row justify-content-start" style="margin-top: 49px;">
-                <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"><img class="d-xxl-flex mx-auto" src="/img/ic-yayo.png" style="width: 130px;margin-top: 19px;"></div>
+                <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
+	                <!--<img class="d-xxl-flex mx-auto" src="/img/ic-yayo.png" style="width: 130px;margin-top: 19px;">-->
+	                <img class="d-xxl-flex mx-auto" :src="offerDetails['profile_photo_url']" style="width: 130px;margin-top: 19px;">
+	                
+	                
+	             </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-start">
 	                <div class="row">
                         <h5 style="color: rgb(0,0,0);" class="col-5">Nom de la société</h5>
-	                    <span class="col-7">{{ offerDetails['company']['company_name'] }}</span>
+	                    <span class="col-7">{{ offerDetails['company_name'] }}</span>
                     </div>
                     <div class="row">
                         <h5 style="color: rgb(0,0,0);" class="col-5">Date de publication</h5>
-                        <span class="col-7">{{ offerDetails['company']['company_name'] }}</span>
+                        <span class="col-7">{{ offerDetails['company_name'] }}</span>
                     </div>
                     <div class="row">
                        <h5 style="color: rgb(0,0,0);" class="col-5">Secteur d'activité</h5>
-                       <span class="col-7">{{ offerDetails['company']['activity_sector']['activity_sector_name'] }}</span>
+                       <span class="col-7">{{ offerDetails['company_activity_sector'] }}</span>
                     </div>
                     <div class="row">
                        <h5 style="color: rgb(0,0,0);" class="col-5">Localisation</h5>
                        <span class="col-7">{{ offerDetails['location'] }}</span>
                     </div>
+                    
+                    
+                    <!--"id_offer" => $offer_details[0]->id_offer,
+	     "title" => $offer_details[0]->title,
+	     "offers_details" => $offer_details[0]->offers_details,
+	     "publish_date" => $offer_details[0]->publish_date,
+	     "offer_type" => $offer_details[0]->contract_type->contract,
+	     "contract_duration" => $offer_details[0]->contract_type->contract_duration,
+	     "location" => $offer_details[0]->location,
+	     "profile_details" => $offer_details[0]->profile_details,
+	     "company_name" => $offer_details[0]->company->company_name,
+	     "company_about" => $offer_details[0]->company->company_about,
+	     "company_location" => $offer_details[0]->company->company_location,
+	     "profile_photo_url" => $offer_details[0]->company->profile_photo_url,
+	     "company_activity_sector" => $offer_details[0]->company->activity_sector->activity_sector_name-->
+                    
                     <div class="row">
                        <h5 style="color: rgb(0,0,0);" class="col-5">Type d'offre</h5>
-                       <span class="col-7">{{ offerDetails['contract_type']['contract'] }}</span>
+                       <span class="col-7">{{ offerDetails['offer_type'] }}</span>
                     </div>
                     <div class="row">
                        <h5 style="color: rgb(0,0,0);" class="col-5">Contrat</h5>
@@ -56,13 +111,13 @@
             <div class="row justify-content-start" style="margin-top: 49px;">
                 <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
                     <h1 class="text-start" style="margin-top: 55px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 12px;font-size: 26px;color: rgb(0,0,0);">Détails de l'entreprise</h1>
-                    <p>{{ offerDetails['company']['company_about'] }}</p>
+                    <p>{{ offerDetails['company_about'] }}</p>
                     <h1 class="text-start" style="margin-top: 0px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 12px;font-size: 26px;color: rgb(0,0,0);">Détails de l'offre</h1>
                     <p>{{ offerDetails['offers_details'] }}</p>
                     <h1 class="text-start" style="margin-top: 0px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 12px;font-size: 26px;color: rgb(0,0,0);">Profil recherché</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat. Duis aute irure dolor in reprehenderit in voluptatevelit esse cillum dolore eu fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non proident, sunt in culpa qui officia deserunt <br>mollit anim id est laborum.</p>
+                    <p>{{ offerDetails['profile_details'] }}</p>
                     <h1 class="text-start" style="margin-top: 0px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 12px;font-size: 26px;color: rgb(0,0,0);">Date d'expiration de l'offre</h1>
-                    <p>Lorem ipsum dolor sit amet, xx/xx/xxxx</p><button class="btn btn-lg" type="button" style="background: #ff7300;color: rgb(255,255,255);">Postuler</button>
+                    <p>Lorem ipsum dolor sit amet, xx/xx/xxxx</p><p><button class="btn btn-lg" type="button" style="background: #ff7300;color: rgb(255,255,255);">Postuler</button></p>
                 </div>
                 <div class="col"></div>
             </div>

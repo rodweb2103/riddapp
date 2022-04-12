@@ -22,12 +22,13 @@ class Offers extends Model
      * @var string
      */
     protected $table = 'offers';
+    protected $appends = ['publish_date'];
     public function users()
     {
         return $this->belongsToMany(User::class);
     }
     
-    public function contract_type(){
+    public function contract_type_offer(){
 	    
 	    return $this->belongsTo(ContractType::class,'contract_type','id');
     }
@@ -48,14 +49,23 @@ class Offers extends Model
     }
     
     
+    //public function setPublishDateAttribute($value)
+    //{
+    //    $this->attributes['publish_date'] = \Carbon\Carbon::parse($this->created_at)->diffForHumans();
+    //}
+
+    
+    public function getPublishDateAttribute()
+    {
+       return \Carbon\Carbon::parse($this->created_at)->diffForHumans();
+    }
     
     
-    
-    /*protected function offerDetails(): Attribute
+    /*protected function publishDate(): Attribute
     {
         return Attribute::make(
-            get: fn ($value) => Str::of($value)->limit(6),
-            set: fn ($value) => Str::of($value)->limit(6)
+            get: fn ($value) => \Carbon\Carbon::parse($this->created_at)->diffForHumans(),
+            //set: fn ($value) => 
         );
     }*/
     

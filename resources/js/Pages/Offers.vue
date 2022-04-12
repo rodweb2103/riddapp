@@ -7,6 +7,8 @@
     </template>
     <welcome />-->
     
+    
+    
     <section id="carousel" style="margin-top: 24px;">
         <div class="container">
             <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="carousel-1" style="height: 300px;">

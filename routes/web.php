@@ -276,9 +276,30 @@ Route::get('/annonces', function () {
 
 Route::get('/annonces/{id}', function (Request $request,$id) {
 	
-	$offer_details = Offers::with(['company','contract_type','activity_sector','study_level','company.activity_sector'])->where('id_offer',$id)->get();
+	$offer_details = Offers::with(['company','contract_type_offer','company.activity_sector_company'])->where('id_offer',$id)->get();
+    //$offer_details[0]->publish_date = $offer_details[0]->created_at;
+    
+    //var_dump($offer_details[0]->contract_type_offer);exit;
+    $url = config('app.url').\Storage::url('profile/'.basename($offer_details[0]->company->profile_photo_url));
+    $array_offer = array(
+	    
+	     "id_offer" => $offer_details[0]->id_offer,
+	     "title" => $offer_details[0]->title,
+	     "offers_details" => $offer_details[0]->offers_details,
+	     "publish_date" => $offer_details[0]->publish_date,
+	     "offer_type" => $offer_details[0]->contract_type_offer->contract,
+	     "contract_duration" => $offer_details[0]->contract_duration,
+	     "location" => $offer_details[0]->location,
+	     "profile_details" => $offer_details[0]->profile_details,
+	     "company_name" => $offer_details[0]->company->company_name,
+	     "company_about" => $offer_details[0]->company->company_about,
+	     "company_location" => $offer_details[0]->company->company_location,
+	     "profile_photo_url" => $url,
+	     "company_activity_sector" => $offer_details[0]->company->activity_sector_company->activity_sector_name
+    );
+	
     return Inertia::render('OffersDetails', [
-	    'offerDetails' => $offer_details[0], 
+	    'offerDetails' => $array_offer, 
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,

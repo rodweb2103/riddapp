@@ -47,22 +47,22 @@
 	       <form id="msform">
 		      <div class="row"> 
 		       
-		        <div class="col-6">
+		        <div class="col-12">
 				  <div class="mb-3">
 					<input type="hidden"  v-model="form.id"/>
 				    <input type="text" placeholder="Titre annonce" v-model="form.offer_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
 				    <jet-input-error :message="form.errors.offer_title" />
 				  </div>
 		        </div>
-		        <div class="col-6">  
+		        <!--<div class="col-6">  
 				  <div class="mb-3">
-				    <!--<select class="form-control" v-model="form.activity_sector">
+				    <select class="form-control" v-model="form.activity_sector">
 					    <option selected disabled value>--Secteur d'activité--</option>
-				    </select>-->
+				    </select>
 				    <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{placeholder:'-Secteur d\'activité--',width:'100%',dropdownParent:'#openOffer'}"/>
 				    <jet-input-error :message="form.errors.activity_sector" />
 				  </div>
-		        </div>
+		        </div>-->
 		      </div>
 			  
 			  <div class="row">
@@ -75,14 +75,18 @@
 					  </div>
 				 </div>-->
 				 
-				 <div class="col-4">
+				 <div class="col-6">
 				  
 					 
-					    <Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%',dropdownParent:'#openOffer'}"/>
+					    <!--<Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%',dropdownParent:'#openOffer'}"/>-->
+					    <select v-model="form.contract_type" class="form-control">
+						    <option selected disabled value>--Selectionner type d'offre--</option>
+						    <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
+					    </select>
 					    <jet-input-error :message="form.errors.contract_type" />
 				 </div>
 				 
-				 <div class="col-4">
+				 <div class="col-6">
 					  <div class="mb-3">
 					    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
 					    <!--<select class="form-control"  v-model="form.contract_duration">
@@ -90,15 +94,19 @@
 						    <option value="CDD">CDD</option>
 						    <option value="CDI">CDI</option>
 					    </select>-->
-					    <Select2 v-model="form.contract_duration" :options="contract_duration" :settings="{placeholder:'--Durée du contrat--',width:'100%',dropdownParent:'#openOffer'}"/>
+					    <!--<Select2 v-model="form.contract_duration" :options="contract_duration" :settings="{placeholder:'--Durée du contrat--',width:'100%',dropdownParent:'#openOffer'}"/>-->
+					    <select v-model="form.contract_duration" class="form-control">
+						    <option selected disabled value>--Selectionner durée du contrat--</option>
+						    <option :value="ct" v-for="ct in contract_duration">{{ ct }}</option>
+					    </select>
 					    <jet-input-error :message="form.errors.contract_duration" />
 					  </div>
 			    </div>
 			    
-			     <div class="col-4">  
+			    <!--<div class="col-4">  
 					    <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%',dropdownParent:'#openOffer'}"/>
 					    <jet-input-error :message="form.errors.study_level" />
-			    </div>
+			    </div>-->
 			  
 			  
 			  </div>
@@ -146,6 +154,27 @@
 				    <jet-input-error :message="form.errors.offer_details" />
 				  </div>
 			    </div>
+			  </div>
+			  
+			  <div class="row">
+				  
+				 <div class="col-12">
+			  
+					  <div class="mb-3">
+					    
+					    <textarea class="form-control" placeholder="Détails sur le profil recherché" v-model="form.profile_details" rows="5" style="margin-bottom: 0px;"></textarea>
+					    <jet-input-error :message="form.errors.profile_details" />
+					  </div>
+				 </div>
+				 
+				 <!--<div class="col-6">
+				  
+					 
+					    <Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%'}"/>
+					    <jet-input-error :message="form.errors.contract_type" />
+				 </div>-->
+			  
+			  
 			  </div>
 			  
            </form>
@@ -435,6 +464,7 @@ export default defineComponent({
         //password: '',
         id : 0,
         offer_title:'',
+        profile_details:'',
         activity_sector:'',
         location:'',
         contract_type:'',
@@ -501,7 +531,7 @@ export default defineComponent({
 	      this.modal.show()
 	      
 	      
-	      
+	      this.editMode = 0;
 	      
 	      
 	
@@ -515,12 +545,12 @@ export default defineComponent({
                 .then(response => {
 	                
 	                this.form.offer_title=response.data['data'][0]['title'];
-	                this.form.activity_sector=response.data['data'][0]['activity_sector'];
+	                this.form.profile_details=response.data['data'][0]['profile_details'];
 	                this.form.location=response.data['data'][0]['location'];
 	                this.form.contract_type=response.data['data'][0]['contract_type'];
 	                this.form.contract_duration=response.data['data'][0]['contract_duration'];
 	                this.form.offer_details=response.data['data'][0]['offers_details'];
-	                this.form.study_level=response.data['data'][0]['study_level'];
+	                //this.form.study_level=response.data['data'][0]['study_level'];
 	                this.form.id = response.data['data'][0]['id_offer'];
 	                //this.form.offer_details=response.data['data'][0]['offer_details'];
 	                console.log(response.data);

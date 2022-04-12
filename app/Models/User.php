@@ -78,7 +78,7 @@ class User extends Authenticatable implements MustVerifyEmail
 	    return $this->belongsTo(StudyLevel::class,'study_level','id');
     }
     
-    public function activity_sector(){
+    public function activity_sector_company(){
 	    
 	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
     }
