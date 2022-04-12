@@ -13,7 +13,7 @@
 <script>
 import { defineComponent } from "vue"
 import AppLayout from "@/Layouts/AppLayout.vue"
-import WelcomeCandidate from "@/Pages/WelcomeCandidate.vue"
+import WelcomeCandidate from "@/Pages/User/Candidate/WelcomeCandidate.vue"
 
 export default defineComponent({
   components: {

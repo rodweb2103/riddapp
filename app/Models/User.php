@@ -12,6 +12,12 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use App\Notifications\ResetPasswordNotification;
+use App\Models\Offers;
+
+use App\Models\ActivitySector;
+use App\Models\StudyLevel;
+use App\Models\Country;
+
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -61,5 +67,25 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+    
+    public function country(){
+	    
+	    return $this->belongsTo(Country::class,'country','id');
+    }
+    
+    public function study_level(){
+	    
+	    return $this->belongsTo(StudyLevel::class,'study_level','id');
+    }
+    
+    public function activity_sector(){
+	    
+	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
+    }
+    
+    public function offers()
+    {
+        return $this->belongsToMany(Offers::class,'offers_bid','user_id','offer_id')->withPivot('offer_status','offer_date');
+    }
     
 }

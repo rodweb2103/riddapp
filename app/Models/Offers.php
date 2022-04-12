@@ -2,7 +2,12 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
+use App\Models\ContractType;
+use Illuminate\Support\Str;
 
+use App\Models\ActivitySector;
+use App\Models\StudyLevel;
   
 
 class Offers extends Model
@@ -17,7 +22,43 @@ class Offers extends Model
      * @var string
      */
     protected $table = 'offers';
-    //protected $fillable = ['title','activity_sector','contract_type','contract_duration','study_level','location','offers_details','publish_status','company_id','publish_date','expiry_date','id_offer'];
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+    
+    public function contract_type(){
+	    
+	    return $this->belongsTo(ContractType::class,'contract_type','id');
+    }
+    
+    public function activity_sector(){
+	    
+	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
+    }
+    
+    public function study_level(){
+	    
+	    return $this->belongsTo(StudyLevel::class,'study_level','id');
+    }
+    
+    public function company()
+    {
+        return $this->belongsTo(User::class,'company_id','id');
+    }
+    
+    
+    
+    
+    
+    /*protected function offerDetails(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value) => Str::of($value)->limit(6),
+            set: fn ($value) => Str::of($value)->limit(6)
+        );
+    }*/
+    
     
     
 

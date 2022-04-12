@@ -5,9 +5,69 @@ use Illuminate\Http\Request;
 use App\Models\Offers;
 use Illuminate\Support\Str;
 
+use App\Models\User;
+
 class OfferController extends Controller
 {
     //
+    public function unbid_offer(Request $request){
+	   
+	   \DB::table("offers_bid")->where("offer_id",$request->input('id'))->delete();
+	   return redirect()->back();   
+    }
+    
+    
+    public function candidate_list_offer(Request $request){
+	    
+	    $itemsPaginated = User::find(8)->offers()->with('company')->paginate(10);
+	    
+	    
+	    $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        //var_dump($item->company->profile_photo_path);exit;
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+		            return [
+			         			            
+		                'id' => $item->id_offer,
+		                'offer_id' => $item->id,
+		                'title' => $item->title,
+		                'offers_details' => Str::of($item->offers_details)->limit(40),
+		                'offers_details_more' => $item->offers_details,
+		                'publish_status' => $item->publish_status,
+		                'offer_status' => $item->pivot->offer_status,
+		                'offer_location' => $item->location,
+		                'offer_date' => \Carbon\Carbon::parse($item->pivot->offer_date)->diffForhumans(),
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'company_profile_photo' => $url
+		            ];
+        })->toArray();
+              
+        $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+	    );
+	    
+	    return $itemsTransformedAndPaginated;
+	    
+        //return $myoffer;
+        //var_dump($user->offers);
+		//foreach ($user->offers as $o) {
+		    //
+		//}
+	    
+    }
+    
     public function create_offer(Request $request){
 	    
 	     $request->validate([
@@ -105,19 +165,25 @@ class OfferController extends Controller
 		      //$output['offers_details'] =  Str::of($output['offers_details'])->limit(20);
 		      
 	     
-	     }else if(\Auth::user()->hasRole('Admin')){
+	     }else if(\Auth::user()->hasRole('Admin') || \Auth::user()->hasRole('Candidate')){
 		     
 		     
-		      $itemsPaginated = Offers::paginate(15);
+		      $itemsPaginated = Offers::with('company')->paginate(15);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()
 		        ->map(function($item) {
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
 		            return [
 		                //'id' => $item->id,
 		                'id' => $item->id_offer,
 		                'title' => $item->title,
 		                'offers_details' => Str::of($item->offers_details)->limit(60),
-		                'publish_status' => $item->publish_status
+		                'publish_status' => $item->publish_status,
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'company_profile_photo' => $url
 		            ];
               })->toArray();
               

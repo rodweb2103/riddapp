@@ -61,33 +61,39 @@
     <section class="testimonials-clean">
         <div class="container">
             <div class="intro" style="margin-right: 0px;margin-left: 0;">
-                <h3 class="text-start" style="margin-top: 55px;margin-left: 24px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 37px;">Dernières offres</h3>
+                <h3 class="text-start" style="margin-top: 55px;margin-left: 24px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 37px;">Dernières offres ({{ total_offer }})</h3>
             </div>
             <div class="row">
                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
                     <ul class="list-group">
 	                    
-                        <li class="list-group-item" style="border-width: 0px;">
-                           <a href="#">
+                        <li class="list-group-item" style="border-width: 0px;" v-for="data in offerData">
+                           <Link :href="`${'/annonces/'+data['id']}`">
                             <div class="d-flex media">
                                 <div class="media-body">
                                     <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" src="/img/ic-yayo.png"></div>
+                                        <div><img class="me-3" style="width: 80px;height: 80px;" :src="data['company_profile_photo']"></div>
                                         <div style="overflow:visible;" class="media-body">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">Poste à pourvoir&nbsp;&nbsp;<span style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Emploi</span></h1>
-                                                    <h5 style="font-size: 16px;">Entreprise</h5>
-                                                    <p style="margin-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim<br></p>
+                                                    <h1 style="font-size: 18px;">{{ data['title'] }}&nbsp;&nbsp;
+	                                                  <span v-if="data['id'].includes('EMPL')" style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Emploi</span>
+	                                                  <span v-if="data['id'].includes('STG')" style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Stage</span>
+	                                                  
+	                                                  <span v-if="data['id'].includes('CLT')" style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Consultance</span>
+	                                                
+	                                                </h1>
+	                                                    <h5 style="font-size: 16px;">{{ data['company_name'] }}</h5>
+                                                    <p style="margin-top: 0px;">{{ data['offers_details'] }}<br></p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                           </a>
+                           </Link>
                         </li>
-                        <li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
+                        <!--<li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
                           <a href="#">
                             <div class="d-flex media">
                                 <div class="media-body">
@@ -226,9 +232,10 @@
                                 </div>
                             </div>
                          </a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
+                <Pagination :data="offerData" @pagination-change-page="getResults" />
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="width: 200;">
                     <div class="d-xxl-flex mx-auto" style="width: 100%;height: 400px;background: #0d0c0c;margin-bottom: 19px;"><img class="d-xxl-flex" style="width: 100%;height: 100%;opacity: 0.11;"></div>
                     <div class="d-xxl-flex mx-auto" style="width: 100%;height: 400px;background: #0d0c0c;"><img class="d-xxl-flex" style="width: 100%;height: 100%;opacity: 0.14;"></div>
@@ -310,18 +317,147 @@
 		border-bottom: 2px solid rgb(215, 215, 215) !important;
 		background: transparent !important;
 	}
-	
+	p{
+		
+		font-weight: unset !important;
+	}
 </style>
 <script>
+//import Select2 from 'vue3-select2-component';
 import { defineComponent } from "vue"
-//import AppLayout from "@/Layouts/AppLayout.vue"
-import AppLayoutGeneral from "@/Layouts/AppLayoutGeneral.vue"
-import Welcome from "@/Jetstream/Welcome.vue"
+import { Head, Link } from '@inertiajs/inertia-vue3';
+
+
+import JetActionSection from '@/Jetstream/ActionSection.vue'
+import JetDialogModal from '@/Jetstream/DialogModal.vue'
+import JetDangerButton from '@/Jetstream/DangerButton.vue'
+import JetInput from '@/Jetstream/Input.vue'
+import JetInputError from '@/Jetstream/InputError.vue'
+import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
+import JetButton from '@/Jetstream/Button.vue'
+
 
 export default defineComponent({
   components: {
-    AppLayoutGeneral,
-    Welcome
+    Head,
+    Link,
+    JetActionSection,
+    JetDangerButton,
+    JetDialogModal,
+    JetInput,
+    JetInputError,
+    JetSecondaryButton,
+    JetButton,
+    //Select2
+  },
+
+  props: {
+    canLogin: Boolean,
+    canRegister: Boolean,
+    laravelVersion: String,
+    phpVersion: String,
+  },
+  data() {
+    return {
+      modal: null,
+      modal2: null,
+      id_delete : 0,
+      total_offer:0,
+      activity_sector : {},
+      study_level : {},
+      contract_type: {},
+      contract_duration: ['CDD', 'CDI'],
+      offerData: {},
+      editMode : 0,
+      viewDataOffer : {},
+      form: this.$inertia.form({
+        //password: '',
+        id : 0,
+        offer_title:'',
+        activity_sector:'',
+        location:'',
+        contract_type:'',
+        contract_duration:'',
+        offer_details:'',
+        study_level:'',
+        offer_details:''
+        
+      })
+    }
+  },
+  mounted(){
+	  
+	  
+	  this.getResults();
+	  
+	  axios.get('/activity/sector').then(response => {
+		  
+		  
+		  this.activity_sector = response.data;
+      });
+      
+      
+      
+      axios.get('/study/level').then(response => {
+		  
+		  
+		  this.study_level = response.data;
+      }); 
+      
+      
+      axios.get('/contract/types').then(response => {
+		  
+		  
+		  this.contract_type = response.data;
+      });  
+      
+      
+  },
+  methods:{
+	  
+	  getResults(page = 1) {
+		    let vm = this;
+            axios.get('/offers?page=' + page)
+                .then(response => {
+	                
+	                //console.log(response.data);
+	                vm.total_offer = response.data['total'];
+                    vm.offerData = response.data['data'];
+            });
+      },
+      openDeleteOffer(id){
+	      
+	      this.id_delete = id;
+	      let el2 = document.querySelector('#deleteOffer')
+	      this.modal2 = new bootstrap.Modal(el2)
+	      this.modal2.show()
+	      
+      },
+      loadOffer(data){
+	      this.viewDataOffer = data;
+	      let el = document.querySelector('#openOffer')
+	      this.modal = new bootstrap.Modal(el)
+	      this.modal.show()  
+      },
+	  closeModal(){
+		  
+		  //this.form.reset()
+          this.modal.hide()
+	  },
+	  closeModal2(){
+		  
+          this.modal2.hide()
+	  },
+	  removeOffer(id){
+		  this.form['id'] = this.id_delete;
+		  this.form.post(route('candidate.unbid.offer'), {
+	        preserveScroll: true,
+	        onSuccess: () => { this.closeModal2();this.getResults();this.id_delete = 0;},
+	        //onError: () => this.$refs.password.focus(),
+	        onFinish: () => {}/*this.form.reset()*/,
+          });
+		  
+	  }
   }
-});
+})
 </script>

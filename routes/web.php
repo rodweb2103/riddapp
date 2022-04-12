@@ -13,6 +13,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Offers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,6 +40,7 @@ Route::get('/contract/types',[UserController::class, 'contract_types'])->name('c
 
 
 Route::get('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
+Route::get('/myoffers',[OfferController::class, 'candidate_list_offer'])->name('candidate.list.offer');
 
 Route::post('/create/offer',[OfferController::class, 'create_offer'])->name('employer.create.offer');
 Route::get('/view/offer/{id}',[OfferController::class, 'view_offer'])->name('employer.view.offer');
@@ -49,6 +51,8 @@ Route::post('/delete/offer',[OfferController::class, 'delete_offer'])->name('emp
 Route::post('/publish/offer',[OfferController::class, 'publish_offer'])->name('employer.publish.offer');
 Route::post('/unpublish/offer',[OfferController::class, 'unpublish_offer'])->name('employer.unpublish.offer');
 
+
+Route::post('/remove/offer',[OfferController::class, 'unbid_offer'])->name('candidate.unbid.offer');
 
 
 /********* admin LINK *********/
@@ -109,6 +113,7 @@ Route::get('/membership',function(){
     return Inertia::render('User/Membership');
 })->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Employer'])->name('employer.membership');
 
+//Route::get('/account/myoffer',[OfferController::class, 'my_offer'])->name('candidate.offer');
 
 //Route::get('/admin/profile',function(){
 	
@@ -259,8 +264,21 @@ Route::get('/mail', function()
 
 })->middleware('verified');
 
-Route::get('/offres', function () {
+Route::get('/annonces', function () {
     return Inertia::render('Offers', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+    
+})->name('offres');
+
+Route::get('/annonces/{id}', function (Request $request,$id) {
+	
+	$offer_details = Offers::with(['company','contract_type','activity_sector','study_level','company.activity_sector'])->where('id_offer',$id)->get();
+    return Inertia::render('OffersDetails', [
+	    'offerDetails' => $offer_details[0], 
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -271,7 +289,7 @@ Route::get('/offres', function () {
 
 
 
-Route::get('/offres/recruteur', function () {
+/*Route::get('/offres/recruteur', function () {
     return Inertia::render('OffersEmployer', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
@@ -289,7 +307,7 @@ Route::get('/offre/details', function () {
         'phpVersion' => PHP_VERSION,
     ]);
     
-})->name('offres-details');
+})->name('offres-details');*/
 
 
 
