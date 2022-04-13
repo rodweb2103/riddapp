@@ -25,20 +25,24 @@ class CheckIsUser
         $user = $user->where('email',$request->input('email'))->first();
         
         
-        $user_exist = User::whereHas("roles", function($q) use($request) { $q->where("name","!=","Admin")->where("email",$request->input('email')); })->get();
+        //$user_exist = User::whereHas("roles", function($q) use($request) { $q->where("name","!=","Admin")->where("email",$request->input('email')); })->get();
         
+        $user_exist = User::where('email',$request->input('email'))->get();
+        
+        if(count($user_exist) > 0){
+	        
+	         $user_exist = User::whereHas("roles", function($q) use($request) { $q->where("name","!=","Admin")->where("email",$request->input('email')); })->get();
+	         if(count($user_exist) == 0) {
+			        return back()->with('status', 'Nous constatons que ce compte n\'est pas autorisé à utiliser ce lien');
+	          }
+        }
+        
+        //var_dump($user_exist);exit;
         
         //var_dump(count($user_exist) == 0 && $request->input('email')!="" && $request->input('is_admin') == 1);exit;
         //$request->session()->forget('status');
         //\Session::forget('status'); 
-        if(count($user_exist) == 0 && $request->input('email')!="") {
-	        //\Inertia::share('flash', session('flash', false));
-	        //var_dump("jjjjj");exit;
-	        //return redirect(RouteServiceProvider::HOME);
-	        //return redirect()->back()->with('status', 'Nous constatons que ce compte nest pas autorisé à utiliser ce lien administrateur');
-	        //return back()->with(['status' => __("Nous constatons que ce compte n\'est pas autorisé à utiliser ce lien administrateur")]);
-	        return back()->with('status', 'Nous constatons que ce compte n\'est pas autorisé à utiliser ce lien');
-	    }
+        
         //\Session::forget('status'); 
         //var_dump(count($user_exist));exit;
         //var_dump($user->hasRole('Cust'));exit;

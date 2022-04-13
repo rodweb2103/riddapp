@@ -6,7 +6,7 @@
         <div class="banner-area" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-8">
                         <div class="banner-content">
                             <!--<span data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">FOR A BETTER FUTURE</span>-->
                             <h1 style="color: #fff" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">Rejoignez notre réseau et bénéficiez de nombreuses opportunités.</h1>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-5">
+                    <div class="col-lg-4">
                         <div class="banner-img" data-speed="0.05" data-revert="true">
                             <img src="/img/student-bg-det2.png" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true" alt="Man" />
                             <!--<div class="bg-shape">
@@ -84,7 +84,7 @@
         <!-- Counter Area End -->
 
         <!-- Featured Area -->
-        <div class="featured-area pt-100 pb-70">
+        <!--<div class="featured-area pt-100 pb-70">
             <div class="container">
                 <div class="row align-items-center mb-45">
                     <div class="col-lg-8 col-md-9">
@@ -164,8 +164,178 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Featured Area End -->
+         <div class="courses-area pb-70 mt-4">
+            <div class="container">
+                <div class="section-title text-center mb-45">
+                    <h2>Mission</h2>
+                    <p>
+                        Notre ADN, notre raison d'être et les objectifs à atteindre se résument à
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="/img/pexels-pavel-danilyuk-7942434.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Contribuer à créer un cadre propice<br>au retour des diplômés de la<br>diaspora ivoirienne</p>
+                                <!--<a href="courses.html" class="tag-btn">Design</a>
+                                <div class="price-text">$120</div>
+                                <h3><a href="courses-details.html">UI/UX design pattern for succesfull software applications</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 10 hr 07 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 67 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors1.jpg" alt="Instructors">
+                                        <h3>David warner</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>4k+ rating
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="/img/pexels-keira-burton-6146978.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Faire la promotion des étudiants<br>ivoiriens formés à l’extérieur</p>
+                                <!--<a href="courses.html" class="tag-btn">Accounting</a>
+                                <div class="price-text">$129</div>
+                                <h3><a href="courses-details.html">Basic knowledge about hodiernal bharat in history</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 04 hr 07 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 27 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors2.jpg" alt="Instructors">
+                                        <h3>David malan</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>2k+ rating
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="/img/pexels-ron-lach-9850088.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Promouvoir l’entreprenariat jeune sur<br>le territoire national et international</p>
+                                <!--<a href="courses.html" class="tag-btn">Physics</a>
+                                <div class="price-text">$100</div>
+                                <h3><a href="courses-details.html">Visual effects for games in unity beginner to intermediate</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 02 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 17 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors3.jpg" alt="Instructors">
+                                        <h3>Emma jhonson</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>1k+ rating
+                                    </div>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--<div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="assets/images/courses/courses-img4.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <a href="courses.html" class="tag-btn">Business</a>
+                                <div class="price-text">$140</div>
+                                <h3><a href="courses-details.html">The complete accounting & bank financial course 2021</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 04 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 07 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors4.jpg" alt="Instructors">
+                                        <h3>Jesse joslin</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>7k+ rating
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="assets/images/courses/courses-img5.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <a href="courses.html" class="tag-btn">Finance</a>
+                                <div class="price-text">$159</div>
+                                <h3><a href="courses-details.html">The complete business plan course includes 50 templates</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 03 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 17 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors5.jpg" alt="Instructors">
+                                        <h3>Lance altman</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>5k+ rating
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="assets/images/courses/courses-img6.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <a href="courses.html" class="tag-btn">Banking</a>
+                                <div class="price-text">$200</div>
+                                <h3><a href="courses-details.html">Full web designing course with 20 web template designing</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 06 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 10 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors6.jpg" alt="Instructors">
+                                        <h3>Altman lucas </h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>3k+ rating
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
         
          <div class="counter-area pt-100 pb-70" style="background-color: rgb(17,149,4) !important;">
             <div class="container">
@@ -204,16 +374,24 @@
 
         <!-- Courses Area -->
         <div class="courses-area pb-70 mt-4">
-            <div class="container">
+            <div class="container-fluid" style="max-width: unset !important;">
                 <div class="section-title text-center mb-45">
-                    <h2>Find popular courses</h2>
-                    <p>
+                    <h2>Nos représentations</h2>
+                    <!--<p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam.
-                    </p>
+                    </p>-->
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
+	                <div class="">
+		                <video style="width: 100%;height:auto;" autoplay="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                <source src="https://beta.ridd.info/video-map-ridd-final.mp4" type="video/mp4" wp-acf="[{'type':'url','name':'video','label':'Video','wrapper':{'width':30}}]" wp-attr="[{'target':'src','replace':'%1'}]">
+            </video>
+	                    <!--<a href="https://www.youtube.com/watch?v=Zd00oIDAt60" class="play-btn">
+	                        <i class='flaticon-play-button-arrowhead'></i>
+	                    </a>-->
+                    </div>
+                    <!--<div class="col-lg-4 col-md-6">
                         <div class="courses-item">
                             <a href="courses-details.html">
                                 <img src="assets/images/courses/courses-img1.jpg" alt="Courses" />
@@ -367,17 +545,196 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
+        
+        <div class="courses-area pb-70 mt-4">
+            <div class="container">
+                <div class="section-title text-center mb-45">
+                    <h2>Valeurs</h2>
+                    <p>
+                        Nos valeurs sont les principes fondamentaux qui régissent notre approche de travail et les conditions de collaboration.
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+	                        
+	                    <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="/img/98297-book-idea.gif" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <!--<a href="courses.html" class="tag-btn">Business</a>
+                                <div class="price-text">$140</div>
+                                <h3><a href="courses-details.html">The complete accounting & bank financial course 2021</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 04 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 07 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors4.jpg" alt="Instructors">
+                                        <h3>Jesse joslin</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>7k+ rating
+                                    </div>
+                                </div>-->
+                                 <h3 class="name" style="text-align: center;">Créativité</h3>
+                            </div>
+                        </div>
+                            
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+	                    
+	                    <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="/img/94206-working.gif" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <!--<a href="courses.html" class="tag-btn">Business</a>
+                                <div class="price-text">$140</div>
+                                <h3><a href="courses-details.html">The complete accounting & bank financial course 2021</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 04 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 07 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors4.jpg" alt="Instructors">
+                                        <h3>Jesse joslin</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>7k+ rating
+                                    </div>
+                                </div>-->
+                                 <h3 class="name" style="text-align: center;">Sens de la responsabilité</h3>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+	                    
+	                    <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="/img/17304-star.gif" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <!--<a href="courses.html" class="tag-btn">Business</a>
+                                <div class="price-text">$140</div>
+                                <h3><a href="courses-details.html">The complete accounting & bank financial course 2021</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 04 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 07 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors4.jpg" alt="Instructors">
+                                        <h3>Jesse joslin</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>7k+ rating
+                                    </div>
+                                </div>-->
+                                 <h3 class="name" style="text-align: center;">Excellence</h3>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!--<div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="assets/images/courses/courses-img4.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <a href="courses.html" class="tag-btn">Business</a>
+                                <div class="price-text">$140</div>
+                                <h3><a href="courses-details.html">The complete accounting & bank financial course 2021</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 04 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 07 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors4.jpg" alt="Instructors">
+                                        <h3>Jesse joslin</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>7k+ rating
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="assets/images/courses/courses-img5.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <a href="courses.html" class="tag-btn">Finance</a>
+                                <div class="price-text">$159</div>
+                                <h3><a href="courses-details.html">The complete business plan course includes 50 templates</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 03 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 17 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors5.jpg" alt="Instructors">
+                                        <h3>Lance altman</h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>5k+ rating
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="courses-item">
+                            <a href="courses-details.html">
+                                <img src="assets/images/courses/courses-img6.jpg" alt="Courses" />
+                            </a>
+                            <div class="content">
+                                <a href="courses.html" class="tag-btn">Banking</a>
+                                <div class="price-text">$200</div>
+                                <h3><a href="courses-details.html">Full web designing course with 20 web template designing</a></h3>
+                                <ul class="course-list">
+                                    <li><i class="ri-time-fill"></i> 06 hr 00 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 10 lectures</li>
+                                </ul>
+                                <div class="bottom-content">
+                                    <a href="instructors-details.html" class="user-area">
+                                        <img src="assets/images/courses/courses-instructors6.jpg" alt="Instructors">
+                                        <h3>Altman lucas </h3>
+                                    </a>
+                                    <div class="rating">
+                                        <i class="ri-star-fill"></i>3k+ rating
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+        
         <!-- Courses Area End -->
 
         <!-- Play Area -->
         <div class="play-area ptb-100">
             <div class="container">
                 <div class="title text-center mb-45">
-                    <h2> We worked with <span>250+ </span> leading universities and companies</h2>
+                    <!--<h2> We worked with <span>250+ </span> leading universities and companies</h2>-->
+                    <h1>Nos partenaires</h1>
                 </div>
                 <div class="brand-slider owl-carousel owl-theme pb-100">
                     <div class="brand-item">
@@ -470,11 +827,7 @@
                     </div>
                     
                 </div>
-                <div class="play-btn-area">
-                    <a href="https://www.youtube.com/watch?v=Zd00oIDAt60" class="play-btn">
-                        <i class='flaticon-play-button-arrowhead'></i>
-                    </a>
-                </div>
+                
             </div>
         </div>
         <!-- Play Area End -->
@@ -485,7 +838,7 @@
                 <div class="row align-items-center mb-45">
                     <div class="col-lg-8 col-md-9">
                         <div class="section-title mt-rs-20">
-                            <h2>Meet our top instructor</h2>
+                            <h2>Notre équipe</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                             </p>
@@ -643,7 +996,7 @@
         <!-- Instructors Area End -->
 
         <!-- Testimonials Area -->
-        <div class="testimonials-area pb-100">
+        <!--<div class="testimonials-area pb-100">
             <div class="container">
                 <div class="section-title mb-45 text-center">
                     <h2>What our happy student say</h2>
@@ -711,11 +1064,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Testimonials Area End -->
 
         <!-- Enrolled Area -->
-        <div class="enrolled-area">
+        <!--<div class="enrolled-area">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
@@ -787,16 +1140,17 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Enrolled Area End -->
 
         <!-- Blog Area -->
-        <div class="blog-area pt-100 pb-70">
+        
+        <!--<div class="blog-area pt-100 pb-70">
             <div class="container">
                 <div class="row align-items-center mb-45">
                     <div class="col-lg-8 col-md-9">
                         <div class="section-title mt-rs-20">
-                            <h2>Latest from our blogs</h2>
+                            <h2>Nos dernières actualités</h2>
                             <p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                             </p>
@@ -857,11 +1211,11 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
         <!-- Blog Area End -->
 
         <!-- Footer Contact Area -->
-        <div class="footer-contact-area ptb-100">
+        <!--<div class="footer-contact-area ptb-100">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 col-md-9">
@@ -874,6 +1228,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
 @endsection

@@ -45,7 +45,7 @@ Default CSS
   --mainColor: #08A9E6;
   --redColor: #EC272F;
   --titleColor: #21225F;
-  --bodyColor: #555555;
+  --bodyColor: #000;
   --whiteColor: #ffffff;
   --fontSize: 16px;
   --transition: 0.5s;
@@ -59,6 +59,7 @@ body {
   font-weight: 400;
   font-size: var(--fontSize);
   font-family: var(--bodyFonts);
+  background: #fff
 }
 
 p {
@@ -2110,7 +2111,8 @@ Counter Area
   border-radius: 30px;
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  background: var(--mainColor);
+  background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);
+  /*background: var(--mainColor);*/
   opacity: 0.7;
 }
 

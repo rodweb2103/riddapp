@@ -21,7 +21,18 @@ class CheckUserIsAdminOrNot
     public function handle(Request $request, Closure $next, ...$guards)
     {
         
-        $user = new User;
+        
+        $user_exist = User::where('email',$request->input('email'))->get();
+        
+        if(count($user_exist) > 0){
+	        
+	         $user_exist = User::whereHas("roles", function($q) use($request) { $q->where("name","Admin")->where("email",$request->input('email')); })->get();
+	         if(count($user_exist) == 0) {
+			        return back()->with('status', 'Nous constatons que ce compte n\'est pas autorisé à utiliser ce lien');
+	          }
+        }
+        
+        /*$user = new User;
         $user = $user->where('email',$request->input('email'))->first();
         
         //if()
@@ -39,7 +50,7 @@ class CheckUserIsAdminOrNot
 	        //return redirect()->back()->with('status', 'Nous constatons que ce compte nest pas autorisé à utiliser ce lien administrateur');
 	        //return back()->with(['status' => __("Nous constatons que ce compte n\'est pas autorisé à utiliser ce lien administrateur")]);
 	        return back()->with('status', 'Nous constatons que ce compte n\'est pas autorisé à utiliser ce lien');
-	    }
+	    }*/
         //\Session::forget('status'); 
         //var_dump(count($user_exist));exit;
         //var_dump($user->hasRole('Cust'));exit;

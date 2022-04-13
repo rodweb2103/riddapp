@@ -1,7 +1,58 @@
 <template>
   <Head title="Forgot Password" />
+  <BaseLayout>
+    
+    <div class="user-area pt-100 pb-70" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162)">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="user-area pt-100 pb-70">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="user-all-form">
+                            <div class="contact-form">
+                                <h3 class="user-title">Mot de passe oublié</h3>
+                                <form id="contactForm" @submit.prevent="submit">
+	                                <div v-if="status" class="alert alert-success" role="alert">
+								           {{ status }}
+								    </div>
+								     <jet-validation-errors class="mb-2" />
+                                    <div class="row">
+                                        <div class="col-lg-12 ">
+                                            <div class="form-group">
+                                                <input type="text" v-model="form.email" name="name" id="name" class="form-control"  data-error="Username Or Email Address*" placeholder="Username Or Email Address*">
+                                            </div>
+                                        </div>
 
-  <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 930.27px;background: linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255);padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
+                                        <div class="col-lg-12 col-md-12">
+                                            <!--<button type="submit" class="default-btn ">
+                                                Reset Now
+                                            </button>-->
+                                            <button class="default-btn" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+									            
+									            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+									              <span class="visually-hidden">Loading...</span>
+									            </div>
+									            
+									            <div v-if="!form.processing">Recevoir le lien de réinitialisation</div>
+									          
+									          </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+  
+  </BaseLayout>
+  
+  <!--<header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 930.27px;background: linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255);padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
         <div class="container hero" style="height: 710px;">
             <div class="row justify-content-center" style="height: 666px;">
                 <div class="col-md-9 col-lg-12 col-xl-12" style="margin-top: 0px;">
@@ -24,15 +75,8 @@
                                          <jet-validation-errors class="mb-2" />
                                         <form @submit.prevent="submit">
                                             <div class="mb-3"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Identifiant ou email" name="email"  v-model="form.email" required autofocus></div>
-                                            <!--<div class="mb-3"></div><button class="btn btn-primary btn-lg d-block btn-user w-100" type="submit" style="margin-top: 6px;background: rgb(255,115,0);border-width: 0px;padding-top: 7px;">Enregistrer</button>-->
                                             <div class="d-flex justify-content-end mt-4">
-									          <!--<jet-button class="btn btn-primary btn-lg d-block btn-user w-100" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
-									            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
-									              <span class="visually-hidden">Loading...</span>
-									            </div>
-									            
-									            <div>Recevoir le lien de réinitialisation</div>
-									          </jet-button>-->
+									         
 									          <button  class="btn btn-primary btn-lg d-block btn-user w-100" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
 									            
 									            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
@@ -57,7 +101,7 @@
                 </div>
             </div>
         </div>
-  </header>
+  </header>-->
   <!--<jet-authentication-card>
     <template #logo>
       <jet-authentication-card-logo />
@@ -103,6 +147,7 @@ import JetButton from '@/Jetstream/Button.vue'
 import JetInput from '@/Jetstream/Input.vue'
 import JetLabel from '@/Jetstream/Label.vue'
 import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
+import BaseLayout from '@/Pages/BaseLayout.vue'
 
 export default defineComponent({
   components: {
@@ -113,7 +158,8 @@ export default defineComponent({
     JetInput,
     JetLabel,
     JetValidationErrors,
-    Link
+    Link,
+    BaseLayout
   },
 
   props: {

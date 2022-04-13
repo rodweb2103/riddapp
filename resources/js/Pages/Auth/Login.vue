@@ -1,7 +1,129 @@
 <template>
   <Head title="Connexion" />
   
-  <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 930.27px;background: linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255);padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
+        <BaseLayout>
+                
+          <div class="user-area pt-100 pb-70" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162)">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="user-img">
+                            <img src="/img/student-pc.jpg" alt="faq" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="user-all-form">
+                            <div class="contact-form">
+                                <h3 class="user-title">Connexion</h3>
+                                <form @submit.prevent="submit">
+	                                <jet-validation-errors class="mb-3" />
+	                                <div v-if="status" class="alert alert-success" role="alert">
+								           {{ status }}
+								    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 ">
+                                            <div class="form-group">
+                                                <input type="email" v-model="form.email" name="name" id="name" class="form-control" placeholder="Adresse e-mail*">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="password" name="Password" placeholder="Mot de passe*" v-model="form.password">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 form-condition">
+                                            <div class="agree-label">
+                                                <!--<input type="checkbox" id="chb1">
+                                                <label for="chb1">
+                                                    Remember Me <a class="forget" href="forgot-password.html">Forgot Password?</a>
+                                                </label>-->
+                                                <jet-checkbox id="remember_me" name="remember" v-model:checked="form.remember" />
+	                                            <label for="remember_me">
+	                                                  Se souvenir de moi
+	                                                  <Link v-if="canResetPassword" :href="route('password.request')" class="forget">
+							                              Mot de passe oublié?
+							                          </Link>
+	                                            </label>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-lg-12 col-md-12">
+                                            <!--<button type="submit" class="default-btn">
+                                                Login Now
+                                            </button>-->
+                                            <jet-button  :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: rgb(255,115,0);border-width: 0px;padding-top: 7px;">
+									              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+									                <span class="visually-hidden">Loading...</span>
+									              </div>
+									              <div v-if="!form.processing">Connexion</div>
+	                                         </jet-button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        </BaseLayout>
+        
+        
+  
+   <!--<div class="user-area pt-100 pb-70">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-6">
+                        <div class="user-img">
+                            <img src="assets/images/faq-img.jpg" alt="faq" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="user-all-form">
+                            <div class="contact-form">
+                                <h3 class="user-title"> Sign in</h3>
+                                <form id="contactForm">
+                                    <div class="row">
+                                        <div class="col-lg-12 ">
+                                            <div class="form-group">
+                                                <input type="text" name="name" id="name" class="form-control" required data-error="Username Or Email Address*" placeholder="Username Or Email Address*">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="password" name="Password" placeholder="Password*">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 form-condition">
+                                            <div class="agree-label">
+                                                <input type="checkbox" id="chb1">
+                                                <label for="chb1">
+                                                    Remember Me <a class="forget" href="forgot-password.html">Forgot Password?</a>
+                                                </label>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-lg-12 col-md-12">
+                                            <button type="submit" class="default-btn">
+                                                Login Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>-->
+  
+  <!--<header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 930.27px;background: linear-gradient(74deg, #ff7300 27%, #ffc700), rgb(255,255,255);padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
 	      
         <div class="container hero" style="height: 710px;">
             <div class="row justify-content-center" style="height: 666px;">
@@ -27,15 +149,10 @@
                                             <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Mot de passe" name="password" v-model="form.password"></div>
                                             <div class="mb-3">
                                                 <div class="custom-control custom-checkbox small">
-                                                    <!--<div class="form-check">-->
-	                                                    <!--<input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1">-->
 	                                                    <jet-checkbox class="form-check-input custom-control-input" id="remember_me" name="remember" v-model:checked="form.remember" />
 	                                                    <label class="form-check-label custom-control-label" for="remember_me">Se souvenir de moi</label>
-	                                                    <!--</div>-->
                                                 </div>
                                             </div>
-                                            <!--<button class="btn btn-primary btn-lg d-block btn-user w-100" type="submit" style="margin-top: 6px;background: rgb(255,115,0);border-width: 0px;padding-top: 7px;">Connexion
-                                            </button>-->
                                              <div class="mb-0">
 	                                            <jet-button class="mx-auto btn btn-primary btn-lg d-block btn-user w-100" :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: rgb(255,115,0);border-width: 0px;padding-top: 7px;">
 									              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
@@ -45,7 +162,6 @@
 	                                            </jet-button>
                                              </div>
                                         </form>
-                                        <!--<div class="text-center" style="margin-top: 11px;"><a class="small" href="forgot-password.html">Mot de passe oublié ?</a></div>-->
                                         <div class="text-center" style="margin-top: 11px;">
                                         <Link v-if="canResetPassword" :href="route('password.request')" class="small">
 							              Mot de passe oublié?
@@ -55,7 +171,6 @@
 	                                        <Link v-if="canResetPassword" href="/register" class="small">
 							                   Créer un compte
 							                </Link>
-	                                        <!--<a class="small" href="register.html">Créer un compte</a>-->
                                         
                                         </div>
                                     </div>
@@ -66,7 +181,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header>-->
 
   <!--<jet-authentication-card>
     <template #logo>
@@ -132,6 +247,7 @@ import JetCheckbox from '@/Jetstream/Checkbox.vue'
 import JetLabel from '@/Jetstream/Label.vue'
 import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import BaseLayout from '@/Pages/BaseLayout.vue'
 
 export default defineComponent({
   components: {
@@ -144,6 +260,7 @@ export default defineComponent({
     JetLabel,
     JetValidationErrors,
     Link,
+    BaseLayout
   },
 
   props: {
