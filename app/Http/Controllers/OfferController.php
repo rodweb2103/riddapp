@@ -10,6 +10,29 @@ use App\Models\User;
 class OfferController extends Controller
 {
     //
+    
+    public function search_offer(Request $request){
+	    
+	     $posts = Offers::select("*")->when($request->has('contract_type'), function ($query) use ($request) {
+
+                        $query->where('contract_type', $request->contract_type);
+
+                 })->when($request->has('contract_duration'), function ($query) use ($request) {
+
+                        $query->where('contract_duration', $request->contract_duration);
+
+                 })->when($request->has('study_level'), function ($query) use ($request) {
+
+                        $query->where('study_level', $request->study_level);
+
+                 })->get();
+                 
+          //return 
+                 
+                 
+                 
+    }
+    
     public function unbid_offer(Request $request){
 	   
 	   \DB::table("offers_bid")->where("offer_id",$request->input('id'))->delete();
@@ -138,7 +161,50 @@ class OfferController extends Controller
     }
     
     public function list_offer(Request $request){
-	     if(\Auth::user()->hasRole('Employer')){
+	    
+	        $itemsPaginated = Offers::with('company')->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
+
+                        $query->where('contract_type', $request->contract_type);
+
+                 })->when($request->has('contract_duration') && $request->contract_duration!='', function ($query) use ($request) {
+
+                        $query->where('contract_duration', $request->contract_duration);
+
+                 })->when($request->has('study_level') && $request->study_level!='', function ($query) use ($request) {
+
+                        $query->where('study_level', $request->study_level);
+
+              })->paginate(15);
+		      $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+		            return [
+		                //'id' => $item->id,
+		                'id' => $item->id_offer,
+		                'title' => $item->title,
+		                'offers_details' => Str::of($item->offers_details)->limit(60),
+		                'publish_status' => $item->publish_status,
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'company_profile_photo' => $url
+		            ];
+            })->toArray();
+              
+            $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+		    );
+	     /*if(\Auth::user()->hasRole('Employer')){
 		      
 		      $itemsPaginated = Offers::where('company_id',\Auth::user()->id)->paginate(15);
 		      
@@ -149,11 +215,19 @@ class OfferController extends Controller
 		            return [
 			            
 			            
-			            
-		                'id' => $item->id_offer,
+			            'id' => $item->id_offer,
 		                'title' => $item->title,
 		                'offers_details' => Str::of($item->offers_details)->limit(60),
-		                'publish_status' => $item->publish_status
+		                'publish_status' => $item->publish_status,
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'company_profile_photo' => $url
+		                //'id' => $item->id_offer,
+		                //'title' => $item->title,
+		                //'offers_details' => Str::of($item->offers_details)->limit(60),
+		                //'publish_status' => $item->publish_status
 		            ];
               })->toArray();
               
@@ -214,7 +288,7 @@ class OfferController extends Controller
 		      //$output = $ajax_data->toArray();
 		      //$output['offers_details'] =  Str::of($output['offers_details'])->limit(20);
 		      //$output['offers_details'] = "";
-	     }
+	     }*/
 	     
 	     return $itemsTransformedAndPaginated;
 	     //return response()->json($output,200);

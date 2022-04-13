@@ -39,7 +39,7 @@ Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name(
 Route::get('/contract/types',[UserController::class, 'contract_types'])->name('contract_types');
 
 
-Route::get('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
+Route::post('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
 Route::get('/myoffers',[OfferController::class, 'candidate_list_offer'])->name('candidate.list.offer');
 
 Route::post('/create/offer',[OfferController::class, 'create_offer'])->name('employer.create.offer');
@@ -53,6 +53,8 @@ Route::post('/unpublish/offer',[OfferController::class, 'unpublish_offer'])->nam
 
 
 Route::post('/remove/offer',[OfferController::class, 'unbid_offer'])->name('candidate.unbid.offer');
+
+Route::post('/offer/search',[OfferController::class, 'search_offer'])->name('candidate.search.offer');
 
 
 /********* admin LINK *********/
@@ -265,7 +267,27 @@ Route::get('/mail', function()
 })->middleware('verified');
 
 Route::get('/annonces', function () {
+	
+	//$employers = \DB::table("users")
+	
+	$users = User::role(['Employer'])->limit(6)->get();
+	
+	$array_users = array();
+	
+	foreach($users as $v){
+		
+		$array_users[] = array(
+			
+			"img" => config('app.url').\Storage::url('profile/'.basename($v->profile_photo_path)),
+			"id" => $v->id
+		);
+		
+		//$array_users[]["img"] = config('app.url').\Storage::url('profile/'.basename($v->profile_photo_path));
+		//$array_users[]["id"] =  $v->id; 
+	}
+	
     return Inertia::render('Offers', [
+	    'employer' => $array_users,
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -277,9 +299,6 @@ Route::get('/annonces', function () {
 Route::get('/annonces/{id}', function (Request $request,$id) {
 	
 	$offer_details = Offers::with(['company','contract_type_offer','company.activity_sector_company'])->where('id_offer',$id)->get();
-    //$offer_details[0]->publish_date = $offer_details[0]->created_at;
-    
-    //var_dump($offer_details[0]->contract_type_offer);exit;
     $url = config('app.url').\Storage::url('profile/'.basename($offer_details[0]->company->profile_photo_url));
     $array_offer = array(
 	    

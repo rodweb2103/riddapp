@@ -1,13 +1,39 @@
 <template>
   <app-layout-general title="Offres">
-    <!--<template #header>
-      <h2 class="h4 font-weight-bold">
-        Dashboard
-      </h2>
-    </template>
-    <welcome />-->
-    
-    
+   
+    <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 360.27px;background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);padding-bottom: 0px;transform-style: preserve-3d;">
+        <div class="container hero">
+            <nav class="navbar navbar-light navbar-expand-lg d-xl-flex navigation-clean" style="background: rgba(177,30,44,0);padding-top: 0;padding-bottom: 0;margin-top: -41px;">
+                <div class="container"><a class="navbar-brand" href="#"><img class="img-fluid" src="/img/LG-RIDD@2x.png" style="width: 115px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navcol-2">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link active" href="#" style="font-size: 18px;">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Offres</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Activités</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Actualités</a></li>
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);font-size: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle text-start" style="font-size: 33px;padding-right: 9px;color: rgb(255,255,255);margin-top: -5px;">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+                                    </svg>Compte&nbsp;</a>
+                                <div class="dropdown-menu"><a class="dropdown-item" href="#">Connexion</a></div>
+                            </li>
+                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);font-size: 18px;"><i class="fa fa-language" style="font-size: 26px;padding-left: 0px;padding-right: 7px;margin-top: -2px;"></i>Langue&nbsp;</a>
+                                <div class="dropdown-menu"><a class="dropdown-item" href="#">Francais</a><a class="dropdown-item" href="#">Anglais</a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section class="highlight-blue" style="background: rgba(30,106,221,0);">
+                <div class="container">
+                    <div class="intro">
+                        <h2 class="text-center" style="font-family: Montserrat, sans-serif;font-size: 47.44px;font-weight: bold;margin-top: -26px;">Les Offres du RIDD</h2>
+                    </div>
+                    <div class="buttons"></div>
+                </div>
+            </section>
+        </div>
+    </header>
     
     <section id="carousel" style="margin-top: 24px;">
         <div class="container">
@@ -29,32 +55,60 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12" style="text-align: center;"><select style="width: 301px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-                        <optgroup label="Type d'offre">
+                <div class="col-md-12" style="text-align: center;">
+	                
+	                <select v-model="form.contract_type"  style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+		                    <option selected value="">Toutes les offres</option>
+						    <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
+					</select>
+	                <!--<select style="width: 301px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
                             <option value="12" selected="">Emploi</option>
                             <option value="13">Stage</option>
-                        </optgroup>
-                    </select><select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-                        <optgroup label="Contrat">
+                    </select>-->
+                    <!--<select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
                             <option value="12" selected="">CDD</option>
                             <option value="13">CDI</option>
-                        </optgroup>
-                    </select><select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-                        <optgroup label="This is a group">
+                    </select>-->
+                    <select v-model="form.contract_duration" style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+	                        <option selected value="">CDI et CDD</option>
+						    <option selected disabled value>--Durée du contrat--</option>
+						    <option  v-for="ct in contract_duration">{{ ct }}</option>
+					</select>
+                    <!--<select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
                             <option value="12" selected="">Niveau d'étude</option>
                             <option value="13">This is item 2</option>
                             <option value="14">This is item 3</option>
-                        </optgroup>
-                    </select><select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+                    </select>-->
+                     <select v-model="form.study_level"  style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+	                        <option selected value="">Toutes les niveaux d'étude</option>
+						    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+					 </select>
+                    <!--<select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
                         <optgroup label="This is a group">
                             <option value="12" selected="">Poste rehcerché</option>
                             <option value="13">This is item 2</option>
                             <option value="14">This is item 3</option>
                         </optgroup>
-                    </select></div>
+                    </select>-->
+                    
+                    <!--<jet-button class="btn btn-primary" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>-->
+                    
+                </div>
             </div>
             <div class="row">
-                <div class="col-md-12" style="padding-top: 40px;text-align: center;"><button class="btn btn-lg" type="button" style="background: rgb(22,147,49);color: rgb(255,255,255);">Rechercher&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 33px;">
+                <div class="col-md-12" style="padding-top: 40px;text-align: center;"><button :class="{ 'text-white-50': loading }" :disabled="loading" @click="getResults(1)" class="btn btn-lg" type="button" style="background: rgb(22,147,49);color: rgb(255,255,255);">
+	                
+	                <div v-show="loading" class="spinner-border spinner-border-sm" role="status">
+                       <span class="visually-hidden">Loading...</span>
+                    </div>
+	                
+	                Rechercher&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 33px;">
                             <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg></button></div>
             </div>
@@ -67,7 +121,7 @@
             </div>
             <div class="row">
                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-                    <ul class="list-group">
+                    <ul class="list-group" v-if="loading == false">
 	                    
                         <li class="list-group-item" style="border-width: 0px;" v-for="data in offerData">
                            <Link :href="`${'/annonces/'+data['id']}`">
@@ -236,6 +290,11 @@
                          </a>
                         </li>-->
                     </ul>
+                    <div class="d-flex justify-content-center mt-5">
+                    <div class="spinner-border text-primary" role="status" v-if="loading == true" id="main">
+					  <span class="sr-only">Loading...</span>
+					</div>
+                    </div>
                 </div>
                 <Pagination :data="offerData" @pagination-change-page="getResults" />
                 <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="width: 200;">
@@ -265,12 +324,17 @@
                         <div class="container">
                             <div class="intro"></div>
                             <div class="row g-0 d-xxl-flex people">
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/1.jpg" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></div>
+	                            <div v-for="data in employer" class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;">
+		                            
+		                            <img class="rounded-circle d-xxl-flex" :src="data['img']" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;">
+		                            
+	                            </div>
+                                <!--<div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/1.jpg" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/1.jpg" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;border-style: solid;border-color: var(--bs-white);"></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>-->
                             </div>
                         </div>
                     </section>
@@ -278,7 +342,7 @@
             </div>
         </div>
     </section>
-    <section style="height: auto;padding-bottom: 42px;">
+    <!--<section style="height: auto;padding-bottom: 42px;">
         <div class="container">
             <div class="intro" style="margin-right: 0px;margin-left: 0;margin-bottom: 0px;">
                 <h3 class="text-start" style="margin-top: 55px;margin-left: 24px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 37px;">Trouver d'autres offres</h3>
@@ -306,7 +370,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     
   </app-layout-general>
 </template>
@@ -319,6 +383,15 @@
 		border-bottom: 2px solid rgb(215, 215, 215) !important;
 		background: transparent !important;
 	}
+	
+	#main {
+		
+		width: 8rem !important;
+        height: 8rem !important;
+    
+    }
+    
+   	
 	p{
 		
 		font-weight: unset !important;
@@ -354,6 +427,8 @@ export default defineComponent({
   },
 
   props: {
+	
+	employer: Array,
     canLogin: Boolean,
     canRegister: Boolean,
     laravelVersion: String,
@@ -363,6 +438,7 @@ export default defineComponent({
     return {
       modal: null,
       modal2: null,
+      loading:false,
       id_delete : 0,
       total_offer:0,
       activity_sector : {},
@@ -372,7 +448,13 @@ export default defineComponent({
       offerData: {},
       editMode : 0,
       viewDataOffer : {},
-      form: this.$inertia.form({
+      form :{
+	       
+	      contract_type:'',
+          contract_duration:'', 
+          study_level:'',
+      }
+      /*form: this.$inertia.form({
         //password: '',
         id : 0,
         offer_title:'',
@@ -384,7 +466,7 @@ export default defineComponent({
         study_level:'',
         offer_details:''
         
-      })
+      })*/
     }
   },
   mounted(){
@@ -419,47 +501,27 @@ export default defineComponent({
 	  
 	  getResults(page = 1) {
 		    let vm = this;
-            axios.get('/offers?page=' + page)
+		    /*this.form.post('/offers?page='+page, {
+		        preserveScroll: true,
+		        onSuccess: (data) => {
+			        
+			        vm.total_offer = data['total'];
+                    vm.offerData = data['data'];
+		        },
+		        //onError: () => this.$refs.password.focus(),
+		        onFinish: () => {}/*this.form.reset(),
+            });*/
+            vm.loading = true;
+            axios.post('/offers?page=' + page,{'contract_type':vm.form.contract_type,'contract_duration':vm.form.contract_duration,'study_level':vm.form.study_level})
                 .then(response => {
 	                
+	                vm.loading = false;
 	                //console.log(response.data);
 	                vm.total_offer = response.data['total'];
                     vm.offerData = response.data['data'];
             });
       },
-      openDeleteOffer(id){
-	      
-	      this.id_delete = id;
-	      let el2 = document.querySelector('#deleteOffer')
-	      this.modal2 = new bootstrap.Modal(el2)
-	      this.modal2.show()
-	      
-      },
-      loadOffer(data){
-	      this.viewDataOffer = data;
-	      let el = document.querySelector('#openOffer')
-	      this.modal = new bootstrap.Modal(el)
-	      this.modal.show()  
-      },
-	  closeModal(){
-		  
-		  //this.form.reset()
-          this.modal.hide()
-	  },
-	  closeModal2(){
-		  
-          this.modal2.hide()
-	  },
-	  removeOffer(id){
-		  this.form['id'] = this.id_delete;
-		  this.form.post(route('candidate.unbid.offer'), {
-	        preserveScroll: true,
-	        onSuccess: () => { this.closeModal2();this.getResults();this.id_delete = 0;},
-	        //onError: () => this.$refs.password.focus(),
-	        onFinish: () => {}/*this.form.reset()*/,
-          });
-		  
-	  }
+	  
   }
 })
 </script>

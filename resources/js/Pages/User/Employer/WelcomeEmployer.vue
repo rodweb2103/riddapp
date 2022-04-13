@@ -75,18 +75,18 @@
 					  </div>
 				 </div>-->
 				 
-				 <div class="col-6">
+			    <div class="col-4">
 				  
 					 
 					    <!--<Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%',dropdownParent:'#openOffer'}"/>-->
 					    <select v-model="form.contract_type" class="form-control">
-						    <option selected disabled value>--Selectionner type d'offre--</option>
+						    <option selected disabled value>--Type d'offre--</option>
 						    <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
 					    </select>
 					    <jet-input-error :message="form.errors.contract_type" />
 				 </div>
 				 
-				 <div class="col-6">
+				 <div class="col-4">
 					  <div class="mb-3">
 					    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
 					    <!--<select class="form-control"  v-model="form.contract_duration">
@@ -96,17 +96,21 @@
 					    </select>-->
 					    <!--<Select2 v-model="form.contract_duration" :options="contract_duration" :settings="{placeholder:'--Durée du contrat--',width:'100%',dropdownParent:'#openOffer'}"/>-->
 					    <select v-model="form.contract_duration" class="form-control">
-						    <option selected disabled value>--Selectionner durée du contrat--</option>
+						    <option selected disabled value>--Durée du contrat--</option>
 						    <option :value="ct" v-for="ct in contract_duration">{{ ct }}</option>
 					    </select>
 					    <jet-input-error :message="form.errors.contract_duration" />
 					  </div>
 			    </div>
 			    
-			    <!--<div class="col-4">  
-					    <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%',dropdownParent:'#openOffer'}"/>
+			    <div class="col-4">  
+					    <!--<Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%',dropdownParent:'#openOffer'}"/>-->
+					    <select v-model="form.study_level" class="form-control">
+						    <option selected disabled value>--Durée du contrat--</option>
+						    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+					    </select>
 					    <jet-input-error :message="form.errors.study_level" />
-			    </div>-->
+			    </div>
 			  
 			  
 			  </div>
@@ -550,7 +554,7 @@ export default defineComponent({
 	                this.form.contract_type=response.data['data'][0]['contract_type'];
 	                this.form.contract_duration=response.data['data'][0]['contract_duration'];
 	                this.form.offer_details=response.data['data'][0]['offers_details'];
-	                //this.form.study_level=response.data['data'][0]['study_level'];
+	                this.form.study_level=response.data['data'][0]['study_level'];
 	                this.form.id = response.data['data'][0]['id_offer'];
 	                //this.form.offer_details=response.data['data'][0]['offer_details'];
 	                console.log(response.data);
