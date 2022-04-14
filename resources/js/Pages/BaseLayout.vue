@@ -17,13 +17,15 @@
         <!-- End Pre Loader -->
         
         <!-- Start Navbar Area -->
-        <div class="navbar-area ledu-area">
-            <div class="mobile-responsive-nav">
+        <div class="navbar-area ledu-area" id="ledu-area">
+             <div class="mobile-responsive-nav">
                 <div class="container">
                    <div class="mobile-responsive-menu">
                         <div class="logo">
-                            <a href="index.html">
-                               
+                            <a href="/">
+                                <!--<img src="assets/images/logos/logo-small.png" class="logo-one" alt="logo">
+                                <img src="assets/images/logos/logo-small-white.png" class="logo-two" alt="logo">-->
+                                <!--<img src="/img/LG-RIDD@2x.png" class="logo-two" alt="logo"/>-->
                                 <img src="/img/LG-RIDD@2x.png" class="logo-two" alt="logo" style="width: 60px;"/>
                                 <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 60px;"/>
                                 
@@ -45,7 +47,7 @@
                             <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 90px;"/>
                         </a>
 
-                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" v-mainmenu>
                             <ul class="navbar-nav">
                                 
                                  <li class="nav-item">
@@ -307,6 +309,29 @@ export default defineComponent({
     canRegister: Boolean,
     laravelVersion: String,
     phpVersion: String,
+  },
+  updated(){
+	
+	 //alert("ggggggg");  
+  },
+  mounted(){
+	  
+	  //let fontAwesome = document.createElement('script')
+      //fontAwesome.setAttribute('src', '/assets/js/plugins.js')
+      //document.body.appendChild(fontAwesome)
+      
+      
+      
+      
+      //let fontAwesome2 = document.createElement('script')
+      //fontAwesome2.setAttribute('src', '/assets/js/custom.js')
+      //document.head.appendChild(fontAwesome2)
+	  
+      /*$('.mean-menu').meanmenu({
+		meanScreenWidth: "991"
+	  });*/
+	 //console.log(jQuery('.mean-menu'));
+	 //alert(""); 
   }
 })
 </script>

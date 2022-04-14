@@ -747,6 +747,8 @@ export default defineComponent({
   mounted(){
 	  
 	   
+	  
+	   
 	  axios.get('/activity/sector').then(response => {
 		  
 		  

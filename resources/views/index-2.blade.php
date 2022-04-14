@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </nav>
-            <!--<div class="row g-0" data-aos="zoom-in" data-aos-duration="1100">
+            <div class="row g-0" data-aos="zoom-in" data-aos-duration="1100">
                 <div class="col-12 col-md-auto col-lg-6 col-xl-7">
                     <h1 style="font-family: Montserrat, sans-serif;font-weight: bold;font-size: 40px;"><strong>Rejoignez notre réseau et bénéficiez de nombreuses opportunités.</strong></h1>
                     <p style="font-family: Montserrat, sans-serif;font-size: 20px;color: rgba(0,0,0,0.8);line-height: 23px;">Le Réseau Ivoirien des Diplômés de la Diaspora<br>(RIDD) est une organisation née le 15 Novembre<br>2017 à l’initiative des jeunes ivoiriens diplômés<br>de la diaspora.</p><a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="#" style="background: rgb(71,179,21);border-style: none;width: 159.5px;color: rgb(255,255,255);">Rejoindre</a>
@@ -48,7 +48,7 @@
 
 </code></div>
                 </div>
-            </div>-->
+            </div>
         </div>
     </header>
     <section class="order-1 projects-clean" style="padding-top: 109px;margin-top: -28px;transform-style: preserve-3d;padding-bottom: 70px;">
@@ -175,7 +175,7 @@
         </div>
     </section>
     <div data-aos="slide-right" class="brands"></div>
-    <!--<section style="margin-top: 0px;padding-bottom: 0px;padding-top: 81px;background: #ffffff;height: 631px;">
+    <section style="margin-top: 0px;padding-bottom: 0px;padding-top: 81px;background: #ffffff;height: 631px;">
         <div class="container">
             <h1 style="font-family: Montserrat, sans-serif;font-weight: bold;padding-bottom: 42px;font-size: 60px;text-align: center;color: rgb(0,0,0);padding-top: 16px;">Nos partenaires</h1>
             <p class="text-center" style="padding-top: 0px;font-family: Montserrat, sans-serif;font-size: 18px;margin-bottom: 29px;margin-top: -32px;color: rgb(125,130,133);">Ils nous font confiance</p><code>
@@ -212,7 +212,7 @@
 
 </code>
         </div>
-    </section>-->
+    </section>
     <footer class="footer-dark">
         <div class="container">
             <div class="row">

@@ -86,7 +86,7 @@
                 <div class="container">
                    <div class="mobile-responsive-menu">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <!--<img src="assets/images/logos/logo-small.png" class="logo-one" alt="logo">
                                 <img src="assets/images/logos/logo-small-white.png" class="logo-two" alt="logo">-->
                                 <!--<img src="/img/LG-RIDD@2x.png" class="logo-two" alt="logo"/>-->
@@ -167,7 +167,7 @@
                             <ul class="navbar-nav">
                                 
                                  <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="/" class="nav-link">
                                         Accueil
                                     </a>
                                  </li>
@@ -229,7 +229,7 @@
 
                             <div class="others-options d-flex align-items-center">
                                 <div class="optional-item">
-                                    <a href="signup.html" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">Se connecter</a>
+                                    <a href="/login" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">Se connecter</a>
                                 </div>
                             </div>
                         </div>
@@ -426,6 +426,13 @@
         <script src="{{ asset('/assets/js/plugins.js') }}?<?php echo uniqid(); ?>"></script>
         <!-- Custom  JS -->
         <script src="{{ asset('/assets/js/custom.js') }}"></script>
+        
+        <script>
+	        $(document).ready(function(){
+		        
+		        $('body').addClass('loaded'); 
+	        });
+	        </script>
 	    @yield('script')
     </body>
 </html>

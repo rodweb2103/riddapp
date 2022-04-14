@@ -14,7 +14,7 @@
 
        <!-- Plugins CSS -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <!--<link rel="stylesheet" href="{{ mix('css/app.css') }}">-->
         <link rel="stylesheet" href="{{ asset('/assets/css/plugins.css') }}">
         <link rel="stylesheet" href="{{ asset('/fonts/fontawesome5-overrides.min.css') }}">
         <!-- Icon Plugins CSS -->
@@ -26,7 +26,7 @@
         <!-- Theme Dark CSS -->
         <link rel="stylesheet" href="{{ asset('/assets/css/theme-dark.css') }}">
         
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <!--<link rel="stylesheet" href="{{ mix('css/app.css') }}">-->
         <link rel="stylesheet" href="{{ asset('/fonts/ionicons.min.css') }}">
 	    <link rel="stylesheet" href="{{ asset('/fonts/simple-line-icons.min.css') }}">
 	    <link rel="stylesheet" href="{{ asset('/fonts/fontawesome5-overrides.min.css') }}">
@@ -92,6 +92,11 @@
         
         <style>
 	        
+	       #progressbar{
+		       
+		       padding-left: unset !important;
+	       }
+	        
 	       .brand-item img {
 		     
 		     opacity: unset !important;
@@ -123,7 +128,7 @@
         <!-- Scripts -->
         @routes
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        
     </head>
     <body class="bg-light">
 	    
@@ -169,12 +174,39 @@
 		<!-- ChartJS -->
 		<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
 		
+		
+		<script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+		
+		<script src="assets/js/meanmenu.min.js" type="text/javascript"></script>
+		
+		<script src="assets/js/ajaxchimp.min.js" type="text/javascript"></script>
+		
+		<script src="assets/js/form-validator.min.js" type="text/javascript"></script>
+		
+		<script src="assets/js/contact-form-script.js" type="text/javascript"></script>
+		
+		<script src="assets/js/owl.carousel.min.js" type="text/javascript"></script>
+		
+		<script src="assets/js/magnific-popup.min.js" type="text/javascript"></script>
+		
+		<script src="assets/js/aos.js" type="text/javascript"></script>
+		
+		<script src="assets/js/odometer.min.js" type="text/javascript"></script>
+		<script src="assets/js/appear.min.js" type="text/javascript"></script>
+		
+		<script src="assets/js/tweenMax.min.js" type="text/javascript"></script>
+		
+		<script src="{{ asset('/assets/js/custom.js') }}"></script>
 		 <!-- Jquery Min JS -->
         <!--<script src="{{ asset('/assets/js/jquery.min.js') }}"></script>-->
         <!-- Plugins JS -->
-        <script src="{{ asset('/assets/js/plugins.js') }}?<?php echo uniqid(); ?>"></script>
-        <!-- Custom  JS -->
-        <script src="{{ asset('/assets/js/custom.js') }}"></script>
+        <!--<script src="{{ asset('/assets/js/plugins.js') }}?<?php echo uniqid(); ?>"></script>
+        <script src="{{ asset('/assets/js/custom.js') }}"></script>-->
+        <script src="{{ mix('js/app.js') }}"></script>
+        <script type="text/javascript">
+	        
+	        
+	    </script>
 		
 		<!--<script src="{{ asset('js/demo.js') }}"></script>-->
 	    
