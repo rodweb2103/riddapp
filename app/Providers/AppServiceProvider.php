@@ -31,5 +31,7 @@ class AppServiceProvider extends ServiceProvider
         
         Paginator::useBootstrap();
         JetstrapFacade::useAdminLte3();
+        
+        //\Carbon\Carbon::setLocale('fr');
     }
 }

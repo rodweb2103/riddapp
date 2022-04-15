@@ -1,129 +1,123 @@
 <template>
-  <app-layout-general title="Détails Offre">
-    <!--<template #header>
-      <h2 class="h4 font-weight-bold">
-        Dashboard
-      </h2>
-    </template>
-    <welcome />-->
-   
-    <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 360.27px;background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);padding-bottom: 0px;transform-style: preserve-3d;">
-        <div class="container hero">
-            <nav class="navbar navbar-light navbar-expand-lg d-xl-flex navigation-clean" style="background: rgba(177,30,44,0);padding-top: 0;padding-bottom: 0;margin-top: -41px;">
-                <div class="container"><a class="navbar-brand" href="#"><img class="img-fluid" src="assets/img/logo-ridd.jpg" style="width: 115px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navcol-2">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link active" href="#" style="font-size: 18px;">Accueil</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Offres</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Activités</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Actualités</a></li>
-                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);font-size: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle text-start" style="font-size: 33px;padding-right: 9px;color: rgb(255,255,255);margin-top: -5px;">
-                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
-                                    </svg>Compte&nbsp;</a>
-                                <div class="dropdown-menu"><a class="dropdown-item" href="#">Connexion</a></div>
-                            </li>
-                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);font-size: 18px;"><i class="fa fa-language" style="font-size: 26px;padding-left: 0px;padding-right: 7px;margin-top: -2px;"></i>Langue&nbsp;</a>
-                                <div class="dropdown-menu"><a class="dropdown-item" href="#">Francais</a><a class="dropdown-item" href="#">Anglais</a></div>
-                            </li>
+  
+  <BaseLayout>
+  <!-- Inner Banner -->
+        <div class="inner-banner inner-banner-bg9">
+            <div class="container">
+                <div class="inner-title">
+	                <!--{{ offerDetails }}-->
+                    <h3>{{ offerDetails['title'] }}</h3>
+                    <!--<div class="rating">
+                        <i class="ri-star-fill"></i>4k+ rating
+                    </div>-->
+                    <div class="inner-banner-content">
+                        <!--<a href="instructors-details.html" class="user-area">
+                            <img src="assets/images/courses/courses-instructors1.jpg" alt="Instructors">
+                            <h3>{{ offerDetails['company_name'] }}</h3>
+                        </a>-->
+                        <ul class="course-list">
+                            <li><i class="ri-time-fill"></i> {{ offerDetails['publish_date'] }}</li>
+                            <li><i class="ri-map-pin-fill"></i>  {{ offerDetails['location'] }}</li>
                         </ul>
                     </div>
+                    <!--<ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>Courses details</li>
+                    </ul>-->
                 </div>
-            </nav>
-            <section class="highlight-blue" style="background: rgba(30,106,221,0);">
-                <div class="container">
-                    <div class="intro">
-                        <h2 class="text-center" style="font-family: Montserrat, sans-serif;font-size: 47.44px;font-weight: bold;margin-top: -26px;">Les Offres du RIDD</h2>
-                    </div>
-                    <div class="buttons"></div>
-                </div>
-            </section>
-        </div>
-    </header>
-    <section id="carousel" style="margin-top: 24px;">
-        <div class="container">
-            <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="carousel-1" style="height: 300px;">
-                <div class="carousel-inner" style="height: 300px;">
-                    <div class="carousel-item active" style="height: auto;"><img class="img-fluid w-100 d-block" alt="Slide Image" style="margin-top: 0px;opacity: 1;filter: brightness(0%);" src="/img/ades3.jpg"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image" style="filter: brightness(0%);"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image" style="filter: brightness(0%);"></div>
-                </div>
-                <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
             </div>
         </div>
-    </section>
-    <section style="height: auto;padding-bottom: 42px;">
-	    <!--{{ offerDetails }}-->
-        <div class="container">
-            <div class="intro" style="margin-right: 0px;margin-left: 0;margin-bottom: 0px;">
-                <h1 class="text-center" style="margin-top: 55px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 43px;font-size: 26px;color: rgb(255,115,0);">{{ offerDetails['title'] }}</h1>
-            </div>
-            <div class="row justify-content-start" style="margin-top: 49px;">
-                <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
-	                <!--<img class="d-xxl-flex mx-auto" src="/img/ic-yayo.png" style="width: 130px;margin-top: 19px;">-->
-	                <img class="d-xxl-flex mx-auto" :src="offerDetails['profile_photo_url']" style="width: 130px;margin-top: 19px;">
-	                
-	                
-	             </div>
-                <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 text-start">
-	                <div class="row">
-                        <h5 style="color: rgb(0,0,0);" class="col-5">Nom de la société</h5>
-	                    <span class="col-7">{{ offerDetails['company_name'] }}</span>
+        <!-- Inner Banner End -->
+
+        <!-- Courses Details Area -->
+        <div class="courses-details-area pt-100 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="courses-details-contact">
+                            <div class="tab courses-details-tab">
+                                <ul class="tabs">
+                                    <li>
+                                        Overview
+                                    </li>
+                                </ul>
+                                <div class="tab_content current active">
+                                    <div class="tabs_item current">
+                                        <div class="courses-details-tab-content">
+                                            <div class="courses-details-into">
+                                               <h3>Description</h3>
+                                               <p>{{ offerDetails['offers_details'] }}</p>
+                                            </div>
+                                            <div class="courses-details-into">
+                                                <h3>Profil recherché</h3>
+                                                <p>
+	                                                
+	                                                {{ offerDetails['profile_details'] }}
+	                                                
+                                                </p>
+                                            </div>
+                                            <!--<div class="courses-details-into">
+                                                <h3>What you'll learn</h3>
+                                                <p>
+                                                    Quisque velit nisi, pretium ut lacinia in, elementum id enim. Praesent sapien massa, convallis a pellentesque nec, egestas non
+                                                    nisi. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada. Vivamus magna justo, lacinia
+                                                    eget consectetur sed, convallis at tellus.
+                                                </p>
+                                                <p>
+                                                    Donec sollicitudin molestie malesuada. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet
+                                                    et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor felis porttitor volutpat.
+                                                    Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Vivamus suscipit tortor eget.
+                                                </p>
+                                             </div>-->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row">
-                        <h5 style="color: rgb(0,0,0);" class="col-5">Date de publication</h5>
-                        <span class="col-7">{{ offerDetails['company_name'] }}</span>
-                    </div>
-                    <div class="row">
-                       <h5 style="color: rgb(0,0,0);" class="col-5">Secteur d'activité</h5>
-                       <span class="col-7">{{ offerDetails['company_activity_sector'] }}</span>
-                    </div>
-                    <div class="row">
-                       <h5 style="color: rgb(0,0,0);" class="col-5">Localisation</h5>
-                       <span class="col-7">{{ offerDetails['location'] }}</span>
-                    </div>
-                    
-                    
-                    <!--"id_offer" => $offer_details[0]->id_offer,
-	     "title" => $offer_details[0]->title,
-	     "offers_details" => $offer_details[0]->offers_details,
-	     "publish_date" => $offer_details[0]->publish_date,
-	     "offer_type" => $offer_details[0]->contract_type->contract,
-	     "contract_duration" => $offer_details[0]->contract_type->contract_duration,
-	     "location" => $offer_details[0]->location,
-	     "profile_details" => $offer_details[0]->profile_details,
-	     "company_name" => $offer_details[0]->company->company_name,
-	     "company_about" => $offer_details[0]->company->company_about,
-	     "company_location" => $offer_details[0]->company->company_location,
-	     "profile_photo_url" => $offer_details[0]->company->profile_photo_url,
-	     "company_activity_sector" => $offer_details[0]->company->activity_sector->activity_sector_name-->
-                    
-                    <div class="row">
-                       <h5 style="color: rgb(0,0,0);" class="col-5">Type d'offre</h5>
-                       <span class="col-7">{{ offerDetails['offer_type'] }}</span>
-                    </div>
-                    <div class="row">
-                       <h5 style="color: rgb(0,0,0);" class="col-5">Contrat</h5>
-                       <span class="col-7">{{ offerDetails['contract_duration'] }}</span>
+                    <div class="col-lg-4">
+                        <div class="courses-details-sidebar">
+                            <div class="mt-5"><img :src="offerDetails['profile_photo_url']" alt="Courses" class="rounded mx-auto d-block" style="width: 150px;"/></div>
+                            <div class="content">
+                                <h3>{{ offerDetails['company_name'] }}</h3>
+                                <!--<span>This course includes:</span>-->
+                                <ul class="courses-details-list">
+                                    <li> <i class="ri-flag-2-line"></i> {{ offerDetails['company_activity_sector'] }}</li>
+                                    <li><i class="ri-map-pin-fill"></i>{{ offerDetails['company_location'] }}</li>
+                                    <li> <i class="ri-information-fill"></i> {{ offerDetails['company_about'] }}</li>
+                                    <!--<li>Full lifetime access</li>
+                                    <li>Access on mobile and TV</li>
+                                    <li>Certificate of completion</li>-->
+                                </ul>
+                                <!--<a href="cart.html" class="default-btn">Add to cart</a>
+                                <ul class="social-link">
+                                    <li class="social-title">Share this course:</li>
+                                    <li>
+                                        <a href="https://www.facebook.com/" target="_blank">
+                                            <i class="ri-facebook-fill"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/" target="_blank">
+                                            <i class="ri-twitter-fill"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.pinterest.com/" target="_blank">
+                                            <i class="ri-instagram-line"></i>
+                                        </a>
+                                    </li>
+                                </ul>-->
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row justify-content-start" style="margin-top: 49px;">
-                <div class="col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
-                    <h1 class="text-start" style="margin-top: 55px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 12px;font-size: 26px;color: rgb(0,0,0);">Détails de l'entreprise</h1>
-                    <p>{{ offerDetails['company_about'] }}</p>
-                    <h1 class="text-start" style="margin-top: 0px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 12px;font-size: 26px;color: rgb(0,0,0);">Détails de l'offre</h1>
-                    <p>{{ offerDetails['offers_details'] }}</p>
-                    <h1 class="text-start" style="margin-top: 0px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 12px;font-size: 26px;color: rgb(0,0,0);">Profil recherché</h1>
-                    <p>{{ offerDetails['profile_details'] }}</p>
-                    <h1 class="text-start" style="margin-top: 0px;margin-left: 0px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 12px;font-size: 26px;color: rgb(0,0,0);">Date d'expiration de l'offre</h1>
-                    <p>Lorem ipsum dolor sit amet, xx/xx/xxxx</p><p><button class="btn btn-lg" type="button" style="background: #ff7300;color: rgb(255,255,255);">Postuler</button></p>
-                </div>
-                <div class="col"></div>
             </div>
         </div>
-    </section>    
-  </app-layout-general>
+    </BaseLayout>
 </template>
 
 <style type="text/css">
@@ -149,7 +143,7 @@ import JetInput from '@/Jetstream/Input.vue'
 import JetInputError from '@/Jetstream/InputError.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 import JetButton from '@/Jetstream/Button.vue'
-
+import BaseLayout from '@/Pages/BaseLayout.vue'
 
 export default defineComponent({
   components: {
@@ -162,6 +156,7 @@ export default defineComponent({
     JetInputError,
     JetSecondaryButton,
     JetButton,
+    BaseLayout
     //Select2
   },
 

@@ -11,7 +11,7 @@
                             <!--<span data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">FOR A BETTER FUTURE</span>-->
                             <h1 style="color: #fff" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">Rejoignez notre réseau et bénéficiez de nombreuses opportunités.</h1>
                             <p style="color: #fff">Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.</p>
-                            <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="#" style="background: rgb(71,179,21);border-style: none;width: 159.5px;color: rgb(255,255,255);">Rejoindre</a>
+                            <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;width: 159.5px;color: rgb(255,255,255);">Rejoindre</a>
                             <!--<div class="banner-form-area" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
                                 <form class="banner-form" data-toggle="validator" method="POST">
                                     <input type="email" class="form-control" placeholder="Search your courses" name="EMAIL" required autocomplete="off">
@@ -343,29 +343,29 @@
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
                             <i class="flaticon-online-course"></i>
-                            <h3><span class="odometer" data-count="15000">00000</span>+</h3>
-                            <p>Courses & videos</p>
+                            <h3><span class="odometer" data-count="2000">0000</span></h3>
+                            <p>profils de diverses formations</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
                             <i class="flaticon-student"></i>
-                            <h3><span class="odometer" data-count="145000">000000</span>+</h3>
-                            <p>Students enrolled</p>
+                            <h3><span class="odometer" data-count="30">00</span></h3>
+                            <p>Porteurs d'idées et prototypes de projets</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
                             <i class="flaticon-online-course-1"></i>
-                            <h3><span class="odometer" data-count="10000">00000</span>+</h3>
-                            <p>Courses instructors</p>
+                            <h3><span class="odometer" data-count="30">00</span></h3>
+                            <p>Lauréats prix d'excellence révélés</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
                             <i class="flaticon-customer-satisfaction"></i>
-                            <h3><span class="odometer" data-count="100">000</span>%</h3>
-                            <p>Satisfaction rate</p>
+                            <h3><span class="odometer" data-count="10">00</span></h3>
+                            <p>Coordinations à l'international</p>
                         </div>
                     </div>
                 </div>
@@ -384,12 +384,15 @@
                 </div>
                 <div class="row">
 	                <div class="">
-		                <video style="width: 100%;height:auto;" autoplay="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+		                <!--<video style="width: 100%;height:auto;" playsinline autoplay muted loop data-wf-ignore="true" data-object-fit="cover">
                 <source src="https://beta.ridd.info/video-map-ridd-final.mp4" type="video/mp4" wp-acf="[{'type':'url','name':'video','label':'Video','wrapper':{'width':30}}]" wp-attr="[{'target':'src','replace':'%1'}]">
-            </video>
+            </video>-->
 	                    <!--<a href="https://www.youtube.com/watch?v=Zd00oIDAt60" class="play-btn">
 	                        <i class='flaticon-play-button-arrowhead'></i>
 	                    </a>-->
+	                    <video style="width: 100%;height:auto;"  data-wf-ignore="true" data-object-fit="cover">
+                <source src="https://beta.ridd.info/video-map-ridd-final.mp4" type="video/mp4" wp-acf="[{'type':'url','name':'video','label':'Video','wrapper':{'width':30}}]" wp-attr="[{'target':'src','replace':'%1'}]">
+            </video>
                     </div>
                     <!--<div class="col-lg-4 col-md-6">
                         <div class="courses-item">
@@ -844,9 +847,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-3 text-end">
+                    <!--<div class="col-lg-4 col-md-3 text-end">
                         <a href="instructors.html" class="default-btn">View all instructor</a>
-                    </div>
+                    </div>-->
                 </div>
 
                 <div class="row justify-content-center">
@@ -880,8 +883,8 @@
                                 </ul>
                             </div>
                             <div class="content">
-                                <h3><a href="instructors-details.html">Sally welch</a></h3>
-                                <span>Web designer</span>
+                                <h3><a href="instructors-details.html">Djeket Steve</a></h3>
+                                <span>Président</span>
                             </div>
                         </div>
                     </div>

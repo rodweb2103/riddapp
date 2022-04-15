@@ -1,378 +1,240 @@
 <template>
-  <app-layout-general title="Offres">
-   
-    <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 360.27px;background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);padding-bottom: 0px;transform-style: preserve-3d;">
-        <div class="container hero">
-            <nav class="navbar navbar-light navbar-expand-lg d-xl-flex navigation-clean" style="background: rgba(177,30,44,0);padding-top: 0;padding-bottom: 0;margin-top: -41px;">
-                <div class="container"><a class="navbar-brand" href="#"><img class="img-fluid" src="/img/LG-RIDD@2x.png" style="width: 115px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navcol-2">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link active" href="#" style="font-size: 18px;">Accueil</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Offres</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Activités</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);font-size: 18px;">Actualités</a></li>
-                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);font-size: 18px;"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person-circle text-start" style="font-size: 33px;padding-right: 9px;color: rgb(255,255,255);margin-top: -5px;">
-                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
-                                    </svg>Compte&nbsp;</a>
-                                <div class="dropdown-menu"><a class="dropdown-item" href="#">Connexion</a></div>
-                            </li>
-                            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="color: rgb(255,255,255);font-size: 18px;"><i class="fa fa-language" style="font-size: 26px;padding-left: 0px;padding-right: 7px;margin-top: -2px;"></i>Langue&nbsp;</a>
-                                <div class="dropdown-menu"><a class="dropdown-item" href="#">Francais</a><a class="dropdown-item" href="#">Anglais</a></div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <section class="highlight-blue" style="background: rgba(30,106,221,0);">
-                <div class="container">
-                    <div class="intro">
-                        <h2 class="text-center" style="font-family: Montserrat, sans-serif;font-size: 47.44px;font-weight: bold;margin-top: -26px;">Les Offres du RIDD</h2>
-                    </div>
-                    <div class="buttons"></div>
-                </div>
-            </section>
-        </div>
-    </header>
     
-    <section id="carousel" style="margin-top: 24px;">
-        <div class="container">
-            <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="carousel-1" style="height: 300px;">
-                <div class="carousel-inner" style="height: 300px;">
-                    <div class="carousel-item active" style="height: auto;"><img class="img-fluid w-100 d-block" alt="Slide Image" style="margin-top: 0px;opacity: 1;filter: brightness(0%);" src="/img/ades3.jpg"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image" style="filter: brightness(0%);"></div>
-                    <div class="carousel-item"><img class="w-100 d-block" src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png" alt="Slide Image" style="filter: brightness(0%);"></div>
+    <BaseLayout>
+    <!-- Inner Banner -->
+        <div class="inner-banner inner-banner-bg">
+            <div class="container">
+                <div class="inner-title text-center">
+                    <h3>Annonces</h3>
+                    <!--<ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>Courses List</li>
+                    </ul>-->
                 </div>
-                <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span><span class="visually-hidden">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button" data-bs-slide="next"><span class="carousel-control-next-icon"></span><span class="visually-hidden">Next</span></a></div>
             </div>
         </div>
-    </section>
-    <section style="margin-top: 31px;">
-        <div class="container-fluid" style="padding-bottom: 25px;background: #d7d7d7;">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="text-center" style="margin-top: 31px;margin-left: 0px;padding-top: 0px;margin-bottom: 43px;padding-bottom: 0px;color: rgb(0,0,0);">Recherche avancée</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12" style="text-align: center;">
-	                
-	                <select v-model="form.contract_type"  style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-		                    <option selected value="">Toutes les offres</option>
-						    <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
-					</select>
-	                <!--<select style="width: 301px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-                            <option value="12" selected="">Emploi</option>
-                            <option value="13">Stage</option>
-                    </select>-->
-                    <!--<select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-                            <option value="12" selected="">CDD</option>
-                            <option value="13">CDI</option>
-                    </select>-->
-                    <select v-model="form.contract_duration" style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-	                        <option selected value="">CDI et CDD</option>
-						    <option selected disabled value>--Durée du contrat--</option>
-						    <option  v-for="ct in contract_duration">{{ ct }}</option>
-					</select>
-                    <!--<select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-                            <option value="12" selected="">Niveau d'étude</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                    </select>-->
-                     <select v-model="form.study_level"  style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-	                        <option selected value="">Toutes les niveaux d'étude</option>
-						    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
-					 </select>
-                    <!--<select style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-                        <optgroup label="This is a group">
-                            <option value="12" selected="">Poste rehcerché</option>
-                            <option value="13">This is item 2</option>
-                            <option value="14">This is item 3</option>
-                        </optgroup>
-                    </select>-->
-                    
-                    <!--<jet-button class="btn btn-primary" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
-            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
-              <span class="visually-hidden">Loading...</span>
-            </div>
+        <!-- Inner Banner End -->
 
-            Confirmer
-          </jet-button>-->
-                    
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12" style="padding-top: 40px;text-align: center;"><button :class="{ 'text-white-50': loading }" :disabled="loading" @click="getResults(1)" class="btn btn-lg" type="button" style="background: rgb(22,147,49);color: rgb(255,255,255);">
-	                
-	                <div v-show="loading" class="spinner-border spinner-border-sm" role="status">
-                       <span class="visually-hidden">Loading...</span>
+        <!-- Events Area -->
+        <div class="event-area pt-100 pb-100">
+            <div class="container">
+                <div class="product-topper mb-45">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product-title">
+                                <!--<h3>We found  <span> 09 </span>courses available for you</h3>-->
+                                <h3><span>{{ total_offer }}</span> offre(s) disponible(s)</h3>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product-title">
+                               <select @change="getResults(1)" v-model="form.contract_type"  style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+			                      <option selected value="">Toutes les offres</option>
+							      <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
+					           </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product-title">
+                                <select @change="getResults(1)" v-model="form.contract_duration" style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+			                        
+								    <option selected value="">CDI et CDD</option>
+								    <option  v-for="ct in contract_duration">{{ ct }}</option>
+					            </select>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="product-title">
+                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+			                        <option selected value="">Toutes les niveaux d'étude</option>
+								    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+					            </select>
+                            </div>
+                        </div>
+
+                        <!--<div class="col-lg-3 col-md-6">
+                            <div class="product-list">
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Default Price</option>
+                                    <option value="1">Price High To Low</option>
+                                    <option value="2">Price Low To High</option>
+                                </select>
+                                <i class="ri-arrow-down-s-line"></i>
+                            </div>
+                        </div>-->
                     </div>
-	                
-	                Rechercher&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" style="font-size: 33px;">
-                            <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        </svg></button></div>
-            </div>
-        </div>
-    </section>
-    <section class="testimonials-clean">
-        <div class="container">
-            <div class="intro" style="margin-right: 0px;margin-left: 0;">
-                <h3 class="text-start" style="margin-top: 55px;margin-left: 24px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 37px;">Dernières offres ({{ total_offer }})</h3>
-            </div>
-            <div class="row">
-                <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-                    <ul class="list-group" v-if="loading == false">
-	                    
-                        <li class="list-group-item" style="border-width: 0px;" v-for="data in offerData">
-                           <Link :href="`${'/annonces/'+data['id']}`">
-                            <div class="d-flex media">
-                                <div class="media-body">
-                                    <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" :src="data['company_profile_photo']"></div>
-                                        <div style="overflow:visible;" class="media-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">{{ data['title'] }}&nbsp;&nbsp;
-	                                                  <span v-if="data['id'].includes('EMPL')" style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Emploi</span>
-	                                                  <span v-if="data['id'].includes('STG')" style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Stage</span>
-	                                                  
-	                                                  <span v-if="data['id'].includes('CLT')" style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Consultance</span>
-	                                                
-	                                                </h1>
-	                                                    <h5 style="font-size: 16px;">{{ data['company_name'] }}</h5>
-                                                    <p style="margin-top: 0px;">{{ data['offers_details'] }}<br></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                </div>
+                
+                <div class="row">
+	                <div class="d-flex justify-content-center mt-5" v-if="loading == true">
+	                    <div class="spinner-border text-primary" role="status" id="main">
+						  <span class="sr-only">Loading...</span>
+						</div>
+                    </div>
+                    <div class="col-lg-6" v-for="data in offerData" v-if="loading == false">
+                        <div class="event-item box-shadow" style="height: 190px;">
+                            <div class="event-img">
+                                <a href="event-details.html">
+                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 100px;"/>
+                                    
+                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 100px;"/>
+                                    
+                                    
+                                    
+                                </a>
                             </div>
-                           </Link>
-                        </li>
-                        <!--<li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
-                          <a href="#">
-                            <div class="d-flex media">
-                                <div class="media-body">
-                                    <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" src="/img/ic-yayo.png"></div>
-                                        <div style="overflow:visible;" class="media-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">Poste à pourvoir&nbsp;&nbsp;<span style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;">Stage</span></h1>
-                                                    <h5 style="font-size: 16px;">Entreprise</h5>
-                                                    <p style="margin-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim<br></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="event-content">
+                                <ul class="event-list">
+                                    <li><i class="ri-time-fill"></i> {{ data['offer_duration'] }}</li>
+                                    <li>
+                                        <!--<i class="ri-vidicon-fill"></i> 
+                                        17 lectures-->
+                                         <span v-if="data['id'].includes('EMPL')" style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Emploi</span>
+	                                     <span v-if="data['id'].includes('STG')" style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Stage</span>
+	                                     <span v-if="data['id'].includes('CLT')" style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Consultance</span>
+                                    </li>
+                                </ul>
+                                <h3><Link :href="`${'/annonces/'+data['id']}`">{{ data['title'] }}</Link></h3>
+                                <p>{{ data['offers_details'] }}</p>
                             </div>
-                          </a>
-                        </li>
-                        <li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
-                          <a href="#">
-                            <div class="d-flex media">
-                                <div class="media-body">
-                                    <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" src="/img/ic-yayo.png"></div>
-                                        <div style="overflow:visible;" class="media-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">Poste à pourvoir&nbsp;&nbsp;<span style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;">Emploi</span></h1>
-                                                    <h5 style="font-size: 16px;">Entreprise</h5>
-                                                    <p style="margin-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim<br></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
-                         <a href="#">
-                            <div class="d-flex media">
-                                <div class="media-body">
-                                    <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" src="/img/ic-yayo.png"></div>
-                                        <div style="overflow:visible;" class="media-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">Poste à pourvoir&nbsp;&nbsp;<span style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;">Emploi</span></h1>
-                                                    <h5 style="font-size: 16px;">Entreprise</h5>
-                                                    <p style="margin-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim<br></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                         </a>
-                        </li>
-                        <li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
-                          <a href="#">
-                            <div class="d-flex media">
-                                <div class="media-body">
-                                    <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" src="/img/ic-yayo.png"></div>
-                                        <div style="overflow:visible;" class="media-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">Poste à pourvoir&nbsp;&nbsp;<span style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;">Consultance</span></h1>
-                                                    <h5 style="font-size: 16px;">Entreprise</h5>
-                                                    <p style="margin-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim<br></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
-                         <a href="#">
-                            <div class="d-flex media">
-                                <div class="media-body">
-                                    <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" src="/img/ic-yayo.png"></div>
-                                        <div style="overflow:visible;" class="media-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">Poste à pourvoir&nbsp;&nbsp;<span style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;">Emploi</span></h1>
-                                                    <h5 style="font-size: 16px;">Entreprise</h5>
-                                                    <p style="margin-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim<br></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                         </a>
-                        </li>
-                        <li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
-                         <a href="#">
-                            <div class="d-flex media">
-                                <div class="media-body">
-                                    <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" src="/img/ic-yayo.png"></div>
-                                        <div style="overflow:visible;" class="media-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">Poste à pourvoir&nbsp;&nbsp;<span style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;">Emploi</span></h1>
-                                                    <h5 style="font-size: 16px;">Entreprise</h5>
-                                                    <p style="margin-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim<br></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                         </a>
-                        </li>
-                        <li class="list-group-item" style="border-width: 0px;margin-top: -32px;">
-                         <a href="#">
-                            <div class="d-flex media">
-                                <div class="media-body">
-                                    <div class="d-flex media" style="overflow:visible;">
-                                        <div><img class="me-3" style="width: 80px;height: 80px;" src="/img/ic-yayo.png"></div>
-                                        <div style="overflow:visible;" class="media-body">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <h1 style="font-size: 18px;">Poste à pourvoir&nbsp;&nbsp;<span style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;">Emploi</span></h1>
-                                                    <h5 style="font-size: 16px;">Entreprise</h5>
-                                                    <p style="margin-top: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim<br></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                         </a>
-                        </li>-->
-                    </ul>
-                    <div class="d-flex justify-content-center mt-5">
-                    <div class="spinner-border text-primary" role="status" v-if="loading == true" id="main">
-					  <span class="sr-only">Loading...</span>
-					</div>
+                        </div>
                     </div>
                 </div>
                 <Pagination :data="offerData" @pagination-change-page="getResults" />
-                <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="width: 200;">
-                    <div class="d-xxl-flex mx-auto" style="width: 100%;height: 400px;background: #0d0c0c;margin-bottom: 19px;"><img class="d-xxl-flex" style="width: 100%;height: 100%;opacity: 0.11;"></div>
-                    <div class="d-xxl-flex mx-auto" style="width: 100%;height: 400px;background: #0d0c0c;"><img class="d-xxl-flex" style="width: 100%;height: 100%;opacity: 0.14;"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section style="margin-top: 69px;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12" style="height: 136px;background: #000000;">
-                    <h2 class="text-center" style="margin-bottom: 0px;margin-top: 46px;color: rgb(255,255,255);">Bannière publicitaire</h2>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="testimonials-clean" style="height: auto;padding-bottom: 18px;margin-top: 88px;">
-        <div class="container">
-            <div class="intro" style="margin-right: 0px;margin-left: 0;margin-bottom: -81px;">
-                <h3 class="text-start" style="margin-top: 55px;margin-left: 24px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 37px;">Les recruteurs du moment</h3>
-            </div>
-            <div class="row" style="margin-top: 55px;">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                    <section class="team-clean" style="background: transparent;">
-                        <div class="container">
-                            <div class="intro"></div>
-                            <div class="row g-0 d-xxl-flex people">
-	                            <div v-for="data in employer" class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;">
-		                            
-		                            <img class="rounded-circle d-xxl-flex" :src="data['img']" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;">
-		                            
-	                            </div>
-                                <!--<div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/1.jpg" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/1.jpg" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;border-style: solid;border-color: var(--bs-white);"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/3.jpg" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>-->
+                
+                <!--<div class="row">
+                    <div class="col-lg-6">
+                        <div class="event-item box-shadow">
+                            <div class="event-img">
+                                <a href="event-details.html">
+                                    <img src="assets/images/events/event-img1.jpg" alt="Events" />
+                                </a>
                             </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--<section style="height: auto;padding-bottom: 42px;">
-        <div class="container">
-            <div class="intro" style="margin-right: 0px;margin-left: 0;margin-bottom: 0px;">
-                <h3 class="text-start" style="margin-top: 55px;margin-left: 24px;padding-top: 33px;margin-bottom: 0px;padding-bottom: 37px;">Trouver d'autres offres</h3>
-            </div>
-            <div class="row">
-                <div class="col-md-12" style="margin-top: 28px;margin-left: 10px;">
-                    <div id="minimal-tabs">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item" role="presentation" style="width: 300px;"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-1">Secteur d'activité</a></li>
-                            <li class="nav-item" role="presentation" style="width: 300px;"><a class="nav-link" role="tab" data-bs-toggle="tab" href="#tab-2">Type d'offre</a></li>
-                            <li class="nav-item" role="presentation" style="width: 300px;"><a class="nav-link active" role="tab" data-bs-toggle="tab" href="#tab-3">Contrat</a></li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane fade" role="tabpanel" id="tab-1">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <br>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint <br>occaecat cupidatat non proident, sunt in culpa qui officia deserunt <br>mollit anim id est laborum.</p>
-                            </div>
-                            <div class="tab-pane fade" role="tabpanel" id="tab-2">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <br>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint <br>occaecat cupidatat non proident, sunt in culpa qui officia deserunt <br>mollit anim id est laborum.</p>
-                            </div>
-                            <div class="tab-pane fade show active" role="tabpanel" id="tab-3">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod <br>tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br>veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <br>commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br>velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint <br>occaecat cupidatat non proident, sunt in culpa qui officia deserunt <br>mollit anim id est laborum.</p>
+                            <div class="event-content">
+                                <ul class="event-list">
+                                    <li><i class="ri-time-fill"></i> 18 hr 07 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 17 lectures</li>
+                                </ul>
+                                <h3><a href="courses-details.html">University admissions could face emergency controls</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus</p>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                    <div class="col-lg-6">
+                        <div class="event-item box-shadow">
+                            <div class="event-img">
+                                <a href="event-details.html">
+                                    <img src="assets/images/events/event-img2.jpg" alt="Events" />
+                                </a>
+                            </div>
+                            <div class="event-content">
+                                <ul class="event-list">
+                                    <li><i class="ri-time-fill"></i> 18 hr 07 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 07 lectures</li>
+                                </ul>
+                                <h3><a href="courses-details.html">As learning moves online trigger warnings must too</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="event-item box-shadow">
+                            <div class="event-img">
+                                <a href="event-details.html">
+                                    <img src="assets/images/events/event-img3.jpg" alt="Events" />
+                                </a>
+                            </div>
+                            <div class="event-content">
+                                <ul class="event-list">
+                                    <li><i class="ri-time-fill"></i> 44 hr 07 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 37 lectures</li>
+                                </ul>
+                                <h3><a href="courses-details.html">Java programming masterclass name for software developers</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="event-item box-shadow">
+                            <div class="event-img">
+                                <a href="event-details.html">
+                                    <img src="assets/images/events/event-img4.jpg" alt="Events" />
+                                </a>
+                            </div>
+                            <div class="event-content">
+                                <ul class="event-list">
+                                    <li><i class="ri-time-fill"></i> 16 hr 07 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 17 lectures</li>
+                                </ul>
+                                <h3><a href="courses-details.html">Online learning can prepare to students for fast-changing</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="event-item box-shadow">
+                            <div class="event-img">
+                                <a href="event-details.html">
+                                    <img src="assets/images/events/event-img5.jpg" alt="Events" />
+                                </a>
+                            </div>
+                            <div class="event-content">
+                                <ul class="event-list">
+                                    <li><i class="ri-time-fill"></i> 07 hr 07 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 37 lectures</li>
+                                </ul>
+                                <h3><a href="courses-details.html">The complete digital marketing course - 12 courses in 1</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="event-item box-shadow">
+                            <div class="event-img">
+                                <a href="event-details.html">
+                                    <img src="assets/images/events/event-img6.jpg" alt="Events" />
+                                </a>
+                            </div>
+                            <div class="event-content">
+                                <ul class="event-list">
+                                    <li><i class="ri-time-fill"></i> 04 hr 07 min</li>
+                                    <li><i class="ri-vidicon-fill"></i> 27 lectures</li>
+                                </ul>
+                                <h3><a href="courses-details.html">The python mega course: build 10 real world applications</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit necessitatibus</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12 col-md-12 text-center">
+                        <div class="pagination-area">
+							<a href="blog.html" class="prev page-numbers">
+								<i class="flaticon-left-arrow"></i>
+							</a>
+
+							<span class="page-numbers current" aria-current="page">1</span>
+							<a href="blog.html" class="page-numbers">2</a>
+							<a href="blog.html" class="page-numbers">3</a>
+							
+							<a href="blog.html" class="next page-numbers">
+								<i class="flaticon-chevron"></i>
+							</a>
+						</div>
+                    </div>
+                </div>-->
             </div>
         </div>
-    </section>-->
-    
-  </app-layout-general>
+    </BaseLayout>
 </template>
 
 <style type="text/css">
@@ -410,6 +272,7 @@ import JetInput from '@/Jetstream/Input.vue'
 import JetInputError from '@/Jetstream/InputError.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 import JetButton from '@/Jetstream/Button.vue'
+import BaseLayout from '@/Pages/BaseLayout.vue'
 
 
 export default defineComponent({
@@ -423,6 +286,7 @@ export default defineComponent({
     JetInputError,
     JetSecondaryButton,
     JetButton,
+    BaseLayout
     //Select2
   },
 

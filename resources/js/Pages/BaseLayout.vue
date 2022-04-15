@@ -57,7 +57,7 @@
                                  </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a :href="route('annonces')" class="nav-link">
                                         Offres
                                     </a>
                                 </li>
@@ -321,7 +321,7 @@ export default defineComponent({
       //document.body.appendChild(fontAwesome)
       
       
-      
+      $('body').addClass('loaded');
       
       //let fontAwesome2 = document.createElement('script')
       //fontAwesome2.setAttribute('src', '/assets/js/custom.js')

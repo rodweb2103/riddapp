@@ -34,6 +34,11 @@
         
         <style>
 	        
+	       .counter-content i::after {
+		      
+		      background: unset !important;
+		   }
+	        
 	       .brand-item img {
 		     
 		     opacity: unset !important;
@@ -173,7 +178,7 @@
                                  </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="{{ route('annonces') }}" class="nav-link">
                                         Offres
                                     </a>
                                 </li>
@@ -380,21 +385,21 @@
                                     <i class="ri-map-pin-2-fill"></i>
                                     <div class="content">
                                         <h4>Location:</h4>
-                                        <span>Côte d'Ivoire</span>
+                                        <span>Côte d'Ivoire, Marcory Remblais</span>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="ri-mail-fill"></i>
                                     <div class="content">
                                         <h4>Email:</h4>
-                                        <span><a href="mailto:hello@ledu.com">hello@ridd.com</a></span>
+                                        <span><a href="mailto:hello@ledu.com">contact@ridd.ci</a></span>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="ri-phone-fill"></i>
                                     <div class="content">
                                         <h4>Phone:</h4>
-                                        <span><a href="tel:098765432150">0000000000000</a></span>
+                                        <span><a href="tel:098765432150">+2250779379838</a></span>
                                     </div>
                                 </li>
                             </ul>

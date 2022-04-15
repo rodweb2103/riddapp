@@ -162,6 +162,7 @@ class OfferController extends Controller
     
     public function list_offer(Request $request){
 	    
+	        
 	        $itemsPaginated = Offers::with('company')->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
 
                         $query->where('contract_type', $request->contract_type);
@@ -189,6 +190,7 @@ class OfferController extends Controller
 		                'company_location' => $item->company->company_location,
 		                'company_about' => $item->company->company_about,
 		                'company_website' => $item->company->company_website,
+		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->locale("fr")->diffForHumans(),
 		                'company_profile_photo' => $url
 		            ];
             })->toArray();

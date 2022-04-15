@@ -53,7 +53,7 @@
                                             <!--<button type="submit" class="default-btn">
                                                 Login Now
                                             </button>-->
-                                            <jet-button  :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: rgb(255,115,0);border-width: 0px;padding-top: 7px;">
+                                            <jet-button  :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: green;border-width: 0px;padding-top: 7px;">
 									              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
 									                <span class="visually-hidden">Loading...</span>
 									              </div>

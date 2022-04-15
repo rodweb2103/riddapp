@@ -294,7 +294,7 @@ Route::get('/annonces', function () {
         'phpVersion' => PHP_VERSION,
     ]);
     
-})->name('offres');
+})->name('annonces');
 
 Route::get('/annonces/{id}', function (Request $request,$id) {
 	
@@ -305,7 +305,7 @@ Route::get('/annonces/{id}', function (Request $request,$id) {
 	     "id_offer" => $offer_details[0]->id_offer,
 	     "title" => $offer_details[0]->title,
 	     "offers_details" => $offer_details[0]->offers_details,
-	     "publish_date" => $offer_details[0]->publish_date,
+	     "publish_date" => \Carbon\Carbon::parse($offer_details[0]->publish_date)->locale("fr")->diffForHumans(),
 	     "offer_type" => $offer_details[0]->contract_type_offer->contract,
 	     "contract_duration" => $offer_details[0]->contract_duration,
 	     "location" => $offer_details[0]->location,
