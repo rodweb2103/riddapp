@@ -76,7 +76,7 @@
 						  <span class="sr-only">Loading...</span>
 						</div>
                     </div>
-                    <div class="col-lg-6" v-for="data in offerData" v-if="loading == false">
+                    <div class="col-lg-6" v-for="data in offerData['data']" v-if="loading == false">
                         <div class="event-item box-shadow" style="height: 190px;">
                             <div class="event-img">
                                 <a href="event-details.html">
@@ -99,13 +99,13 @@
 	                                     <span v-if="data['id'].includes('CLT')" style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Consultance</span>
                                     </li>
                                 </ul>
-                                <h3><Link :href="`${'/annonces/'+data['id']}`">{{ data['title'] }}</Link></h3>
+                                <h4><Link :href="`${'/annonces/'+data['id']}`">{{ data['title'] }}</Link></h4>
                                 <p>{{ data['offers_details'] }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Pagination :data="offerData" @pagination-change-page="getResults" />
+                <Pagination :data="offerData" @pagination-change-page="getResults" align="center" v-if="loading == false"/>
                 
                 <!--<div class="row">
                     <div class="col-lg-6">
@@ -382,7 +382,7 @@ export default defineComponent({
 	                vm.loading = false;
 	                //console.log(response.data);
 	                vm.total_offer = response.data['total'];
-                    vm.offerData = response.data['data'];
+                    vm.offerData = response.data;
             });
       },
 	  

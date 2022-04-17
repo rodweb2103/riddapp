@@ -51,6 +51,27 @@ Default CSS
   --transition: 0.5s;
 }
 
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #000;
+}
+
+.separator:not(:empty)::before {
+  margin-right: .25em;
+}
+
+.separator:not(:empty)::after {
+  margin-left: .25em;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -258,7 +279,7 @@ img {
   width: 550px;
   height: 550px;
   margin: auto;
-  background: var(--titleColor);
+  /*background: var(--titleColor);*/
   border-radius: 50%;
   z-index: -1;
   -webkit-transform-origin: top center;
@@ -272,12 +293,12 @@ img {
 }
 
 .default-btn.two {
-  background: var(--redColor);
+  /*background: var(--redColor);*/
   color: var(--whiteColor);
 }
 
 .default-btn.two::before {
-  background-color: var(--mainColor);
+  /*background-color: var(--mainColor);*/
 }
 
 .default-btn:hover {
@@ -1106,7 +1127,7 @@ Navbar Area
 }
 
 .side-nav-responsive .side-nav-inner .side-nav {
-  background-color: var(--mainColor);
+  /*background-color: var(--mainColor);*/
   padding: 20px 15px 10px;
 }
 

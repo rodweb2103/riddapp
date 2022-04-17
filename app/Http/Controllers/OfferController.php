@@ -175,11 +175,14 @@ class OfferController extends Controller
 
                         $query->where('study_level', $request->study_level);
 
-              })->paginate(15);
+              })->orderBy('publish_date','DESC')->paginate(10);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()
 		        ->map(function($item) {
 			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+			        
+			        
+			        
 		            return [
 		                //'id' => $item->id,
 		                'id' => $item->id_offer,
@@ -190,7 +193,7 @@ class OfferController extends Controller
 		                'company_location' => $item->company->company_location,
 		                'company_about' => $item->company->company_about,
 		                'company_website' => $item->company->company_website,
-		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->locale("fr")->diffForHumans(),
+		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->diffForHumans(),
 		                'company_profile_photo' => $url
 		            ];
             })->toArray();

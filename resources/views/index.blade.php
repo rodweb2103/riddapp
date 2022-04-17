@@ -166,7 +166,7 @@
             </div>
         </div>-->
         <!-- Featured Area End -->
-         <div class="courses-area pb-70 mt-4">
+         <div class="courses-area pb-70 mt-5">
             <div class="container">
                 <div class="section-title text-center mb-45">
                     <h2>Mission</h2>
@@ -181,7 +181,7 @@
                                 <img src="/img/pexels-pavel-danilyuk-7942434.jpg" alt="Courses" />
                             </a>
                             <div class="content">
-	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Contribuer à créer un cadre propice<br>au retour des diplômés de la<br>diaspora ivoirienne</p>
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Contribuer à créer un cadre propice au retour des diplômés de la diaspora ivoirienne</p>
                                 <!--<a href="courses.html" class="tag-btn">Design</a>
                                 <div class="price-text">$120</div>
                                 <h3><a href="courses-details.html">UI/UX design pattern for succesfull software applications</a></h3>

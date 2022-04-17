@@ -82,7 +82,7 @@
 	    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
         <!-- Theme style -->
-        <!--<link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">-->
+        <link rel="stylesheet" href="{{ asset('css/adminlte.min.css') }}">
  
         <!-- Title -->
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
@@ -91,6 +91,8 @@
         <link rel="icon" type="image/png" href="assets/images/favicon.png">
         
         <style>
+	        
+	       
 	        
 	       #progressbar{
 		       
@@ -175,28 +177,28 @@
 		<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
 		
 		
-		<script src="assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+		<script src="/assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
 		
-		<script src="assets/js/meanmenu.min.js" type="text/javascript"></script>
+		<script src="/assets/js/meanmenu.min.js" type="text/javascript"></script>
 		
-		<script src="assets/js/ajaxchimp.min.js" type="text/javascript"></script>
+		<script src="/assets/js/ajaxchimp.min.js" type="text/javascript"></script>
 		
-		<script src="assets/js/form-validator.min.js" type="text/javascript"></script>
+		<script src="/assets/js/form-validator.min.js" type="text/javascript"></script>
 		
-		<script src="assets/js/contact-form-script.js" type="text/javascript"></script>
+		<script src="/assets/js/contact-form-script.js" type="text/javascript"></script>
 		
-		<script src="assets/js/owl.carousel.min.js" type="text/javascript"></script>
+		<script src="/assets/js/owl.carousel.min.js" type="text/javascript"></script>
 		
-		<script src="assets/js/magnific-popup.min.js" type="text/javascript"></script>
+		<script src="/assets/js/magnific-popup.min.js" type="text/javascript"></script>
 		
-		<script src="assets/js/aos.js" type="text/javascript"></script>
+		<script src="/assets/js/aos.js" type="text/javascript"></script>
 		
-		<script src="assets/js/odometer.min.js" type="text/javascript"></script>
-		<script src="assets/js/appear.min.js" type="text/javascript"></script>
+		<script src="/assets/js/odometer.min.js" type="text/javascript"></script>
+		<script src="/assets/js/appear.min.js" type="text/javascript"></script>
 		
-		<script src="assets/js/tweenMax.min.js" type="text/javascript"></script>
+		<script src="/assets/js/tweenMax.min.js" type="text/javascript"></script>
 		
-		<script src="{{ asset('/assets/js/custom.js') }}"></script>
+		<script src="{{ asset('/assets/js/custom-vue.js') }}"></script>
 		 <!-- Jquery Min JS -->
         <!--<script src="{{ asset('/assets/js/jquery.min.js') }}"></script>-->
         <!-- Plugins JS -->

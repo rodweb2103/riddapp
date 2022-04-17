@@ -34,7 +34,7 @@
 									              <span class="visually-hidden">Loading...</span>
 									            </div>
 									            
-									            <div v-if="!form.processing">Recevoir le lien de réinitialisation</div>
+									            <div v-if="!form.processing">Réinitialiser</div>
 									          
 									          </button>
                                         </div>

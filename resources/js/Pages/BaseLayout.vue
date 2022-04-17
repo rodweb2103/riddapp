@@ -14,8 +14,8 @@
             <div class="preloader-section preloader-left"></div>
             <div class="preloader-section preloader-right"></div>
         </div>
+        <!--{{ $page.props }}-->
         <!-- End Pre Loader -->
-        
         <!-- Start Navbar Area -->
         <div class="navbar-area ledu-area" id="ledu-area">
              <div class="mobile-responsive-nav">
@@ -91,6 +91,39 @@
                                         </li>
                                     </ul>
                                 </li>
+                                
+                                <li class="nav-item">
+                                      <a href="#" class="nav-link dropdown-toggle" v-if="$page.props.user">
+                                        Bonjour, {{ $page.props.user['user_name'] }}                                   
+                                      </a>
+                                    <ul class="dropdown-menu">
+                                        <!--<li class="nav-item">
+                                            <a href="blog.html" class="nav-link">
+                                                Francais
+                                            </a>
+                                        </li>-->
+                                        <li class="nav-item">
+                                         <Link  :href="route('user.dashboard')" v-if="$page.props.is_employer || $page.props.is_candidate" class="nav-link"> 
+							               Mon compte
+							             </Link>
+							             <Link  :href="route('admin.dashboard')" v-if="$page.props.admin" class="nav-link"> 
+							               Administration
+							             </Link>
+                                        </li>
+                                        <li class="nav-item">
+                                        <!--<Link  :href="route('logout')" class="nav-link">
+							               Se deconnecter
+							             </Link>-->
+							             <Link
+								            :href="route('logout')"
+								            method="post"
+								            as="button"
+								            class="nav-link"
+								            >Déconnexion</Link
+		                                 >
+                                        </li>
+                                    </ul>
+                                </li>
 
                                 <!--<li class="nav-item">
                                     <a href="contact.html" class="nav-link">
@@ -99,14 +132,15 @@
                                 </li>-->
                             </ul>
 
-                            <div class="others-options d-flex align-items-center">
+                            <div class="others-options d-flex align-items-center" v-if="!$page.props.user">
                                 <div class="optional-item">
-	                                <Link  href="/login" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">
+	                                <Link  :href="route('login')" class="default-btn two" style="background: rgb(240, 128, 0);">
 							               Se connecter
 							        </Link>
                                     <!--<a href="signup.html" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">Se connecter</a>-->
                                 </div>
                             </div>
+                            
                         </div>
                     </nav>
                 </div>
@@ -114,32 +148,34 @@
 
             <div class="side-nav-responsive">
                 <div class="container">
-                    <!--<div class="dot-menu">
+                    <div class="dot-menu" v-if="!$page.props.user">
                         <div class="circle-inner">
                             <div class="circle circle-one"></div>
                             <div class="circle circle-two"></div>
                             <div class="circle circle-three"></div>
                         </div>
-                    </div>-->
+                    </div>
                     
-                    <!--<div class="container">
+                    <div class="container" v-dropmenu v-if="!$page.props.user">
                         <div class="side-nav-inner">
                             <div class="side-nav justify-content-center align-items-center">
-                                <div class="side-item">
+                               <!-- <div class="side-item">
                                     <form class="search-form">
                                         <input type="search" class="form-control" placeholder="Search courses">
                                         <button type="submit">
                                             <i class="ri-search-line"></i>
                                         </button>
                                     </form>
-                                </div>
+                                </div>-->
 
                                 <div class="side-item">
-                                    <a href="signup.html" class="default-btn two">Sign Up</a>
+                                    <Link :href="route('login')" class="default-btn two">Se connecter</Link>
+                                    <div class="separator">OU</div>
+                                    <Link :href="route('register')" class="default-btn two">Créer un compte</Link>
                                 </div>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </div>

@@ -55,10 +55,10 @@ class Offers extends Model
     //}
 
     
-    public function getPublishDateAttribute()
-    {
-       return \Carbon\Carbon::parse($this->created_at)->diffForHumans();
-    }
+    //public function getPublishDateAttribute()
+    //{
+    //   return \Carbon\Carbon::parse($this->created_at)->diffForHumans();
+    //}
     
     
     /*protected function publishDate(): Attribute

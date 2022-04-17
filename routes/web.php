@@ -66,6 +66,17 @@ Route::get('/admin',function(){
 })->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.dashboard');
 
 
+Route::get('/admin/ajax/new/candidate',[UserController::class, 'new_candidate'])->name('new_candidates');
+Route::get('/admin/ajax/new/employer',[UserController::class, 'new_employer'])->name('new_employer');
+Route::get('/admin/ajax/stats',[UserController::class, 'admin_stats'])->name('admin_stats');
+
+Route::get('/admin/ajax/candidates',[UserController::class, 'get_candidates'])->name('all_candidates');
+Route::get('/admin/ajax/employers',[UserController::class, 'get_employers'])->name('all_employers');
+Route::get('/admin/ajax/offers',[UserController::class, 'get_offers'])->name('all_offers');
+Route::get('/admin/ajax/staff/users',[UserController::class, 'get_staff_users'])->name('all_staff_users');
+
+
+
 Route::get('/admin/employer',function(){
     return Inertia::render('Admin/Employer');
 })->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.employer');
@@ -105,7 +116,7 @@ Route::get('/account/profile',function(){
 	   return Inertia::render('User/Employer/Profile');
 	}
     //return Inertia::render('User/Dashboard');
-})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Candidate|Employer'])->name('user.dashboard');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Candidate|Employer','verified'])->name('user.dashboard');
 
 //Route::get('/offers',function(){
 //    return Inertia::render('User/Offers');
@@ -298,7 +309,7 @@ Route::get('/annonces', function () {
 
 Route::get('/annonces/{id}', function (Request $request,$id) {
 	
-	$offer_details = Offers::with(['company','contract_type_offer','company.activity_sector_company'])->where('id_offer',$id)->get();
+	$offer_details = Offers::with(['company','contract_type_offer','company.activity_sector_company_user_company'])->where('id_offer',$id)->get();
     $url = config('app.url').\Storage::url('profile/'.basename($offer_details[0]->company->profile_photo_url));
     $array_offer = array(
 	    
@@ -314,7 +325,7 @@ Route::get('/annonces/{id}', function (Request $request,$id) {
 	     "company_about" => $offer_details[0]->company->company_about,
 	     "company_location" => $offer_details[0]->company->company_location,
 	     "profile_photo_url" => $url,
-	     "company_activity_sector" => $offer_details[0]->company->activity_sector_company->activity_sector_name
+	     "company_activity_sector" => $offer_details[0]->company->activity_sector_company_user_company->activity_sector_name
     );
 	
     return Inertia::render('OffersDetails', [

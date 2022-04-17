@@ -224,6 +224,49 @@
                                         </li>
                                     </ul>
                                 </li>
+                                
+                                @auth
+                                 <li class="nav-item">
+                                      <a href="#" class="nav-link dropdown-toggle">
+                                        Bonjour, {{ \Auth::user()->user_name }}                                   
+                                      </a>
+                                    <ul class="dropdown-menu">
+                                        <!--<li class="nav-item">
+                                            <a href="blog.html" class="nav-link">
+                                                Francais
+                                            </a>
+                                        </li>-->
+                                        <li class="nav-item">
+                                        @if(\Auth::user()->hasRole('Employer') || \Auth::user()->hasRole('Candidate'))
+	                                         <a href="{{ route('user.dashboard') }}" class="nav-link"> 
+								               Mon compte
+								             </a>
+								        @endif
+								        @if(\Auth::user()->hasRole('Admin'))
+							             <a href="{{ route('admin.dashboard') }}"  class="nav-link"> 
+							               Administration
+							             </a>
+							            @endif
+                                        </li>
+                                        <li class="nav-item">
+                                        <form method="POST" action='/logout' id="frm">
+	                                        @csrf
+	                                        <a class="nav-link" href="#" onclick="logoutUser()">Déconnexion</a>
+                                        </form>
+                                        <!--<Link  :href="route('logout')" class="nav-link">
+							               Se deconnecter
+							             </Link>-->
+							             <!--<Link
+								            :href="route('logout')"
+								            method="post"
+								            as="button"
+								            class="nav-link"
+								            >Déconnexion</Link
+		                                 >-->
+                                        </li>
+                                    </ul>
+                                </li>
+                               @endauth
 
                                 <!--<li class="nav-item">
                                     <a href="contact.html" class="nav-link">
@@ -231,12 +274,13 @@
                                     </a>
                                 </li>-->
                             </ul>
-
+                            @guest
                             <div class="others-options d-flex align-items-center">
                                 <div class="optional-item">
                                     <a href="/login" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">Se connecter</a>
                                 </div>
                             </div>
+                            @endguest
                         </div>
                     </nav>
                 </div>
@@ -433,6 +477,10 @@
         <script src="{{ asset('/assets/js/custom.js') }}"></script>
         
         <script>
+	        function logoutUser(){
+		        
+		        document.getElementById('frm').submit();
+	        }
 	        $(document).ready(function(){
 		        
 		        $('body').addClass('loaded'); 

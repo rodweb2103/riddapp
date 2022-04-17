@@ -1,16 +1,51 @@
 <template>
-  <Head title="Email Verification" />
+  <Head title="Vérifier votre compte" />
   
   <BaseLayout>
      
-      <div class="container hero" style="height: 710px;background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162)">
+      <div class="container hero" style="height: 710px;background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);max-width: unset !important;">
             <div class="row justify-content-center" style="height: 666px;">
-                <div class="col-md-9 col-lg-12 col-xl-12" style="margin-top: 0px;">
-	                <img src="/img/LG-RIDD@2x.png" style="width: 150px;" class="rounded mx-auto d-block">
+                <div class="col-md-9 col-lg-12 col-xl-12 align-self-center" style="margin-top: 0px;">
+	                <!--<img src="/img/LG-RIDD@2x.png" style="width: 150px;" class="rounded mx-auto d-block">-->
 	                <div class="alert alert-success" role="alert" v-if="verificationLinkSent" style="margin-left: auto;margin-right: auto;width: 40%;">
 			           Un nouveau lien de vérification a été envoyé à l'adresse e-mail que vous avez fournie lors de l'inscription.
 	                </div>
-	                <jet-authentication-card class="col-md-12">
+	                <div class="container col-md-12">
+				   <div class="row justify-content-center my-5">
+					      <div class="col-sm-12 col-md-12 col-lg-6 my-4">
+					         <div></div>
+					         <div class="card shadow-sm px-3">
+					            <div class="card-body">
+					               <div class="mb-3 small text-muted" style="font-size: 20px;"> Merci pour votre inscription! Avant de commencer, pourriez-vous vérifier votre adresse e-mail en cliquant sur le lien que nous venons de vous envoyer par e-mail ? Si vous n'a pas reçu l'e-mail, nous vous en enverrons un autre avec plaisir. </div>
+					               <form @submit.prevent="submit">
+					                  <div class="mt-4 d-flex justify-content-between">
+					                     <jet-button
+								            style="background: green;text-transform: unset !important;"
+								            :class="{ 'text-white-50': form.processing }"
+								            :disabled="form.processing"
+								          >
+								            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+								              <span class="visually-hidden">Loading...</span>
+								            </div>
+								
+								            Renvoyer l'e-mail de vérification
+								          </jet-button>
+					                     <!--<button class="btn btn-link">Déconnexion</button>-->
+					                     <!--<Link
+						            :href="route('logout')"
+						            method="post"
+						            as="button"
+						            class="btn btn-link"
+						            >Déconnexion</Link
+                                >-->
+					                  </div>
+					               </form>
+					            </div>
+					         </div>
+					      </div>
+					   </div>
+                   </div>
+	                <!--<jet-authentication-card class="col-md-12">
 					   
 					    <div class="card-body">
 					      <div class="mb-3 small text-muted">
@@ -42,7 +77,7 @@
 					        </div>
 					      </form>
 					    </div>
-					</jet-authentication-card>
+					</jet-authentication-card>-->
                     
                 </div>
             </div>

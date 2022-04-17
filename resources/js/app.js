@@ -172,6 +172,53 @@ createInertiaApp({
         return createApp({ render: () => h(app, props) })
             //.component("font-awesome-icon", FontAwesomeIcon)
             .use(plugin)
+            .directive("dropmenu", {
+				  mounted(el, binding) {
+					  
+					    //console.log($('.mean-menu'));
+					    //$("#ledu-area").html('<div class="mobile-responsive-nav"><div class="container"><div class="mobile-responsive-menu"><div class="logo"><a href="#"><img src="/img/LG-RIDD@2x.png" class="logo-two" alt="logo" style="width: 60px;"/><img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 60px;"/></a></div></div></div>');
+					    
+					    //$(document).ready(function(){ 
+						   
+						    $(".side-nav-responsive .dot-menu").on("click", function(){
+		                       $(".side-nav-responsive .container .container").toggleClass("active");
+                            });
+						    
+						    
+					    //});
+					 
+					    
+				    
+				  },
+				  updated(el, binding){
+					  
+					    
+					  
+					    /*$('.mean-menu').meanmenu({ 
+					            //meanMenuContainer: '.mobile-menu-area', 
+					            meanScreenWidth: "991", 
+					            //meanRevealPosition: "right"
+					    });*/
+					  
+				  },
+				  beforeUpdate(el, binding){
+					  
+					  //$("#ledu-area").html('<div class="mobile-responsive-nav"><div class="container"><div class="mobile-responsive-menu"><div class="logo"><a href="#"><img src="/img/LG-RIDD@2x.png" class="logo-two" alt="logo" style="width: 60px;"/><img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 60px;"/></a></div></div></div>');
+					  
+					  
+				  },
+				  beforeMount(el, binding){
+					  
+					    //$("#ledu-area").html('<div class="mobile-responsive-nav"><div class="container"><div class="mobile-responsive-menu"><div class="logo"><a href="#"><img src="/img/LG-RIDD@2x.png" class="logo-two" alt="logo" style="width: 60px;"/><img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 60px;"/></a></div></div></div>');
+					    
+					    //alert('');
+					    //$("#ledu-area").html('<div class="mobile-responsive-nav"><div class="container"><div class="mobile-responsive-menu"><div class="logo"><a href="#"><img src="/img/LG-RIDD@2x.png" class="logo-two" alt="logo" style="width: 60px;"/><img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 60px;"/></a></div></div></div>');
+					    
+					   
+	                 
+				    //el.style.fontSize = 20 + "px";
+				 },
+            })
             .directive("mainmenu", {
 				  mounted(el, binding) {
 					  
@@ -184,12 +231,24 @@ createInertiaApp({
 						            meanScreenWidth: "991", 
 						            //meanRevealPosition: "right"
 						    });
+						    
+						    /*$(".side-nav-responsive .dot-menu").on("click", function(){
+							    console.log($(".side-nav-responsive .container .container"));
+							    if($(".side-nav-responsive .container .container").hasClass('active')) {
+								    alert("");
+								    $(".side-nav-responsive .container .container").removeClass("active");
+								}
+								$(".side-nav-responsive .container .container").addClass("active");
+						    });*/
+						    
 					    });
 					 
 					    
 				    
 				  },
 				  updated(el, binding){
+					  
+					    
 					  
 					    /*$('.mean-menu').meanmenu({ 
 					            //meanMenuContainer: '.mobile-menu-area', 

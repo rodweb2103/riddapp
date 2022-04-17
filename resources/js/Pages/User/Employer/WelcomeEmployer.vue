@@ -512,7 +512,7 @@ export default defineComponent({
 	  
 	  getResults(page = 1) {
 		    let vm = this;
-            axios.get('/offers?page=' + page)
+            axios.post('/offers?page=' + page)
                 .then(response => {
 	                
 	                //console.log(response.data);

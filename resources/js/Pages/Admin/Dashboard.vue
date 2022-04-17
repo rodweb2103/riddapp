@@ -12,7 +12,7 @@
 <script>
 import { defineComponent } from "vue"
 import AppLayout from "@/Layouts/AppLayout.vue"
-import Welcome from "@/Pages/Welcome.vue"
+import Welcome from "@/Pages/Admin/Welcome.vue"
 //import Welcome from "@/Jetstream/Welcome.vue"
 
 export default defineComponent({

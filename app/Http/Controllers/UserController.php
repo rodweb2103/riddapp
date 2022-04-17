@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Offers;
 
 use Illuminate\Support\Facades\Hash;
 use App\Models\StudyLevel;
@@ -14,6 +15,275 @@ use Illuminate\Validation\Rule;
 class UserController extends Controller
 {
     //
+    
+    //Route::get('/admin/ajax/candidates',[UserController::class, 'get_candidates'])->name('all_candidates');
+    //Route::get('/admin/ajax/employers',[UserController::class, 'get_employers'])->name('all_employers');
+    //Route::get('/admin/ajax/offers',[UserController::class, 'get_offers'])->name('all_offers');
+    //Route::get('/admin/ajax/staff/users',[UserController::class, 'get_staff_users'])->name('all_staff_users');
+    
+    public function new_candidate(Request $request){
+	    
+	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->limit(8)->get();
+	    
+	    $itemsTransformed = $itemsPaginated->map(function($item) {
+			        //var_dump($item->company->profile_photo_path);exit;
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
+			        
+			        //var_dump($item->offers_company);exit;
+			        
+		            return [
+			         	
+			         	'id' => $item->id,
+			         	'first_name' => $item->first_name,
+			         	'last_name' => $item->last_name,
+			         	'profile_url' => $url,
+			         	//'country' => $item->country_user->name,
+			         	//'city' => $item->city,
+			         	//'phone_number' => $item->phone_number,
+			         	//'user_name' => $item->user_name,
+			         	//'study_level' => $item->study_level_user->level,
+			         	//'activity_sector' => $item->activity_sector_company_user->activity_sector_name,
+			         	//'offer_published' => $item->offers_company->count()           
+		                //'id' => $item->id_offer,
+		                //'offer_id' => $item->id,
+		                //'title' => $item->title,
+		                //'offers_details' => Str::of($item->offers_details)->limit(40),
+		                //'offers_details_more' => $item->offers_details,
+		                //'publish_status' => $item->publish_status,
+		                //'offer_status' => $item->pivot->offer_status,
+		                //'offer_location' => $item->location,
+		                //'offer_date' => \Carbon\Carbon::parse($item->pivot->offer_date)->diffForhumans(),
+		                //'company_name' => $item->company->company_name,
+		                //'company_location' => $item->company->company_location,
+		                //'company_about' => $item->company->company_about,
+		                //'company_website' => $item->company->company_website,
+		                //'company_profile_photo' => $url
+		            ];
+        })->toArray();
+	    
+	    
+	    return response()->json($itemsTransformed);
+    }
+    
+    public function new_employer(Request $request){
+	    
+	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->limit(8)->get();
+	    $itemsTransformed = $itemsPaginated
+		        ->map(function($item) {
+			        //var_dump($item->company->profile_photo_path);exit;
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
+			        
+			        //var_dump($item->offers_company);exit;
+			        
+		            return [
+			         	
+			         	'id' => $item->id,
+			         	'first_name' => $item->first_name,
+			         	'last_name' => $item->last_name,
+			         	'profile_url' => $url,
+			         	//'country' => $item->country_user->name,
+			         	//'city' => $item->city,
+			         	//'phone_number' => $item->phone_number,
+			         	//'user_name' => $item->user_name,
+			         	//'study_level' => $item->study_level_user->level,
+			         	//'activity_sector' => $item->activity_sector_company_user->activity_sector_name,
+			         	//'offer_published' => $item->offers_company->count()           
+		                //'id' => $item->id_offer,
+		                //'offer_id' => $item->id,
+		                //'title' => $item->title,
+		                //'offers_details' => Str::of($item->offers_details)->limit(40),
+		                //'offers_details_more' => $item->offers_details,
+		                //'publish_status' => $item->publish_status,
+		                //'offer_status' => $item->pivot->offer_status,
+		                //'offer_location' => $item->location,
+		                //'offer_date' => \Carbon\Carbon::parse($item->pivot->offer_date)->diffForhumans(),
+		                'company_name' => $item->company_name,
+		                //'company_location' => $item->company->company_location,
+		                //'company_about' => $item->company->company_about,
+		                //'company_website' => $item->company->company_website,
+		                //'company_profile_photo' => $url
+		            ];
+        })->toArray();
+	    
+	     return response()->json($itemsTransformed);
+	    
+    }
+    
+    public function admin_stats(Request $request){
+	    
+	    $candidates = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get();
+	    $employers = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get();
+	    $offres = Offers::all();
+	    
+	    return array('candidates'=>$candidates[0]->nb,'employers'=>$employers[0]->nb,'offres'=>count($offres));
+	    
+    }
+    
+    public function get_candidates(Request $request){
+	    
+	    
+	    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user'])->whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->paginate(10);
+	    
+	    
+	    $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        //var_dump($item->company->profile_photo_path);exit;
+			        //$url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+			        
+			        //var_dump($item->study_level_user);exit;
+			        
+		            return [
+			         	
+			         	'id' => $item->id,
+			         	'first_name' => $item->first_name,
+			         	'last_name' => $item->last_name,
+			         	'country' => $item->country_user->name,
+			         	'city' => $item->city,
+			         	'phone_number' => $item->phone_number,
+			         	'user_name' => $item->user_name,
+			         	'study_level' => $item->study_level_user->level,
+			         	'activity_sector' => $item->activity_sector_company_user->activity_sector_name	            
+		                //'id' => $item->id_offer,
+		                //'offer_id' => $item->id,
+		                //'title' => $item->title,
+		                //'offers_details' => Str::of($item->offers_details)->limit(40),
+		                //'offers_details_more' => $item->offers_details,
+		                //'publish_status' => $item->publish_status,
+		                //'offer_status' => $item->pivot->offer_status,
+		                //'offer_location' => $item->location,
+		                //'offer_date' => \Carbon\Carbon::parse($item->pivot->offer_date)->diffForhumans(),
+		                //'company_name' => $item->company->company_name,
+		                //'company_location' => $item->company->company_location,
+		                //'company_about' => $item->company->company_about,
+		                //'company_website' => $item->company->company_website,
+		                //'company_profile_photo' => $url
+		            ];
+        })->toArray();
+              
+        $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+	    );
+	    
+	    return $itemsTransformedAndPaginated;
+	
+	}
+	
+	public function get_employers(Request $request){
+		
+			    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user','offers_company'])->whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->paginate(10);
+	    
+	    
+	    $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        //var_dump($item->company->profile_photo_path);exit;
+			        //$url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+			        
+			        //var_dump($item->offers_company);exit;
+			        
+		            return [
+			         	
+			         	'id' => $item->id,
+			         	'first_name' => $item->first_name,
+			         	'last_name' => $item->last_name,
+			         	'country' => $item->country_user->name,
+			         	'city' => $item->city,
+			         	'phone_number' => $item->phone_number,
+			         	'user_name' => $item->user_name,
+			         	//'study_level' => $item->study_level_user->level,
+			         	'activity_sector' => $item->activity_sector_company_user->activity_sector_name,
+			         	'offer_published' => $item->offers_company->count()           
+		                //'id' => $item->id_offer,
+		                //'offer_id' => $item->id,
+		                //'title' => $item->title,
+		                //'offers_details' => Str::of($item->offers_details)->limit(40),
+		                //'offers_details_more' => $item->offers_details,
+		                //'publish_status' => $item->publish_status,
+		                //'offer_status' => $item->pivot->offer_status,
+		                //'offer_location' => $item->location,
+		                //'offer_date' => \Carbon\Carbon::parse($item->pivot->offer_date)->diffForhumans(),
+		                //'company_name' => $item->company->company_name,
+		                //'company_location' => $item->company->company_location,
+		                //'company_about' => $item->company->company_about,
+		                //'company_website' => $item->company->company_website,
+		                //'company_profile_photo' => $url
+		            ];
+        })->toArray();
+              
+        $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+	    );
+	    
+	    return $itemsTransformedAndPaginated;
+
+	
+	}
+	
+	public function get_offers(Request $request){
+		
+		 $itemsPaginated = Offers::with('company')->paginate(10);
+	    
+	    
+	    $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        //var_dump($item->company->profile_photo_path);exit;
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+		            return [
+			         			            
+		                'id' => $item->id_offer,
+		                'offer_id' => $item->id,
+		                'title' => $item->title,
+		                'offers_details' => \Str::of($item->offers_details)->limit(40),
+		                'offers_details_more' => $item->offers_details,
+		                'publish_status' => $item->publish_status,
+		                'offer_status' => $item->offer_status,
+		                'offer_location' => $item->location,
+		                'offer_date' => \Carbon\Carbon::parse($item->created_at)->diffForhumans(),
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'company_profile_photo' => $url
+		            ];
+        })->toArray();
+              
+        $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+	    );
+	    
+	    return $itemsTransformedAndPaginated;
+	
+	}
+	
+	public function get_staff_users(Request $request){
+	
+	}
     
     public function profile_update(Request $request){
 	    

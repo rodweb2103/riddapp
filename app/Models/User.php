@@ -68,19 +68,31 @@ class User extends Authenticatable implements MustVerifyEmail
         'profile_photo_url',
     ];
     
-    public function country(){
+    //return $this->belongsTo(User::class,'company_id','id');
+    
+    public function country_user(){
 	    
 	    return $this->belongsTo(Country::class,'country','id');
     }
     
-    public function study_level(){
+    public function study_level_user(){
 	    
 	    return $this->belongsTo(StudyLevel::class,'study_level','id');
     }
     
-    public function activity_sector_company(){
+    public function activity_sector_company_user(){
 	    
 	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
+    }
+    
+    public function activity_sector_company_user_company(){
+	    
+	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
+    }
+    
+    public function offers_company()
+    {
+        return $this->hasMany(Offers::class,'company_id','id');
     }
     
     public function offers()

@@ -783,7 +783,12 @@ export default defineComponent({
   methods: {
 	
 	validate(data){
-		this.form.ccode = data.countryCallingCode;
+		
+		if(data.countryCallingCode!==undefined) this.form.ccode = data.countryCallingCode;
+		
+		
+		
+		//alert(data.countryCallingCode);
 		this.isValid = data.valid;
 		console.log(data);
 	},
