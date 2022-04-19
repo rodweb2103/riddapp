@@ -248,7 +248,7 @@
                     <h3 class="card-title">Nouveaux recruteurs</h3>
 
                     <div class="card-tools">
-                      <span class="badge badge-danger">{{ employerData['total_all'] }} New Members</span>
+                      <span class="badge badge-danger">{{ employerData['total'] }} New Members</span>
                       <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -266,7 +266,9 @@
 	                      <div style="font-size: 20px;" class="mt-4">Aucun compte recruteur trouvé</div>
 	                  </div>
                       <li v-for="data in employerData['data']">
-                        <img :src="data['profile_url']" alt="User Image">
+                        <!--<img :src="data['profile_url']" alt="User Image">-->
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''">
+                        <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i>
                         <a class="users-list-name" href="#">{{ data['company_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
                       </li>
@@ -310,7 +312,7 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer text-center">
-                    <Link href="/admin/employer" v-if="employerData['total_all'] > 0">Voir tout les recruteurs</Link>
+                    <Link href="/admin/employer" v-if="employerData['total'] > 0">Voir tout les recruteurs</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>
@@ -323,7 +325,7 @@
                     <h3 class="card-title">Nouveaux Candidats</h3>
 
                     <div class="card-tools">
-                      <span class="badge badge-danger">{{ candidateData['total_all'] }} New Members</span>
+                      <span class="badge badge-danger">{{ candidateData['total'] }} New Members</span>
                       <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -337,12 +339,13 @@
                     <ul class="users-list clearfix">
 	                    
 	                    
-	                  <div  v-if="candidateData['total_all'] == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+	                  <div  v-if="candidateData['total'] == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
 	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
 	                      <div style="font-size: 20px;" class="mt-4">Aucun compte candidat trouvé</div>
 	                  </div>
                       <li v-for="data in candidateData['data']">
-                        <img src="/img/user1-128x128.jpg" alt="User Image">
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''">
+                        <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i>
                         <a class="users-list-name" href="#">{{ data['first_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
                       </li>
@@ -386,7 +389,7 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer text-center">
-                    <Link href="/admin/candidate" v-if="candidateData['total_all'] > 0">Voir tout les candidats</Link>
+                    <Link href="/admin/candidate" v-if="candidateData['total'] > 0">Voir tout les candidats</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>
@@ -570,7 +573,9 @@
 	                      <div style="font-size: 20px;" class="mt-4">Aucun compte staff trouvé</div>
 	                  </div>
                       <li v-for="data in staffData['data']">
-                        <img :src="data['profile_photo']" alt="User Image">
+                        <!--<img :src="data['profile_photo']" alt="User Image">-->
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''">
+                        <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i>
                         <a class="users-list-name" href="#">{{ data['user_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
                       </li>
@@ -614,7 +619,8 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer text-center">
-                    <a href="javascript:">View All Users</a>
+                    <!--<a href="javascript:">Voir tout les comptes staff</a>-->
+                    <Link href="/admin/accounts/staff">Voir tout les comptes staff</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>

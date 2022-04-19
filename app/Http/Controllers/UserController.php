@@ -21,13 +21,119 @@ class UserController extends Controller
     //Route::get('/admin/ajax/offers',[UserController::class, 'get_offers'])->name('all_offers');
     //Route::get('/admin/ajax/staff/users',[UserController::class, 'get_staff_users'])->name('all_staff_users');
     
+    public function ajax_staff_create(Request $request){
+	    
+	    $request->validate([
+		    //'activity_sector' => 'required',
+		    'user_name' => 'required',
+		    'first_name' => 'required',
+		    'last_name' => 'required',
+		    'email' => 'required|email|unique:users',
+		    'password' => 'required',
+		    'password_confirmation' => 'required|same:password'
+		    //'study_level' => 'required'
+         ],[
+		      //'activity_sector.required'=> 'Le secteur d\'activité est requis', // custom message
+		      'email.required'=> 'Le courriel est requis', // custom message,
+		      'email.email' => 'Le courriel est non valide',
+		      'email.unique' => 'Le courriel a déjà été utilisé',
+		      'first_name.required'=> 'Le prénom est requis', // custom message
+		      'last_name.required'=> 'Le nom est requis', // custom message,
+		      'user_name.required'=> 'Le nom d\'utlisateur est requis', // custom message
+		      'user_name.unique'=> 'La nom d\'utlisateur existe déjà', // custom message
+		      'password.required'=> 'Le mot de passe est requis', // custom message,
+		      'password_confirmation.required'=> 'Le mot de passe confirmation est requis', // custom message,
+		      'password_confirmation.same'=> 'Les mots de passe doivent être identiques', // custom message,
+		      //'study_level.required'=> 'Le niveau d\'étude est requis' // custom message
+         ]);
+         
+         
+          //$country_id = \DB::table("countries")->where("phonecode",$request->input('ccode'))->get();
+		  
+		  $user = new User;
+		  
+		  $user->email = $request->input('email');
+		  $user->first_name = $request->input('first_name');
+		  $user->last_name = $request->input('last_name');
+		  $user->user_name = $request->input('user_name');
+		  $user->password = Hash::make($request->input('password'));
+		  $role = Role::where('name', '=', 'Staff')->firstOrFail();
+		  $user->assignRole($role);
+	      $user->save();
+	      
+	      return redirect()->back();
+	      
+		  //$user->city = $request->input('city');
+		  //$user->profile_photo = $request->input('user_name');
+		  //$user->activity_sector = $request->input('activity_sector');
+		  //$user->account_type = $request->input('account_type'); 
+		  //$user->country = $country_id[0]->id; 
+         
+         
+         
+         /*$offer = new Offers;
+         
+         $offer->title=$request->input('offer_title');
+         //$offer->activity_sector=$request->input('activity_sector');
+         $offer->contract_type=$request->input('contract_type');
+         $offer->contract_duration=$request->input('contract_duration');
+         //$offer->study_level=$request->input('study_level');
+         $offer->location=$request->input('location');
+         $offer->offers_details=$request->input('offer_details');
+         $offer->profile_details=$request->input('profile_details');
+         $offer->publish_status = 0;
+         
+         $offer->company_id = \Auth::user()->id;
+         $offer->publish_date = \Carbon\Carbon::now();
+         $offer->expiry_date = \Carbon\Carbon::now()->addDays(10);
+         $offer->save();*/
+         
+         
+         //return redirect('/account');
+	    
+    }
+    
+    public function ajax_staff_delete(Request $request){
+	    
+	    $user = new User;
+	    $user_edit = $user->where('id',$request->input('id'))->first();
+	    $user_edit->removeRole('Staff');
+	    $user_edit->delete();
+	    
+	    //\DB::table("users")->where("id",$request->input('id'))->delete();
+	    
+	    return redirect()->back();
+	    
+    }
+    
+    public function ajax_staff_unsuspend(Request $request){
+	    
+	    
+	    \DB::table("users")->where("id",$request->input('id'))->update(array(
+		    
+		    "is_suspended" => 0
+	    ));
+	    
+	    return redirect()->back();
+    }
+    
+    public function ajax_staff_suspend(Request $request){
+	    \DB::table("users")->where("id",$request->input('id'))->update(array(
+		    
+		    "is_suspended" => 1
+	    ));
+	    
+	    return redirect()->back();
+	    
+    }
+    
     public function new_candidate(Request $request){
 	    
 	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->paginate(8);
-	    $grandTotal =  User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
+	    //$grandTotal =  User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    $itemsTransformed = $itemsPaginated->map(function($item) {
 			        //var_dump($item->company->profile_photo_path);exit;
-			        $url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
+			        //$url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
 			        
 			        //var_dump($item->offers_company);exit;
 			        
@@ -36,7 +142,9 @@ class UserController extends Controller
 			         	'id' => $item->id,
 			         	'first_name' => $item->first_name,
 			         	'last_name' => $item->last_name,
-			         	'profile_url' => $url,
+			         	'profile_url' => $item->profile_photo_path == "" ? "":config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path)),
+
+			         	//'profile_url' => $url,
 			         	//'country' => $item->country_user->name,
 			         	//'city' => $item->city,
 			         	//'phone_number' => $item->phone_number,
@@ -73,7 +181,7 @@ class UserController extends Controller
 			        ]
 	    );
 	    
-	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    //$itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
 	    return $itemsTransformedAndPaginated;
 	    
 	    //return response()->json($itemsTransformed);
@@ -82,11 +190,11 @@ class UserController extends Controller
     public function new_employer(Request $request){
 	    
 	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->paginate(8);
-	    $grandTotal =  User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
+	    //$grandTotal =  User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    $itemsTransformed = $itemsPaginated
 		        ->map(function($item) {
 			        //var_dump($item->company->profile_photo_path);exit;
-			        $url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
+			        //$url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
 			        
 			        //var_dump($item->offers_company);exit;
 			        
@@ -95,7 +203,7 @@ class UserController extends Controller
 			         	'id' => $item->id,
 			         	'first_name' => $item->first_name,
 			         	'last_name' => $item->last_name,
-			         	'profile_url' => $url,
+			         	'profile_url' => $item->profile_photo_path == "" ? "":config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path)),
 			         	//'country' => $item->country_user->name,
 			         	//'city' => $item->city,
 			         	//'phone_number' => $item->phone_number,
@@ -132,7 +240,7 @@ class UserController extends Controller
 			        ]
 	    );
         
-        $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+        //$itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
 	    
 	    return $itemsTransformedAndPaginated;
 	    //return response()->json($itemsTransformed);
@@ -154,7 +262,7 @@ class UserController extends Controller
 	    //exit;
 	    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user'])->whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->paginate(10);
 	    
-	    $grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
+	    //$grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    
 	    $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -204,7 +312,7 @@ class UserController extends Controller
 			        ]
 	    );
 	    
-	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    //$itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
 	    
 	    return $itemsTransformedAndPaginated;
 	
@@ -214,7 +322,7 @@ class UserController extends Controller
 		
 	    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user','offers_company'])->whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->paginate(10);
 	    
-	    $grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
+	   //$grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    
 	    $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -265,7 +373,7 @@ class UserController extends Controller
 			        ]
 	    );
 	    
-	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    //$itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
 	    
 	    return $itemsTransformedAndPaginated;
 
@@ -276,7 +384,7 @@ class UserController extends Controller
 		
 		$itemsPaginated = Offers::with('company')->orderByRaw('publish_date DESC')->paginate(10);
 	    
-	    $grandTotal = Offers::with('company')->orderByRaw('publish_date DESC')->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
+	    //$grandTotal = Offers::with('company')->orderByRaw('publish_date DESC')->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    //$itemsPaginated->additional(['extra'=> $grandTotal]);
 	    
 	    //$itemsPaginated = InvoiceResource::collection($customer->invoices()->paginate(10));
@@ -320,7 +428,7 @@ class UserController extends Controller
 			        ]
 	    );
 	    
-	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    //$itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
 	    
 	    
 	    return $itemsTransformedAndPaginated;
@@ -331,13 +439,13 @@ class UserController extends Controller
 		
 		
 		$itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Staff"); })->paginate(10);
-	    $grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Staff"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
+	    //$grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Staff"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    
 	    $itemsTransformed = $itemsPaginated
 		        ->getCollection()
 		        ->map(function($item) {
 			        //var_dump($item->company->profile_photo_path);exit;
-			        $url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
+			        //$url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
 			        
 			        //var_dump($item->offers_company);exit;
 			        
@@ -345,12 +453,15 @@ class UserController extends Controller
 			         	
 			         	'id' => $item->id,
 			         	'first_name' => $item->first_name,
+			         	'email' => $item->email,
 			         	'last_name' => $item->last_name,
-			         	'country' => $item->country_user->name,
+			         	'country' => strval(@$item->country_user->name),
 			         	'city' => $item->city,
 			         	'phone_number' => $item->phone_number,
 			         	'user_name' => $item->user_name,
-			         	'profile_photo' => $url
+			         	//'profile_photo' => $url,
+			            'profile_url' => $item->profile_photo_path == "" ? "":config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path)),
+			         	'is_suspended' => $item->is_suspended
 			         	//'study_level' => $item->study_level_user->level,
 			         	//'activity_sector' => $item->activity_sector_company_user->activity_sector_name,
 			         	//'offer_published' => $item->offers_company->count()           
@@ -383,7 +494,7 @@ class UserController extends Controller
 			        ]
 	    );
 	    
-	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    //$itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
 	    
 	    return $itemsTransformedAndPaginated;
 	
@@ -496,7 +607,7 @@ class UserController extends Controller
 		    //'user_type' => 'required',
 		    'first_name' => 'required',
 		    'last_name' => 'required',
-		    'email' => 'required',
+		    'email' => 'required|unique:users',
 		    'phone_number' => 'required',
 		    //'ccode' => 'required',
 		    'city' => 'required'
@@ -507,6 +618,7 @@ class UserController extends Controller
 		      'email.required'=> 'Le courriel est requis', // custom message,
 		      'phone_number.required' => 'Le numéro de téléphone est requis',
 		      'city.required' => 'La ville est requise',
+		      'email.unique' => 'Le courriel a déjà été utilisé'
 		      //'ccode.required' => 'Le pays est requis'
 		      //'password_confirmation.same'=> 'Les mots de passe doivent être identiques', // custom message,
          ]);

@@ -74,7 +74,10 @@ Route::get('/admin/ajax/candidates',[UserController::class, 'get_candidates'])->
 Route::get('/admin/ajax/employers',[UserController::class, 'get_employers'])->name('all_employers');
 Route::get('/admin/ajax/offers',[UserController::class, 'get_offers'])->name('all_offers');
 Route::get('/admin/ajax/staff/users',[UserController::class, 'get_staff_users'])->name('all_staff_users');
-
+Route::post('/admin/ajax/staff/create',[UserController::class, 'ajax_staff_create'])->name('ajax_staff_create');
+Route::post('/admin/ajax/staff/delete',[UserController::class, 'ajax_staff_delete'])->name('ajax_staff_delete');
+Route::post('/admin/ajax/staff/suspend',[UserController::class, 'ajax_staff_suspend'])->name('ajax_staff_suspend');
+Route::post('/admin/ajax/staff/unsuspend',[UserController::class, 'ajax_staff_unsuspend'])->name('ajax_staff_unsuspend');
 
 
 Route::get('/admin/employer',function(){
@@ -128,10 +131,10 @@ Route::get('/membership',function(){
 
 //Route::get('/account/myoffer',[OfferController::class, 'my_offer'])->name('candidate.offer');
 
-//Route::get('/admin/profile',function(){
+Route::get('/admin/profile',function(){
 	
-//    return Inertia::render('Admin/Profile');
-//});
+    return Inertia::render('Admin/Profile');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('employer.membership');
 
 
 $limiter = config('fortify.limiters.login');
