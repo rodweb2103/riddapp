@@ -23,8 +23,8 @@ class UserController extends Controller
     
     public function new_candidate(Request $request){
 	    
-	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->limit(8)->get();
-	    
+	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->paginate(8);
+	    $grandTotal =  User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    $itemsTransformed = $itemsPaginated->map(function($item) {
 			        //var_dump($item->company->profile_photo_path);exit;
 			        $url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
@@ -60,14 +60,29 @@ class UserController extends Controller
 		                //'company_profile_photo' => $url
 		            ];
         })->toArray();
+        
+        $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+	    );
 	    
+	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    return $itemsTransformedAndPaginated;
 	    
-	    return response()->json($itemsTransformed);
+	    //return response()->json($itemsTransformed);
     }
     
     public function new_employer(Request $request){
 	    
-	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->limit(8)->get();
+	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->paginate(8);
+	    $grandTotal =  User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    $itemsTransformed = $itemsPaginated
 		        ->map(function($item) {
 			        //var_dump($item->company->profile_photo_path);exit;
@@ -104,8 +119,23 @@ class UserController extends Controller
 		                //'company_profile_photo' => $url
 		            ];
         })->toArray();
+        
+        $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+	    );
+        
+        $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
 	    
-	     return response()->json($itemsTransformed);
+	    return $itemsTransformedAndPaginated;
+	    //return response()->json($itemsTransformed);
 	    
     }
     
@@ -121,9 +151,10 @@ class UserController extends Controller
     
     public function get_candidates(Request $request){
 	    
-	    
+	    //exit;
 	    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user'])->whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->paginate(10);
 	    
+	    $grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    
 	    $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -173,14 +204,17 @@ class UserController extends Controller
 			        ]
 	    );
 	    
+	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    
 	    return $itemsTransformedAndPaginated;
 	
 	}
 	
 	public function get_employers(Request $request){
 		
-			    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user','offers_company'])->whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->paginate(10);
+	    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user','offers_company'])->whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->paginate(10);
 	    
+	    $grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    
 	    $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -231,6 +265,8 @@ class UserController extends Controller
 			        ]
 	    );
 	    
+	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    
 	    return $itemsTransformedAndPaginated;
 
 	
@@ -238,8 +274,12 @@ class UserController extends Controller
 	
 	public function get_offers(Request $request){
 		
-		 $itemsPaginated = Offers::with('company')->paginate(10);
+		$itemsPaginated = Offers::with('company')->orderByRaw('publish_date DESC')->paginate(10);
 	    
+	    $grandTotal = Offers::with('company')->orderByRaw('publish_date DESC')->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
+	    //$itemsPaginated->additional(['extra'=> $grandTotal]);
+	    
+	    //$itemsPaginated = InvoiceResource::collection($customer->invoices()->paginate(10));
 	    
 	    $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -264,6 +304,9 @@ class UserController extends Controller
 		                'company_profile_photo' => $url
 		            ];
         })->toArray();
+        
+        
+        //var_dump($itemsTransformed);exit;
               
         $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
 			        $itemsTransformed,
@@ -277,11 +320,72 @@ class UserController extends Controller
 			        ]
 	    );
 	    
+	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    
+	    
 	    return $itemsTransformedAndPaginated;
 	
 	}
 	
 	public function get_staff_users(Request $request){
+		
+		
+		$itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Staff"); })->paginate(10);
+	    $grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Staff"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
+	    
+	    $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        //var_dump($item->company->profile_photo_path);exit;
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->profile_photo_path));
+			        
+			        //var_dump($item->offers_company);exit;
+			        
+		            return [
+			         	
+			         	'id' => $item->id,
+			         	'first_name' => $item->first_name,
+			         	'last_name' => $item->last_name,
+			         	'country' => $item->country_user->name,
+			         	'city' => $item->city,
+			         	'phone_number' => $item->phone_number,
+			         	'user_name' => $item->user_name,
+			         	'profile_photo' => $url
+			         	//'study_level' => $item->study_level_user->level,
+			         	//'activity_sector' => $item->activity_sector_company_user->activity_sector_name,
+			         	//'offer_published' => $item->offers_company->count()           
+		                //'id' => $item->id_offer,
+		                //'offer_id' => $item->id,
+		                //'title' => $item->title,
+		                //'offers_details' => Str::of($item->offers_details)->limit(40),
+		                //'offers_details_more' => $item->offers_details,
+		                //'publish_status' => $item->publish_status,
+		                //'offer_status' => $item->pivot->offer_status,
+		                //'offer_location' => $item->location,
+		                //'offer_date' => \Carbon\Carbon::parse($item->pivot->offer_date)->diffForhumans(),
+		                //'company_name' => $item->company->company_name,
+		                //'company_location' => $item->company->company_location,
+		                //'company_about' => $item->company->company_about,
+		                //'company_website' => $item->company->company_website,
+		                //'company_profile_photo' => $url
+		            ];
+        })->toArray();
+              
+        $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+	    );
+	    
+	    $itemsTransformedAndPaginated = new \App\MyPaginator($itemsTransformedAndPaginated,$grandTotal);
+	    
+	    return $itemsTransformedAndPaginated;
 	
 	}
     

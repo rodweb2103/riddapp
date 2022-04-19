@@ -198,9 +198,8 @@ export default defineComponent({
   },
   mounted(){
 	  
-	  
+	  //alert("");
 	  this.getResults();
-	  
 	   
       
       

@@ -243,12 +243,12 @@
               <!-- /.col -->
               <div class="col-md-6">
                 <!-- USERS LIST -->
-                <div class="card">
+                <div class="card" style="height: 420px;">
                   <div class="card-header">
                     <h3 class="card-title">Nouveaux recruteurs</h3>
 
                     <div class="card-tools">
-                      <span class="badge badge-danger">{{ employerData.length }} New Members</span>
+                      <span class="badge badge-danger">{{ employerData['total_all'] }} New Members</span>
                       <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -261,7 +261,11 @@
                   <!-- /.card-header -->
                   <div class="card-body p-0">
                     <ul class="users-list clearfix">
-                      <li v-for="data in employerData">
+	                   <div  v-if="employerData['total_all'] == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
+	                      <div style="font-size: 20px;" class="mt-4">Aucun compte recruteur trouvé</div>
+	                  </div>
+                      <li v-for="data in employerData['data']">
                         <img :src="data['profile_url']" alt="User Image">
                         <a class="users-list-name" href="#">{{ data['company_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
@@ -306,7 +310,7 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer text-center">
-                    <Link href="/admin/employer">Voir tout les recruteurs</Link>
+                    <Link href="/admin/employer" v-if="employerData['total_all'] > 0">Voir tout les recruteurs</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>
@@ -314,12 +318,12 @@
               </div>
               <div class="col-md-6">
                 <!-- USERS LIST -->
-                <div class="card">
+                <div class="card" style="height: 420px;">
                   <div class="card-header">
                     <h3 class="card-title">Nouveaux Candidats</h3>
 
                     <div class="card-tools">
-                      <span class="badge badge-danger">{{ candidateData.length }} New Members</span>
+                      <span class="badge badge-danger">{{ candidateData['total_all'] }} New Members</span>
                       <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -331,7 +335,13 @@
                   <!-- /.card-header -->
                   <div class="card-body p-0">
                     <ul class="users-list clearfix">
-                      <li v-for="data in candidateData">
+	                    
+	                    
+	                  <div  v-if="candidateData['total_all'] == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
+	                      <div style="font-size: 20px;" class="mt-4">Aucun compte candidat trouvé</div>
+	                  </div>
+                      <li v-for="data in candidateData['data']">
                         <img src="/img/user1-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">{{ data['first_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
@@ -376,7 +386,7 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer text-center">
-                    <Link href="/admin/candidate">Voir tout les candidats</Link>
+                    <Link href="/admin/candidate" v-if="candidateData['total_all'] > 0">Voir tout les candidats</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>
@@ -406,22 +416,26 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>Order ID</th>
-                      <th>Item</th>
-                      <th>Status</th>
-                      <th>Popularity</th>
+                      <th>ID</th>
+                      <th>Annonce</th>
+                      <th>Statut</th>
+                      <th>Date publication</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>Call of Duty IV</td>
-                      <td><span class="badge badge-success">Shipped</span></td>
+                    <tr v-for="offer in offerData['data']">
+                      <td>{{ offer['id'] }}</td>
+                      <td>{{ offer['offers_details'] }}</td>
+                      <td><!--<span class="badge badge-success">Shipped</span>-->
+                          
+                          <span class="badge badge-warning" v-if="offer['publish_status'] == 0">Non publié</span>
+	                      <span class="badge badge-success" v-if="offer['publish_status'] == 1">Publié</span>
+                      </td>
                       <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                          {{ offer['offer_date'] }}
                       </td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                       <td><a href="pages/examples/invoice.html">OR1848</a></td>
                       <td>Samsung Smart TV</td>
                       <td><span class="badge badge-warning">Pending</span></td>
@@ -468,7 +482,7 @@
                       <td>
                         <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
                       </td>
-                    </tr>
+                    </tr>-->
                     </tbody>
                   </table>
                 </div>
@@ -476,8 +490,11 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+                <!--<a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">V</a>-->
+                <div class="card-footer text-center">
+                    <Link href="/admin/offers">Voir toutes les annonces</Link>
+                </div>
               </div>
               <!-- /.card-footer -->
             </div>
@@ -531,12 +548,12 @@
               <!-- /.col -->
               <div class="col-md-12">
                 <!-- USERS LIST -->
-                <div class="card">
+                <div class="card" style="height: 420px;">
                   <div class="card-header">
                     <h3 class="card-title">Comptes staff</h3>
 
                     <div class="card-tools">
-                      <span class="badge badge-danger">8 New Members</span>
+                      <span class="badge badge-danger">{{ staffData['total_all'] }} New Members</span>
                       <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -548,12 +565,16 @@
                   <!-- /.card-header -->
                   <div class="card-body p-0">
                     <ul class="users-list clearfix">
-                      <li>
-                        <img src="/img/user1-128x128.jpg" alt="User Image">
-                        <a class="users-list-name" href="#">Alexander Pierce</a>
-                        <span class="users-list-date">Today</span>
+	                  <div  v-if="staffData['total_all'] == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
+	                      <div style="font-size: 20px;" class="mt-4">Aucun compte staff trouvé</div>
+	                  </div>
+                      <li v-for="data in staffData['data']">
+                        <img :src="data['profile_photo']" alt="User Image">
+                        <a class="users-list-name" href="#">{{ data['user_name'] }}</a>
+                        <!--<span class="users-list-date">Today</span>-->
                       </li>
-                      <li>
+                      <!--<li>
                         <img src="/img/user8-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Norman</a>
                         <span class="users-list-date">Yesterday</span>
@@ -587,7 +608,7 @@
                         <img src="/img/user3-128x128.jpg" alt="User Image">
                         <a class="users-list-name" href="#">Nadia</a>
                         <span class="users-list-date">15 Jan</span>
-                      </li>
+                      </li>-->
                     </ul>
                     <!-- /.users-list -->
                   </div>
@@ -701,6 +722,7 @@ export default defineComponent({
       employerData : {},
       candidateData:{},
       statsData:{},
+      staffData:{},
       form: this.$inertia.form({
         //password: '',
         id : 0,
@@ -722,6 +744,8 @@ export default defineComponent({
 	  this.getResultsStats();
 	  this.getResultsNewEmployer();
 	  this.getResultsNewCandidate();
+	  this.getResultsOffers();
+	  this.getResultsStaffUsers();
 	  
 	   
       
@@ -758,6 +782,29 @@ export default defineComponent({
 	                //vm.total_offer = response.data['total'];
                     vm.candidateData = response.data;
             });
+      },
+      getResultsOffers(page = 1) {
+		    let vm = this;
+            axios.get('/admin/ajax/offers')
+                .then(response => {
+	                
+	                console.log(response.data);
+	                //vm.total_offer = response.data['total'];
+                    vm.offerData = response.data;
+            });
+      },
+      getResultsStaffUsers(page = 1){
+	      
+	    let vm = this;
+        axios.get('/admin/ajax/staff/users')
+            .then(response => {
+                
+                console.log(response.data);
+                //vm.total_offer = response.data['total'];
+                vm.staffData = response.data;
+        });
+	     
+	       
       },
       openDeleteOffer(id){
 	      
