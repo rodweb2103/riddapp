@@ -166,7 +166,7 @@
             </div>
         </div>-->
         <!-- Featured Area End -->
-         <div class="courses-area pb-70 mt-5">
+         <div class="courses-area pb-70 mt-5" style="margin-top: 90px !important;">
             <div class="container">
                 <div class="section-title text-center mb-45">
                     <h2>Mission</h2>
@@ -208,7 +208,7 @@
                                 <img src="/img/pexels-keira-burton-6146978.jpg" alt="Courses" />
                             </a>
                             <div class="content">
-	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Faire la promotion des étudiants<br>ivoiriens formés à l’extérieur</p>
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Faire la promotion des étudiants ivoiriens formés à l’extérieur</p>
                                 <!--<a href="courses.html" class="tag-btn">Accounting</a>
                                 <div class="price-text">$129</div>
                                 <h3><a href="courses-details.html">Basic knowledge about hodiernal bharat in history</a></h3>
@@ -235,7 +235,7 @@
                                 <img src="/img/pexels-ron-lach-9850088.jpg" alt="Courses" />
                             </a>
                             <div class="content">
-	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Promouvoir l’entreprenariat jeune sur<br>le territoire national et international</p>
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Promouvoir l’entreprenariat jeune sur le territoire national et international</p>
                                 <!--<a href="courses.html" class="tag-btn">Physics</a>
                                 <div class="price-text">$100</div>
                                 <h3><a href="courses-details.html">Visual effects for games in unity beginner to intermediate</a></h3>
@@ -373,7 +373,7 @@
         </div>
 
         <!-- Courses Area -->
-        <div class="courses-area pb-70 mt-4">
+        <div class="courses-area pb-70 mt-4" style="margin-top: 90px !important;">
             <div class="container-fluid" style="max-width: unset !important;">
                 <div class="section-title text-center mb-45">
                     <h2>Nos représentations</h2>
@@ -390,9 +390,10 @@
 	                    <!--<a href="https://www.youtube.com/watch?v=Zd00oIDAt60" class="play-btn">
 	                        <i class='flaticon-play-button-arrowhead'></i>
 	                    </a>-->
-	                    <video style="width: 100%;height:auto;"  data-wf-ignore="true" data-object-fit="cover">
+	                    <!--<video style="width: 100%;height:auto;"  data-wf-ignore="true" data-object-fit="cover">
                 <source src="https://beta.ridd.info/video-map-ridd-final.mp4" type="video/mp4" wp-acf="[{'type':'url','name':'video','label':'Video','wrapper':{'width':30}}]" wp-attr="[{'target':'src','replace':'%1'}]">
-            </video>
+            </video>-->
+                      <img src="/img/MAP-RIDD-REP-WHITE@2x.png"/>
                     </div>
                     <!--<div class="col-lg-4 col-md-6">
                         <div class="courses-item">

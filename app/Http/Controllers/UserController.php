@@ -509,22 +509,81 @@ class UserController extends Controller
 				        'required',
 				        Rule::unique('users')->ignore(auth()->user()->id),
                 ],
+                'first_name' => 'required',
+                'last_name' => 'required',
+                'user_name' => [
+				        'required',
+				        Rule::unique('users')->ignore(auth()->user()->id),
+                ],
 		    
 		    
          ],[
 		      'email.required'=> 'Le courriel est requis', // custom message
 		      'email.unique'=> 'La courriel existe déjà', // custom message
+		      'user_name.unique' => 'Le pseudo a déjà été utilisé',
+		      'user_name.required' => 'Le pseudo est requis',
+		      'first_name.required' => 'Le prénom est requis',
+		      'last_name.required' => 'Le nom est requis'
 		      
          ]);
          
-         $user = User::where("email",$request->input('email'))->first();
+         $user = User::where("id",$request->input('id'))->first();
+         $user->email = $request->input('email');
+         $user->user_name = $request->input('user_name');
          if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
          $user->save();
          
-         
+         //exit;
          return redirect()->back();
     }
     
+    public function profile_pdf_upload(Request $request){
+	    
+	    
+	    $validatedData = $request->validate([
+         'pdf' => 'required|mimes:pdf|max:2048',
+ 
+        ]);
+        
+        //var_dump($request->all());exit;
+ 
+        
+        
+        $check_image_exist = \DB::table("users")->where("id",\Auth::user()->id)->whereRaw("cv_profile!=''")->get();
+        
+        //var_dump(count($check_image_exist));exit;
+        
+        if(count($check_image_exist) > 0){
+	       
+	       $image_path = $check_image_exist[0]->cv_profile;
+	       
+	       \Storage::delete($image_path);
+	    }
+	    
+	    //$name = $request->file('pdf')->getClientOriginalName();
+        //$path = $request->file('pdf')->store('public/cv');
+        
+        
+        //Storage::disk('local')->put('public/cv/CV_'.\Auth::user()->first_name.'_'.\Auth::user()->first_name.' $request->getClientOriginalExtension() ,$request->file) 
+        
+        //public/cv/CV_Yeo Test_Yeo Testpdf/ElK70ZYz3mjJ7KDxPuSarCOUUNz8gvGGZjysleVW.pdf
+        
+        
+        //$path = \Storage::disk('local')->put('public/cv/CV_'.\Auth::user()->first_name.'_'.\Auth::user()->first_name.'.',$request->file('pdf')->getClientOriginalExtension() ,$request->file('pdf')) ;
+        
+        $path = \Storage::disk('public')->putFileAs('cv',$request->file('pdf'),'cv_'.\Auth::user()->first_name.'_'.\Auth::user()->first_name.'.pdf');
+        
+	    $user = User::find(\Auth::user()->id);
+	    $user->cv_profile = $path;
+	    $user->save();
+	    
+	    $url = config('app.url').\Storage::url('profile/'.basename($path));
+	    
+	    
+	    return redirect('/account/profile')->with('status',basename($path));
+	    
+	    
+    }
     
     public function profile_image_upload(Request $request){
 	    
@@ -535,8 +594,7 @@ class UserController extends Controller
         
         //var_dump($request->all());exit;
  
-        $name = $request->file('avatar')->getClientOriginalName();
-        $path = $request->file('avatar')->store('public/profile');
+        
         
         $check_image_exist = \DB::table("users")->where("id",\Auth::user()->id)->whereRaw("profile_photo_path!=''")->get();
         
@@ -545,7 +603,11 @@ class UserController extends Controller
         if(count($check_image_exist) > 0){
 	       
 	       $image_path = $check_image_exist[0]->profile_photo_path;
+	       \Storage::delete($image_path);
 	    }
+	    
+	    $name = $request->file('avatar')->getClientOriginalName();
+        $path = $request->file('avatar')->store('public/profile');
         
 	    $user = User::find(\Auth::user()->id);
 	    $user->profile_photo_path = $path;

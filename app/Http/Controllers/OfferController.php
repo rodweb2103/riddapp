@@ -162,8 +162,29 @@ class OfferController extends Controller
     
     public function list_offer(Request $request){
 	    
+	    
+	    /*public function contract_type_offer(){
+	    
+	    return $this->belongsTo(ContractType::class,'contract_type','id');
+    }
+    
+    public function activity_sector(){
+	    
+	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
+    }
+    
+    public function study_level(){
+	    
+	    return $this->belongsTo(StudyLevel::class,'study_level','id');
+    }
+    
+    public function company()
+    {
+        return $this->belongsTo(User::class,'company_id','id');
+    }*/
+	    
 	        
-	        $itemsPaginated = Offers::with('company')->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
+	        $itemsPaginated = Offers::with(['company','contract_type_offer_job','activity_sector_job','study_level_job'])->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
 
                         $query->where('contract_type', $request->contract_type);
 
@@ -181,20 +202,28 @@ class OfferController extends Controller
 		        ->map(function($item) {
 			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
 			        
+			        //var_dump($item->activity_sector_job);exit;
 			        
 			        
 		            return [
-		                //'id' => $item->id,
+		                'id_offer' => $item->id,
 		                'id' => $item->id_offer,
 		                'title' => $item->title,
 		                'offers_details' => Str::of($item->offers_details)->limit(60),
+		                'offers_details_more' => $item->offers_details,
 		                'publish_status' => $item->publish_status,
 		                'company_name' => $item->company->company_name,
 		                'company_location' => $item->company->company_location,
 		                'company_about' => $item->company->company_about,
 		                'company_website' => $item->company->company_website,
 		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->diffForHumans(),
-		                'company_profile_photo' => $url
+		                'company_profile_photo' => $url,
+		                'contract_type' => $item->contract_type_offer_job->id,
+		                "contract_duration" => $item->contract_duration,
+		                "location" => $item->location,
+		                "study_level" => $item->study_level_job->id,
+		                "profile_details"=> $item->profile_details
+		                //"activity_sector" => $item->activity_sector_job->id
 		            ];
             })->toArray();
               
@@ -301,18 +330,19 @@ class OfferController extends Controller
     }
     
     public function view_offer(Request $request,$id){
-	    
+	     exit;
 	     $itemsPaginated = Offers::where('id_offer',$id)->paginate(15);
 	     
 	     return $itemsPaginated;
     }
     
     public function edit_offer(Request $request){
-	    
-	    
+	     
+	     //var_dump($request->input('profile_details'));
+	     //exit;
 	     $id = $request->input('id');
 	     $request->validate([
-		    'activity_sector' => 'required',
+		    //'activity_sector' => 'required',
 		    'contract_duration' => 'required',
 		    'contract_type' => 'required',
 		    'location' => 'required',
@@ -320,7 +350,7 @@ class OfferController extends Controller
 		    'offer_title' => 'required',
 		    'study_level' => 'required'
          ],[
-		      'activity_sector.required'=> 'Le secteur d\'activité est requis', // custom message
+		      //'activity_sector.required'=> 'Le secteur d\'activité est requis', // custom message
 		      'contract_duration.required'=> 'La durée du contrat est requis', // custom message
 		      'contract_type.required'=> 'Le type de contrat est requis', // custom message,
 		      'location.required'=> 'La localisation est requise', // custom message,
@@ -329,7 +359,7 @@ class OfferController extends Controller
 		      'study_level.required'=> 'Le niveau d\'étude est requis' // custom message
          ]);
          
-         $offer = Offers::where("id_offer",$id)->first();
+         $offer = Offers::where("id",$id)->first();
          
          
          /*Offers::where('id_offer',$id)
@@ -346,6 +376,8 @@ class OfferController extends Controller
          
          //$offer = Offers::find($id);
          
+         //var_dump($request->input('profile_details'));exit;
+         
          $offer->title=$request->input('offer_title');
          $offer->activity_sector=$request->input('activity_sector');
          $offer->contract_type=$request->input('contract_type');
@@ -353,6 +385,7 @@ class OfferController extends Controller
          $offer->study_level=$request->input('study_level');
          $offer->location=$request->input('location');
          $offer->offers_details=$request->input('offer_details');
+         $offer->profile_details=$request->input('profile_details');
          //$offer->publish_status = 0;
          
          $offer->company_id = \Auth::user()->id;

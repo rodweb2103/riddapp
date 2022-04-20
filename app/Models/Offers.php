@@ -23,22 +23,23 @@ class Offers extends Model
      */
     protected $table = 'offers';
     protected $appends = ['publish_date'];
+    protected $guarded = [];
     public function users()
     {
         return $this->belongsToMany(User::class);
     }
     
-    public function contract_type_offer(){
+    public function contract_type_offer_job(){
 	    
 	    return $this->belongsTo(ContractType::class,'contract_type','id');
     }
     
-    public function activity_sector(){
+    public function activity_sector_job(){
 	    
 	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
     }
     
-    public function study_level(){
+    public function study_level_job(){
 	    
 	    return $this->belongsTo(StudyLevel::class,'study_level','id');
     }
@@ -48,6 +49,8 @@ class Offers extends Model
         return $this->belongsTo(User::class,'company_id','id');
     }
     
+    
+       
     
     //public function setPublishDateAttribute($value)
     //{

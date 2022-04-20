@@ -104,10 +104,11 @@ Route::get('/account',function(){
 	   return Inertia::render('User/Employer/Dashboard');
 	}
     //return Inertia::render('User/Dashboard');
-})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Candidate|Employer'])->name('user.dashboard');
+})->middleware(['auth:sanctum','role:Candidate|Employer'])->name('user.dashboard');
 
 
 Route::post('/account/profile/image/upload',[UserController::class, 'profile_image_upload'])->name('profile.image.upload');
+Route::post('/account/profile/pdf/upload',[UserController::class, 'profile_pdf_upload'])->name('profile.pdf.upload');
 Route::post('/account/profile/update',[UserController::class, 'profile_update'])->name('profile.update');
 
 Route::get('/account/profile',function(){
@@ -115,11 +116,12 @@ Route::get('/account/profile',function(){
 	//return Inertia::render('User/Profile');
 	if (Auth::user()->hasRole('Candidate')) {
 	   return Inertia::render('User/Candidate/Profile');
+	
 	}else{
 	   return Inertia::render('User/Employer/Profile');
 	}
     //return Inertia::render('User/Dashboard');
-})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Candidate|Employer','verified'])->name('user.dashboard');
+})->middleware(['auth:sanctum','role:Candidate|Employer','verified'])->name('user.dashboard');
 
 //Route::get('/offers',function(){
 //    return Inertia::render('User/Offers');
@@ -127,14 +129,14 @@ Route::get('/account/profile',function(){
 
 Route::get('/membership',function(){
     return Inertia::render('User/Membership');
-})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Employer'])->name('employer.membership');
+})->middleware(['auth:sanctum','role:Employer'])->name('employer.membership');
 
 //Route::get('/account/myoffer',[OfferController::class, 'my_offer'])->name('candidate.offer');
 
 Route::get('/admin/profile',function(){
 	
     return Inertia::render('Admin/Profile');
-})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('employer.membership');
+})->middleware(['auth:sanctum','role:Admin'])->name('employer.membership');
 
 
 $limiter = config('fortify.limiters.login');

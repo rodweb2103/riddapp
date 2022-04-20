@@ -295,7 +295,7 @@
                     </tr>
                     </thead>
                     <tbody>
-	                    <tr v-for="data in offerData">
+	                    <tr v-for="data in offerData['data']">
 		                    <td>{{ data.id }}</td>
 		                    <td>{{ data.title }}</td>
 		                    <td>{{ data.offers_details }}</td>
@@ -516,7 +516,7 @@ export default defineComponent({
                 .then(response => {
 	                
 	                //console.log(response.data);
-                    vm.offerData = response.data['data'];
+                    vm.offerData = response.data;
             });
       },
       openDeleteOffer(id){
@@ -527,7 +527,7 @@ export default defineComponent({
 	      this.modal2.show()
 	      
       },
-	  openOfferForm() {
+	  openOfferForm(editMode = 0) {
 	      //this.form.password = '';
 	
 	      let el = document.querySelector('#openOffer')
@@ -535,7 +535,7 @@ export default defineComponent({
 	      this.modal.show()
 	      
 	      
-	      this.editMode = 0;
+	      this.editMode = editMode;
 	      
 	      
 	
@@ -543,9 +543,25 @@ export default defineComponent({
       },
       loadOffer(id){
 	     
-	     this.editMode = 1;
+	     //this.editMode = 1;
 	     this.form.errors = {};
-	     axios.get('/view/offer/'+id)
+	     
+	     const filteredResult = this.offerData.find((e) => e.id == id);
+	     
+	     console.log(filteredResult);
+	     
+	     
+	     this.form.offer_title=filteredResult['title'];
+         this.form.profile_details=filteredResult['profile_details'];
+         this.form.location=filteredResult['location'];
+         this.form.contract_type=filteredResult['contract_type'];
+         this.form.contract_duration=filteredResult['contract_duration'];
+         this.form.offer_details=filteredResult['offers_details_more'];
+         this.form.study_level=filteredResult['study_level'];
+         this.form.id = filteredResult['id_offer'];
+	                //this.form.offer_details=response.data['data'][0]['offer_details'];
+	     
+	     /*axios.get('/view/offer/'+id)
                 .then(response => {
 	                
 	                this.form.offer_title=response.data['data'][0]['title'];
@@ -560,14 +576,15 @@ export default defineComponent({
 	                console.log(response.data);
 	                //this.editMode = 0;
                     //vm.offerData = response.data['data'];
-         });
+         });*/
 	     
-	     this.openOfferForm();  
+	     this.openOfferForm(1);  
       },
 	  closeModal(){
 		  
 		  this.form.reset()
           this.modal.hide()
+          this.editMode = 0;
 	  },
 	  closeModal2(){
 		  
@@ -598,6 +615,9 @@ export default defineComponent({
 	  },
 	  checkSaving(){
 		 let vm = this;
+		 
+		 //console.log(vm.editMode);return false;
+		 
 		 if(vm.editMode == 1){
 			 
 			 

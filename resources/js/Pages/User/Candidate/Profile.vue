@@ -4,6 +4,9 @@
     <div class="container-fluid">
 	    
 	    
+	    
+	    
+	    
 	    <jet-dialog-modal id="loadImage">
         <template #title>
           Charger une image
@@ -12,7 +15,7 @@
         <template #content>
           
           <div class="mt-4">
-	             <!--{{ $page.props['user'] }} ====-->
+	             <!--{{ $page.props['user'] }}-->
 		        <vue-cropper v-if="imageSrc!=''"
 				  class="mr-2 mb-4"
 				  style="height: 190px;"
@@ -25,7 +28,7 @@
 			    <!--<progress v-if="form.progress" :value="form.progress.percentage" max="100">
 			      {{ form.progress.percentage }}%
 			    </progress>-->
-	          
+	            
           </div>
         </template>
 
@@ -47,12 +50,15 @@
         <div class="row pt-5">
           <div class="col-md-3">
             <!-- Profile Image -->
+            <!--{{ $page.props['candidate_details'] }}-->
             <div class="card card-primary card-outline">
               <div class="card-body box-profile">
                 <div class="text-center">
 	             
                   <!--<img class="profile-user-img img-fluid img-circle" @click="loadImage" :src="imageSrcProfile" alt="User profile picture">-->
-                  <img v-if="imageSrcProfile==''" class="profile-user-img img-fluid img-circle" @click="loadImage" src="/assets/img/avatar5.png" alt="User profile picture">
+                  
+                  
+                  <i @click="loadImage" class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="imageSrcProfile==''"></i>
                   <img v-if="imageSrcProfile!=''" class="profile-user-img img-fluid img-circle" @click="loadImage" :src="imageSrcProfile" alt="User profile picture">
                   
                 </div>
@@ -60,6 +66,61 @@
                 <h1 class="profile-username text-center">{{ $page.props['user']['first_name'] }} {{ $page.props['user']['last_name'] }}</h1>
                 <p class="text-muted text-center" v-if="$page.props['user']['user_name']!=''">@{{ $page.props['user']['user_name'] }}</p>
 
+              </div>
+              <!-- /.card-body -->
+            </div>
+            
+            <div class="card card-primary" style="padding: unset !important;">
+              <div class="card-header">
+                <h3 class="card-title">About Me</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <strong><i class="fas fa-book mr-1"></i>Domaine de Formation</strong>
+
+                <p class="text-muted">
+                  {{ $page.props['candidate_details']['activity_sector_company_user']['activity_sector_name'] }}
+                </p>
+
+                <hr>
+
+                <strong><i class="fas fa-map-marker-alt mr-1"></i>Adresse</strong>
+
+                <p class="text-muted">{{ $page.props['candidate_details']['city'] }}, {{ $page.props['candidate_details']['country_user']['name'] }}</p>
+
+                <hr>
+                <input type="file" @change="uploadPDF" @input="form.pdf = $event.target.files[0]" ref="cv_upload" style="display: none;"/>
+                <strong><i class="fas fa-pencil-alt mr-1"></i> CV</strong>
+
+                <p class="text-muted" v-if="$page.props['candidate_details']['cv_profile'] == null || $page.props['candidate_details']['cv_profile'] == ''">
+	                
+	                
+	                <div>
+		                <div>Aucun CV disponible<i class="fas fa-upload" @click="loadPDF"></i></div>
+		                
+		                
+		                
+		            </div>
+	                
+                  <!--<span class="tag tag-danger">UI Design</span>
+                  <span class="tag tag-success">Coding</span>
+                  <span class="tag tag-info">Javascript</span>
+                  <span class="tag tag-warning">PHP</span>
+                  <span class="tag tag-primary">Node.js</span>-->
+                </p>
+                <p>
+	                {{ $page.props['file_cv'] }} <i class="fas fa-upload" @click="loadPDF"></i> 
+	                
+                </p>
+                <progress v-if="form.progress" :value="form.progress.percentage" max="100">
+					      {{ form.progress.percentage }}%
+			    </progress>
+
+                <hr>
+
+                <!--<strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>-->
               </div>
               <!-- /.card-body -->
             </div>
@@ -75,7 +136,7 @@
                 <!--<ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
                 </ul>-->
-                <label>Éditer vos informations de connexion</label>
+                <label>Éditer vos informations personnelles</label>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
@@ -97,6 +158,23 @@
                            <div v-if="formUser.errors.email" style="color:red;">{{ formUser.errors.email }}</div>
                         </div>
                       </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nom</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="" v-model="formUser.last_name">
+                           <div v-if="formUser.errors.last_name" style="color:red;">{{ formUser.errors.last_name }}</div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Prénom</label>
+                        <div class="col-sm-9">
+                          <input type="email" class="form-control" id="inputEmail" placeholder="" v-model="formUser.first_name">
+                           <div v-if="formUser.errors.first_name" style="color:red;">{{ formUser.errors.first_name }}</div>
+                        </div>
+                      </div>
+                      
                       <div class="form-group row">
                         <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Mot de passe</label>
                         <div class="col-sm-9">
@@ -214,9 +292,13 @@ export default defineComponent({
 	  imageSrcProfile: this.$page.props['image_profile'],//"/img/user4-128x128.jpg",
       croppedImageSrc: "",
       modal: null,
+      modal2: null,
+      pdfFile:'',
       formUser: this.$inertia.form({
-	      
+	    id : this.$page.props['user']['id'],
 	    user_name : this.$page.props['user']['user_name'],
+	    first_name : this.$page.props['user']['first_name'],
+	    last_name : this.$page.props['user']['last_name'],
 	    email : this.$page.props['user']['email'],
 	    password : '',
 	    //password_confirmation : '',
@@ -233,7 +315,7 @@ export default defineComponent({
         
       }),
       form: this.$inertia.form({
-	      
+	    pdf : '',
 	    avatar : ''
         //password: '',
         //id : 0,
@@ -263,7 +345,18 @@ export default defineComponent({
 		  
           this.modal.hide()
 	  },
-
+	  closeModal2(){
+		  
+		  this.modal2.hide()
+	  },
+      loadPDF(){
+	      
+	      this.$refs.cv_upload.click();
+	      //let el = document.querySelector('#loadPDF');
+	      //this.modal2 = new bootstrap.Modal(el)
+	      //this.modal2.show()
+	      
+      },
 	  loadImage(){
 	      
 	      let el = document.querySelector('#loadImage')
@@ -305,10 +398,28 @@ export default defineComponent({
 	      
 	      this.formUser.post(route('profile.update'), {
 	        preserveScroll: true,
-	        onSuccess: (data) => {vm.formUser.reset()},
+	        onSuccess: (data) => {this.formUser['password'] = ''},
 	        //onError: () => this.$refs.password.focus(),
 	        onFinish: () => {}/*this.form.reset()*/,
           });
+	      
+      },
+      uploadPDF(){
+	      
+	      let vm = this;
+	      //this.$refs.cropper2.getCroppedCanvas().toBlob(function (blob) {
+		        
+		      //vm.form['pdf'] = blob;
+		      //console.log(blob);
+		      
+		      vm.form.post(route('profile.pdf.upload'), {
+		        preserveScroll: true,
+		        onSuccess: (data) => {vm.pdfFile=data.props['status'];},
+		        //onError: () => this.$refs.password.focus(),
+		        onFinish: () => {}/*this.form.reset()*/,
+	          });
+          
+          //})
 	      
       },
       uploadImage() {
@@ -325,21 +436,6 @@ export default defineComponent({
 	        onFinish: () => {}/*this.form.reset()*/,
           });
           
-          /*let formData = new FormData()
-          // Add name for our image
-          formData.append("name", "image-name-" + new Date().getTime())
-
-          // Append image file
-          formData.append("file", blob)
-
-          axios
-            .post("/api/store", formData)
-            .then(response => {
-              console.log(response.data)
-            })
-            .catch(function (error) {
-              console.log(error)
-            })*/
         })
       },
 
