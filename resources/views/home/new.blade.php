@@ -71,14 +71,15 @@
 	    <!-- Pre Loader -->
         <div id="preloader">
             <div id="preloader-area">
+                <!--<div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
-                <div class="spinner"></div>
-                <div class="spinner"></div>
+                <div class="spinner"></div>-->
+                 <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 60px;"/>
             </div>
             <div class="preloader-section preloader-left"></div>
             <div class="preloader-section preloader-right"></div>
@@ -184,7 +185,7 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="{{ route('activites') }}" class="nav-link">
                                         Activités
                                     </a>
                                 </li>

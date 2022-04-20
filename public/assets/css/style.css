@@ -1901,7 +1901,8 @@ Inner Banner Area
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--titleColor);
+  /*background: var(--titleColor);*/
+  background: rgba(255,115,0);
   opacity: 0.9;
 }
 

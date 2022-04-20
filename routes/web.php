@@ -28,6 +28,35 @@ use App\Models\Offers;
 
 //Auth::routes(['verify' => true]);
 
+Route::get('/activites',function(){
+	 
+	 return view('activities');
+})->name('activites');
+
+Route::get('/adestiv',function(){
+	 
+	 return view('adestiv');
+})->name('adestiv');
+
+Route::get('/cafe-ridd',function(){
+	 
+	 return view('cafe_ridd');
+})->name('cafe_ridd');
+
+Route::get('/campagne-sensibilisation',function(){
+	 
+	 return view('campagne_sensibilisation');
+})->name('campagne_sensibilisation');
+
+Route::get('/jiomi',function(){
+	 
+	 return view('jiomi');
+})->name('jiomi');
+
+Route::get('/tribune-ridd',function(){
+	 
+	 return view('tribune_ridd');
+})->name('tribune_ridd');
 
 Route::post('/create/user/account',[UserController::class, 'create_user_account']);
 Route::post('/validate/step/1',[UserController::class, 'validate_step1'])->name('validate1');

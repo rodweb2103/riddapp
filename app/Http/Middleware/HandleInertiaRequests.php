@@ -37,7 +37,9 @@ class HandleInertiaRequests extends Middleware
      */
     public function share(Request $request): array
     {
-	    $user = User::with(['country_user','activity_sector_company_user'])->where("id",auth()->user()->id)->first();
+	    
+	    
+	    if(auth()->user()) $user = User::with(['country_user','activity_sector_company_user'])->where("id",auth()->user()->id)->first();
         return array_merge(parent::share($request), [
             //
                 'image_profile' => \Auth::user() ? \Auth::user()->profile_photo_path!="" ? config('app.url').\Storage::url('profile/'.basename(\Auth::user()->profile_photo_path)): "" : "",
@@ -46,8 +48,8 @@ class HandleInertiaRequests extends Middleware
                 'is_admin' => auth()->user() ? auth()->user()->hasRole('Admin') ? 1 : 0 : 0,
                 'is_employer' => auth()->user() ? auth()->user()->hasRole('Employer') ? 1 : 0 : 0,
                 'is_candidate' => auth()->user() ? auth()->user()->hasRole('Candidate') ? 1 : 0 : 0,
-                'candidate_details' => auth()->user() ? auth()->user()->hasRole('Candidate') ? $user : [] : [],
-                'file_cv' => basename($user->cv_profile),
+                'candidate_details' => auth()->user() ? auth()->user()->hasRole('Candidate') ? @$user : [] : [],
+                'file_cv' => basename(@$user->cv_profile),
 	            'auth.user' => fn () => $request->user()
 	                ? $request->user()->only('id', 'name', 'email')
 	                : null,

@@ -97,6 +97,56 @@
                           <div v-if="formUser.errors.email" style="color:red;">{{ formUser.errors.email }}</div>
                         </div>
                       </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nom de l'entreprise</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.company_name">
+                           <div v-if="formUser.errors.company_name" style="color:red;">{{ formUser.errors.company_name }}</div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Adresse géographique</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.company_location">
+                           <div v-if="formUser.errors.company_location" style="color:red;">{{ formUser.errors.company_location }}</div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Détails sur l'entreprise</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.company_about">
+                           <div v-if="formUser.errors.company_about" style="color:red;">{{ formUser.errors.company_about }}</div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Site web entreprise</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.company_website">
+                           <div v-if="formUser.errors.company_website" style="color:red;">{{ formUser.errors.company_website }}</div>
+                        </div>
+                      </div>
+                      
+                       
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nom du mandataire</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.last_name">
+                           <div v-if="formUser.errors.last_name" style="color:red;">{{ formUser.errors.last_name }}</div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Prénom du mandataire</label>
+                        <div class="col-sm-9">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.first_name">
+                           <div v-if="formUser.errors.first_name" style="color:red;">{{ formUser.errors.first_name }}</div>
+                        </div>
+                      </div>
+                      
                       <div class="form-group row">
                         <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Mot de passe</label>
                         <div class="col-sm-9">
@@ -215,7 +265,13 @@ export default defineComponent({
       croppedImageSrc: "",
       modal: null,
       formUser: this.$inertia.form({
-	      
+	    id:this.$page.props['user']['id'],
+	    first_name : this.$page.props['user']['first_name'],
+	    company_name : this.$page.props['user']['company_name'],
+	    company_location : this.$page.props['user']['company_location'],
+	    company_about : this.$page.props['user']['company_about'],
+	    company_website : this.$page.props['user']['company_website'],
+	    last_name : this.$page.props['user']['last_name'],
 	    user_name : this.$page.props['user']['user_name'],
 	    email : this.$page.props['user']['email'],
 	    password : '',

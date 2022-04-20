@@ -162,7 +162,7 @@
                       <div class="form-group row">
                         <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nom</label>
                         <div class="col-sm-9">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="" v-model="formUser.last_name">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.last_name">
                            <div v-if="formUser.errors.last_name" style="color:red;">{{ formUser.errors.last_name }}</div>
                         </div>
                       </div>
@@ -170,7 +170,7 @@
                       <div class="form-group row">
                         <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Prénom</label>
                         <div class="col-sm-9">
-                          <input type="email" class="form-control" id="inputEmail" placeholder="" v-model="formUser.first_name">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.first_name">
                            <div v-if="formUser.errors.first_name" style="color:red;">{{ formUser.errors.first_name }}</div>
                         </div>
                       </div>

@@ -502,36 +502,91 @@ class UserController extends Controller
     
     public function profile_update(Request $request){
 	    
-	    $request->validate([
-		    
-		    
-		        'email' => [
-				        'required',
-				        Rule::unique('users')->ignore(auth()->user()->id),
-                ],
-                'first_name' => 'required',
-                'last_name' => 'required',
-                'user_name' => [
-				        'required',
-				        Rule::unique('users')->ignore(auth()->user()->id),
-                ],
-		    
-		    
-         ],[
-		      'email.required'=> 'Le courriel est requis', // custom message
-		      'email.unique'=> 'La courriel existe déjà', // custom message
-		      'user_name.unique' => 'Le pseudo a déjà été utilisé',
-		      'user_name.required' => 'Le pseudo est requis',
-		      'first_name.required' => 'Le prénom est requis',
-		      'last_name.required' => 'Le nom est requis'
-		      
-         ]);
-         
-         $user = User::where("id",$request->input('id'))->first();
-         $user->email = $request->input('email');
-         $user->user_name = $request->input('user_name');
-         if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
-         $user->save();
+	    
+	    if(\Auth::user()->hasRole('Admin') || \Auth::user()->hasRole('Candidate')){
+	    
+		    $request->validate([
+			    
+			    
+			        'email' => [
+					        'required',
+					        Rule::unique('users')->ignore(auth()->user()->id),
+	                ],
+	                'first_name' => 'required',
+	                'last_name' => 'required',
+	                'user_name' => [
+					        'required',
+					        Rule::unique('users')->ignore(auth()->user()->id),
+	                ],
+			    
+			    
+	         ],[
+			      'email.required'=> 'Le courriel est requis', // custom message
+			      'email.unique'=> 'La courriel existe déjà', // custom message
+			      'user_name.unique' => 'Le pseudo a déjà été utilisé',
+			      'user_name.required' => 'Le pseudo est requis',
+			      'first_name.required' => 'Le prénom est requis',
+			      'last_name.required' => 'Le nom est requis'
+			      
+	         ]);
+	         
+	         $user = User::where("id",$request->input('id'))->first();
+	         $user->email = $request->input('email');
+	         $user->user_name = $request->input('user_name');
+	         $user->first_name = $request->input('first_name');
+	         $user->last_name = $request->input('last_name');
+	         if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
+	         $user->save();
+	     
+	     }else{
+		     
+		     
+		     $request->validate([
+			    
+			    
+			        'email' => [
+					        'required',
+					        Rule::unique('users')->ignore(auth()->user()->id),
+	                ],
+	                'first_name' => 'required',
+	                'last_name' => 'required',
+	                'company_name' => 'required',
+	                'company_location' => 'required',
+	                'company_about' => 'required',
+	                'user_name' => [
+					        'required',
+					        Rule::unique('users')->ignore(auth()->user()->id),
+	                ],
+			    
+			    
+	         ],[
+			      'email.required'=> 'Le courriel est requis', // custom message
+			      'email.unique'=> 'La courriel existe déjà', // custom message
+			      'user_name.unique' => 'Le pseudo a déjà été utilisé',
+			      'user_name.required' => 'Le pseudo est requis',
+			      'first_name.required' => 'Le prénom est requis',
+			      'last_name.required' => 'Le nom est requis',
+			      'company_name.required' => 'Le nom de l\'entreprise est requis',
+			      'company_location.required' => 'L\'adresse géographique est requise',
+			      'company_about.required' => 'Les détails sur l\'entreprise sont requises'
+			      
+	         ]);
+	         
+	         $user = User::where("id",$request->input('id'))->first();
+	         $user->email = $request->input('email');
+	         $user->user_name = $request->input('user_name');
+	         $user->first_name = $request->input('first_name');
+	         $user->last_name = $request->input('last_name');
+	         
+	         $user->company_name = $request->input('company_name');
+	         $user->company_location = $request->input('company_location');
+	         $user->company_about = $request->input('company_about');
+	         $user->company_website = $request->input('company_website');
+	         if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
+	         $user->save();
+		     
+		     
+	     }
          
          //exit;
          return redirect()->back();
@@ -571,7 +626,7 @@ class UserController extends Controller
         
         //$path = \Storage::disk('local')->put('public/cv/CV_'.\Auth::user()->first_name.'_'.\Auth::user()->first_name.'.',$request->file('pdf')->getClientOriginalExtension() ,$request->file('pdf')) ;
         
-        $path = \Storage::disk('public')->putFileAs('cv',$request->file('pdf'),'cv_'.\Auth::user()->first_name.'_'.\Auth::user()->first_name.'.pdf');
+        $path = \Storage::disk('public')->putFileAs('cv',$request->file('pdf'),'cv_'.\Auth::user()->first_name.'_'.\Auth::user()->last_name.'.pdf');
         
 	    $user = User::find(\Auth::user()->id);
 	    $user->cv_profile = $path;

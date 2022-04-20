@@ -546,7 +546,7 @@ export default defineComponent({
 	     //this.editMode = 1;
 	     this.form.errors = {};
 	     
-	     const filteredResult = this.offerData.find((e) => e.id == id);
+	     const filteredResult = this.offerData['data'].find((e) => e.id == id);
 	     
 	     console.log(filteredResult);
 	     
