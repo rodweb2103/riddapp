@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="{{ asset('/assets/css/responsive.css') }}">
         <!-- Theme Dark CSS -->
         <link rel="stylesheet" href="{{ asset('/assets/css/theme-dark.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/photoswipe.css') }}">
  
         <!-- Title -->
         <title>Ledu - Education Courses & Online Training HTML Template</title>
@@ -60,6 +61,56 @@
 		     
 		     -webkit-box-shadow: unset !important;
 		   }
+		   
+		   
+		   #demo {
+  height:100%;
+  position:relative;
+  overflow:hidden;
+}
+
+
+.green{
+  background-color:#6fb936;
+}
+        .thumb{
+            margin-bottom: 30px;
+        }
+        
+        .page-top{
+            margin-top:85px;
+        }
+
+   
+		img.zoom {
+		    width: 100%;
+		    height: 200px;
+		    border-radius:5px;
+		    object-fit:cover;
+		    -webkit-transition: all .3s ease-in-out;
+		    -moz-transition: all .3s ease-in-out;
+		    -o-transition: all .3s ease-in-out;
+		    -ms-transition: all .3s ease-in-out;
+		}
+		        
+		 
+		.transition {
+		    -webkit-transform: scale(1.2); 
+		    -moz-transform: scale(1.2);
+		    -o-transform: scale(1.2);
+		    transform: scale(1.2);
+		}
+		    .modal-header {
+		   
+		     border-bottom: none;
+		}
+		    .modal-title {
+		        color:#000;
+		    }
+		    .modal-footer{
+		      display:none;  
+		    }
+		   
 	    </style>
 
         <!-- Scripts -->
@@ -476,7 +527,7 @@
         <script src="{{ asset('/assets/js/plugins.js') }}?<?php echo uniqid(); ?>"></script>
         <!-- Custom  JS -->
         <script src="{{ asset('/assets/js/custom.js') }}"></script>
-        
+        <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
         <script>
 	        function logoutUser(){
 		        
@@ -485,6 +536,9 @@
 	        $(document).ready(function(){
 		        
 		        $('body').addClass('loaded'); 
+		        
+		        
+		        
 	        });
 	        </script>
 	    @yield('script')

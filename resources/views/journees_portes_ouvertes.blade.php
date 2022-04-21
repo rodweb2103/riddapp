@@ -4,7 +4,7 @@
 	      
 	      .inner-banner::before {
 		  
-		      background-image: url('/img/banniere-campagne.png') !important;
+		      background-image: url('/img/banniere-gradient.png') !important;
 		  }
 	    
 	    </style>
@@ -13,7 +13,7 @@
         <div class="inner-banner">
             <div class="container">
                 <div class="inner-title">
-                    <h3>Campagne de sensibilisation contre la fuite des cerveaux en milieu scolaire et universitaire</h3>
+                    <h3>La Journée porte ouverte</h3>
                     <!--<div class="rating">
                         <i class="ri-star-fill"></i>4k+ rating
                     </div>
@@ -68,12 +68,12 @@
                                             <div class="courses-details-into">
                                                <h3>Concept</h3>
                                                 <p>
-                                                   Dans la continuité des efforts faits par les organismes, organisations et institutions dans la lutte contre la migration clandestine et la fuite des cerveaux en Côte d’Ivoire, le RIDD a décidé d’apporter sa contribution à travers un évènement.Elle va consister à sillonner les villes et écoles pour exhorter les élèves, les étudiants, les jeunes diplômés et non diplômés, à créer de la richesse pour construire le pays, et en prenant appui sur les opportunités à saisir sur place et à prendre conscience des dangers liés à la migration irrégulière.</p>
+                                                   Cette journée s’inscrit dans les axes d’interventions du RIDD et vise à contribuer à informer, orienter et sensibiliser la jeunesse estudiantine sur des mécanismes liés aux processus d’études à l’étranger, aux choix des filières d’avenir, à la politique d’intégration dans le pays et à une meilleure planification de la carrière professionnelle.</p>
                                             </div>
                                             <div class="courses-details-into">
                                                 <h3>Objectif général</h3>
                                                 <p>
-                                                    Mettre en exergue les conséquences liées au phénomène de la fuite des cerveaux sur le développement de la Côte d’Ivoire et les dangers de la pratique de l’immigration Irrégulière.
+                                                    Mettre à la disposition des étudiants et diplômés ivoiriens, des informations sur la meilleure stratégie à adopter pour une orientation académique réussie.
                                                 </p>
                                                 <ul class="courses-details-list" style="display:none;">
                                                     <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
@@ -85,20 +85,14 @@
                                             <div class="courses-details-into">
                                                 <h3>Objectif spécifique</h3>
                                                 <p>
-                                                    Eclairer la lanterne de la jeunesse ivoirienne sur les opportunités existantes en Côte D’Ivoire, Exhorter la jeunesse à réfléchir sur des opportunités d’investissements dans des secteurs d’activités encore inexploités liés aux ressources du pays, Inciter l’Etat de Côte d’Ivoire à investir dans le développement du capital humain et dans l’insertion socio professionnelle</p>
+                                                    Fournir au public cible, les informations sur les conditions et procédures d’entrées dans une école ou université étrangère; Informer, orienter et sensibiliser la jeunesse estudiantine sur des mécanismes liés aux processus d’études à l’étranger, aux choix des filières d’avenir, à la politique d’intégration dans le pays et à une meilleure planification de la carrière professionnelle</p>
                                             </div>
-                                             
-                                             <div class="courses-details-into">
-                                                <h3>Résultats attendus</h3>
-                                                <p>
-                                                    Eclairer la lanterne de la jeunesse ivoirienne sur les opportunités existantes en Côte D’Ivoire, Exhorter la jeunesse à réfléchir sur des opportunités d’investissements dans des secteurs d’activités encore inexploités liés aux ressources du pays, Inciter l’Etat de Côte d’Ivoire à investir dans le développement du capital humain et dans l’insertion socio professionnelle</p>
-                                             </div>
-                                             
+                                                                                          
                                              
                                              <div class="courses-details-into">
                                                 <h3>Cible</h3>
                                                 <p>
-                                                Jeunes ivoiriens, élèves et étudiants ivoiriens (diplômés ou non)</p>
+                                        Étudiants et diplômés ivoiriens, écoles et universités sur le plan local et internationale</p>
                                              </div>
 
 
@@ -106,11 +100,11 @@
                                                 <h3>Programme</h3>
                                                   
                                                   <ul class="courses-details-list">
-                                                    <li>Projections de film</li>
-                                                    <li>Panels, Témoignages/partage d’expériences</li>
-                                                    <li>Ateliers de formations</li>
-                                                    <li>Débats et présentation de programmes de bourse et des loisirs</li>
-                                                </ul> 
+                                                    <li>Présentation des écoles et universités étrangères</li>
+                                                    <li>Visites de stands</li>
+                                                    <li>Ateliers</li>
+                                                    <li>Panels</li>
+                                                  </ul> 
                                                                                                
                                                 <p style="display:none;">
                                                     Donec sollicitudin molestie malesuada. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet
@@ -452,7 +446,7 @@
                     
                     
                     <!-- Portofolio Area -->
-                    <div class="row pswp-gallery" id="my-gallery">
+<div class="row pswp-gallery" id="my-gallery">
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
 	                        <a href="assets/images/courses/courses-img2.jpg" class="fancybox" data-pswp-width="2500"
@@ -596,8 +590,7 @@
                 </div>
             </div>
         </div>
-        </div>
-	   
+        </div>	   
 @endsection
 @section('script')
 

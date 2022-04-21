@@ -738,7 +738,7 @@
             <div class="container">
                 <div class="title text-center mb-45">
                     <!--<h2> We worked with <span>250+ </span> leading universities and companies</h2>-->
-                    <h1>Nos partenaires</h1>
+                    <h2 style="font-size: 35px;">Nos partenaires</h2>
                 </div>
                 <div class="brand-slider owl-carousel owl-theme pb-100">
                     <div class="brand-item">

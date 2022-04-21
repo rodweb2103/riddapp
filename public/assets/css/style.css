@@ -114,9 +114,15 @@ button:focus {
   border: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2{
+	
+	font-weight: 700;
+	line-height: 1.4;
+}
+h1, /*h2,*/ h3, h4, h5, h6 {
   font-weight: 700;
-  color: var(--titleColor);
+  /*color: var(--titleColor);*/
+  color: orange;
   line-height: 1.4;
   font-family: var(--headerFonts);
 }
@@ -585,7 +591,8 @@ Navbar Area
 
 .desktop-nav .navbar .navbar-nav .nav-item a {
   font-size: 17px;
-  color: var(--titleColor);
+  /*color: var(--titleColor);*/
+  color: #000;
   position: relative;
   z-index: 1;
   font-weight: 500;
@@ -2828,7 +2835,8 @@ Courses Area
 }
 
 .courses-item .content h3 a {
-  color: var(--titleColor);
+  /*color: var(--titleColor);*/
+  color: #000;
   -webkit-transition: var(--transition);
   transition: var(--transition);
 }

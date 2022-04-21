@@ -444,16 +444,20 @@
                     
                     
                     <!-- Portofolio Area -->
-<div class="row">
+                    <div class="row pswp-gallery" id="my-gallery">
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                                <img src="assets/images/courses/courses-img1.jpg" alt="Courses"/>
+	                        <a href="assets/images/courses/courses-img2.jpg" class="fancybox" data-pswp-width="2500"
+      data-pswp-height="1667">
+                                <img src="assets/images/courses/courses-img1.jpg"  alt="Courses"/>
+	                        </a>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
+                            <a href="assets/images/courses/courses-img2.jpg" class="fancybox" data-pswp-width="2500"
+      data-pswp-height="1667">
                                 <img src="assets/images/courses/courses-img2.jpg" alt="Courses" />
                             </a>
                         </div>
@@ -461,7 +465,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
+                            <a href="assets/images/courses/courses-img3.jpg" class="fancybox" data-pswp-width="2500"
+      data-pswp-height="1667">
                                 <img src="assets/images/courses/courses-img3.jpg" alt="Courses" />
                             </a>
                         </div>
@@ -469,7 +474,11 @@
                     
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
+                            <a href="assets/images/courses/courses-img3.jpg" class="fancybox"
+	                            data-pswp-width="2500"
+      data-pswp-height="1667"
+		                         
+			                >
                                 <img src="assets/images/courses/courses-img3.jpg" alt="Courses" />
                             </a>
                         </div>
@@ -477,7 +486,10 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
+                            <a href="assets/images/courses/courses-img3.jpg" class="fancybox"
+	                           data-pswp-width="2500"
+      data-pswp-height="1667"   
+		                     >
                                 <img src="assets/images/courses/courses-img3.jpg" alt="Courses" />
                             </a>
                         </div>
@@ -485,13 +497,55 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
+                            <a href="assets/images/courses/courses-img3.jpg"
+	                            
+	                            data-pswp-width="2500"
+      data-pswp-height="1667"
+	                            
+		                      >
                                 <img src="assets/images/courses/courses-img3.jpg" alt="Courses" />
                             </a>
                         </div>
                     </div>
+                    
+                    <!--<div class="pswp-gallery" id="my-gallery">
+    <a
+      href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-2500.jpg"
+      data-pswp-width="1875"
+      data-pswp-height="2500"
+      target="_blank"
+    >
+      <img
+        src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/1/img-200.jpg"
+        alt=""
+      />
+    </a>
+    <a
+      href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-2500.jpg"
+      data-pswp-width="1669"
+      data-pswp-height="2500"
+      target="_blank"
+    >
+      <img
+        src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/2/img-200.jpg"
+        alt=""
+      />
+    </a>
+    <a
+      href="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-2500.jpg"
+      data-pswp-width="2500"
+      data-pswp-height="1666"
+      target="_blank"
+    >
+      <img
+        src="https://cdn.photoswipe.com/photoswipe-demo-images/photos/3/img-200.jpg"
+        alt=""
+      />
+    </a>
+  </div>-->
 
-
+   <br/>
+   
 <!-- Portofolio Area end-->
 
                     
@@ -536,4 +590,17 @@
         </div>
         </div>
 	   
+@endsection
+@section('script')
+
+<script type="module">
+import PhotoSwipeLightbox from '/js/photoswipe-lightbox.esm.js';
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#my-gallery',
+  children: 'a',
+  pswpModule: () => import('/js/photoswipe.esm.js')
+});
+lightbox.init();
+</script>
+
 @endsection

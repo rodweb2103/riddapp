@@ -43,6 +43,15 @@ Route::get('/cafe-ridd',function(){
 	 return view('cafe_ridd');
 })->name('cafe_ridd');
 
+Route::get('/journees-portes-ouvertes',function(){
+	 
+	 return view('journees_portes_ouvertes');
+})->name('journees_portes_ouvertes');
+
+Route::get('/actions-sociales',function(){
+	 return view('actions_sociales');
+})->name('actions_sociales');
+
 Route::get('/campagne-sensibilisation',function(){
 	 
 	 return view('campagne_sensibilisation');
