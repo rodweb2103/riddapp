@@ -2,6 +2,280 @@
   <app-layout title="Gestion des offres">
   
      <div class="container-fluid">
+	    
+	    
+	    <jet-dialog-modal id="deleteOffer" maxWidth="lg">
+        <template #title>
+          Supprimer une annonce
+        </template>
+
+        <template #content>
+          
+          <div class="mt-4">
+	          Confirmez vous la suppression de cette annonce ?
+          </div>
+        </template>
+
+        <template #footer>
+          <jet-secondary-button data-dismiss="modal" @click="closeModal2">
+            Annuler
+          </jet-secondary-button>
+          
+          <jet-button class="btn btn-primary" @click="removeOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>
+        </template>
+       </jet-dialog-modal>
+	     
+	    <jet-dialog-modal id="unpubOffer" maxWidth="lg">
+        <template #title>
+          Publier une annonce
+        </template>
+
+        <template #content>
+          
+          <div class="mt-4">
+	          Confirmez vous la dépublication de cette annonce ?
+          </div>
+        </template>
+
+        <template #footer>
+          <jet-secondary-button data-dismiss="modal" @click="closeModalUnpubOffer">
+            Annuler
+          </jet-secondary-button>
+          
+          <jet-button class="btn btn-primary" @click="unpublishOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>
+        </template>
+       </jet-dialog-modal>
+	     
+	    <jet-dialog-modal id="pubOffer" maxWidth="lg">
+        <template #title>
+          Publier une annonce
+        </template>
+
+        <template #content>
+          
+          <div class="mt-4">
+	          Confirmez vous la publication de cette annonce ?
+          </div>
+        </template>
+
+        <template #footer>
+          <jet-secondary-button data-dismiss="modal" @click="closeModalpubOffer">
+            Annuler
+          </jet-secondary-button>
+          
+          <jet-button class="btn btn-primary" @click="publishOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>
+        </template>
+       </jet-dialog-modal>
+	     
+	     
+	    <jet-dialog-modal id="openOffer" maxWidth="lg">
+        <template #title>
+          Visualiser une annonce
+        </template>
+
+        <template #content>
+          
+          <div class="mt-4">
+	          
+	          
+	          
+	       <form id="msform">
+		      <div class="row"> 
+		       
+		        <div class="col-12">
+				  <div class="mb-3">
+					<input type="hidden"  v-model="form.id"/>
+				    <input type="text" placeholder="Titre annonce" v-model="form.offer_title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;" disabled>
+				    <jet-input-error :message="form.errors.offer_title" />
+				  </div>
+		        </div>
+		        <!--<div class="col-6">  
+				  <div class="mb-3">
+				    <select class="form-control" v-model="form.activity_sector">
+					    <option selected disabled value>--Secteur d'activité--</option>
+				    </select>
+				    <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{placeholder:'-Secteur d\'activité--',width:'100%',dropdownParent:'#openOffer'}"/>
+				    <jet-input-error :message="form.errors.activity_sector" />
+				  </div>
+		        </div>-->
+		      </div>
+			  
+			  <div class="row">
+				  
+				 <!--<div class="col-6">
+			  
+					  <div class="mb-3">
+					    <textarea class="form-control" placeholder="Localisation" v-model="form.location" rows="5" style="margin-bottom: 0px;"></textarea>
+					    <jet-input-error :message="form.errors.location" />
+					  </div>
+				 </div>-->
+				 
+			    <div class="col-4">
+				  
+					 
+					    <!--<Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%',dropdownParent:'#openOffer'}"/>-->
+					    <select v-model="form.contract_type" class="form-control" disabled>
+						    <option selected disabled value>--Type d'offre--</option>
+						    <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
+					    </select>
+					    <jet-input-error :message="form.errors.contract_type" />
+				 </div>
+				 
+				 <div class="col-4">
+					  <div class="mb-3">
+					    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
+					    <!--<select class="form-control"  v-model="form.contract_duration">
+						    <option selected disabled value>--Durée du contrat--</option>
+						    <option value="CDD">CDD</option>
+						    <option value="CDI">CDI</option>
+					    </select>-->
+					    <!--<Select2 v-model="form.contract_duration" :options="contract_duration" :settings="{placeholder:'--Durée du contrat--',width:'100%',dropdownParent:'#openOffer'}"/>-->
+					    <select v-model="form.contract_duration" class="form-control" disabled>
+						    <option selected disabled value>--Durée du contrat--</option>
+						    <option :value="ct" v-for="ct in contract_duration">{{ ct }}</option>
+					    </select>
+					    <jet-input-error :message="form.errors.contract_duration" />
+					  </div>
+			    </div>
+			    
+			    <div class="col-4">  
+					    <!--<Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%',dropdownParent:'#openOffer'}"/>-->
+					    <select v-model="form.study_level" class="form-control" disabled>
+						    <option selected disabled value>--Durée du contrat--</option>
+						    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+					    </select>
+					    <jet-input-error :message="form.errors.study_level" />
+			    </div>
+			  
+			  
+			  </div>
+			  
+			  <!--<div class="row">
+			    
+			    <div class="col-6">
+				  <div class="mb-3">
+				  
+				    <Select2 v-model="form.contract_duration" :options="contract_duration" :settings="{placeholder:'--Durée du contrat--',width:'100%'}"/>
+				    <jet-input-error :message="form.errors.contract_duration" />
+				  </div>
+			    </div>
+			    <div class="col-6">  
+					    <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%'}"/>
+					    <jet-input-error :message="form.errors.study_level" />
+			    </div>
+			  
+			  </div>-->
+			   <div class="row">
+				  
+				 <div class="col-12">
+			  
+					  <div class="mb-3">
+					    
+					    <textarea class="form-control" placeholder="Localisation" v-model="form.location" rows="5" style="margin-bottom: 0px;" disabled></textarea>
+					    <jet-input-error :message="form.errors.location" />
+					  </div>
+				 </div>
+				 
+				 <!--<div class="col-6">
+				  
+					 
+					    <Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%'}"/>
+					    <jet-input-error :message="form.errors.contract_type" />
+				 </div>-->
+			  
+			  
+			  </div>
+			  <div class="row">
+			    <div class="col-12">
+				  <div class="mb-3">
+				    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
+				    <textarea class="form-control" placeholder="Détails de l'offre" v-model="form.offer_details" rows="10" style="margin-bottom: 0px;" disabled></textarea>
+				    <jet-input-error :message="form.errors.offer_details" />
+				  </div>
+			    </div>
+			  </div>
+			  
+			  <div class="row">
+				  
+				 <div class="col-12">
+			  
+					  <div class="mb-3">
+					    
+					    <textarea class="form-control" placeholder="Détails sur le profil recherché" v-model="form.profile_details" rows="5" style="margin-bottom: 0px;" disabled></textarea>
+					    <jet-input-error :message="form.errors.profile_details" />
+					  </div>
+				 </div>
+				 
+				 <!--<div class="col-6">
+				  
+					 
+					    <Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%'}"/>
+					    <jet-input-error :message="form.errors.contract_type" />
+				 </div>-->
+			  
+			  
+			  </div>
+			  
+           </form>
+	          
+            <!--<jet-input type="password" placeholder="Password"
+                       ref="password"
+                       v-model="form.password"
+                       :class="{ 'is-invalid': form.errors.password }"
+                       @keyup.enter="deleteUser" />
+
+            <jet-input-error :message="form.errors.password" />-->
+          </div>
+        </template>
+
+        <template #footer>
+          <!--<jet-secondary-button data-dismiss="modal" @click="closeModal">
+            Annuler
+          </jet-secondary-button>
+          
+          <jet-button class="btn btn-primary" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>-->
+          <!--<jet-button v-if="editMode == 0" class="btn btn-primary" @click="createOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>
+          
+          <jet-button v-if="editMode == 1" class="btn btn-primary" @click="editOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>-->
+          
+        </template>
+       </jet-dialog-modal>
        
         <!-- Main row -->
         <div class="row pt-3">
@@ -33,14 +307,14 @@
                       <th>ID</th>
                       <th>Titre annonce</th>
                       <th>Infos annonces</th>
-                      <th>Statut publication</th>
-                      <th>Date publication</th>
+                      <th>Statut</th>
+                      <th>Date</th>
                       <th>Entreprise</th>
                       <th style="text-align: center;">Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr v-for="data in offerData">
+                    <tr v-for="data in offerData['data']">
                       <td>{{ data['id'] }}</td>
                       <td>{{ data['title'] }}</td>
                       <td>{{ data['offers_details'] }}</td>
@@ -50,17 +324,17 @@
                         <!--<div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>-->
                       </td>
                       <td>
-	                      {{ data['offer_date'] }}
+	                      {{ data['offer_duration'] }}
                       </td>
                        <td>
 	                      {{ data['company_name'] }}
                       </td>
                       <td>
 	                      
-	                      <a href="#" @click="loadOffer(data.id)"><i class="fas fa-info-circle" style="padding: 10px;"></i></a>
-			              <a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 10px;"></i></a>
-			              <a href="#" @click="unpublishOffer(data.id)" v-if="data['publish_status'] == 1"><i class="fas fa-eye-slash" style="color:red;padding: 10px;"></i></a>
-			              <a href="#" @click="publishOffer(data.id)" v-if="data['publish_status'] == 0"><i class="fas fa-eye" style="color:green;padding: 10px;"></i></a>
+	                      <a href="#" @click="loadOffer(data.id_offer)"><i class="fas fa-info-circle" style="padding: 10px;"></i></a>
+			              <a href="#" @click="openDeleteOffer(data.id_offer)"><i class="fas fa-trash" style="color:red;padding: 10px;"></i></a>
+			              <a href="#" @click="loadUnpublishOffer(data.id_offer)" v-if="data['publish_status'] == 1"><i class="fas fa-eye-slash" style="color:red;padding: 10px;"></i></a>
+			              <a href="#" @click="loadPublishOffer(data.id_offer)" v-if="data['publish_status'] == 0"><i class="fas fa-eye" style="color:green;padding: 10px;"></i></a>
 	                      
                       </td>
                     </tr>
@@ -176,6 +450,8 @@ export default defineComponent({
     return {
       modal: null,
       modal2: null,
+      modalunpub:null,
+      modalpub:null,
       id_delete : 0,
       total_offer:0,
       activity_sector : {},
@@ -190,6 +466,7 @@ export default defineComponent({
         id : 0,
         offer_title:'',
         activity_sector:'',
+        profile_details:'',
         location:'',
         contract_type:'',
         contract_duration:'',
@@ -204,6 +481,20 @@ export default defineComponent({
 	  
 	  
 	  this.getResults();
+	  axios.get('/activity/sector').then(response => {
+		  this.activity_sector = response.data;
+      });
+      
+      
+      
+      axios.get('/study/level').then(response => {
+		  this.study_level = response.data;
+      }); 
+      
+      
+      axios.get('/contract/types').then(response => {
+		  this.contract_type = response.data;
+      });  
 	  
 	   
       
@@ -218,7 +509,7 @@ export default defineComponent({
 	                
 	                //console.log(response.data);
 	                vm.total_offer = response.data['total'];
-                    vm.offerData = response.data['data'];
+                    vm.offerData = response.data;
             });
       },
       openDeleteOffer(id){
@@ -229,8 +520,24 @@ export default defineComponent({
 	      this.modal2.show()
 	      
       },
-      loadOffer(data){
-	      this.viewDataOffer = data;
+      loadOffer(id){
+	      //this.viewDataOffer = data;
+	     this.form.errors = {};
+	     const filteredResult = this.offerData['data'].find((e) => e.id_offer == id);
+	     
+	     console.log(filteredResult);
+	     
+	     
+	     this.form.offer_title=filteredResult['title'];
+         this.form.profile_details=filteredResult['profile_details'];
+         this.form.location=filteredResult['location'];
+         this.form.contract_type=filteredResult['contract_type'];
+         this.form.contract_duration=filteredResult['contract_duration'];
+         this.form.offer_details=filteredResult['offers_details_more'];
+         this.form.study_level=filteredResult['study_level'];
+         this.form.id = filteredResult['id_offer'];
+	      
+	      
 	      let el = document.querySelector('#openOffer')
 	      this.modal = new bootstrap.Modal(el)
 	      this.modal.show()  
@@ -240,13 +547,66 @@ export default defineComponent({
 		  //this.form.reset()
           this.modal.hide()
 	  },
+	  closeModalUnpubOffer(){
+		  
+		  //this.form.reset()
+		  
+          this.modalunpub.hide()
+	  },
+	  closeModalpubOffer(){
+		  
+		  //this.form.reset()
+          this.modalpub.hide()
+	  },
 	  closeModal2(){
 		  
           this.modal2.hide()
 	  },
-	  removeOffer(id){
+	  loadUnpublishOffer(id){
+		  
+		  this.form['id'] = id;
+		  let el = document.querySelector('#unpubOffer')
+	      this.modalunpub = new bootstrap.Modal(el)
+	      this.modalunpub.show()
+		  
+	  },
+	  loadPublishOffer(id){
+		  
+		  
+		  this.form['id'] = id;
+          let el = document.querySelector('#pubOffer')
+	      this.modalpub = new bootstrap.Modal(el)
+	      this.modalpub.show()
+		  
+	  },
+	  unpublishOffer(){
+		  
+		  
+		  
+		  
+		  //this.form['id'] = id;
+		  this.form.post(route('employer.unpublish.offer'), {
+	        preserveScroll: true,
+	        onSuccess: () => { this.closeModalUnpubOffer();this.getResults();},
+	        //onError: () => this.$refs.password.focus(),
+	        onFinish: () => {}/*this.form.reset()*/,
+          });
+		  
+	  },
+	  publishOffer(){
+		  
+		  this.form.post(route('employer.publish.offer'), {
+	        preserveScroll: true,
+	        onSuccess: () => { this.closeModalpubOffer();this.getResults();},
+	        //onError: () => this.$refs.password.focus(),
+	        onFinish: () => {}/*this.form.reset()*/,
+          });
+          
+		  
+	  },
+	  removeOffer(){
 		  this.form['id'] = this.id_delete;
-		  this.form.post(route('candidate.unbid.offer'), {
+		  this.form.post(route('employer.delete.offer'), {
 	        preserveScroll: true,
 	        onSuccess: () => { this.closeModal2();this.getResults();this.id_delete = 0;},
 	        //onError: () => this.$refs.password.focus(),

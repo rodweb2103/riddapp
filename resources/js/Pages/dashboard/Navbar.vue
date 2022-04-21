@@ -10,10 +10,10 @@
         </a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Accueil</a>
+        <a href="/" class="nav-link">Accueil</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Offres</a>
+        <Link href="/annonces" class="nav-link">Offres</Link>
       </li>
     </ul>
     <!-- Right navbar links -->

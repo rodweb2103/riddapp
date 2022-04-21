@@ -33,6 +33,13 @@ class OfferController extends Controller
                  
     }
     
+    public function delete_offer(Request $request){
+	    
+	   \DB::table("offers")->where("id",$request->input('id'))->delete();
+	   \DB::table("offers_bid")->where("offer_id",$request->input('id'))->delete();
+	   return redirect()->back();
+    }
+    
     public function unbid_offer(Request $request){
 	   
 	   \DB::table("offers_bid")->where("offer_id",$request->input('id'))->delete();
@@ -400,26 +407,32 @@ class OfferController extends Controller
     
     public function publish_offer(Request $request){
 	     
+	      $id = $request->input('id');
 	      Offers::where('id',$id)->update(array(
 		      
 		       "publish_status" => 1
 	      ));
+	      
+	      return redirect()->back();
     }
     
-    public function delete_offer(Request $request){
+    /*public function delete_offer(Request $request){
 	      
 	      //var_dump($request->all());exit;
 	      $id = $request->input('id');
 	      Offers::where('id_offer',$id)->delete();
-	      return redirect('/account');
-    }
+	      return redirect()->back();
+	      //return redirect('/account');
+    }*/
     
     public function unpublish_offer(Request $request){
 	    
+	     $id = $request->input('id');
 	     Offers::where('id',$id)->update(array(
 		      
 		       "publish_status" => 0
-	      ));
+	     ));
+	     return redirect()->back();
     }
     
 }

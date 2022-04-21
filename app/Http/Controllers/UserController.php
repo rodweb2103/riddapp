@@ -382,7 +382,7 @@ class UserController extends Controller
 	
 	public function get_offers(Request $request){
 		
-		$itemsPaginated = Offers::with('company')->orderByRaw('publish_date DESC')->paginate(10);
+		$itemsPaginated = Offers::with(['company','contract_type_offer_job','activity_sector_job','study_level_job'])->orderByRaw('publish_date DESC')->paginate(10);
 	    
 	    //$grandTotal = Offers::with('company')->orderByRaw('publish_date DESC')->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    //$itemsPaginated->additional(['extra'=> $grandTotal]);
@@ -396,20 +396,23 @@ class UserController extends Controller
 			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
 		            return [
 			         			            
+		                'id_offer' => $item->id,
 		                'id' => $item->id_offer,
-		                'offer_id' => $item->id,
 		                'title' => $item->title,
-		                'offers_details' => \Str::of($item->offers_details)->limit(40),
+		                'offers_details' => \Str::of($item->offers_details)->limit(50),
 		                'offers_details_more' => $item->offers_details,
 		                'publish_status' => $item->publish_status,
-		                'offer_status' => $item->offer_status,
-		                'offer_location' => $item->location,
-		                'offer_date' => \Carbon\Carbon::parse($item->created_at)->diffForhumans(),
 		                'company_name' => $item->company->company_name,
 		                'company_location' => $item->company->company_location,
 		                'company_about' => $item->company->company_about,
 		                'company_website' => $item->company->company_website,
-		                'company_profile_photo' => $url
+		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->diffForHumans(),
+		                'company_profile_photo' => $url,
+		                'contract_type' => $item->contract_type_offer_job->id,
+		                "contract_duration" => $item->contract_duration,
+		                "location" => $item->location,
+		                "study_level" => $item->study_level_job->id,
+		                "profile_details"=> $item->profile_details
 		            ];
         })->toArray();
         

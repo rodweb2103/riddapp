@@ -117,6 +117,9 @@ Route::post('/admin/ajax/staff/delete',[UserController::class, 'ajax_staff_delet
 Route::post('/admin/ajax/staff/suspend',[UserController::class, 'ajax_staff_suspend'])->name('ajax_staff_suspend');
 Route::post('/admin/ajax/staff/unsuspend',[UserController::class, 'ajax_staff_unsuspend'])->name('ajax_staff_unsuspend');
 
+Route::post('/admin/delete/offer',[OfferController::class, 'delete_offer'])->name('employer.delete.offer');
+Route::post('/admin/profile/image/upload',[UserController::class, 'profile_image_upload'])->name('admin.image.upload');
+
 
 Route::get('/admin/employer',function(){
     return Inertia::render('Admin/Employer');

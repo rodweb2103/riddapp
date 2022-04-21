@@ -385,7 +385,7 @@
 	                            (RIDD) est une organisation née le 15 Novembre 2017 
 	                            à l’initiative des jeunes ivoiriens diplômés de la diaspora.</p>
                             <ul class="social-link">
-                                <li class="social-title">Follow Us:</li>
+                                <li class="social-title">Suivez nous:</li>
                                 <li>
                                     <a href="https://www.facebook.com/" target="_blank">
                                         <i class="ri-facebook-fill"></i>

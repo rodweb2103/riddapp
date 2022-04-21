@@ -28,7 +28,7 @@
           <span>
             <!--<a href="#" v-if="is_admin" class="" style="margin: unset !important;padding: 8px;">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</a>-->
             <Link href="/account/profile" v-if="$page.props.is_employer == 1 || $page.props.is_candidate == 1">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</Link>
-            <Link href="#" v-if="$page.props.is_admin == 1">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</Link>
+            <Link href="/admin/profile" v-if="$page.props.is_admin == 1">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</Link>
             
             
             <!--<Link  :href="route('admin.profile')" class="" style="margin: unset !important;padding: 8px;">
