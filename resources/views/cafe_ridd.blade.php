@@ -449,7 +449,22 @@
                     
                     <!-- Portofolio Area -->
                     <div class="row pswp-gallery" id="my-gallery">
-                    <div class="col-lg-4 col-md-6">
+	                @foreach(\File::glob(public_path() . '/img/Cafe-ridd/*.*') as $v)
+	                
+	                
+	                   <div class="col-lg-4 col-md-6">
+	                        <div class="courses-item">
+		                        <a href="{{ asset('/img/Cafe-ridd/'.basename($v)) }}" class="fancybox" data-pswp-width="2500"
+	      data-pswp-height="1667">
+	                                <img src="{{ asset('/img/Cafe-ridd/'.basename($v)) }}"  alt="Courses"/>
+		                        </a>
+	                        </div>
+                        </div>
+	                
+	                
+	                
+	                @endforeach
+                    <!--<div class="col-lg-4 col-md-6">
                         <div class="courses-item">
 	                        <a href="assets/images/courses/courses-img2.jpg" class="fancybox" data-pswp-width="2500"
       data-pswp-height="1667">
@@ -510,7 +525,8 @@
                                 <img src="assets/images/courses/courses-img3.jpg" alt="Courses" />
                             </a>
                         </div>
-                    </div>
+                    </div>-->
+                    
                     
                     <!--<div class="pswp-gallery" id="my-gallery">
     <a

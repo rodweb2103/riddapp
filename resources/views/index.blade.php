@@ -11,7 +11,14 @@
                             <!--<span data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">FOR A BETTER FUTURE</span>-->
                             <h1 style="color: #fff" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">Rejoignez notre réseau et bénéficiez de nombreuses opportunités.</h1>
                             <p style="color: #fff">Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.</p>
+                            @guest
                             <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;width: 159.5px;color: rgb(255,255,255);">Rejoindre</a>
+                            
+                            @endguest
+                            
+                            @auth
+                               <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;color: rgb(255,255,255);">Accéder aux offres</a>
+                            @endauth
                             <!--<div class="banner-form-area" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
                                 <form class="banner-form" data-toggle="validator" method="POST">
                                     <input type="email" class="form-control" placeholder="Search your courses" name="EMAIL" required autocomplete="off">
@@ -586,7 +593,7 @@
                                         <i class="ri-star-fill"></i>7k+ rating
                                     </div>
                                 </div>-->
-                                 <h3 class="name" style="text-align: center;">Créativité</h3>
+                                 <h3 class="name" style="text-align: center;color:#000 !important">Créativité</h3>
                             </div>
                         </div>
                             
@@ -615,7 +622,7 @@
                                         <i class="ri-star-fill"></i>7k+ rating
                                     </div>
                                 </div>-->
-                                 <h3 class="name" style="text-align: center;">Sens de la responsabilité</h3>
+                                 <h3 class="name" style="text-align: center;color:#000 !important">Sens de la responsabilité</h3>
                             </div>
                         </div>
                         
@@ -644,7 +651,7 @@
                                         <i class="ri-star-fill"></i>7k+ rating
                                     </div>
                                 </div>-->
-                                 <h3 class="name" style="text-align: center;">Excellence</h3>
+                                 <h3 class="name" style="text-align: center;color:#000 !important">Excellence</h3>
                             </div>
                         </div>
                         
@@ -839,13 +846,13 @@
         <!-- Instructors Area -->
         <div class="instructors-area pb-70">
             <div class="container">
-                <div class="row align-items-center mb-45">
-                    <div class="col-lg-8 col-md-9">
+                <div class="row align-items-center mb-45 text-center">
+                    <div class="col-lg-12 col-md-9">
                         <div class="section-title mt-rs-20">
                             <h2>Notre équipe</h2>
-                            <p>
+                            <!--<p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-                            </p>
+                            </p>-->
                         </div>
                     </div>
                     <!--<div class="col-lg-4 col-md-3 text-end">
@@ -857,8 +864,8 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="instructors-item">
                             <div class="instructors-img">
-                                <a href="instructors-details.html">
-                                    <img src="assets/images/instructors/instructors-img1.jpg" alt="Team Images">
+                                <a href="#">
+                                    <img src="{{ asset('img/staff/Photo-President.png') }}" alt="Team Images">
                                 </a>
                                 <ul class="instructors-social">
                                     <li>
@@ -884,8 +891,43 @@
                                 </ul>
                             </div>
                             <div class="content">
-                                <h3><a href="instructors-details.html">Djeket Steve</a></h3>
-                                <span>Président</span>
+                                <h3><a href="instructors-details.html">Steve ESSIS</a></h3>
+                                <span>Président Éxecutif du RIDD</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="instructors-item">
+                            <div class="instructors-img">
+                                <a href="#">
+                                    <img src="{{ asset('img/staff/Photo-staff1.png') }}" alt="Team Images">
+                                </a>
+                                <!--<ul class="instructors-social">
+                                    <li>
+                                        <a href="https://www.facebook.com/" target="_blank">
+                                            <i class="ri-facebook-fill"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/" target="_blank">
+                                            <i class="ri-instagram-line"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/" target="_blank">
+                                            <i class="ri-twitter-fill"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/" target="_blank">
+                                            <i class="ri-linkedin-box-line"></i>
+                                        </a>
+                                    </li>
+                                </ul>-->
+                            </div>
+                            <div class="content">
+                                <h3><a href="instructors-details.html">Sarah DIGBEU</a></h3>
+                                <span>Responsable des partenariats à l'international</span>
                             </div>
                         </div>
                     </div>
@@ -893,9 +935,9 @@
                         <div class="instructors-item">
                             <div class="instructors-img">
                                 <a href="instructors-details.html">
-                                    <img src="assets/images/instructors/instructors-img2.jpg" alt="Team Images">
+                                    <img src="{{ asset('img/staff/Photo-staff2.png') }}" alt="Team Images">
                                 </a>
-                                <ul class="instructors-social">
+                                <!--<ul class="instructors-social">
                                     <li>
                                         <a href="https://www.facebook.com/" target="_blank">
                                             <i class="ri-facebook-fill"></i>
@@ -916,21 +958,21 @@
                                             <i class="ri-linkedin-box-line"></i>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                             <div class="content">
-                                <h3><a href="instructors-details.html">Jesse joslin</a></h3>
-                                <span>Content strategist</span>
+                                <h3><a href="instructors-details.html">Jules MADÉ</a></h3>
+                                <span>Responsable projet à l'international</span>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <div class="instructors-item">
                             <div class="instructors-img">
-                                <a href="instructors-details.html">
-                                    <img src="assets/images/instructors/instructors-img3.jpg" alt="Team Images">
+                                <a href="#">
+                                    <img src="{{ asset('img/staff/Photo-staff3.png') }}" alt="Team Images">
                                 </a>
-                                <ul class="instructors-social">
+                                <!--<ul class="instructors-social">
                                     <li>
                                         <a href="https://www.facebook.com/" target="_blank">
                                             <i class="ri-facebook-fill"></i>
@@ -951,46 +993,11 @@
                                             <i class="ri-linkedin-box-line"></i>
                                         </a>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </div>
                             <div class="content">
-                                <h3><a href="instructors-details.html">Lance altman</a></h3>
-                                <span>Photographer</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="instructors-item">
-                            <div class="instructors-img">
-                                <a href="instructors-details.html">
-                                    <img src="assets/images/instructors/instructors-img4.jpg" alt="Team Images">
-                                </a>
-                                <ul class="instructors-social">
-                                    <li>
-                                        <a href="https://www.facebook.com/" target="_blank">
-                                            <i class="ri-facebook-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.instagram.com/" target="_blank">
-                                            <i class="ri-instagram-line"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://twitter.com/" target="_blank">
-                                            <i class="ri-twitter-fill"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/" target="_blank">
-                                            <i class="ri-linkedin-box-line"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="content">
-                                <h3><a href="instructors-details.html">Jonquil von</a></h3>
-                                <span>Art director</span>
+                                <h3><a href="#">Cyrille BOUAZO</a></h3>
+                                <span>Responsable des coordinations à l'international</span>
                             </div>
                         </div>
                     </div>

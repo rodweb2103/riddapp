@@ -52,8 +52,8 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
-                                <img src="assets/images/courses/courses-img1.jpg" alt="Courses" />
+                            <a href="{{ route('adestiv') }}">
+                                <img src="{{ asset('/img/Cadre-adestiv.png') }}" alt="Courses" />
                             </a>
                             <div class="content">
                                 <!--<a href="courses.html" class="tag-btn">Design</a>-->
@@ -78,8 +78,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
-                                <img src="assets/images/courses/courses-img2.jpg" alt="Courses" />
+                            <a href="{{ route('campagne_sensibilisation') }}">
+                                <img src="{{ asset('/img/Cadre-campagne.png') }}" alt="Courses" />
                             </a>
                             <div class="content">
                                 <!--<a href="courses.html" class="tag-btn">Accounting</a>-->
@@ -104,8 +104,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
-                                <img src="assets/images/courses/courses-img3.jpg" alt="Courses" />
+                            <a href="{{ route('jiomi') }}">
+                                <img src="{{ asset('/img/Cadre-jiomi.png') }}" alt="Courses" />
                             </a>
                             <div class="content">
                                 <!--<a href="courses.html" class="tag-btn">Physics</a>-->
@@ -130,8 +130,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
-                                <img src="assets/images/courses/courses-img4.jpg" alt="Courses" />
+                            <a href="{{ route('tribune_ridd') }}">
+                                <img src="{{ asset('/img/Cadre-tribune.png') }}" alt="Courses" />
                             </a>
                             <div class="content">
                                 <!--<a href="courses.html" class="tag-btn">Business</a>-->
@@ -158,8 +158,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
-                                <img src="assets/images/courses/courses-img5.jpg" alt="Courses" />
+                            <a href="{{ route('journees_portes_ouvertes') }}">
+                                <img src="{{ asset('/img/Cadre-orientation.png') }}" alt="Courses" />
                             </a>
                             <div class="content">
                                 <!--<a href="courses.html" class="tag-btn">Finance</a>-->
@@ -184,8 +184,8 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
-                                <img src="assets/images/courses/courses-img6.jpg" alt="Courses" />
+                            <a href="{{ route('cafe_ridd') }}">
+                                <img src="{{ asset('/img/Cadre-cafe.png') }}" alt="Courses" />
                             </a>
                             <div class="content">
                                 <!--<a href="courses.html" class="tag-btn">Banking</a>-->
@@ -210,8 +210,8 @@
                     
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
-                                <img src="assets/images/courses/courses-img6.jpg" alt="Courses" />
+                            <a href="{{ route('actions_sociales') }}">
+                                <img src="{{ asset('/img/Cadre-action.png') }}" alt="Courses" />
                             </a>
                             <div class="content">
                                 <!--<a href="courses.html" class="tag-btn">Banking</a>-->

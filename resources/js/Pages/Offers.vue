@@ -19,94 +19,109 @@
 
         <!-- Events Area -->
         <div class="event-area pt-100 pb-100">
-            <div class="container">
-                <div class="product-topper mb-45">
-                    <div class="row align-items-center">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-title">
-                                <!--<h3>We found  <span> 09 </span>courses available for you</h3>-->
-                                <h3><span>{{ total_offer }}</span> offre(s) disponible(s)</h3>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-title">
-                               <select @change="getResults(1)" v-model="form.contract_type"  style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-			                      <option selected value="">Toutes les offres</option>
-							      <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
-					           </select>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-title">
-                                <select @change="getResults(1)" v-model="form.contract_duration" style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-			                        
-								    <option selected value="">CDI et CDD</option>
-								    <option  v-for="ct in contract_duration">{{ ct }}</option>
-					            </select>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-title">
-                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 300px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-			                        <option selected value="">Toutes les niveaux d'étude</option>
-								    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
-					            </select>
-                            </div>
-                        </div>
-
-                        <!--<div class="col-lg-3 col-md-6">
-                            <div class="product-list">
-                                <select class="form-select" aria-label="Default select example">
-                                    <option selected>Default Price</option>
-                                    <option value="1">Price High To Low</option>
-                                    <option value="2">Price Low To High</option>
-                                </select>
-                                <i class="ri-arrow-down-s-line"></i>
-                            </div>
-                        </div>-->
-                    </div>
-                </div>
+            <div class="container-fluid">
+	            
+	            
+	            <div class="row">
+		            
+		          <div class="col-md-8">
+	            
+	                <div class="product-topper mb-45">
+	                    <div class="row align-items-center">
+	                        
+	                        
+	                        <div class="col-lg-3 col-md-6">
+	                            <div class="product-title">
+	                               <select @change="getResults(1)" v-model="form.contract_type"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+				                      <option selected value="">Toutes les offres</option>
+								      <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
+						           </select>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="col-lg-3 col-md-6">
+	                            <div class="product-title">
+	                                <select @change="getResults(1)" v-model="form.contract_duration" style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+				                        
+									    <option selected value="">CDI et CDD</option>
+									    <option  v-for="ct in contract_duration">{{ ct }}</option>
+						            </select>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="col-lg-3 col-md-6">
+	                            <div class="product-title">
+	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 250px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+				                        <option selected value="">Toutes les niveaux d'étude</option>
+									    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+						            </select>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="col-lg-12 col-md-6 mt-4">
+	                            <div class="product-title">
+	                                <!--<h3>We found  <span> 09 </span>courses available for you</h3>-->
+	                                <h3><span>{{ total_offer }}</span> offre(s) disponible(s)</h3>
+	                            </div>
+	                        </div>
+	
+	                        <!--<div class="col-lg-3 col-md-6">
+	                            <div class="product-list">
+	                                <select class="form-select" aria-label="Default select example">
+	                                    <option selected>Default Price</option>
+	                                    <option value="1">Price High To Low</option>
+	                                    <option value="2">Price Low To High</option>
+	                                </select>
+	                                <i class="ri-arrow-down-s-line"></i>
+	                            </div>
+	                        </div>-->
+	                    </div>
+	                </div>
+	                
+	                <div class="row">
+		                <div class="d-flex justify-content-center mt-5" v-if="loading == true">
+		                    <div class="spinner-border text-primary" role="status" id="main">
+							  <span class="sr-only">Loading...</span>
+							</div>
+	                    </div>
+	                    <div class="col-lg-6" v-for="data in offerData['data']" v-if="loading == false">
+	                        <div class="event-item box-shadow">
+	                            <div class="event-img">
+	                                <a href="event-details.html">
+	                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 100px;"/>
+	                                    
+	                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 100px;"/>
+	                                    
+	                                    
+	                                    
+	                                </a>
+	                            </div>
+	                            <div class="event-content">
+	                                <ul class="event-list">
+	                                    <li><i class="ri-time-fill"></i> {{ data['offer_duration'] }}</li>
+	                                    <li>
+	                                        <!--<i class="ri-vidicon-fill"></i> 
+	                                        17 lectures-->
+	                                         <span v-if="data['id'].includes('EMPL')" style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Emploi</span>
+		                                     <span v-if="data['id'].includes('STG')" style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Stage</span>
+		                                     <span v-if="data['id'].includes('CLT')" style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Consultance</span>
+	                                    </li>
+	                                </ul>
+	                                <h4><Link :href="`${'/annonces/'+data['id']}`">{{ data['title'] }}</Link></h4>
+	                                <p>{{ data['offers_details'] }}</p>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <Pagination :data="offerData" @pagination-change-page="getResults" align="center" v-if="loading == false"/>
+		          </div>
+		          <div class="col-md-4">
+			          <img src="https://beta.ridd.info/img/bannieres/ezgif.com-gif-maker.gif" alt="Team Images">
+			          
+		          </div>
                 
-                <div class="row">
-	                <div class="d-flex justify-content-center mt-5" v-if="loading == true">
-	                    <div class="spinner-border text-primary" role="status" id="main">
-						  <span class="sr-only">Loading...</span>
-						</div>
-                    </div>
-                    <div class="col-lg-6" v-for="data in offerData['data']" v-if="loading == false">
-                        <div class="event-item box-shadow" style="height: 190px;">
-                            <div class="event-img">
-                                <a href="event-details.html">
-                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 100px;"/>
-                                    
-                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 100px;"/>
-                                    
-                                    
-                                    
-                                </a>
-                            </div>
-                            <div class="event-content">
-                                <ul class="event-list">
-                                    <li><i class="ri-time-fill"></i> {{ data['offer_duration'] }}</li>
-                                    <li>
-                                        <!--<i class="ri-vidicon-fill"></i> 
-                                        17 lectures-->
-                                         <span v-if="data['id'].includes('EMPL')" style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Emploi</span>
-	                                     <span v-if="data['id'].includes('STG')" style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Stage</span>
-	                                     <span v-if="data['id'].includes('CLT')" style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Consultance</span>
-                                    </li>
-                                </ul>
-                                <h4><Link :href="`${'/annonces/'+data['id']}`">{{ data['title'] }}</Link></h4>
-                                <p>{{ data['offers_details'] }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <Pagination :data="offerData" @pagination-change-page="getResults" align="center" v-if="loading == false"/>
                 
+	            </div>
                 <!--<div class="row">
                     <div class="col-lg-6">
                         <div class="event-item box-shadow">

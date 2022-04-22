@@ -31,7 +31,7 @@
         <title>Ledu - Education Courses & Online Training HTML Template</title>
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="assets/images/favicon.png">
+        <link rel="icon" type="image/png" href="{{ asset('/img/favicon.png') }}">
         
         <style>
 	        

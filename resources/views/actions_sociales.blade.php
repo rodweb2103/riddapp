@@ -42,7 +42,7 @@
         <div class="courses-details-area pt-100 pb-70">
             <div class="container">
                 <div class="row">
-                    <!--<div class="col-lg-8">
+                    <div class="col-lg-8">
                         <div class="courses-details-contact">
                             <div class="tab courses-details-tab">
                                
@@ -52,51 +52,38 @@
                                             <div class="courses-details-into">
                                                <h3>Concept</h3>
                                                 <p>
-                                                   Le projet « CAFE DU RIDD » s’inscrit dans le cadre du renforcement des capacités de ses membres au plan national et international et les porteurs projets. En effet, le RIDD étant une organisation non gouvernementale ; elle a pour but de participer à transmettre, guider, orienter et aider toute personne désireuse de poursuivre les études, créer un cadre de retour des cerveaux et faire la promotion des Ivoiriens à l’extérieur.</p>
+                                                  Étendre nos mains de soutien à offrir des dons en vivres et non vivres à nos communautés.</p>
                                                    
-                                                   <p>
-                                                   Cette plateforme que représente le café du RIDD, permet à ses membres d’acquérir des connaissances et approfondir leurs compétences pour amorcer leur autonomisation et être outiller pour faire face aux défis qui se présentent au niveau de la jeunesse ivoirienne. Une bonne formation rend plus compétitif, d’où la nécessité pour les membres du réseau d’acquérir des techniques adéquate pour participer au développement du pays.</p>
+                                                   
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif général</h3>
+                                                <h3>Objectif </h3>
                                                 <p>
-                                         Le concept du « Café du RIDD » a pour mission première le renforcement des capacités de sa cible.
+                                         Porter assistance et communiquer de l'amour envers les autres. Le RIDD c'est aussi une famille avec le sens du partage et de l'amour..
                                                 </p>
-                                                <ul class="courses-details-list" style="display:none;">
-                                                    <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
-                                                    <li>Curabitur aliquet quam id dui posuere blandit.</li>
-                                                    <li>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</li>
-                                                </ul> 
+                                                
                                              
                                             </div>
-                                            <div class="courses-details-into">
-                                                <h3>Objectif spécifique</h3>
-                                                <p>
-                                                    Etoffer les capacités et compétences des membres au travers d’une formation, Donner les mêmes opportunités de formation à nos différents membres, porteurs de projets et la jeunesse ivoirienne, Apporter une aide pratique et financière par nos partenaires aux porteurs de projets du réseau</p>
-                                            </div>
+                                            
                                                                                           
                                              
-                                             <div class="courses-details-into">
+                                             <!--<div class="courses-details-into">
                                                 <h3>Cible</h3>
                                                 <p>
                                         Les cibles directes : membres du bureau national du RIDD, les coordinations à l’international et les porteurs de projets du réseau; La cible finale : jeunesse ivoirienne</p>
-                                             </div>
+                                             </div>-->
 
 
                                                 <div class="courses-details-into">
-                                                <h3>Programme</h3>
+                                                <h3>Cible</h3>
                                                   
-                                                  <ul class="courses-details-list">
-                                                    <li>Ateliers de formation</li>
-                                                    <li>Workshop</li>
-                                                    <li>Remise de certificat</li>
-                                                  </ul> 
-                                                                                               
-                                                <p style="display:none;">
-                                                    Donec sollicitudin molestie malesuada. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet
-                                                    et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Vivamus suscipit tortor felis porttitor volutpat.
-                                                    Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Vivamus suscipit tortor eget.
-                                                </p>
+                                                 <ul class="courses-details-list">
+                                                    <li>Communautés défavorisées et en situation d’handicaps.</li>
+                                                    <li>Orphelins.</li>
+                                                    <li>Sourd-muets.</li>
+                                                    <li>Prisonniers et des personnes en conditions de vie précaires.</li>
+                                                </ul>  
+                                                
                                              </div>
 
                                                 
@@ -108,7 +95,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>-->
+                    </div>
                     
                     
                     <!-- Portofolio Area -->
