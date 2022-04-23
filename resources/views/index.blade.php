@@ -349,28 +349,29 @@
                 <div class="row">
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
-                            <i class="flaticon-online-course"></i>
+                            <i class="fas fa-user-graduate"></i>
                             <h3><span class="odometer" data-count="2000">0000</span></h3>
                             <p>profils de diverses formations</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
-                            <i class="flaticon-student"></i>
+	                        <!--<i class="flaticon-online-course"></i>-->
+                            <i class="far fa-lightbulb"></i>
                             <h3><span class="odometer" data-count="30">00</span></h3>
                             <p>Porteurs d'idées et prototypes de projets</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
-                            <i class="flaticon-online-course-1"></i>
+                            <i class="fas fa-award"></i>
                             <h3><span class="odometer" data-count="30">00</span></h3>
                             <p>Lauréats prix d'excellence révélés</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
-                            <i class="flaticon-customer-satisfaction"></i>
+                            <i class="fas fa-globe-africa"></i>
                             <h3><span class="odometer" data-count="10">00</span></h3>
                             <p>Coordinations à l'international</p>
                         </div>

@@ -5,6 +5,7 @@
         <div class="inner-banner inner-banner-bg">
             <div class="container">
                 <div class="inner-title text-center">
+	                <!--<img src="https://beta.ridd.info/img/bannieres/banner-yayo2-large.png" alt="Team Images">-->
                     <h3>Annonces</h3>
                     <!--<ul>
                         <li>
@@ -51,8 +52,17 @@
 	                        
 	                        <div class="col-lg-3 col-md-6">
 	                            <div class="product-title">
-	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 250px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-				                        <option selected value="">Toutes les niveaux d'étude</option>
+	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+				                        <option selected value="">Niveaux d'étude</option>
+									    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+						            </select>
+	                            </div>
+	                        </div>
+	                        
+	                        <div class="col-lg-3 col-md-6">
+	                            <div class="product-title">
+	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+				                        <option selected value="">Secteur d'activité</option>
 									    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
 						            </select>
 	                            </div>
@@ -76,6 +86,7 @@
 	                            </div>
 	                        </div>-->
 	                    </div>
+	                    
 	                </div>
 	                
 	                <div class="row">
@@ -114,9 +125,37 @@
 	                    </div>
 	                </div>
 	                <Pagination :data="offerData" @pagination-change-page="getResults" align="center" v-if="loading == false"/>
+	                
+	                
+	                <h2 style="font-size: 35px;margin-top:30px;">Les recruteurs du moment</h2>
+	                
+	                <div class="row g-0 d-xxl-flex people mt-1">
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;border-style: solid;border-color: var(--bs-white);"></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/LG-RIDD@2x.png" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/LG-RIDD@2x.png" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/LG-RIDD@2x.png" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
+                    </div>
+	                
+	                <div class="row" style="margin-top: 51px;">
+		                    <div class="col-12">
+			                    <img src="https://beta.ridd.info/img/bannieres/banner-yayo2-large.png" alt="Team Images">
+		                    </div>
+	                </div>
+	                
 		          </div>
 		          <div class="col-md-4">
-			          <img src="https://beta.ridd.info/img/bannieres/ezgif.com-gif-maker.gif" alt="Team Images">
+			         <div class="row">
+				      <div class="col-12">
+			             <img src="https://beta.ridd.info/img/bannieres/ezgif.com-gif-maker.gif" alt="Team Images">
+				      </div>
+			          <div class="col-12 mt-4">
+			            <img src="https://beta.ridd.info/img/bannieres/banner-yayo1-side.png" alt="Team Images">
+			          </div>
+			          <div class="col-12 mt-4">
+			            <img src="https://beta.ridd.info/img/bannieres/banner-yayo4-side.jpg" alt="Team Images">
+			          </div>
+			         </div>
 			          
 		          </div>
                 
@@ -254,6 +293,14 @@
 
 <style type="text/css">
 	
+	.inner-banner-bg {
+      background-image: url('/img/bannieres/banniere-offres.png');
+    }
+    
+    .inner-banner::before {
+	  background: unset !important;
+	}
+    
 	li.list-group-item{
 		margin-bottom:40px;
 		/*border-bottom: 1px solid !important;*/

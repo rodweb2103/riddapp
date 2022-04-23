@@ -14,11 +14,12 @@
 
        <!-- Plugins CSS -->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap&subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('/assets/css/plugins.css') }}">
         <link rel="stylesheet" href="{{ asset('/fonts/fontawesome5-overrides.min.css') }}">
         <!-- Icon Plugins CSS -->
-        <link rel="stylesheet" href="{{ asset('/assets/css/iconplugins.css') }}">
+        <link rel="stylesheet" href="{{ asset('/assets/css/iconplugins.css') }}?<?php echo uniqid(); ?>">
         <!-- Style CSS -->
         <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}?<?php echo uniqid(); ?>">
         <!-- Responsive CSS -->
@@ -34,6 +35,11 @@
         <link rel="icon" type="image/png" href="{{ asset('/img/favicon.png') }}">
         
         <style>
+	        
+	        
+	       .counter-content h3 .odometer {
+		     font-weight: bold;
+		   }
 	        
 	       .counter-content i::after {
 		      

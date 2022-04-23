@@ -21,6 +21,11 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 .flaticon-studying:before {
     content: "\f101";
 }
+
+.flaticon-idea:before {
+    content: "\f672";
+}
+
 .flaticon-corporate:before {
     content: "\f102";
 }

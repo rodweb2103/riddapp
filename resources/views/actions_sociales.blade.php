@@ -100,7 +100,7 @@
                     
                     <!-- Portofolio Area -->
                     <div class="row pswp-gallery" id="my-gallery">
-	                    @foreach(\File::glob(public_path() . '/img/Actions-sociales/*.*') as $v)
+	                    @foreach(\File::glob(public_path() . '/img/Actions-sociales/*.png') as $v)
 	                
 	                
 	                   <div class="col-lg-4 col-md-6">
