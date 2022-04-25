@@ -66,14 +66,14 @@
                                     <div class="tabs_item current">
                                         <div class="courses-details-tab-content">
                                             <div class="courses-details-into">
-                                               <h3>Concept</h3>
+                                               <h3>{{ __('Concept') }}</h3>
                                                 <p>
-                                                   Cette journée s’inscrit dans les axes d’interventions du RIDD et vise à contribuer à informer, orienter et sensibiliser la jeunesse estudiantine sur des mécanismes liés aux processus d’études à l’étranger, aux choix des filières d’avenir, à la politique d’intégration dans le pays et à une meilleure planification de la carrière professionnelle.</p>
+                                                   {{ __('Cette journée s’inscrit dans les axes d’interventions du RIDD et vise à contribuer à informer, orienter et sensibiliser la jeunesse estudiantine sur des mécanismes liés aux processus d’études à l’étranger, aux choix des filières d’avenir, à la politique d’intégration dans le pays et à une meilleure planification de la carrière professionnelle.') }}</p>
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif général</h3>
+                                                <h3>{{ __('Objectif général') }}</h3>
                                                 <p>
-                                                    Mettre à la disposition des étudiants et diplômés ivoiriens, des informations sur la meilleure stratégie à adopter pour une orientation académique réussie.
+                                                    {{ __('Mettre à la disposition des étudiants et diplômés ivoiriens, des informations sur la meilleure stratégie à adopter pour une orientation académique réussie.') }}
                                                 </p>
                                                 <ul class="courses-details-list" style="display:none;">
                                                     <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
@@ -83,27 +83,27 @@
                                              
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif spécifique</h3>
+                                                <h3>{{ __('Objectif spécifique') }}</h3>
                                                 <p>
-                                                    Fournir au public cible, les informations sur les conditions et procédures d’entrées dans une école ou université étrangère; Informer, orienter et sensibiliser la jeunesse estudiantine sur des mécanismes liés aux processus d’études à l’étranger, aux choix des filières d’avenir, à la politique d’intégration dans le pays et à une meilleure planification de la carrière professionnelle</p>
+                                                    {{ __('Fournir au public cible, les informations sur les conditions et procédures d’entrées dans une école ou université étrangère; Informer, orienter et sensibiliser la jeunesse estudiantine sur des mécanismes liés aux processus d’études à l’étranger, aux choix des filières d’avenir, à la politique d’intégration dans le pays et à une meilleure planification de la carrière professionnelle') }}</p>
                                             </div>
                                                                                           
                                              
                                              <div class="courses-details-into">
-                                                <h3>Cible</h3>
+                                                <h3>{{ __('Cible') }}</h3>
                                                 <p>
-                                        Étudiants et diplômés ivoiriens, écoles et universités sur le plan local et internationale</p>
+                                        {{ __('Étudiants et diplômés ivoiriens, écoles et universités sur le plan local et internationale') }}</p>
                                              </div>
 
 
                                                 <div class="courses-details-into">
-                                                <h3>Programme</h3>
+                                                <h3>{{ __('Programme') }}</h3>
                                                   
                                                   <ul class="courses-details-list">
-                                                    <li>Présentation des écoles et universités étrangères</li>
-                                                    <li>Visites de stands</li>
-                                                    <li>Ateliers</li>
-                                                    <li>Panels</li>
+                                                    <li>{{ __('Présentation des écoles et universités étrangères') }}</li>
+                                                    <li>{{ __('Visites de stands') }}</li>
+                                                    <li>{{ __('Ateliers') }}</li>
+                                                    <li>{{ __('Panels') }}</li>
                                                   </ul> 
                                                                                                
                                                 <p style="display:none;">

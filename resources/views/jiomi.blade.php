@@ -66,14 +66,14 @@
                                     <div class="tabs_item current">
                                         <div class="courses-details-tab-content">
                                             <div class="courses-details-into">
-                                               <h3>Concept</h3>
+                                               <h3>{{ __('Concept') }}</h3>
                                                 <p>
-                                                   La Journée d’Information et d’Orientation à la Mobilité Internationale (JIOMI) est un programme de mobilité universitaire qui s’inscrit dans le cadre de la coopération décentralisée des régions de l’oriental du Maroc et les régions ivoiriennes à travers l’octroi de bourses d’études.Les lauréats retenus pour ce programme bénéficient d’un soutien des deux régions partenaires.</p>
+                                                   {{ __('La Journée d’Information et d’Orientation à la Mobilité Internationale (JIOMI) est un programme de mobilité universitaire qui s’inscrit dans le cadre de la coopération décentralisée des régions de l’oriental du Maroc et les régions ivoiriennes à travers l’octroi de bourses d’études.Les lauréats retenus pour ce programme bénéficient d’un soutien des deux régions partenaires.') }}</p>
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif général</h3>
+                                                <h3>{{ __('Objectif général') }}</h3>
                                                 <p>
-                                                    Dépasser l'appréhension du départ à l'étranger et informer les étudiants sur les possibilités d'études à l'étranger notamment au Maroc
+                                                    {{ __('Dépasser l'appréhension du départ à l'étranger et informer les étudiants sur les possibilités d'études à l'étranger notamment au Maroc') }}
                                                 </p>
                                                 <ul class="courses-details-list" style="display:none;">
                                                     <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
@@ -83,25 +83,25 @@
                                              
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif spécifique</h3>
+                                                <h3>{{ __('Objectif spécifique') }}</h3>
                                                 <p>
-                                                    Inciter les étudiants à passer le cap d'une mobilité internationale, Exprimer et dissiper les doutes concernant les études à l’étranger (la validation de l'année à l'étranger, les modalités, les formalités à respecter, les aides financières ainsi que le coût que cela peut induire à leur charge)</p>
+                                                    {{ __('Inciter les étudiants à passer le cap d'une mobilité internationale, Exprimer et dissiper les doutes concernant les études à l’étranger (la validation de l'année à l'étranger, les modalités, les formalités à respecter, les aides financières ainsi que le coût que cela peut induire à leur charge)') }}</p>
                                             </div>
                                                                                           
                                              
                                              <div class="courses-details-into">
-                                                <h3>Cible</h3>
+                                                <h3>{{ __('Cible') }}</h3>
                                                 <p>
-                                                Les élèves et étudiants (diplômés ou non) ivoiriens, les parents</p>
+                                                {{ __('Les élèves et étudiants (diplômés ou non) ivoiriens, les parents') }}</p>
                                              </div>
 
 
                                                 <div class="courses-details-into">
-                                                <h3>Programme</h3>
+                                                <h3>{{ __('Programme') }}</h3>
                                                   
                                                   <ul class="courses-details-list">
-                                                    <li>Présentation de programme de bourses</li>
-                                                    <li>Panels</li>
+                                                    <li>{{ __('Présentation de programme de bourses') }}</li>
+                                                    <li>{{ __('Panels') }}</li>
                                                   </ul> 
                                                                                                
                                                 <p style="display:none;">

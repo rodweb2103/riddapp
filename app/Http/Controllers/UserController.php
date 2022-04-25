@@ -34,16 +34,16 @@ class UserController extends Controller
 		    //'study_level' => 'required'
          ],[
 		      //'activity_sector.required'=> 'Le secteur d\'activité est requis', // custom message
-		      'email.required'=> 'Le courriel est requis', // custom message,
-		      'email.email' => 'Le courriel est non valide',
-		      'email.unique' => 'Le courriel a déjà été utilisé',
-		      'first_name.required'=> 'Le prénom est requis', // custom message
-		      'last_name.required'=> 'Le nom est requis', // custom message,
-		      'user_name.required'=> 'Le nom d\'utlisateur est requis', // custom message
-		      'user_name.unique'=> 'La nom d\'utlisateur existe déjà', // custom message
-		      'password.required'=> 'Le mot de passe est requis', // custom message,
-		      'password_confirmation.required'=> 'Le mot de passe confirmation est requis', // custom message,
-		      'password_confirmation.same'=> 'Les mots de passe doivent être identiques', // custom message,
+		      'email.required'=> trans('Le courriel est requis'), // custom message,
+		      'email.email' => trans('Le courriel est non valide'),
+		      'email.unique' => trans('Le courriel a déjà été utilisé'),
+		      'first_name.required'=> trans('Le prénom est requis'), // custom message
+		      'last_name.required'=> trans('Le nom est requis'), // custom message,
+		      'user_name.required'=> trans('Le nom d\'utlisateur est requis'), // custom message
+		      'user_name.unique'=> trans('Le nom d\'utlisateur existe déjà'), // custom message
+		      'password.required'=> trans('Le mot de passe est requis'), // custom message,
+		      'password_confirmation.required'=> trans('Le mot de passe confirmation est requis'), // custom message,
+		      'password_confirmation.same'=> trans('Les mots de passe doivent être identiques'), // custom message,
 		      //'study_level.required'=> 'Le niveau d\'étude est requis' // custom message
          ]);
          
@@ -524,12 +524,12 @@ class UserController extends Controller
 			    
 			    
 	         ],[
-			      'email.required'=> 'Le courriel est requis', // custom message
-			      'email.unique'=> 'La courriel existe déjà', // custom message
-			      'user_name.unique' => 'Le pseudo a déjà été utilisé',
-			      'user_name.required' => 'Le pseudo est requis',
-			      'first_name.required' => 'Le prénom est requis',
-			      'last_name.required' => 'Le nom est requis'
+			      'email.required'=> trans('Le courriel est requis'), // custom message
+			      'email.unique'=> trans('La courriel existe déjà'), // custom message
+			      'user_name.unique' => trans('Le pseudo a déjà été utilisé'),
+			      'user_name.required' => trans('Le pseudo est requis'),
+			      'first_name.required' => trans('Le prénom est requis'),
+			      'last_name.required' => trans('Le nom est requis')
 			      
 	         ]);
 	         
@@ -563,15 +563,15 @@ class UserController extends Controller
 			    
 			    
 	         ],[
-			      'email.required'=> 'Le courriel est requis', // custom message
-			      'email.unique'=> 'La courriel existe déjà', // custom message
-			      'user_name.unique' => 'Le pseudo a déjà été utilisé',
-			      'user_name.required' => 'Le pseudo est requis',
-			      'first_name.required' => 'Le prénom est requis',
-			      'last_name.required' => 'Le nom est requis',
-			      'company_name.required' => 'Le nom de l\'entreprise est requis',
-			      'company_location.required' => 'L\'adresse géographique est requise',
-			      'company_about.required' => 'Les détails sur l\'entreprise sont requises'
+			      'email.required'=> trans('Le courriel est requis'), // custom message
+			      'email.unique'=> trans('La courriel existe déjà'), // custom message
+			      'user_name.unique' => trans('Le pseudo a déjà été utilisé'),
+			      'user_name.required' => trans('Le pseudo est requis'),
+			      'first_name.required' => trans('Le prénom est requis'),
+			      'last_name.required' => trans('Le nom est requis'),
+			      'company_name.required' => trans('Le nom de l\'entreprise est requis'),
+			      'company_location.required' => trans('L\'adresse géographique est requise'),
+			      'company_about.required' => trans('Les détails sur l\'entreprise sont requises')
 			      
 	         ]);
 	         
@@ -703,11 +703,11 @@ class UserController extends Controller
 		    'password' => 'required',
 		    'password_confirmation' => 'required|same:password'
          ],[
-		      'user_name.required'=> 'Le nom d\'utlisateur est requis', // custom message
-		      'user_name.unique'=> 'La nom d\'utlisateur existe déjà', // custom message
-		      'password.required'=> 'Le mot de passe est requis', // custom message,
-		      'password_confirmation.required'=> 'Le mot de passe confirmation est requis', // custom message,
-		      'password_confirmation.same'=> 'Les mots de passe doivent être identiques', // custom message,
+		      'user_name.required'=> trans('Le nom d\'utlisateur est requis'), // custom message
+		      'user_name.unique'=> trans('La nom d\'utlisateur existe déjà'), // custom message
+		      'password.required'=> trans('Le mot de passe est requis'), // custom message,
+		      'password_confirmation.required'=> trans('Le mot de passe confirmation est requis'), // custom message,
+		      'password_confirmation.same'=> trans('Les mots de passe doivent être identiques'), // custom message,
          ]);
 	    
 	    
@@ -732,13 +732,13 @@ class UserController extends Controller
 		    //'ccode' => 'required',
 		    'city' => 'required'
         ],[
-		      'user_type.required'=> 'Le type d\'utlisateur est requis', // custom message
-		      'first_name.required'=> 'Le prénom est requis', // custom message
-		      'last_name.required'=> 'Le nom est requis', // custom message,
-		      'email.required'=> 'Le courriel est requis', // custom message,
-		      'phone_number.required' => 'Le numéro de téléphone est requis',
-		      'city.required' => 'La ville est requise',
-		      'email.unique' => 'Le courriel a déjà été utilisé'
+		      'user_type.required'=> trans('Le type d\'utlisateur est requis'), // custom message
+		      'first_name.required'=> trans('Le prénom est requis'), // custom message
+		      'last_name.required'=> trans('Le nom est requis'), // custom message,
+		      'email.required'=> trans('Le courriel est requis'), // custom message,
+		      'phone_number.required' => trans('Le numéro de téléphone est requis'),
+		      'city.required' => trans('La ville est requise'),
+		      'email.unique' => trans('Le courriel a déjà été utilisé')
 		      //'ccode.required' => 'Le pays est requis'
 		      //'password_confirmation.same'=> 'Les mots de passe doivent être identiques', // custom message,
          ]);
@@ -764,12 +764,12 @@ class UserController extends Controller
 		    //'country' => 'required',
 		    //'city' => 'required'
         ],[
-		      'study_level.required_if'=> 'Le niveau d\'étude est requis', // custom message
-		      'activity_sector.required'=> 'Le domaine de formation est requis', // custom message
-		      'company_name.required_if'=> 'Le nom de l\'entreprise est requis',
-		      'company_about.required_if'=> 'Les détails sur l\'entreprise sont requises',
-		      'company_location.required_if'=> 'L\'addresse géographique de l\'entreprise est requise',
-		      'policy.required' => 'Veuillez accepter les conditions générales d\'utilisation'
+		      'study_level.required_if'=> trans('Le niveau d\'étude est requis'), // custom message
+		      'activity_sector.required'=> trans('Le domaine de formation est requis'), // custom message
+		      'company_name.required_if'=> trans('Le nom de l\'entreprise est requis'),
+		      'company_about.required_if'=> trans('Les détails sur l\'entreprise sont requises'),
+		      'company_location.required_if'=> trans('L\'addresse géographique de l\'entreprise est requise'),
+		      'policy.required' => trans('Veuillez accepter les conditions générales d\'utilisation')
 		      //'company_name.company_website'=> 'Le nom de l\'entreprise est requis',
 		      //'last_name.required'=> 'Le nom est requis', // custom message,
 		      //'email.required'=> 'Le courriel est requis', // custom message,

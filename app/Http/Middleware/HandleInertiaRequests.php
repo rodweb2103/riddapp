@@ -38,11 +38,20 @@ class HandleInertiaRequests extends Middleware
     public function share(Request $request): array
     {
 	    
+	    //var_dump(base_path('lang/'. app()->getLocale() .'.json'));
+	    /*var_dump(translations(
+			            base_path('lang/'. app()->getLocale() .'.json')
+			        ));exit;*/
 	    
 	    if(auth()->user()) $user = User::with(['country_user','activity_sector_company_user'])->where("id",auth()->user()->id)->first();
         return array_merge(parent::share($request), [
             //
                 'image_profile' => \Auth::user() ? \Auth::user()->profile_photo_path!="" ? config('app.url').\Storage::url('profile/'.basename(\Auth::user()->profile_photo_path)): "" : "",
+                'language' => function () {
+			        return translations(
+			            base_path('lang/'. app()->getLocale() .'.json')
+			        );
+			    },
                 'status' => fn () => $request->session()->get('status'),
                 'appName' => config('app.name'),
                 'is_admin' => auth()->user() ? auth()->user()->hasRole('Admin') ? 1 : 0 : 0,

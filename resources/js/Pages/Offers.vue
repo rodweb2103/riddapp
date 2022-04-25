@@ -2,11 +2,11 @@
     
     <BaseLayout>
     <!-- Inner Banner -->
-        <div class="inner-banner inner-banner-bg">
+        <div class="inner-banner inner-banner-bg" >
             <div class="container">
                 <div class="inner-title text-center">
 	                <!--<img src="https://beta.ridd.info/img/bannieres/banner-yayo2-large.png" alt="Team Images">-->
-                    <h3>Annonces</h3>
+                    <h3>Offres</h3>
                     <!--<ul>
                         <li>
                             <a href="index.html">Home</a>
@@ -34,8 +34,8 @@
 	                        <div class="col-lg-3 col-md-6">
 	                            <div class="product-title">
 	                               <select @change="getResults(1)" v-model="form.contract_type"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-				                      <option selected value="">Toutes les offres</option>
-								      <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
+				                      <option selected value="">{{ __('Toutes les offres') }}</option>
+								      <option :value="ct['id']" v-for="ct in contract_type">{{ __(''+ct['text']) }}</option>
 						           </select>
 	                            </div>
 	                        </div>
@@ -53,7 +53,7 @@
 	                        <div class="col-lg-3 col-md-6">
 	                            <div class="product-title">
 	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-				                        <option selected value="">Niveaux d'étude</option>
+				                        <option selected value="">{{ __('Niveaux d\'étude') }}</option>
 									    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
 						            </select>
 	                            </div>
@@ -62,7 +62,7 @@
 	                        <div class="col-lg-3 col-md-6">
 	                            <div class="product-title">
 	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
-				                        <option selected value="">Secteur d'activité</option>
+				                        <option selected value="">{{ __('Secteur d\'activité') }}</option>
 									    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
 						            </select>
 	                            </div>
@@ -71,7 +71,7 @@
 	                        <div class="col-lg-12 col-md-6 mt-4">
 	                            <div class="product-title">
 	                                <!--<h3>We found  <span> 09 </span>courses available for you</h3>-->
-	                                <h3><span>{{ total_offer }}</span> offre(s) disponible(s)</h3>
+	                                <h3><span>{{ total_offer }}</span> {{ __('offre(s) disponible(s)') }}</h3>
 	                            </div>
 	                        </div>
 	
@@ -113,12 +113,13 @@
 	                                    <li>
 	                                        <!--<i class="ri-vidicon-fill"></i> 
 	                                        17 lectures-->
-	                                         <span v-if="data['id'].includes('EMPL')" style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Emploi</span>
-		                                     <span v-if="data['id'].includes('STG')" style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Stage</span>
-		                                     <span v-if="data['id'].includes('CLT')" style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">Consultance</span>
+	                                         <span v-if="data['id'].includes('EMPL')" style="background: #08921e;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">{{ __('Emploi') }}</span>
+		                                     <span v-if="data['id'].includes('STG')" style="background: #ff7300;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">{{ __('Stage') }}</span>
+		                                     <span v-if="data['id'].includes('CLT')" style="background: #c90c00;padding-right: 15px;padding-left: 15px;padding-bottom: 3px;padding-top: 3px;color: rgb(255,255,255);font-size: 12px;margin-right: 8px;">{{ __('Consultance') }}</span>
 	                                    </li>
 	                                </ul>
 	                                <h4><Link :href="`${'/annonces/'+data['id']}`">{{ data['title'] }}</Link></h4>
+	                                <p>{{ data['company_name'] }}</p>
 	                                <p>{{ data['offers_details'] }}</p>
 	                            </div>
 	                        </div>
@@ -127,14 +128,14 @@
 	                <Pagination :data="offerData" @pagination-change-page="getResults" align="center" v-if="loading == false"/>
 	                
 	                
-	                <h2 style="font-size: 35px;margin-top:30px;">Les recruteurs du moment</h2>
+	                <h2 style="font-size: 35px;margin-top:30px;">{{ __('Les recruteurs du moment') }}</h2>
 	                
 	                <div class="row g-0 d-xxl-flex people mt-1">
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;border-style: solid;border-color: var(--bs-white);"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/LG-RIDD@2x.png" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/LG-RIDD@2x.png" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><img class="rounded-circle" src="/img/LG-RIDD@2x.png" style="max-width: 150px;border-style: solid;border-color: var(--bs-white);"></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                     </div>
 	                
 	                <div class="row" style="margin-top: 51px;">

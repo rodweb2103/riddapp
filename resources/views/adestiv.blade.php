@@ -57,16 +57,16 @@
                                     <div class="tabs_item current">
                                         <div class="courses-details-tab-content">
                                             <div class="courses-details-into">
-                                               <h3>Concept</h3>
+                                               <h3>{{ __('Concept') }}</h3>
                                                 <p>
-                                                   Le RIDD (Réseau Ivoirien des Diplômés de la Diaspora) se positionne comme une plateforme incitatrice qui se fixe pour objectif d’offrir à cette « intelligencia » ivoirienne, toutes les opportunités disponibles afin de réussir leur insertion socio-professionnelle en Côte-d’Ivoire. C’est dans ce cadre que s’inscrit l’un des évènements phare du RIDD : les Awards de la Diaspora Estudiantine Ivoirienne.                        </p>
+                                                   {{ __('Le RIDD (Réseau Ivoirien des Diplômés de la Diaspora) se positionne comme une plateforme incitatrice qui se fixe pour objectif d’offrir à cette « intelligencia » ivoirienne, toutes les opportunités disponibles afin de réussir leur insertion socio-professionnelle en Côte-d’Ivoire. C’est dans ce cadre que s’inscrit l’un des évènements phare du RIDD : les Awards de la Diaspora Estudiantine Ivoirienne.') }}</p>
                                                 <p>
-                                                    C’est une lucarne ouverte pour célébrer l’excellence, distinguer les meilleurs étudiants formés à l’extérieur, exposer le potentiel formidable des ressources humaines de la diaspora auprès des entreprises, et mettre à la disposition des diplômés de la diaspora des opportunités réelles d’insertion dans le tissu socio-économique.</p>
+                                                    {{ __('C’est une lucarne ouverte pour célébrer l’excellence, distinguer les meilleurs étudiants formés à l’extérieur, exposer le potentiel formidable des ressources humaines de la diaspora auprès des entreprises, et mettre à la disposition des diplômés de la diaspora des opportunités réelles d’insertion dans le tissu socio-économique.') }}</p>
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif général</h3>
+                                                <h3>{{ __('Objectif général') }}</h3>
                                                 <p>
-                                                    Faire la promotion des étudiants et diplômés ivoiriens afin de les inciter à venir mettre leurs compétences au service du développement économique de la Côte D’ivoire.
+                                                    {{ __('Faire la promotion des étudiants et diplômés ivoiriens afin de les inciter à venir mettre leurs compétences au service du développement économique de la Côte D’ivoire.') }}
                                                 </p>
                                                 <ul class="courses-details-list" style="display:none;">
                                                     <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
@@ -76,29 +76,29 @@
                                              
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif spécifique</h3>
+                                                <h3>{{ __('Objectif spécifique') }}</h3>
                                                 <p>
-                                                    Contribuer à la promotion des talents de la diaspora par la culture du mérite, exposer le potentiel des ressources humaines de la diaspora, encourager l’entreprenariat des jeunes de la diaspora et au plan local, orienter les étudiants au plan local dans leur projet d’étude à l’étranger, construire un réseau professionnel facilitant le contact entre recruteurs et demandeurs d’emploi par le canal du portail web du RIDD.</p>
+                                                    {{ __('Contribuer à la promotion des talents de la diaspora par la culture du mérite, exposer le potentiel des ressources humaines de la diaspora, encourager l’entreprenariat des jeunes de la diaspora et au plan local, orienter les étudiants au plan local dans leur projet d’étude à l’étranger, construire un réseau professionnel facilitant le contact entre recruteurs et demandeurs d’emploi par le canal du portail web du RIDD.') }}</p>
                                             </div>
                                              
                                              <div class="courses-details-into">
-                                                <h3>Cible</h3>
+                                                <h3>{{ __('Cible') }}</h3>
                                                 <p>
-                                                    Étudiants et diplômés de la diaspora ivoirienne, étudiants au plan local désireux d’étudier à l’étranger, les porteurs de projet de la diaspora et au plan local, les entreprises, les cabinets de recrutement, les incubateurs, organismes gouvernementaux, organismes internationaux.</p>
+                                                    {{ __('Étudiants et diplômés de la diaspora ivoirienne, étudiants au plan local désireux d’étudier à l’étranger, les porteurs de projet de la diaspora et au plan local, les entreprises, les cabinets de recrutement, les incubateurs, organismes gouvernementaux, organismes internationaux.') }}</p>
                                              </div>
 
                                                 <div class="courses-details-into">
-                                                <h3>Programme</h3>
+                                                <h3>{{ __('Programme') }}</h3>
                                                   
                                                   <ul class="courses-details-list">
-                                                    <li>Table ronde</li>
-                                                    <li>Présentation du portail web du RIDD</li>
-                                                    <li>Pitch des porteurs de projet</li>
-                                                    <li>Top recrutement</li>
-                                                    <li>Partage d’expérience</li>
-                                                    <li>Visite stand des universités étrangères et des entreprises</li>
-                                                    <li>Meet-upOrientation académique</li>
-                                                    <li>Atelier de formation et Soirée de distinction</li>
+                                                    <li>{{ __('Table ronde') }}</li>
+                                                    <li>{{ __('Présentation du portail web du RIDD') }}</li>
+                                                    <li>{{ __('Pitch des porteurs de projet') }}</li>
+                                                    <li>{{ __('Top recrutement') }}</li>
+                                                    <li>{{ __('Partage d’expérience') }}</li>
+                                                    <li>{{ __('Visite stand des universités étrangères et des entreprises') }}</li>
+                                                    <li>{{ __('Meet-up Orientation académique') }}</li>
+                                                    <li>{{ __('Atelier de formation et Soirée de distinction') }}</li>
 
                                                 </ul> 
                                                                                                

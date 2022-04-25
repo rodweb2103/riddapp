@@ -16,7 +16,7 @@
                                     <div class="p-5" style="margin-top: 26px;">
 	                                    <jet-validation-errors class="mb-3" />
                                         <div class="text-center">
-                                            <h4 class="text-dark mb-4">Changer le mot de passe</h4>
+                                            <h4 class="text-dark mb-4">{{ __('Changer le mot de passe') }}</h4>
                                         </div>
                                         <form @submit.prevent="submit">
                                             <div class="mb-3"><div class="mb-3"><input class="form-control form-control-user" type="hidden" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Identifiant ou email" name="email" v-model="form.email"></div></div>
@@ -27,7 +27,7 @@
 									              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
 									                <span class="visually-hidden">Loading...</span>
 									              </div>
-									              <div v-if="!form.processing">Enregistrer</div>
+									              <div v-if="!form.processing">{{ __('Enregistrer') }}</div>
 	                                            </jet-button>
                                              </div>
                                         </form>

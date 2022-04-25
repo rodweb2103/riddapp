@@ -1,5 +1,5 @@
 <template>
-  <Head title="Vérifier votre compte" />
+  <Head :title="__('Vérifier votre compte')" />
   
   <BaseLayout>
      
@@ -8,7 +8,7 @@
                 <div class="col-md-9 col-lg-12 col-xl-12 align-self-center" style="margin-top: 0px;">
 	                <!--<img src="/img/LG-RIDD@2x.png" style="width: 150px;" class="rounded mx-auto d-block">-->
 	                <div class="alert alert-success" role="alert" v-if="verificationLinkSent" style="margin-left: auto;margin-right: auto;width: 40%;">
-			           Un nouveau lien de vérification a été envoyé à l'adresse e-mail que vous avez fournie lors de l'inscription.
+			           {{ __('Un nouveau lien de vérification a été envoyé à l\'adresse e-mail que vous avez fournie lors de l\'inscription.') }}
 	                </div>
 	                <div class="container col-md-12">
 				   <div class="row justify-content-center my-5">
@@ -16,7 +16,7 @@
 					         <div></div>
 					         <div class="card shadow-sm px-3">
 					            <div class="card-body">
-					               <div class="mb-3 small text-muted" style="font-size: 20px;"> Merci pour votre inscription! Avant de commencer, pourriez-vous vérifier votre adresse e-mail en cliquant sur le lien que nous venons de vous envoyer par e-mail ? Si vous n'a pas reçu l'e-mail, nous vous en enverrons un autre avec plaisir. </div>
+					               <div class="mb-3 small text-muted" style="font-size: 20px;"> {{ __('Merci pour votre inscription! Avant de commencer, pourriez-vous vérifier votre adresse e-mail en cliquant sur le lien que nous venons de vous envoyer par e-mail ? Si vous n\'a pas reçu l\'e-mail, nous vous en enverrons un autre avec plaisir.') }} </div>
 					               <form @submit.prevent="submit">
 					                  <div class="mt-4 d-flex justify-content-between">
 					                     <jet-button
@@ -28,7 +28,7 @@
 								              <span class="visually-hidden">Loading...</span>
 								            </div>
 								
-								            Renvoyer l'e-mail de vérification
+								            {{ __('Renvoyer l\'e-mail de vérification') }}
 								          </jet-button>
 					                     <!--<button class="btn btn-link">Déconnexion</button>-->
 					                     <!--<Link

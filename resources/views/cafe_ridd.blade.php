@@ -66,17 +66,17 @@
                                     <div class="tabs_item current">
                                         <div class="courses-details-tab-content">
                                             <div class="courses-details-into">
-                                               <h3>Concept</h3>
+                                               <h3>{{ __('Concept') }}</h3>
                                                 <p>
-                                                   Le projet « CAFE DU RIDD » s’inscrit dans le cadre du renforcement des capacités de ses membres au plan national et international et les porteurs projets. En effet, le RIDD étant une organisation non gouvernementale ; elle a pour but de participer à transmettre, guider, orienter et aider toute personne désireuse de poursuivre les études, créer un cadre de retour des cerveaux et faire la promotion des Ivoiriens à l’extérieur.</p>
+                                                   {{ __('Le projet « CAFE DU RIDD » s’inscrit dans le cadre du renforcement des capacités de ses membres au plan national et international et les porteurs projets. En effet, le RIDD étant une organisation non gouvernementale ; elle a pour but de participer à transmettre, guider, orienter et aider toute personne désireuse de poursuivre les études, créer un cadre de retour des cerveaux et faire la promotion des Ivoiriens à l’extérieur.') }}</p>
                                                    
                                                    <p>
-                                                   Cette plateforme que représente le café du RIDD, permet à ses membres d’acquérir des connaissances et approfondir leurs compétences pour amorcer leur autonomisation et être outiller pour faire face aux défis qui se présentent au niveau de la jeunesse ivoirienne. Une bonne formation rend plus compétitif, d’où la nécessité pour les membres du réseau d’acquérir des techniques adéquate pour participer au développement du pays.</p>
+                                                   {{ __('Cette plateforme que représente le café du RIDD, permet à ses membres d’acquérir des connaissances et approfondir leurs compétences pour amorcer leur autonomisation et être outiller pour faire face aux défis qui se présentent au niveau de la jeunesse ivoirienne. Une bonne formation rend plus compétitif, d’où la nécessité pour les membres du réseau d’acquérir des techniques adéquate pour participer au développement du pays.') }}</p>
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif général</h3>
+                                                <h3>{{ __('Objectif général') }}</h3>
                                                 <p>
-                                         Le concept du « Café du RIDD » a pour mission première le renforcement des capacités de sa cible.
+                                         {{ __('Le concept du « Café du RIDD » a pour mission première le renforcement des capacités de sa cible.') }}
                                                 </p>
                                                 <ul class="courses-details-list" style="display:none;">
                                                     <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
@@ -86,26 +86,26 @@
                                              
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif spécifique</h3>
+                                                <h3>{{ __('Objectif spécifique') }}</h3>
                                                 <p>
-                                                    Etoffer les capacités et compétences des membres au travers d’une formation, Donner les mêmes opportunités de formation à nos différents membres, porteurs de projets et la jeunesse ivoirienne, Apporter une aide pratique et financière par nos partenaires aux porteurs de projets du réseau</p>
+                                                    {{ __('Etoffer les capacités et compétences des membres au travers d’une formation, Donner les mêmes opportunités de formation à nos différents membres, porteurs de projets et la jeunesse ivoirienne, Apporter une aide pratique et financière par nos partenaires aux porteurs de projets du réseau') }}</p>
                                             </div>
                                                                                           
                                              
                                              <div class="courses-details-into">
-                                                <h3>Cible</h3>
+                                                <h3>{{ __('Cible') }}</h3>
                                                 <p>
-                                        Les cibles directes : membres du bureau national du RIDD, les coordinations à l’international et les porteurs de projets du réseau; La cible finale : jeunesse ivoirienne</p>
+                                        {{ __('Les cibles directes : membres du bureau national du RIDD, les coordinations à l’international et les porteurs de projets du réseau; La cible finale : jeunesse ivoirienne') }}</p>
                                              </div>
 
 
                                                 <div class="courses-details-into">
-                                                <h3>Programme</h3>
+                                                <h3>{{ __('Programme') }}</h3>
                                                   
                                                   <ul class="courses-details-list">
-                                                    <li>Ateliers de formation</li>
-                                                    <li>Workshop</li>
-                                                    <li>Remise de certificat</li>
+                                                    <li>{{ __('Ateliers de formation') }}</li>
+                                                    <li>{{ __('Workshop') }}</li>
+                                                    <li>{{ __('Remise de certificat') }}</li>
                                                   </ul> 
                                                                                                
                                                 <p style="display:none;">

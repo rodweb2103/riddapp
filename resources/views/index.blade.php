@@ -9,15 +9,15 @@
                     <div class="col-lg-8">
                         <div class="banner-content">
                             <!--<span data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">FOR A BETTER FUTURE</span>-->
-                            <h1 style="color: #fff" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">Rejoignez notre réseau et bénéficiez de nombreuses opportunités.</h1>
-                            <p style="color: #fff">Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.</p>
+                            <h1 style="color: #fff" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">{{ __('Rejoignez notre réseau et bénéficiez de nombreuses opportunités.') }}</h1>
+                            <p style="color: #fff">{{ __('Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.') }}</p>
                             @guest
-                            <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;width: 159.5px;color: rgb(255,255,255);">Rejoindre</a>
+                            <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;width: 159.5px;color: rgb(255,255,255);">{{ __('Rejoindre') }}</a>
                             
                             @endguest
                             
                             @auth
-                               <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;color: rgb(255,255,255);">Accéder aux offres</a>
+                               <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;color: rgb(255,255,255);">{{ __('Accéder aux offres') }}</a>
                             @endauth
                             <!--<div class="banner-form-area" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
                                 <form class="banner-form" data-toggle="validator" method="POST">
@@ -176,9 +176,9 @@
          <div class="courses-area pb-70 mt-5" style="margin-top: 90px !important;">
             <div class="container">
                 <div class="section-title text-center mb-45">
-                    <h2>Mission</h2>
+                    <h2>{{ __('Mission') }}</h2>
                     <p>
-                        Notre ADN, notre raison d'être et les objectifs à atteindre se résument à
+                        {{ __('Notre ADN, notre raison d\'être et les objectifs à atteindre se résument à') }}
                     </p>
                 </div>
                 <div class="row">
@@ -188,7 +188,7 @@
                                 <img src="/img/pexels-pavel-danilyuk-7942434.jpg" alt="Courses" />
                             </a>
                             <div class="content">
-	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Contribuer à créer un cadre propice au retour des diplômés de la diaspora ivoirienne</p>
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">{{ __('Contribuer à créer un cadre propice au retour des diplômés de la diaspora ivoirienne') }}</p>
                                 <!--<a href="courses.html" class="tag-btn">Design</a>
                                 <div class="price-text">$120</div>
                                 <h3><a href="courses-details.html">UI/UX design pattern for succesfull software applications</a></h3>
@@ -215,7 +215,7 @@
                                 <img src="/img/pexels-keira-burton-6146978.jpg" alt="Courses" />
                             </a>
                             <div class="content">
-	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Faire la promotion des étudiants ivoiriens formés à l’extérieur</p>
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">{{ __('Faire la promotion des étudiants ivoiriens formés à l’extérieur') }}</p>
                                 <!--<a href="courses.html" class="tag-btn">Accounting</a>
                                 <div class="price-text">$129</div>
                                 <h3><a href="courses-details.html">Basic knowledge about hodiernal bharat in history</a></h3>
@@ -242,7 +242,7 @@
                                 <img src="/img/pexels-ron-lach-9850088.jpg" alt="Courses" />
                             </a>
                             <div class="content">
-	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">Promouvoir l’entreprenariat jeune sur le territoire national et international</p>
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">{{ __('Promouvoir l\’entreprenariat jeune sur le territoire national et international') }}</p>
                                 <!--<a href="courses.html" class="tag-btn">Physics</a>
                                 <div class="price-text">$100</div>
                                 <h3><a href="courses-details.html">Visual effects for games in unity beginner to intermediate</a></h3>
@@ -351,7 +351,7 @@
                         <div class="counter-content">
                             <i class="fas fa-user-graduate"></i>
                             <h3><span class="odometer" data-count="2000">0000</span></h3>
-                            <p>profils de diverses formations</p>
+                            <p>{{ __('Profils de diverses formations') }}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
@@ -359,21 +359,21 @@
 	                        <!--<i class="flaticon-online-course"></i>-->
                             <i class="far fa-lightbulb"></i>
                             <h3><span class="odometer" data-count="30">00</span></h3>
-                            <p>Porteurs d'idées et prototypes de projets</p>
+                            <p>{{ __('Porteurs d\'idées et prototypes de projets') }}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
                             <i class="fas fa-award"></i>
                             <h3><span class="odometer" data-count="30">00</span></h3>
-                            <p>Lauréats prix d'excellence révélés</p>
+                            <p>{{ __('Lauréats prix d\'excellence révélés') }}</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-6 col-md-3">
                         <div class="counter-content">
                             <i class="fas fa-globe-africa"></i>
                             <h3><span class="odometer" data-count="10">00</span></h3>
-                            <p>Coordinations à l'international</p>
+                            <p>{{ __('Coordinations à l\'international') }}</p>
                         </div>
                     </div>
                 </div>
@@ -384,7 +384,7 @@
         <div class="courses-area pb-70 mt-4" style="margin-top: 90px !important;">
             <div class="container-fluid" style="max-width: unset !important;">
                 <div class="section-title text-center mb-45">
-                    <h2>Nos représentations</h2>
+                    <h2>{{ __('Nos représentations') }}</h2>
                     <!--<p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam.
@@ -565,9 +565,9 @@
         <div class="courses-area pb-70 mt-4">
             <div class="container">
                 <div class="section-title text-center mb-45">
-                    <h2>Valeurs</h2>
+                    <h2>{{ __('Valeurs') }}</h2>
                     <p>
-                        Nos valeurs sont les principes fondamentaux qui régissent notre approche de travail et les conditions de collaboration.
+                        {{ __('Nos valeurs sont les principes fondamentaux qui régissent notre approche de travail et les conditions de collaboration.') }}
                     </p>
                 </div>
                 <div class="row">
@@ -594,7 +594,7 @@
                                         <i class="ri-star-fill"></i>7k+ rating
                                     </div>
                                 </div>-->
-                                 <h3 class="name" style="text-align: center;color:#000 !important">Créativité</h3>
+                                 <h3 class="name" style="text-align: center;color:#000 !important">{{ __('Créativité') }}</h3>
                             </div>
                         </div>
                             
@@ -623,7 +623,7 @@
                                         <i class="ri-star-fill"></i>7k+ rating
                                     </div>
                                 </div>-->
-                                 <h3 class="name" style="text-align: center;color:#000 !important">Sens de la responsabilité</h3>
+                                 <h3 class="name" style="text-align: center;color:#000 !important">{{ __('Sens de la responsabilité') }}</h3>
                             </div>
                         </div>
                         
@@ -652,7 +652,7 @@
                                         <i class="ri-star-fill"></i>7k+ rating
                                     </div>
                                 </div>-->
-                                 <h3 class="name" style="text-align: center;color:#000 !important">Excellence</h3>
+                                 <h3 class="name" style="text-align: center;color:#000 !important">{{ __('Excellence') }}</h3>
                             </div>
                         </div>
                         
@@ -746,7 +746,7 @@
             <div class="container">
                 <div class="title text-center mb-45">
                     <!--<h2> We worked with <span>250+ </span> leading universities and companies</h2>-->
-                    <h2 style="font-size: 35px;">Nos partenaires</h2>
+                    <h2 style="font-size: 35px;">{{ __('Nos partenaires') }}</h2>
                 </div>
                 <div class="brand-slider owl-carousel owl-theme pb-100">
                     <div class="brand-item">
@@ -850,7 +850,7 @@
                 <div class="row align-items-center mb-45 text-center">
                     <div class="col-lg-12 col-md-9">
                         <div class="section-title mt-rs-20">
-                            <h2>Notre équipe</h2>
+                            <h2>{{ __('Notre équipe') }}</h2>
                             <!--<p>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
                             </p>-->
@@ -893,7 +893,7 @@
                             </div>
                             <div class="content">
                                 <h3><a href="instructors-details.html">Steve ESSIS</a></h3>
-                                <span>Président Éxecutif du RIDD</span>
+                                <span>{{ __('Président Éxecutif du RIDD') }}</span>
                             </div>
                         </div>
                     </div>
@@ -928,7 +928,7 @@
                             </div>
                             <div class="content">
                                 <h3><a href="instructors-details.html">Sarah DIGBEU</a></h3>
-                                <span>Responsable des partenariats à l'international</span>
+                                <span>{{ __('Responsable des partenariats à l\'international') }}</span>
                             </div>
                         </div>
                     </div>
@@ -963,7 +963,7 @@
                             </div>
                             <div class="content">
                                 <h3><a href="instructors-details.html">Jules MADÉ</a></h3>
-                                <span>Responsable projet à l'international</span>
+                                <span>{{ __('Responsable projet à l\'international') }}</span>
                             </div>
                         </div>
                     </div>
@@ -998,7 +998,7 @@
                             </div>
                             <div class="content">
                                 <h3><a href="#">Cyrille BOUAZO</a></h3>
-                                <span>Responsable des coordinations à l'international</span>
+                                <span>{{ __('Responsable des coordinations à l\'international') }}</span>
                             </div>
                         </div>
                     </div>

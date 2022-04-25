@@ -2,10 +2,11 @@
   
   <BaseLayout>
   <!-- Inner Banner -->
-        <div class="inner-banner inner-banner-bg9">
+        <div class="inner-banner" style="background-image: url('/img/banniere-gradient.png') !important">
             <div class="container">
                 <div class="inner-title">
 	                <!--{{ offerDetails }}-->
+	                {{ $page.props['is_employer'] }}
                     <h3>{{ offerDetails['title'] }}</h3>
                     <!--<div class="rating">
                         <i class="ri-star-fill"></i>4k+ rating
@@ -16,8 +17,8 @@
                             <h3>{{ offerDetails['company_name'] }}</h3>
                         </a>-->
                         <ul class="course-list">
-                            <li><i class="ri-time-fill"></i> {{ offerDetails['publish_date'] }}</li>
-                            <li><i class="ri-map-pin-fill"></i>  {{ offerDetails['location'] }}</li>
+                            <li><i class="ri-time-fill" style="color:#fff;font-size: 25px;top:9px"></i> {{ offerDetails['publish_date'] }}</li>
+                            <li><i class="ri-map-pin-fill" style="color:#fff;font-size: 25px;top:9px"></i>  {{ offerDetails['location'] }}</li>
                         </ul>
                     </div>
                     <!--<ul>
@@ -38,11 +39,11 @@
                     <div class="col-lg-8">
                         <div class="courses-details-contact">
                             <div class="tab courses-details-tab">
-                                <ul class="tabs">
+                                <!--<ul class="tabs">
                                     <li>
                                         Overview
                                     </li>
-                                </ul>
+                                </ul>-->
                                 <div class="tab_content current active">
                                     <div class="tabs_item current">
                                         <div class="courses-details-tab-content">
@@ -51,13 +52,40 @@
                                                <p>{{ offerDetails['offers_details'] }}</p>
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Profil recherché</h3>
+                                                <h3>{{ __('Profil recherché') }}</h3>
                                                 <p>
 	                                                
 	                                                {{ offerDetails['profile_details'] }}
 	                                                
                                                 </p>
                                             </div>
+                                            
+                                            <div class="courses-details-into">
+                                                <h3>Niveau d'étude</h3>
+                                                <p>
+	                                                
+	                                                {{ offerDetails['study_level'] }}
+	                                                
+                                                </p>
+                                            </div>
+                                            
+                                            <form @submit.prevent="submitCV" v-if="$page.props['auth']['user'] && $page.props['is_employer'] != 1">
+                                            
+                                              <button :disabled="formCV.processing" class="default-btn two" style="background: rgb(71,179,21) none repeat scroll 0% 0%;" href="https://beta.ridd.info/login">
+                                                  <div v-show="formCV.processing" class="spinner-border spinner-border-sm" role="status">
+									                <span class="visually-hidden">Loading...</span>
+									              </div>
+									              <div v-if="!formCV.processing">{{ __('Postuler à cette offre') }}</div></button>
+                                              
+                                              
+                                              
+                                            </form>
+                                            
+                                            <Link v-if="!$page.props['auth']['user'] && $page.props['is_employer'] != 1" href="/login" class="default-btn two" style="background: rgb(240, 128, 0) none repeat scroll 0% 0%">Se connecter</Link>
+                                            
+                                            
+                                            <Link v-if="$page.props['auth']['user'] && $page.props['is_employer'] == 1" href="/account" class="default-btn two" style="background: rgb(240, 128, 0) none repeat scroll 0% 0%">Modifier cette annonce</Link>
+                                            
                                             <!--<div class="courses-details-into">
                                                 <h3>What you'll learn</h3>
                                                 <p>
@@ -82,7 +110,7 @@
                         <div class="courses-details-sidebar">
                             <div class="mt-5"><img :src="offerDetails['profile_photo_url']" alt="Courses" class="rounded mx-auto d-block" style="width: 150px;"/></div>
                             <div class="content">
-                                <h3>{{ offerDetails['company_name'] }}</h3>
+                                <h3 class="text-center">{{ offerDetails['company_name'] }}</h3>
                                 <!--<span>This course includes:</span>-->
                                 <ul class="courses-details-list">
                                     <li> <i class="ri-flag-2-line"></i> {{ offerDetails['company_activity_sector'] }}</li>
@@ -91,6 +119,7 @@
                                     <!--<li>Full lifetime access</li>
                                     <li>Access on mobile and TV</li>
                                     <li>Certificate of completion</li>-->
+                                    <Link class="mt-3" :href="`${'/recruiters/offers/'+offerDetails['company_id']}`" style="color:rgb(240, 128, 0) !important;">Voir toutes les offres de ce recruteur</Link>
                                 </ul>
                                 <!--<a href="cart.html" class="default-btn">Add to cart</a>
                                 <ul class="social-link">
@@ -127,7 +156,10 @@
 		/*border-bottom: 1px solid !important;*/
 		background: transparent !important;
 	}
-	
+	.inner-banner {
+      
+      z-index: unset !important;
+    }
 </style>
 
 <script>
@@ -180,6 +212,10 @@ export default defineComponent({
       offerData: {},
       editMode : 0,
       viewDataOffer : {},
+      formCV:this.$inertia.form({
+	      
+	      id_offer:this.offerDetails['id_offer']
+	  }),
       form: this.$inertia.form({
         //password: '',
         id : 0,
@@ -225,6 +261,17 @@ export default defineComponent({
   },
   methods:{
 	  
+	  submitCV(){
+		  
+		  
+		 this.formCV.post(route('candidate.post.cv'), {
+	        preserveScroll: true,
+	        onSuccess: () => {},
+	        //onError: () => this.$refs.password.focus(),
+	        onFinish: () => {}/*this.form.reset()*/,
+          });
+		  
+	  },
 	  getResults(page = 1) {
 		    let vm = this;
             axios.get('/offers?page=' + page)

@@ -13,7 +13,7 @@
         <div class="inner-banner">
             <div class="container">
                 <div class="inner-title">
-                    <h3>Campagne de sensibilisation contre la fuite des cerveaux en milieu scolaire et universitaire</h3>
+                    <h3>{{ __('Campagne de sensibilisation contre la fuite des cerveaux en milieu scolaire et universitaire') }}</h3>
                     <!--<div class="rating">
                         <i class="ri-star-fill"></i>4k+ rating
                     </div>
@@ -66,14 +66,14 @@
                                     <div class="tabs_item current">
                                         <div class="courses-details-tab-content">
                                             <div class="courses-details-into">
-                                               <h3>Concept</h3>
+                                               <h3>{{ __('Concept') }}</h3>
                                                 <p>
-                                                   Dans la continuité des efforts faits par les organismes, organisations et institutions dans la lutte contre la migration clandestine et la fuite des cerveaux en Côte d’Ivoire, le RIDD a décidé d’apporter sa contribution à travers un évènement.Elle va consister à sillonner les villes et écoles pour exhorter les élèves, les étudiants, les jeunes diplômés et non diplômés, à créer de la richesse pour construire le pays, et en prenant appui sur les opportunités à saisir sur place et à prendre conscience des dangers liés à la migration irrégulière.</p>
+                                                   {{ __('Dans la continuité des efforts faits par les organismes, organisations et institutions dans la lutte contre la migration clandestine et la fuite des cerveaux en Côte d’Ivoire, le RIDD a décidé d’apporter sa contribution à travers un évènement.Elle va consister à sillonner les villes et écoles pour exhorter les élèves, les étudiants, les jeunes diplômés et non diplômés, à créer de la richesse pour construire le pays, et en prenant appui sur les opportunités à saisir sur place et à prendre conscience des dangers liés à la migration irrégulière.') }}</p>
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif général</h3>
+                                                <h3>{{ __('Objectif général') }}</h3>
                                                 <p>
-                                                    Mettre en exergue les conséquences liées au phénomène de la fuite des cerveaux sur le développement de la Côte d’Ivoire et les dangers de la pratique de l’immigration Irrégulière.
+                                                    {{ __('Mettre en exergue les conséquences liées au phénomène de la fuite des cerveaux sur le développement de la Côte d’Ivoire et les dangers de la pratique de l’immigration Irrégulière.') }}
                                                 </p>
                                                 <ul class="courses-details-list" style="display:none;">
                                                     <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
@@ -83,33 +83,33 @@
                                              
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif spécifique</h3>
+                                                <h3>{{ __('Objectif spécifique') }}</h3>
                                                 <p>
-                                                    Eclairer la lanterne de la jeunesse ivoirienne sur les opportunités existantes en Côte D’Ivoire, Exhorter la jeunesse à réfléchir sur des opportunités d’investissements dans des secteurs d’activités encore inexploités liés aux ressources du pays, Inciter l’Etat de Côte d’Ivoire à investir dans le développement du capital humain et dans l’insertion socio professionnelle</p>
+                                                    {{ __('Eclairer la lanterne de la jeunesse ivoirienne sur les opportunités existantes en Côte D’Ivoire, Exhorter la jeunesse à réfléchir sur des opportunités d’investissements dans des secteurs d’activités encore inexploités liés aux ressources du pays, Inciter l’Etat de Côte d’Ivoire à investir dans le développement du capital humain et dans l’insertion socio professionnelle') }}</p>
                                             </div>
                                              
                                              <div class="courses-details-into">
-                                                <h3>Résultats attendus</h3>
+                                                <h3>{{ __('Résultats attendus') }}</h3>
                                                 <p>
-                                                    Eclairer la lanterne de la jeunesse ivoirienne sur les opportunités existantes en Côte D’Ivoire, Exhorter la jeunesse à réfléchir sur des opportunités d’investissements dans des secteurs d’activités encore inexploités liés aux ressources du pays, Inciter l’Etat de Côte d’Ivoire à investir dans le développement du capital humain et dans l’insertion socio professionnelle</p>
+                                                    {{ __('Eclairer la lanterne de la jeunesse ivoirienne sur les opportunités existantes en Côte D’Ivoire, Exhorter la jeunesse à réfléchir sur des opportunités d’investissements dans des secteurs d’activités encore inexploités liés aux ressources du pays, Inciter l’Etat de Côte d’Ivoire à investir dans le développement du capital humain et dans l’insertion socio professionnelle') }}</p>
                                              </div>
                                              
                                              
                                              <div class="courses-details-into">
-                                                <h3>Cible</h3>
+                                                <h3>{{ __('Cible') }}</h3>
                                                 <p>
-                                                Jeunes ivoiriens, élèves et étudiants ivoiriens (diplômés ou non)</p>
+                                                {{ __('Jeunes ivoiriens, élèves et étudiants ivoiriens (diplômés ou non)') }}</p>
                                              </div>
 
 
                                                 <div class="courses-details-into">
-                                                <h3>Programme</h3>
+                                                <h3>{{ __('Programme') }}</h3>
                                                   
                                                   <ul class="courses-details-list">
-                                                    <li>Projections de film</li>
-                                                    <li>Panels, Témoignages/partage d’expériences</li>
-                                                    <li>Ateliers de formations</li>
-                                                    <li>Débats et présentation de programmes de bourse et des loisirs</li>
+                                                    <li>{{ __('Projections de film') }}</li>
+                                                    <li>{{ __('Panels, Témoignages/partage d’expériences') }}</li>
+                                                    <li>{{ __('Ateliers de formations') }}</li>
+                                                    <li>{{ __('Débats et présentation de programmes de bourse et des loisirs') }}</li>
                                                 </ul> 
                                                                                                
                                                 <p style="display:none;">

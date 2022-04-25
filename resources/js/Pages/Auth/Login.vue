@@ -14,7 +14,7 @@
                     <div class="col-lg-6">
                         <div class="user-all-form">
                             <div class="contact-form">
-                                <h3 class="user-title">Connexion</h3>
+                                <h3 class="user-title">{{ __('Connexion') }}</h3>
                                 <form @submit.prevent="submit">
 	                                <jet-validation-errors class="mb-3" />
 	                                <div v-if="status" class="alert alert-success" role="alert">
@@ -23,13 +23,13 @@
                                     <div class="row">
                                         <div class="col-lg-12 ">
                                             <div class="form-group">
-                                                <input type="email" v-model="form.email" name="name" id="name" class="form-control" placeholder="Adresse e-mail*">
+                                                <input type="email" v-model="form.email" name="name" id="name" class="form-control" :placeholder="__('Adresse e-mail')">
                                             </div>
                                         </div>
 
                                         <div class="col-12">
                                             <div class="form-group">
-                                                <input class="form-control" type="password" name="Password" placeholder="Mot de passe*" v-model="form.password">
+                                                <input class="form-control" type="password" name="Password" :placeholder="__('Mot de passe')" v-model="form.password">
                                             </div>
                                         </div>
 
@@ -39,11 +39,11 @@
                                                 <label for="chb1">
                                                     Remember Me <a class="forget" href="forgot-password.html">Forgot Password?</a>
                                                 </label>-->
-                                                <jet-checkbox id="remember_me" name="remember" v-model:checked="form.remember" />
+                                                <jet-checkbox id="remember_me" name="remember" v-model:checked="form.remember" style="margin-left: unset !important;" />
 	                                            <label for="remember_me">
-	                                                  Se souvenir de moi
+	                                                  {{ __('Se souvenir de moi') }}
 	                                                  <Link v-if="canResetPassword" :href="route('password.request')" class="forget">
-							                              Mot de passe oublié?
+							                              {{ __('Mot de passe oublié?') }}
 							                          </Link>
 	                                            </label>
                                             </div>
@@ -57,9 +57,14 @@
 									              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
 									                <span class="visually-hidden">Loading...</span>
 									              </div>
-									              <div v-if="!form.processing">Connexion</div>
+									              <div v-if="!form.processing">{{ __('Connexion') }}</div>
 	                                         </jet-button>
+	                                         {{ __('OU') }}
+	                                         <Link class="btn btn-dark text-uppercase" href="/register" style="margin-top: 6px; background: rgb(240, 128, 0) none repeat scroll 0% 0%; border-width: 0px; padding-top: 7px;">{{ __('Créer un compte') }}</Link>
                                         </div>
+                                        <!--<div class="col-lg-12 col-md-12">
+	                                        
+                                        </div>-->
                                     </div>
                                 </form>
                             </div>

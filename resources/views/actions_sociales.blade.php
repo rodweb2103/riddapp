@@ -50,16 +50,16 @@
                                     <div class="tabs_item current">
                                         <div class="courses-details-tab-content">
                                             <div class="courses-details-into">
-                                               <h3>Concept</h3>
+                                               <h3>{{ __('Concept') }}</h3>
                                                 <p>
-                                                  Étendre nos mains de soutien à offrir des dons en vivres et non vivres à nos communautés.</p>
+                                                  {{ __('Étendre nos mains de soutien à offrir des dons en vivres et non vivres à nos communautés.') }}</p>
                                                    
                                                    
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif </h3>
+                                                <h3>{{ __('Objectif') }} </h3>
                                                 <p>
-                                         Porter assistance et communiquer de l'amour envers les autres. Le RIDD c'est aussi une famille avec le sens du partage et de l'amour..
+                                         {{ __('Porter assistance et communiquer de l\'amour envers les autres. Le RIDD c\'est aussi une famille avec le sens du partage et de l\'amour.') }}
                                                 </p>
                                                 
                                              
@@ -75,13 +75,13 @@
 
 
                                                 <div class="courses-details-into">
-                                                <h3>Cible</h3>
+                                                <h3>{{ __('Cible') }}</h3>
                                                   
                                                  <ul class="courses-details-list">
-                                                    <li>Communautés défavorisées et en situation d’handicaps.</li>
-                                                    <li>Orphelins.</li>
-                                                    <li>Sourd-muets.</li>
-                                                    <li>Prisonniers et des personnes en conditions de vie précaires.</li>
+                                                    <li>{{ __('Communautés défavorisées et en situation d’handicaps.') }}</li>
+                                                    <li>{{ __('Orphelins.') }}</li>
+                                                    <li>{{ __('Sourd-muets.') }}</li>
+                                                    <li>{{ __('Prisonniers et des personnes en conditions de vie précaires.') }}</li>
                                                 </ul>  
                                                 
                                              </div>

@@ -231,25 +231,25 @@
                                 
                                  <li class="nav-item">
                                     <a href="/" class="nav-link">
-                                        Accueil
+                                        {{ __('Accueil') }}
                                     </a>
                                  </li>
 
                                 <li class="nav-item">
                                     <a href="{{ route('annonces') }}" class="nav-link">
-                                        Offres
+                                        {{ __('Offres') }}
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="{{ route('activites') }}" class="nav-link">
-                                        Activités
+                                        {{ __('Activités') }}
                                     </a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="contact.html" class="nav-link">
-                                        Actualités
+                                        {{ __('Actualités') }}
                                     </a>
                                 </li>
 
@@ -267,17 +267,17 @@
                                 </li>-->
                                  <li class="nav-item">
                                       <a href="#" class="nav-link dropdown-toggle">
-                                        <i class="fa fa-language"></i>Langue                                   
+                                        <i class="fa fa-language"></i>{{ __('Langue') }}                                   
                                       </a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
                                             <a href="blog.html" class="nav-link">
-                                                Francais
+                                                {{ __('Français') }}
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="blog.html" class="nav-link">
-                                                Anglais
+                                                {{ __('Anglais') }}
                                             </a>
                                         </li>
                                     </ul>
@@ -286,7 +286,7 @@
                                 @auth
                                  <li class="nav-item">
                                       <a href="#" class="nav-link dropdown-toggle">
-                                        Bonjour, {{ \Auth::user()->user_name }}                                   
+                                        {{ __('Bonjour') }}, {{ \Auth::user()->user_name }}                                   
                                       </a>
                                     <ul class="dropdown-menu">
                                         <!--<li class="nav-item">
@@ -297,19 +297,19 @@
                                         <li class="nav-item">
                                         @if(\Auth::user()->hasRole('Employer') || \Auth::user()->hasRole('Candidate'))
 	                                         <a href="{{ route('user.dashboard') }}" class="nav-link"> 
-								               Mon compte
+								               {{ __('Mon compte') }}
 								             </a>
 								        @endif
 								        @if(\Auth::user()->hasRole('Admin'))
 							             <a href="{{ route('admin.dashboard') }}"  class="nav-link"> 
-							               Administration
+							               {{ __('Administration') }}
 							             </a>
 							            @endif
                                         </li>
                                         <li class="nav-item">
                                         <form method="POST" action='/logout' id="frm">
 	                                        @csrf
-	                                        <a class="nav-link" href="#" onclick="logoutUser()">Déconnexion</a>
+	                                        <a class="nav-link" href="#" onclick="logoutUser()">{{ __('Déconnexion') }}</a>
                                         </form>
                                         <!--<Link  :href="route('logout')" class="nav-link">
 							               Se deconnecter
@@ -335,7 +335,7 @@
                             @guest
                             <div class="others-options d-flex align-items-center">
                                 <div class="optional-item">
-                                    <a href="/login" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">Se connecter</a>
+                                    <a href="/login" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">{{ __('Se connecter') }}</a>
                                 </div>
                             </div>
                             @endguest
@@ -346,7 +346,7 @@
 
             <div class="side-nav-responsive">
                 <div class="container">
-                    <div class="dot-menu">
+                    <div class="dot-menu" v-if="!$page.props.user">
                         <div class="circle-inner">
                             <div class="circle circle-one"></div>
                             <div class="circle circle-two"></div>
@@ -354,20 +354,22 @@
                         </div>
                     </div>
                     
-                    <div class="container">
+                    <div class="container" v-dropmenu v-if="!$page.props.user">
                         <div class="side-nav-inner">
                             <div class="side-nav justify-content-center align-items-center">
-                                <div class="side-item">
+                               <!-- <div class="side-item">
                                     <form class="search-form">
                                         <input type="search" class="form-control" placeholder="Search courses">
                                         <button type="submit">
                                             <i class="ri-search-line"></i>
                                         </button>
                                     </form>
-                                </div>
+                                </div>-->
 
                                 <div class="side-item">
-                                    <a href="signup.html" class="default-btn two">Sign Up</a>
+                                    <a href="route('login')" class="default-btn two">{{ __('Se connecter') }}</a>
+                                    <div class="separator">{{ __('OU') }}</div>
+                                    <a href="route('register')" class="default-btn two">{{ __('Créer un compte') }}</a>
                                 </div>
                             </div>
                         </div>
@@ -387,11 +389,9 @@
                                     <img src="/img/LG-RIDD@2x.png" alt="Images" style="width: 100px;">
                                 </a>
                             </div>
-                            <p>Le Réseau Ivoirien des Diplômés de la Diaspora
-	                            (RIDD) est une organisation née le 15 Novembre 2017 
-	                            à l’initiative des jeunes ivoiriens diplômés de la diaspora.</p>
+                            <p>{{ __('Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.') }}</p>
                             <ul class="social-link">
-                                <li class="social-title">Suivez nous:</li>
+                                <li class="social-title">{{ __('Suivez nous') }}:</li>
                                 <li>
                                     <a href="https://www.facebook.com/" target="_blank">
                                         <i class="ri-facebook-fill"></i>
@@ -412,11 +412,11 @@
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget ps-5">
-                            <h3>Services</h3>
+                            <h3>{{ __('Services') }}</h3>
                             <ul class="footer-list">
-	                            <li><a href="#">Offres</a></li>
-		                        <li><a href="#">Activités</a></li>
-		                        <li><a href="#">Actualités</a></li>
+	                            <li><a href="#">{{ __('Offres') }}</a></li>
+		                        <li><a href="#">{{ __('Activités') }}</a></li>
+		                        <li><a href="#">{{ __('Actualités') }}</a></li>
                                 <!--<li>
                                     <a href="about.html">
                                         About Us
@@ -447,10 +447,10 @@
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget ps-5">
-                            <h3>Qui sommes nous ?</h3>
+                            <h3>{{ __('Qui sommes nous ?') }}</h3>
                             <ul class="footer-list">
 	                            <li><a href="#">RIDD</a></li>
-		                        <li><a href="#">Equipe</a></li>
+		                        <li><a href="#">{{ __('Equipe') }}</a></li>
                                 <!--<li>
                                     <a href="index.html">
                                         Home
@@ -481,26 +481,26 @@
                     </div>
                     <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget ps-5">
-                            <h3>Nos contacts</h3>
+                            <h3>{{ __('Nos contacts') }}</h3>
                             <ul class="footer-contact">
                                 <li>
                                     <i class="ri-map-pin-2-fill"></i>
                                     <div class="content">
-                                        <h4>Location:</h4>
+                                        <h4>{{ __('Location') }}:</h4>
                                         <span>Côte d'Ivoire, Marcory Remblais</span>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="ri-mail-fill"></i>
                                     <div class="content">
-                                        <h4>Email:</h4>
+                                        <h4>{{ __('Email') }}:</h4>
                                         <span><a href="mailto:hello@ledu.com">contact@ridd.ci</a></span>
                                     </div>
                                 </li>
                                 <li>
                                     <i class="ri-phone-fill"></i>
                                     <div class="content">
-                                        <h4>Phone:</h4>
+                                        <h4>{{ __('Phone') }}:</h4>
                                         <span><a href="tel:098765432150">+2250779379838</a></span>
                                     </div>
                                 </li>
@@ -515,7 +515,7 @@
                         <p>
                             <!--Copyright @<script>document.write(new Date().getFullYear())</script>2022 <b>Ledu</b> All Rights Reserved 
                             <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>-->
-                            Propulsé par yayotech © 2022
+                            {{ __('Propulsé par') }} yayotech © 2022
                         </p>
                     </div>
                 </div>

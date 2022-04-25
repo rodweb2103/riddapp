@@ -11,6 +11,12 @@ class OfferController extends Controller
 {
     //
     
+    public function ajax_recruiter_offers(Request $request){
+	    
+	    
+    }
+    
+    
     public function search_offer(Request $request){
 	    
 	     $posts = Offers::select("*")->when($request->has('contract_type'), function ($query) use ($request) {
@@ -119,12 +125,12 @@ class OfferController extends Controller
 		    //'study_level' => 'required'
          ],[
 		      //'activity_sector.required'=> 'Le secteur d\'activité est requis', // custom message
-		      'contract_duration.required'=> 'La durée du contrat est requis', // custom message
-		      'profile_details.required'=> 'Le détails sur le profil recherché est requis', // custom message
-		      'contract_type.required'=> 'Le type de contrat est requis', // custom message,
-		      'location.required'=> 'La localisation est requise', // custom message,
-		      'offer_details.required'=> 'Veuillez décrire l\'intitulé du poste', // custom message,
-		      'offer_title.required'=> 'Le titre de l\'annonce est requis', // custom message,
+		      'contract_duration.required'=> trans('La durée du contrat est requis'), // custom message
+		      'profile_details.required'=> trans('Le détails sur le profil recherché est requis'), // custom message
+		      'contract_type.required'=> trans('Le type de contrat est requis'), // custom message,
+		      'location.required'=> trans('La localisation est requise'), // custom message,
+		      'offer_details.required'=> trans('Veuillez décrire l\'intitulé du poste'), // custom message,
+		      'offer_title.required'=> trans('Le titre de l\'annonce est requis'), // custom message,
 		      //'study_level.required'=> 'Le niveau d\'étude est requis' // custom message
          ]);
          
@@ -151,7 +157,7 @@ class OfferController extends Controller
          //$offer->activity_sector=$request->input('activity_sector');
          $offer->contract_type=$request->input('contract_type');
          $offer->contract_duration=$request->input('contract_duration');
-         //$offer->study_level=$request->input('study_level');
+         $offer->study_level=$request->input('study_level');
          $offer->location=$request->input('location');
          $offer->offers_details=$request->input('offer_details');
          $offer->profile_details=$request->input('profile_details');
@@ -203,7 +209,13 @@ class OfferController extends Controller
 
                         $query->where('study_level', $request->study_level);
 
-              })->orderBy('publish_date','DESC')->paginate(10);
+              })
+              ->when($request->has('company_id') && $request->company_id!='', function ($query) use ($request) {
+
+                        $query->where('company_id', $request->company_id);
+
+              })
+              ->orderBy('publish_date','DESC')->paginate(10);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()
 		        ->map(function($item) {
@@ -358,12 +370,12 @@ class OfferController extends Controller
 		    'study_level' => 'required'
          ],[
 		      //'activity_sector.required'=> 'Le secteur d\'activité est requis', // custom message
-		      'contract_duration.required'=> 'La durée du contrat est requis', // custom message
-		      'contract_type.required'=> 'Le type de contrat est requis', // custom message,
-		      'location.required'=> 'La localisation est requise', // custom message,
-		      'offer_details.required'=> 'Veuillez décrire l\'intitulé du poste', // custom message,
-		      'offer_title.required'=> 'Le titre de l\'annonce est requis', // custom message,
-		      'study_level.required'=> 'Le niveau d\'étude est requis' // custom message
+		      'contract_duration.required'=> trans('La durée du contrat est requis'), // custom message
+		      'contract_type.required'=> trans('Le type de contrat est requis'), // custom message,
+		      'location.required'=> trans('La localisation est requise'), // custom message,
+		      'offer_details.required'=> trans('Veuillez décrire l\'intitulé du poste'), // custom message,
+		      'offer_title.required'=> trans('Le titre de l\'annonce est requis'), // custom message,
+		      'study_level.required'=> trans('Le niveau d\'étude est requis') // custom message
          ]);
          
          $offer = Offers::where("id",$id)->first();

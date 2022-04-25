@@ -1,5 +1,5 @@
 <template>
-  <Head title="Forgot Password" />
+  <Head :title="__('Mot de passe oublié')" />
   <BaseLayout>
     
     <div class="user-area pt-100 pb-70" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162)">
@@ -11,7 +11,7 @@
                     <div class="col-lg-6">
                         <div class="user-all-form">
                             <div class="contact-form">
-                                <h3 class="user-title">Mot de passe oublié</h3>
+                                <h3 class="user-title">{{ __('Mot de passe oublié') }}</h3>
                                 <form id="contactForm" @submit.prevent="submit">
 	                                <div v-if="status" class="alert alert-success" role="alert">
 								           {{ status }}
@@ -34,7 +34,7 @@
 									              <span class="visually-hidden">Loading...</span>
 									            </div>
 									            
-									            <div v-if="!form.processing">Réinitialiser</div>
+									            <div v-if="!form.processing">{{ __('Réinitialiser') }}</div>
 									          
 									          </button>
                                         </div>

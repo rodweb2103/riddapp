@@ -14,6 +14,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Offers;
+
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +30,37 @@ use App\Models\Offers;
 
 
 //Auth::routes(['verify' => true]);
+
+
+Route::get('/en',function(){
+	
+	//App::setLocale("en");
+	//session()->put('locale','en');
+	//session(['my_locale' => 'en']);
+	session()->put('my_locale', 'en');
+	//session()->save();
+	Session::save();
+	//session()->put('user_signup',$user_information);
+	//\Session::put('my_locale', 'en');
+    //\Session::save();
+	return redirect()->back();
+	
+})->middleware('web');
+
+Route::get('/fr',function(){
+	
+	//\Session::put('my_locale', 'de');
+    //\Session::save();
+	session()->put('my_locale', 'fr');
+	Session::save();
+	//session()->save();
+	//session(['my_locale' => 'de']);
+	//session()->put('locale','de');
+	//App::setLocale("de");
+	return redirect()->back();
+	
+})->middleware('web');
+
 
 Route::get('/activites',function(){
 	 
@@ -67,6 +101,11 @@ Route::get('/tribune-ridd',function(){
 	 return view('tribune_ridd');
 })->name('tribune_ridd');
 
+
+
+
+
+
 Route::post('/create/user/account',[UserController::class, 'create_user_account']);
 Route::post('/validate/step/1',[UserController::class, 'validate_step1'])->name('validate1');
 Route::post('/validate/step/2',[UserController::class, 'validate_step2'])->name('validate2');
@@ -77,7 +116,24 @@ Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name(
 Route::get('/contract/types',[UserController::class, 'contract_types'])->name('contract_types');
 
 
+
+
+
 Route::post('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
+
+Route::get('/ajax/recruiters/offers/{id}',[OfferController::class, 'ajax_recruiter_offers'])->name('ajax_recruiter_offers');
+Route::get('/recruiters/offers/{id}',function($id){
+	
+	//$url = config('app.url').\Storage::url('profile/'.basename($offer_details[0]->company->profile_photo_url));
+	$offer_details = \DB::table("users")->where('id',$id)->get();
+    $url = config('app.url').\Storage::url('profile/'.basename($offer_details[0]->profile_photo_path));
+    
+    //var_dump($url);exit;
+    
+	return Inertia::render('User/Employer/MyOffers',['id'=>$id,'photo'=>$url,'compant_name_offer'=>$offer_details[0]->company_name]);
+	
+})/*->middleware(['auth:sanctum',config('jetstream.auth_session')])*/->name('recruiter_offers');
+
 Route::get('/myoffers',[OfferController::class, 'candidate_list_offer'])->name('candidate.list.offer');
 
 Route::post('/create/offer',[OfferController::class, 'create_offer'])->name('employer.create.offer');
@@ -91,6 +147,9 @@ Route::post('/unpublish/offer',[OfferController::class, 'unpublish_offer'])->nam
 
 
 Route::post('/remove/offer',[OfferController::class, 'unbid_offer'])->name('candidate.unbid.offer');
+
+
+Route::post('/post/cv',[OfferController::class, 'post_cv'])->name('candidate.post.cv');
 
 Route::post('/offer/search',[OfferController::class, 'search_offer'])->name('candidate.search.offer');
 
@@ -355,15 +414,16 @@ Route::get('/annonces', function () {
 
 Route::get('/annonces/{id}', function (Request $request,$id) {
 	
-	$offer_details = Offers::with(['company','contract_type_offer','company.activity_sector_company_user_company'])->where('id_offer',$id)->get();
+	$offer_details = Offers::with(['company','contract_type_offer_job','study_level_job','company.activity_sector_company_user_company'])->where('id_offer',$id)->get();
     $url = config('app.url').\Storage::url('profile/'.basename($offer_details[0]->company->profile_photo_url));
     $array_offer = array(
 	    
 	     "id_offer" => $offer_details[0]->id_offer,
+	     "company_id" => $offer_details[0]->company->id,
 	     "title" => $offer_details[0]->title,
 	     "offers_details" => $offer_details[0]->offers_details,
 	     "publish_date" => \Carbon\Carbon::parse($offer_details[0]->publish_date)->locale("fr")->diffForHumans(),
-	     "offer_type" => $offer_details[0]->contract_type_offer->contract,
+	     "offer_type" => $offer_details[0]->contract_type_offer_job->contract,
 	     "contract_duration" => $offer_details[0]->contract_duration,
 	     "location" => $offer_details[0]->location,
 	     "profile_details" => $offer_details[0]->profile_details,
@@ -371,6 +431,7 @@ Route::get('/annonces/{id}', function (Request $request,$id) {
 	     "company_about" => $offer_details[0]->company->company_about,
 	     "company_location" => $offer_details[0]->company->company_location,
 	     "profile_photo_url" => $url,
+	     "study_level" => $offer_details[0]->study_level_job->level,
 	     "company_activity_sector" => $offer_details[0]->company->activity_sector_company_user_company->activity_sector_name
     );
 	

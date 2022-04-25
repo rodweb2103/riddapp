@@ -13,6 +13,12 @@ import VueTelInput from 'vue-tel-input';
 import 'vue-tel-input/dist/vue-tel-input.css';
 import Select2 from 'vue3-select2-component';
 import LaravelVuePagination from 'laravel-vue-pagination';
+//import { createI18n } from 'vue-i18n'
+
+
+//const i18n = createI18n({
+  // something vue-i18n options here ...
+//})
 
 /*import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {dom, library} from '@fortawesome/fontawesome-svg-core';
@@ -67,7 +73,7 @@ import "../../node_modules/admin-lte/plugins/dropzone/min/dropzone.min.css"*/
 //.contact-form .agree-label label { margin-left: unset !important;}label{ display: unset !important}
 
 
-
+//Vue.mixin(require('./base'))
 !function($) {
     "use strict";
     $.fn.meanmenu = function(e) {
@@ -279,6 +285,7 @@ createInertiaApp({
             .component('Select2', Select2)
             .component('Pagination', LaravelVuePagination)
             .mixin({ methods: { route } })
+             .mixin(require('./base'))
             .mount(el);
     },
 });

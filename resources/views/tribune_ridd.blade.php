@@ -65,14 +65,14 @@
                                     <div class="tabs_item current">
                                         <div class="courses-details-tab-content">
                                             <div class="courses-details-into">
-                                               <h3>Concept</h3>
+                                               <h3>{{ __('Concept') }}</h3>
                                                 <p>
-                                                   Cadre d'expression dédié aux Ambassades et aux institutions afin de faire connaître les programmes de bourses où opportunités pour les jeunes.</p>
+                                                   {{ __('Cadre d'expression dédié aux Ambassades et aux institutions afin de faire connaître les programmes de bourses où opportunités pour les jeunes.') }}</p>
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif général</h3>
+                                                <h3>{{ __('Objectif général') }}</h3>
                                                 <p>
-                                                    Informer la jeunesse estudiantine sur les opportunités (bourses étrangères, programmes académique et professionnel)
+                                                    {{ __('Informer la jeunesse estudiantine sur les opportunités (bourses étrangères, programmes académique et professionnel)') }}
                                                 </p>
                                                 <ul class="courses-details-list" style="display:none;">
                                                     <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
@@ -82,26 +82,26 @@
                                              
                                             </div>
                                             <div class="courses-details-into">
-                                                <h3>Objectif spécifique</h3>
+                                                <h3>{{ __('Objectif spécifique') }}</h3>
                                                 <p>
-                                                    Communiquer sur la procédure de reconnaissance des diplômes étrangers, Informer sur les moyens de vérification d’accréditation des universités des universités étrangères</p>
+                                                    {{ __('Communiquer sur la procédure de reconnaissance des diplômes étrangers, Informer sur les moyens de vérification d’accréditation des universités des universités étrangères') }}</p>
                                             </div>
                                                                                           
                                              
                                              <div class="courses-details-into">
-                                                <h3>Cible</h3>
+                                                <h3>{{ __('Cible') }}</h3>
                                                 <p>
-                                                Les élèves et étudiants ivoiriens, les ambassades, les institutions, les écoles et universités</p>
+                                                {{ __('Les élèves et étudiants ivoiriens, les ambassades, les institutions, les écoles et universités') }}</p>
                                              </div>
 
 
                                                 <div class="courses-details-into">
-                                                <h3>Programme</h3>
+                                                <h3>{{ __('Programme') }}</h3>
                                                   
                                                   <ul class="courses-details-list">
-                                                    <li>Conférence</li>
-                                                    <li>B to B</li>
-                                                    <li>Partages d’expériences</li>
+                                                    <li>{{ __('Conférence') }}</li>
+                                                    <li>{{ __('B to B') }}</li>
+                                                    <li>{{ __('Partages d’expériences') }}</li>
                                                   </ul> 
                                                                                                
                                                 <p style="display:none;">
