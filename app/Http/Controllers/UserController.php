@@ -795,7 +795,7 @@ class UserController extends Controller
 		  $user->first_name = $request->input('first_name');
 		  $user->last_name = $request->input('last_name');
 		  $user->city = $request->input('city');
-		  //$user->profile_photo = $request->input('user_name');
+		  $user->user_name = $request->input('user_name');
 		  $user->activity_sector = $request->input('activity_sector');
 		  //$user->account_type = $request->input('account_type'); 
 		  $user->country = $country_id[0]->id; 
@@ -823,9 +823,12 @@ class UserController extends Controller
 	      if($request->input('account_type') == 1){
 	      
 	         $role = Role::where('name', '=', 'Candidate')->firstOrFail();
-	      }else{
+	      }else if($request->input('account_type') == 2) {
 		      
 		     $role = Role::where('name', '=', 'Employer')->firstOrFail();
+	      }else{
+		      
+		     $role = Role::where('name', '=', 'Consultant')->firstOrFail();
 	      }
 	      
 	      $user->assignRole($role);

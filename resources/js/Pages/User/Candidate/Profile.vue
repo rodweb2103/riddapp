@@ -108,7 +108,7 @@
                   <span class="tag tag-warning">PHP</span>
                   <span class="tag tag-primary">Node.js</span>-->
                 </p>
-                <p>
+                <p v-if="$page.props['file_cv']!=''">
 	                {{ $page.props['file_cv'] }} <i class="fas fa-upload" @click="loadPDF"></i> 
 	                
                 </p>

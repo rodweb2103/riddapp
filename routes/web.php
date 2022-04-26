@@ -121,6 +121,8 @@ Route::get('/contract/types',[UserController::class, 'contract_types'])->name('c
 
 Route::post('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
 
+Route::post('/company/offers',[OfferController::class, 'company_list_offer'])->name('company.list.offer');
+
 Route::get('/ajax/recruiters/offers/{id}',[OfferController::class, 'ajax_recruiter_offers'])->name('ajax_recruiter_offers');
 Route::get('/recruiters/offers/{id}',function($id){
 	
@@ -198,13 +200,13 @@ Route::get('/admin/accounts/staff',function(){
 
 Route::get('/account',function(){
 	
-	if (Auth::user()->hasRole('Candidate')) {
+	if (Auth::user()->hasRole('Candidate') || Auth::user()->hasRole('Consultant')) {
 	   return Inertia::render('User/Candidate/Dashboard');
 	}else{
 	   return Inertia::render('User/Employer/Dashboard');
 	}
     //return Inertia::render('User/Dashboard');
-})->middleware(['auth:sanctum','role:Candidate|Employer'])->name('user.dashboard');
+})->middleware(['auth:sanctum','role:Candidate|Employer|Consultant'])->name('user.dashboard');
 
 
 Route::post('/account/profile/image/upload',[UserController::class, 'profile_image_upload'])->name('profile.image.upload');
@@ -217,11 +219,17 @@ Route::get('/account/profile',function(){
 	if (Auth::user()->hasRole('Candidate')) {
 	   return Inertia::render('User/Candidate/Profile');
 	
-	}else{
+	}else if(Auth::user()->hasRole('Employer')){
+	   
 	   return Inertia::render('User/Employer/Profile');
+	
+	}else{
+	
+	   return Inertia::render('User/Consultant/Profile');
+		
 	}
     //return Inertia::render('User/Dashboard');
-})->middleware(['auth:sanctum','role:Candidate|Employer','verified'])->name('user.dashboard');
+})->middleware(['auth:sanctum','role:Candidate|Employer|Consultant','verified'])->name('user.dashboard');
 
 //Route::get('/offers',function(){
 //    return Inertia::render('User/Offers');

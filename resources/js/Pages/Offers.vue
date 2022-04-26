@@ -71,7 +71,7 @@
 	                        <div class="col-lg-12 col-md-6 mt-4">
 	                            <div class="product-title">
 	                                <!--<h3>We found  <span> 09 </span>courses available for you</h3>-->
-	                                <h3><span>{{ total_offer }}</span> {{ __('offre(s) disponible(s)') }}</h3>
+	                                <h2><span>{{ total_offer }}</span> {{ __('offre(s) disponible(s)') }}</h2>
 	                            </div>
 	                        </div>
 	
@@ -99,9 +99,9 @@
 	                        <div class="event-item box-shadow">
 	                            <div class="event-img">
 	                                <a href="event-details.html">
-	                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 100px;"/>
+	                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 90px;"/>
 	                                    
-	                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 100px;"/>
+	                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 90px;"/>
 	                                    
 	                                    
 	                                    

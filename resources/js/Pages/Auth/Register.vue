@@ -79,6 +79,7 @@
 								                           <option selected disabled value="">--{{ __('Selectionner le type de compte') }}--</option>
 								                           <option value="1">{{ __('Candidat') }}</option>
 								                           <option value="2">{{ __('Recruteur') }}</option>
+								                           <option value="5">{{ __('Consultant') }}</option>
 								                        </select>
 								                         <div v-if="errors.account_type" style="color:red;">{{ errors.account_type }}</div>
 							                        </div>
@@ -101,7 +102,7 @@
 							                        
 													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number" :ignoredCountries="['ci']" enabledCountryCode="true" @validate="validate" v-if="form.account_type == 1"></vue-tel-input>
 													 
-													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true" @validate="validate" v-if="form.account_type == 2"></vue-tel-input>
+													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true" @validate="validate" v-if="form.account_type == 2 || form.account_type == 5"></vue-tel-input>
 													 
 													 
 													 <div v-if="errors.phone_number" style="color:red;">{{ errors.phone_number }}</div>
@@ -117,7 +118,8 @@
 								                        <input type="file" @input="form.profile_photo = $event.target.files[0]" accept="image/*"/>
 							                        </div>
 							                     </div>
-							                     <jet-button class="next action-button" :class="{ 'text-white-50': form.processing }" :disabled="form.processing || (isValid == false || form.account_type == 0)">
+							                     <!--isValid == false |--->
+							                     <jet-button class="next action-button" :class="{ 'text-white-50': form.processing }" :disabled="form.processing || (form.account_type == 0)">
 										              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
 										                <span class="visually-hidden">Loading...</span>
 										              </div>
@@ -180,6 +182,50 @@
 							                     <br/>
 							                     <div class="form-check">
 							                        <input class="form-check-input" type="checkbox" id="flexCheckDefault" v-model="form.policy">
+							                        <label class="form-check-label" for="flexCheckDefault">
+							                        {{ __('J’ai lu et accepte les conditions générales d’utilisation') }}
+							                        </label>
+							                         <div v-if="errors.policy" style="color:red;">{{ errors.policy }}</div>
+							                     </div>
+							                     
+							                  </fieldset>
+							                  <fieldset style="background: transparent;" v-if="form.account_type == 5 && step == 3">
+							                     <div class="form-card">
+							                        <div class="row">
+							                           <div class="col-7">
+							                              <h2 class="fs-title"></h2>
+							                           </div>
+							                           <div class="col-5">
+							                              <h2 class="steps"></h2>
+							                           </div>
+							                        </div>
+							                         <!--<div class="fields">
+							                           <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'Selectionner votre domaine d\'intervention' }"/>
+							                           <div v-if="errors.study_level" style="color:red;">{{ errors.study_level }}</div>
+							                        </div>-->
+							                        <div class="fields">
+							                           <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{placeholder:'Selectionner votre domaine d\'intervention' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+							                           <div v-if="errors.activity_sector" style="color:red;">{{ errors.activity_sector }}</div>
+							                         </div>
+							                          <div class="fields">
+							                            <label class="fieldlabels" style="margin-top:20px;margin-bottom:30px;">Votre CV</label> 
+							                            <input type="file" @input="form.candidate_cv = $event.target.files[0]"/> 
+							                          </div>
+							                     </div>
+							                     <jet-button class="next action-button" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+										              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+										                <span class="visually-hidden">Loading...</span>
+										              </div>
+										              {{ __('Suivant') }}
+										         </jet-button>
+							                     &nbsp;&nbsp;
+							                     <jet-button  type="button" class="previous action-button-previous" @click="step = step - 1">
+										             			 {{ __('Retour') }}
+										         </jet-button>
+							                     <br/>
+							                     
+							                     <div class="form-check">
+							                        <input class="form-check-input" type="checkbox" v-model="form.policy" id="flexCheckDefault">
 							                        <label class="form-check-label" for="flexCheckDefault">
 							                        {{ __('J’ai lu et accepte les conditions générales d’utilisation') }}
 							                        </label>

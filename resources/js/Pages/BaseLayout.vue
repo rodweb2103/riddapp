@@ -104,11 +104,12 @@
                                                 Francais
                                             </a>
                                         </li>-->
+                                        
                                         <li class="nav-item">
-                                         <Link  :href="route('user.dashboard')" v-if="$page.props.is_employer || $page.props.is_candidate" class="nav-link"> 
+                                         <Link style="background: transparent;font-size: 17px;color:#000 !important;font-weight: 500" :href="route('user.dashboard')" v-if="$page.props.is_employer || $page.props.is_candidate || $page.props.is_consult" class="nav-link"> 
 							               {{ __('Mon compte') }}
 							             </Link>
-							             <Link  :href="route('admin.dashboard')" v-if="$page.props.admin" class="nav-link"> 
+							             <Link style="background: transparent;font-size: 17px;color:#000 !important;font-weight: 500" :href="route('admin.dashboard')" v-if="$page.props.admin" class="nav-link"> 
 							               {{ __('Administration') }}
 							             </Link>
                                         </li>
@@ -116,7 +117,7 @@
                                         <!--<Link  :href="route('logout')" class="nav-link">
 							               Se deconnecter
 							             </Link>-->
-							             <Link
+							             <Link style="background: transparent;font-size: 17px;color:#000;font-weight: 500"
 								            :href="route('logout')"
 								            method="post"
 								            as="button"

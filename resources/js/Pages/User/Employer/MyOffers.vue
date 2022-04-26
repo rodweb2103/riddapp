@@ -5,7 +5,9 @@
         <div class="inner-banner inner-banner-bg" >
             <div class="container">
                 <div class="inner-title text-center">
-	                <img :src="$page.props.photo" alt="Team Images" style="width: 90px;border-radius: 100px;">
+	                <div>
+	                  <img :src="$page.props.photo" alt="Team Images" style="width: 120px;border-radius: 100px;">
+	                </div>
                     <h3 class="mt-2">{{ $page.props.compant_name_offer }}</h3>
                     
                     <!--<ul>
@@ -72,7 +74,7 @@
 	                        <div class="col-lg-12 col-md-6 mt-4">
 	                            <div class="product-title">
 	                                <!--<h3>We found  <span> 09 </span>courses available for you</h3>-->
-	                                <h3><span>{{ total_offer }}</span> {{ __('offre(s) disponible(s)') }}</h3>
+	                                <h2><span>{{ total_offer }}</span> {{ __('offre(s) disponible(s)') }}</h2>
 	                            </div>
 	                        </div>
 	
@@ -280,7 +282,7 @@
 <style type="text/css">
 	
 	.inner-banner-bg {
-      background-image: url('/img/bannieres/banniere-offres.png');
+      background-image: url('/img/banniere-gradient.png');
     }
     
     .inner-banner::before {
@@ -424,7 +426,7 @@ export default defineComponent({
 		        onFinish: () => {}/*this.form.reset(),
             });*/
             vm.loading = true;
-            axios.post('/offers?page=' + page,{'contract_type':vm.form.contract_type,'contract_duration':vm.form.contract_duration,'study_level':vm.form.study_level,'company_id':this.$page.props.id})
+            axios.post('/company/offers?page=' + page,{'contract_type':vm.form.contract_type,'contract_duration':vm.form.contract_duration,'study_level':vm.form.study_level,'company_id':this.$page.props.id})
                 .then(response => {
 	                
 	                vm.loading = false;

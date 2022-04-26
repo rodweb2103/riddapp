@@ -16,6 +16,159 @@ class OfferController extends Controller
 	    
     }
     
+    public function company_list_offer(Request $request){
+	    
+	    
+	    $itemsPaginated = Offers::with(['company','contract_type_offer_job','activity_sector_job','study_level_job'])->where("company_id",\Auth::user()->id)->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
+
+                        $query->where('contract_type', $request->contract_type);
+
+                 })->when($request->has('contract_duration') && $request->contract_duration!='', function ($query) use ($request) {
+
+                        $query->where('contract_duration', $request->contract_duration);
+
+                 })->when($request->has('study_level') && $request->study_level!='', function ($query) use ($request) {
+
+                        $query->where('study_level', $request->study_level);
+
+              })
+              ->when($request->has('company_id') && $request->company_id!='', function ($query) use ($request) {
+
+                        $query->where('company_id', $request->company_id);
+
+              })
+              ->orderBy('publish_date','DESC')->paginate(10);
+		      $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+			        
+			        //var_dump($item->activity_sector_job);exit;
+			        
+			        
+		            return [
+		                'id_offer' => $item->id,
+		                'id' => $item->id_offer,
+		                'title' => $item->title,
+		                'offers_details' => Str::of($item->offers_details)->limit(60),
+		                'offers_details_more' => $item->offers_details,
+		                'publish_status' => $item->publish_status,
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->diffForHumans(),
+		                'company_profile_photo' => $url,
+		                'contract_type' => $item->contract_type_offer_job->id,
+		                "contract_duration" => $item->contract_duration,
+		                "location" => $item->location,
+		                "study_level" => $item->study_level_job->id,
+		                "profile_details"=> $item->profile_details
+		                //"activity_sector" => $item->activity_sector_job->id
+		            ];
+            })->toArray();
+              
+            $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+		    );
+	     /*if(\Auth::user()->hasRole('Employer')){
+		      
+		      $itemsPaginated = Offers::where('company_id',\Auth::user()->id)->paginate(15);
+		      
+		      $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        //var_dump($item["id_offer"]);exit;
+		            return [
+			            
+			            
+			            'id' => $item->id_offer,
+		                'title' => $item->title,
+		                'offers_details' => Str::of($item->offers_details)->limit(60),
+		                'publish_status' => $item->publish_status,
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'company_profile_photo' => $url
+		                //'id' => $item->id_offer,
+		                //'title' => $item->title,
+		                //'offers_details' => Str::of($item->offers_details)->limit(60),
+		                //'publish_status' => $item->publish_status
+		            ];
+              })->toArray();
+              
+              $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+			  );
+		      
+		      //$output = $ajax_data->toArray();
+		      
+		      //var_dump($output);exit;
+		      
+		      //$output['offers_details'] =  Str::of($output['offers_details'])->limit(20);
+		      
+	     
+	     }else if(\Auth::user()->hasRole('Admin') || \Auth::user()->hasRole('Candidate')){
+		     
+		     
+		      $itemsPaginated = Offers::with('company')->paginate(15);
+		      $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+		            return [
+		                //'id' => $item->id,
+		                'id' => $item->id_offer,
+		                'title' => $item->title,
+		                'offers_details' => Str::of($item->offers_details)->limit(60),
+		                'publish_status' => $item->publish_status,
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'company_profile_photo' => $url
+		            ];
+              })->toArray();
+              
+              $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+			  );
+
+		      //$ajax_data =  Offers::paginate(15);
+		      //$output = $ajax_data->toArray();
+		      //$output['offers_details'] =  Str::of($output['offers_details'])->limit(20);
+		      //$output['offers_details'] = "";
+	     }*/
+	     
+	     return $itemsTransformedAndPaginated;
+	    
+	    
+    }
     
     public function search_offer(Request $request){
 	    

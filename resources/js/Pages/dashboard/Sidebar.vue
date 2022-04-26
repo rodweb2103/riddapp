@@ -10,7 +10,7 @@
       <img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;float:unset !important;max-height: 90px !important;">
     </a>-->
     
-     <Link class="brand-link" style="text-align: center;" href="/account" v-if="$page.props.is_employer == 1 || $page.props.is_candidate == 1"><img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;float:unset !important;max-height: 90px !important;"></Link>
+     <Link class="brand-link" style="text-align: center;" href="/account" v-if="$page.props.is_employer == 1 || $page.props.is_candidate == 1 || $page.props.is_consult== 1"><img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;float:unset !important;max-height: 90px !important;"></Link>
      <Link class="brand-link" style="text-align: center;" href="/admin" v-if="$page.props.is_admin == 1"><img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8;float:unset !important;max-height: 90px !important;"></Link>
     
     <!-- Sidebar -->
@@ -27,8 +27,8 @@
         <div class="info" style="width: 200px;">
           <span>
             <!--<a href="#" v-if="is_admin" class="" style="margin: unset !important;padding: 8px;">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</a>-->
-            <Link href="/account/profile" v-if="$page.props.is_employer == 1 || $page.props.is_candidate == 1">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</Link>
-            <Link href="/admin/profile" v-if="$page.props.is_admin == 1">{{ $page.props.user['first_name']+' '+$page.props.user['last_name'] }}</Link>
+            <Link href="/account/profile" v-if="$page.props.is_employer == 1 || $page.props.is_candidate == 1 || $page.props.is_consult== 1">{{ $page.props.user['user_name'] }}</Link>
+            <Link href="/admin/profile" v-if="$page.props.is_admin == 1">{{ $page.props.user['user_name'] }}</Link>
             
             
             <!--<Link  :href="route('admin.profile')" class="" style="margin: unset !important;padding: 8px;">
@@ -110,7 +110,7 @@
           
           </template>
           
-          <template v-if="$page.props.is_candidate == 1">
+          <template v-if="$page.props.is_candidate == 1 || $page.props.is_consult== 1">
           
             <li class="nav-item">
 	            
