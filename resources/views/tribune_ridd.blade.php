@@ -67,7 +67,7 @@
                                             <div class="courses-details-into">
                                                <h3>{{ __('Concept') }}</h3>
                                                 <p>
-                                                   {{ __('Cadre d'expression dédié aux Ambassades et aux institutions afin de faire connaître les programmes de bourses où opportunités pour les jeunes.') }}</p>
+                                                   {{ __('Cadre d\'expression dédié aux Ambassades et aux institutions afin de faire connaître les programmes de bourses où opportunités pour les jeunes.') }}</p>
                                             </div>
                                             <div class="courses-details-into">
                                                 <h3>{{ __('Objectif général') }}</h3>

@@ -29,10 +29,106 @@ class OfferController extends Controller
     public function ajax_view_candidates(Request $request){
 	    
 	    
-	    $itemsPaginated = User::with(['offers'])->paginate(10);
+	    //$itemsPaginated = User::with(["offers" => function($q){
+		//    $q->where('offer_id', '=', 18);
+		//}])->paginate(10);
+	    
+	    $itemsPaginated = User::join('offers_bid','offers_bid.user_id','=','users.id')->join('offers','offers.id','=','offers_bid.offer_id')->where("offers.id_offer",$request->input('offer_cand'))->selectRaw('first_name,last_name,offers_bid.id,offers_bid.offer_date')->paginate(10);
 	    
 	    
-	    var_dump($itemsPaginated);exit;
+	    $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        //$url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+			        
+			        //var_dump($item->activity_sector_job);exit;
+			        //var_dump($item->pivot);exit;
+			        
+		            return [
+		                //'id_offer' => $item->id,
+		                'id_offer' => $item->id,
+		                'first_name' =>  $item->first_name,
+		                'last_name' =>   $item->last_name,
+		                'offers_duration' => \Carbon\Carbon::parse($item->offer_date)->diffForhumans()
+		                //'candidates'=>$item->candidate_offers
+		                //"activity_sector" => $item->activity_sector_job->id
+		            ];
+            })->toArray();
+            
+            
+              
+            $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+		    );
+	    
+	    return $itemsTransformedAndPaginated;
+	    //return $itemsPaginated;
+	    //var_dump(count($itemsPaginated));exit;
+	    
+	    /*$itemsPaginated = Offers::with(['candidate_offers'])->where("company_id",\Auth::user()->id)
+              ->orderBy('publish_date','DESC')->paginate(10);
+		      $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+			        
+			        //var_dump($item->activity_sector_job);exit;
+			        //var_dump($item->pivot);exit;
+			        
+		            return [
+		                /*'id_offer' => $item->id,
+		                'id' => $item->id_offer,
+		                'title' => $item->title,
+		                'offers_details' => Str::of($item->offers_details)->limit(60),
+		                'offers_details_more' => $item->offers_details,
+		                'publish_status' => $item->publish_status,
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->diffForHumans(),
+		                'company_profile_photo' => $url,
+		                'contract_type' => $item->contract_type_offer_job->id,
+		                "contract_duration" => $item->contract_duration,
+		                "location" => $item->location,
+		                "study_level" => $item->study_level_job->id,
+		                "profile_details"=> $item->profile_details,
+		                //'candidates'=>$item->candidate_offers
+		                //"activity_sector" => $item->activity_sector_job->id
+		            ];
+            })->toArray();
+            
+            
+              
+            $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+		    );*/
+	    
+	    
+	    /*$itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","=","Candidate")->orWhere("name","Consultant"); })->with(["offers" => function($q){
+    $q->where('offer_id', '=', 18);
+}])->paginate(10);
+	    
+	    
+	    
+	    
+	    var_dump(count($itemsPaginated));exit;
 	    
 	    
 	    $itemsTransformed = $itemsPaginated
@@ -71,7 +167,7 @@ class OfferController extends Controller
 			        ]
 	    );
 	    
-	    return $itemsTransformedAndPaginated;
+	    return $itemsTransformedAndPaginated;*/
 	    
 	    
     }

@@ -73,7 +73,7 @@
                                             <div class="courses-details-into">
                                                 <h3>{{ __('Objectif général') }}</h3>
                                                 <p>
-                                                    {{ __('Dépasser l'appréhension du départ à l'étranger et informer les étudiants sur les possibilités d'études à l'étranger notamment au Maroc') }}
+                                                    {{ __('Dépasser l\'appréhension du départ à l\'étranger et informer les étudiants sur les possibilités d\'études à l\'étranger notamment au Maroc') }}
                                                 </p>
                                                 <ul class="courses-details-list" style="display:none;">
                                                     <li>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</li>
@@ -85,7 +85,7 @@
                                             <div class="courses-details-into">
                                                 <h3>{{ __('Objectif spécifique') }}</h3>
                                                 <p>
-                                                    {{ __('Inciter les étudiants à passer le cap d'une mobilité internationale, Exprimer et dissiper les doutes concernant les études à l’étranger (la validation de l'année à l'étranger, les modalités, les formalités à respecter, les aides financières ainsi que le coût que cela peut induire à leur charge)') }}</p>
+                                                    {{ __('Inciter les étudiants à passer le cap d\'une mobilité internationale, Exprimer et dissiper les doutes concernant les études à l’étranger (la validation de l\'année à l\'étranger, les modalités, les formalités à respecter, les aides financières ainsi que le coût que cela peut induire à leur charge)') }}</p>
                                             </div>
                                                                                           
                                              

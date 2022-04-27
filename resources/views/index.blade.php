@@ -9,7 +9,7 @@
                     <div class="col-lg-8">
                         <div class="banner-content">
                             <!--<span data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">FOR A BETTER FUTURE</span>-->
-                            <h1 style="color: #fff" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">{{ __('Rejoignez notre réseau et bénéficiez de nombreuses opportunités.') }}</h1>
+                            <h1 style="color: #fff" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">{{ __('Vivier de compétences au service de la Côte d\'Ivoire') }}</h1>
                             <p style="color: #fff">{{ __('Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.') }}</p>
                             @guest
                             <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;width: 159.5px;color: rgb(255,255,255);">{{ __('Rejoindre') }}</a>
