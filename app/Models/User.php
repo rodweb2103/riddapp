@@ -82,12 +82,17 @@ class User extends Authenticatable implements MustVerifyEmail
     
     public function activity_sector_company_user(){
 	    
-	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
+	    return $this->belongsTo(ActivitySector::class,'activity_sector_student','id');
+    }
+    
+    public function activity_sector_company_user_consult(){
+	    
+	    return $this->belongsTo(ActivitySector::class,'activity_sector_consult','id');
     }
     
     public function activity_sector_company_user_company(){
 	    
-	    return $this->belongsTo(ActivitySector::class,'activity_sector','id');
+	    return $this->belongsTo(ActivitySector::class,'activity_sector_company','id');
     }
     
     public function offers_company()

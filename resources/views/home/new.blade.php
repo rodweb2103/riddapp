@@ -32,7 +32,7 @@
         <title>Ledu - Education Courses & Online Training HTML Template</title>
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="{{ asset('/img/favicon.png') }}">
+        <link rel="icon" type="image/png" href="/img/favicon.png">
         
         <style>
 	        
@@ -267,17 +267,29 @@
                                 </li>-->
                                  <li class="nav-item">
                                       <a href="#" class="nav-link dropdown-toggle">
-                                        <i class="fa fa-language"></i>{{ __('Langue') }}                                   
+                                        <!--<i class="fa fa-language"></i>-->
+                                        <!--{{ __('Langue') }}-->
+                                        @if(app()->getLocale()=="fr")
+                                           <img style="width: 20px;" class="flag-img" src="{{ asset('/flags/4x3/fr.svg') }}" alt="Flag of France">
+                                        @else
+                                           
+                                           <img style="width: 20px;" class="flag-img" src="{{ asset('/flags/4x3/us.svg') }}" alt="Flag of USA">
+                                        
+                                        @endif
+                                                                    
                                       </a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" style="width: unset !important;min-width: 5rem;">
                                         <li class="nav-item">
-                                            <a href="blog.html" class="nav-link">
-                                                {{ __('Français') }}
+                                            <a href="{{ asset('/fr') }}" class="nav-link">
+                                                <!--{{ __('Français') }}-->
+                                                <img style="width: 80%;" class="flag-img" src="{{ asset('/flags/4x3/fr.svg') }}" alt="Flag of France">
+                                                
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="blog.html" class="nav-link">
-                                                {{ __('Anglais') }}
+                                            <a href="{{ asset('/en') }}" class="nav-link">
+                                                <!--{{ __('Anglais') }}-->
+                                                <img style="width: 80%;" class="flag-img" src="{{ asset('/flags/4x3/us.svg') }}" alt="Flag of USA">
                                             </a>
                                         </li>
                                     </ul>
@@ -338,7 +350,7 @@
                             @guest
                             <div class="others-options d-flex align-items-center">
                                 <div class="optional-item">
-                                    <a href="/login" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">{{ __('Se connecter') }}</a>
+                                    <a href="/login" class="default-btn two" style="background:  rgb(240, 128, 0);">{{ __('Se connecter') }}</a>
                                 </div>
                             </div>
                             @endguest

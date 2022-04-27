@@ -184,7 +184,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
+                            <a href="#">
                                 <img src="/img/pexels-pavel-danilyuk-7942434.jpg" alt="Courses" />
                             </a>
                             <div class="content">
@@ -211,7 +211,7 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
+                            <a href="#">
                                 <img src="/img/pexels-keira-burton-6146978.jpg" alt="Courses" />
                             </a>
                             <div class="content">
@@ -238,11 +238,11 @@
 
                     <div class="col-lg-4 col-md-6">
                         <div class="courses-item">
-                            <a href="courses-details.html">
+                            <a href="#">
                                 <img src="/img/pexels-ron-lach-9850088.jpg" alt="Courses" />
                             </a>
                             <div class="content">
-	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">{{ __('Promouvoir l\’entreprenariat jeune sur le territoire national et international') }}</p>
+	                            <p class="description" style="font-family: Montserrat, sans-serif;color: rgb(0,0,0);font-size: 18px;">{{ __('Promouvoir l\'entreprenariat jeune sur le territoire national et international') }}</p>
                                 <!--<a href="courses.html" class="tag-btn">Physics</a>
                                 <div class="price-text">$100</div>
                                 <h3><a href="courses-details.html">Visual effects for games in unity beginner to intermediate</a></h3>
@@ -843,6 +843,80 @@
             </div>
         </div>
         <!-- Play Area End -->
+        
+        <div class="testimonials-area  ptb-100">
+            <div class="container">
+                <div class="section-title mb-45 text-center">
+                    <h2>{{ __('Témoignages') }}</h2>
+                </div>
+                <div class="testimonials-slider owl-carousel owl-theme">
+                    <div class="testimonials-card">
+                        <div class="content">
+                            <img src="assets/images/testimonials/testimonials-img1.jpg" alt="testimonials" />
+                            <h3>Nikolas albart</h3>
+                            <span>Student</span>
+                        </div>
+                        <div class="quote"> <i class="flaticon-quote"></i></div>
+                        <p>“Morbi porttitor ligula id varius consectetur. Integer ipsum justo, congue sit amet massa vel, porttitor semper magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus.”</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <div class="testimonials-card">
+                        <div class="content">
+                            <img src="assets/images/testimonials/testimonials-img2.jpg" alt="testimonials" />
+                            <h3>Terry ambady</h3>
+                            <span>Content strategist</span>
+                        </div>
+                        <div class="quote"> <i class="flaticon-quote"></i></div>
+                        <p>“Morbi porttitor ligula id varius consectetur. Integer ipsum justo, congue sit amet massa vel, porttitor semper magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus.”</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <div class="testimonials-card">
+                        <div class="content">
+                            <img src="assets/images/testimonials/testimonials-img3.jpg" alt="testimonials" />
+                            <h3>Cory zamora</h3>
+                            <span>Photographer</span>
+                        </div>
+                        <div class="quote"> <i class="flaticon-quote"></i></div>
+                        <p>“Morbi porttitor ligula id varius consectetur. Integer ipsum justo, congue sit amet massa vel, porttitor semper magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus.”</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                    <div class="testimonials-card">
+                        <div class="content">
+                            <img src="assets/images/testimonials/testimonials-img3.jpg" alt="testimonials" />
+                            <h3>Jonquil von</h3>
+                            <span>Photographer</span>
+                        </div>
+                        <div class="quote"> <i class="flaticon-quote"></i></div>
+                        <p>“Morbi porttitor ligula id varius consectetur. Integer ipsum justo, congue sit amet massa vel, porttitor semper magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus.”</p>
+                        <div class="rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Instructors Area -->
         <div class="instructors-area pb-70">

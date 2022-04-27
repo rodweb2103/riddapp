@@ -8,6 +8,7 @@ use App\Models\Offers;
 use Illuminate\Support\Facades\Hash;
 use App\Models\StudyLevel;
 use App\Models\ActivitySector;
+use App\Models\ConsultLevel;
 use App\Models\ContractType;
 use Spatie\Permission\Models\Role;
 use Illuminate\Validation\Rule;
@@ -20,6 +21,11 @@ class UserController extends Controller
     //Route::get('/admin/ajax/employers',[UserController::class, 'get_employers'])->name('all_employers');
     //Route::get('/admin/ajax/offers',[UserController::class, 'get_offers'])->name('all_offers');
     //Route::get('/admin/ajax/staff/users',[UserController::class, 'get_staff_users'])->name('all_staff_users');
+    public function consult_level(Request $request){
+	    
+	    return ConsultLevel::selectRaw('id,level AS text')->get();   
+    }
+    
     
     public function ajax_staff_create(Request $request){
 	    
@@ -752,12 +758,16 @@ class UserController extends Controller
 		$request->validate([
 		    //'user_type' => 'required',
 		    'study_level' => 'required_if:account_type,==,1',
-		    'activity_sector' => 'required',
+		    //'activity_sector_student' => 'required_if:account_type,==,1',
+		    'activity_sector_company' => 'required_if:account_type,==,2',
+		    'activity_sector_consult' => 'required_if:account_type,==,5',
 		    'company_about' => 'required_if:account_type,==,2',
 		    'company_location' => 'required_if:account_type,==,2',
 		    'company_name' => 'required_if:account_type,==,2',
 		    'company_about' => 'required_if:account_type,==,2',
 		    'company_location' => 'required_if:account_type,==,2',
+		    'consult_level' => 'required_if:account_type,==,5',
+		    'year_exp' => 'required_if:account_type,==,5',
 		    'policy' => 'required'
 		    //'email' => 'required',
 		    //'phone_number' => 'required_if:user_type,==,',
@@ -765,11 +775,16 @@ class UserController extends Controller
 		    //'city' => 'required'
         ],[
 		      'study_level.required_if'=> trans('Le niveau d\'étude est requis'), // custom message
-		      'activity_sector.required'=> trans('Le domaine de formation est requis'), // custom message
+		      //'activity_sector.required'=> trans('Le domaine de formation est requis'), // custom message
 		      'company_name.required_if'=> trans('Le nom de l\'entreprise est requis'),
 		      'company_about.required_if'=> trans('Les détails sur l\'entreprise sont requises'),
 		      'company_location.required_if'=> trans('L\'addresse géographique de l\'entreprise est requise'),
-		      'policy.required' => trans('Veuillez accepter les conditions générales d\'utilisation')
+		      'policy.required' => trans('Veuillez accepter les conditions générales d\'utilisation'),
+		      'consult_level.required_if' => trans('Veuillez spécifier votre niveau'),
+		      'year_exp.required_if' => trans('Veuillez spécifier votre année d\'experience'),
+		      //'activity_sector_student.required_if' => trans('Le domaine de formation est requis'),
+		      'activity_sector_company.required_if' => trans('Le secteur d\'activité est requis'),
+		      'activity_sector_consult.required_if' => trans('Le domaine d\'intervention est requis')
 		      //'company_name.company_website'=> 'Le nom de l\'entreprise est requis',
 		      //'last_name.required'=> 'Le nom est requis', // custom message,
 		      //'email.required'=> 'Le courriel est requis', // custom message,
@@ -796,7 +811,10 @@ class UserController extends Controller
 		  $user->last_name = $request->input('last_name');
 		  $user->city = $request->input('city');
 		  $user->user_name = $request->input('user_name');
-		  $user->activity_sector = $request->input('activity_sector');
+		  
+		  
+		  
+		  
 		  //$user->account_type = $request->input('account_type'); 
 		  $user->country = $country_id[0]->id; 
 		  
@@ -806,6 +824,8 @@ class UserController extends Controller
 		  
 		  if($request->input('account_type') == 1)  {
 			  
+			  
+			   //$user->activity_sector_student = $request->input('activity_sector_student');
 			   $user->study_level = $request->input('study_level');
 			   $user->user_name = $request->input('user_name');
 			   $user->phone_number = $request->input('phone_number');
@@ -814,11 +834,18 @@ class UserController extends Controller
 		  
 		  if($request->input('account_type') == 2){
 		  
+		      $user->activity_sector_company = $request->input('activity_sector_company');
 			  $user->company_name = $request->input('company_name');
 			  $user->company_location = $request->input('company_location');
 			  $user->company_about = $request->input('company_about');
 			  $user->company_website = $request->input('company_website');
 	      }
+	      
+	      
+	      if($request->input('account_type') == 5){
+		      
+		      $user->activity_sector_consult = $request->input('activity_sector_consult');
+		  }
 	      
 	      if($request->input('account_type') == 1){
 	      

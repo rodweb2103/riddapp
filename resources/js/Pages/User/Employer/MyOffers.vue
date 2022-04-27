@@ -34,18 +34,18 @@
 	                    <div class="row align-items-center">
 	                        
 	                        
-	                        <div class="col-lg-3 col-md-6">
+	                        <div class="col-lg-4 col-md-6 col-12">
 	                            <div class="product-title">
-	                               <select @change="getResults(1)" v-model="form.contract_type"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+	                               <select @change="getResults(1)" v-model="form.contract_type"  style="width: 100%;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
 				                      <option selected value="">{{ __('Toutes les offres') }}</option>
 								      <option :value="ct['id']" v-for="ct in contract_type">{{ __(''+ct['text']) }}</option>
 						           </select>
 	                            </div>
 	                        </div>
 	                        
-	                        <div class="col-lg-3 col-md-6">
+	                        <div class="col-lg-4 col-md-6 col-12">
 	                            <div class="product-title">
-	                                <select @change="getResults(1)" v-model="form.contract_duration" style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+	                                <select @change="getResults(1)" v-model="form.contract_duration" style="width: 100%;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
 				                        
 									    <option selected value="">CDI et CDD</option>
 									    <option  v-for="ct in contract_duration">{{ ct }}</option>
@@ -53,23 +53,23 @@
 	                            </div>
 	                        </div>
 	                        
-	                        <div class="col-lg-3 col-md-6">
+	                        <div class="col-lg-4 col-md-6 col-12">
 	                            <div class="product-title">
-	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
+	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 100%;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
 				                        <option selected value="">{{ __('Niveaux d\'étude') }}</option>
 									    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
 						            </select>
 	                            </div>
 	                        </div>
 	                        
-	                        <div class="col-lg-3 col-md-6">
+	                        <!--<div class="col-lg-3 col-md-6">
 	                            <div class="product-title">
 	                                <select @change="getResults(1)" v-model="form.study_level"  style="width: 220px;height: 53px;margin-right: 19px;padding-left: 10px;margin-bottom: 5px;border-width: 0px;">
 				                        <option selected value="">{{ __('Secteur d\'activité') }}</option>
 									    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
 						            </select>
 	                            </div>
-	                        </div>
+	                        </div>-->
 	                        
 	                        <div class="col-lg-12 col-md-6 mt-4">
 	                            <div class="product-title">
@@ -102,9 +102,9 @@
 	                        <div class="event-item box-shadow">
 	                            <div class="event-img">
 	                                <a href="event-details.html">
-	                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 100px;"/>
+	                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 70%;"/>
 	                                    
-	                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 100px;"/>
+	                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 70%;"/>
 	                                    
 	                                    
 	                                    
@@ -303,6 +303,13 @@
     
     }
     
+    .event-item .event-img {
+	    
+	    max-width: 80px;
+	    margin-right: unset !important;
+	
+	}
+    
    	
 	p{
 		
@@ -413,6 +420,9 @@ export default defineComponent({
   },
   methods:{
 	  
+	  scrollToTop() {
+        window.scrollTo(0,0);
+      },
 	  getResults(page = 1) {
 		    let vm = this;
 		    /*this.form.post('/offers?page='+page, {
@@ -425,6 +435,7 @@ export default defineComponent({
 		        //onError: () => this.$refs.password.focus(),
 		        onFinish: () => {}/*this.form.reset(),
             });*/
+            this.scrollToTop();
             vm.loading = true;
             axios.post('/company/offers?page=' + page,{'contract_type':vm.form.contract_type,'contract_duration':vm.form.contract_duration,'study_level':vm.form.study_level,'company_id':this.$page.props.id})
                 .then(response => {

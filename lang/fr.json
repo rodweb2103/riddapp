@@ -369,6 +369,12 @@
     "Mot de passe oublié":"Mot de passe oublié",
     "Réinitialiser":"Réinitialiser",
     "Créer un compte":"Créer un compte",
-    "Vérifier votre compte":"Vérifier votre compte"
+    "Vérifier votre compte":"Vérifier votre compte",
+    "Veuillez spécifier votre niveau":"Veuillez spécifier votre niveau",
+    "Veuillez spécifier votre année d'experience":"Veuillez spécifier votre année d'experience",
+    "Le secteur d'activité est requis":"Le secteur d'activité est requis",
+    "Le domaine d'intervention est requis":"Le domaine d'intervention est requis",
+    "Le domaine de formation est requis":"Le domaine de formation est requis",
+    "Témoignages":"Témoignages"
     
 }

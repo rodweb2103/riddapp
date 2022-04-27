@@ -292,6 +292,7 @@
                       <th>Libellé Annonce</th>
                       <th>Statut annonce</th>
                       <th>Action</th>
+                      <th>Candidats</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -309,7 +310,9 @@
 		                    <td>
 			                    <a href="#" @click="loadOffer(data.id)"><i class="fas fa-eye" style="padding: 10px;"></i></a>
 			                    <a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 10px;"></i></a>
+			                    <Link :href="`${'/view/cv/candidates/'+data.id}`"><i class="fas fa-file-pdf" style="padding: 10px;"></i></Link>
 			               </td>
+			               <td>{{ data.candidates }}</td>
 		                    
 	                    </tr>
                     <!--<tr>

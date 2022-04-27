@@ -46,7 +46,7 @@
 	          
 	          <div class="mt-4 text-center">
 		          
-		             Confirmez vous la suppression de votre offre ?
+		             Confirmez vous le retrait de votre offre ?
 		              
 		          
 	          </div>

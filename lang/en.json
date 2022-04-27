@@ -201,7 +201,7 @@
     "Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.":"The Ivorian Network of Diaspora Graduates (RIDD) is an organization born on November 15, 2017 at the initiative of young Ivorian graduates from the diaspora.",
     "Rejoindre":"Join us",
     "Mission":"Assignment",
-    "Notre ADN, notre raison d'être et les objectifs à atteindre se résument à":"Our DNA, our raison d'être and the objectives to be achieved are summed up in",
+    "Notre ADN, notre raison d'être et les objectifs à atteindre se résument à":"Our objectives to be achieved are summed up in",
     "Contribuer à créer un cadre propice au retour des diplômés de la diaspora ivoirienne":"Contribute to creating a framework conducive to the return of graduates from the Ivorian diaspora",
     "Faire la promotion des étudiants ivoiriens formés à l’extérieur":"Promote Ivorian students trained abroad",
     "Promouvoir l’entreprenariat jeune sur le territoire national et international":"Promote young entrepreneurship on the national and international territory",
@@ -379,5 +379,13 @@
     "Adresse e-mail":"E-mail address",
     "Nous suivre":"Follow us",
     "Niveaux d'étude":"All study level",
-    "offre(s) disponible(s)":"offer(s) available"
+    "offre(s) disponible(s)":"offer(s) available",
+    "Veuillez spécifier votre niveau":"Please specify your level",
+    "Veuillez spécifier votre année d'experience":"Please specify your year of experience",
+    "Le secteur d'activité est requis":"",
+    "Le domaine d'intervention est requis":"Field area is required",
+    "Le domaine de formation est requis":"Field of training is required",
+    "Année d'expérience":"Year of experience",
+    "Témoignages":"Testimonials",
+    "Promouvoir l'entreprenariat jeune sur le territoire national et international":"Promote youth entrepreneurship on the national and international territory"
 }

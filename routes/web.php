@@ -113,15 +113,20 @@ Route::post('/validate/step/3',[UserController::class, 'validate_step3'])->name(
 Route::get('/countries',[UserController::class, 'get_countries'])->name('countries');
 Route::get('/study/level',[UserController::class, 'study_level'])->name('study_level');
 Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name('activity_sector');
+Route::get('/consult/level',[UserController::class, 'consult_level'])->name('consult_level');
 Route::get('/contract/types',[UserController::class, 'contract_types'])->name('contract_types');
 
 
 
-
+Route::get('/view/cv/candidates/{id}',function($id){
+	  
+	  return Inertia::render('User/Employer/Candidates',['offer_cand'=>$id]);
+});
+Route::post('/ajax/view/cv/candidates',[OfferController::class, 'ajax_view_candidates'])->name('ajax.view.candidates');
 
 Route::post('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
 
-Route::post('/company/offers',[OfferController::class, 'company_list_offer'])->name('company.list.offer');
+Route::post('/company/offers',[OfferController::class, 'company_my_list_offer'])->name('company.list.offer');
 
 Route::get('/ajax/recruiters/offers/{id}',[OfferController::class, 'ajax_recruiter_offers'])->name('ajax_recruiter_offers');
 Route::get('/recruiters/offers/{id}',function($id){
@@ -424,8 +429,13 @@ Route::get('/annonces/{id}', function (Request $request,$id) {
 	
 	$offer_details = Offers::with(['company','contract_type_offer_job','study_level_job','company.activity_sector_company_user_company'])->where('id_offer',$id)->get();
     $url = config('app.url').\Storage::url('profile/'.basename($offer_details[0]->company->profile_photo_url));
+    
+    session(['id_offer' => $offer_details[0]->id]);
+    //$request->session()->put('id_offer',$offer_details[0]->id);
+    //$request->session()->get('status')
     $array_offer = array(
 	    
+	     "id" => $offer_details[0]->id,
 	     "id_offer" => $offer_details[0]->id_offer,
 	     "company_id" => $offer_details[0]->company->id,
 	     "title" => $offer_details[0]->title,

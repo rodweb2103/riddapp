@@ -1,4 +1,7 @@
 <template>
+       <Head>
+		  <link rel="icon" type="image/png" href="/img/favicon.png">
+       </Head>
   <!-- Pre Loader -->
         <div id="preloader">
             <div id="preloader-area">
@@ -78,17 +81,27 @@
 
                                  <li class="nav-item">
                                       <a href="#" class="nav-link dropdown-toggle">
-                                        <i class="fa fa-language"></i>{{ __('Langue') }}                                   
+                                        <!--<i class="fa fa-language"></i>-->
+                                        
+                                           <img v-if="$page.props.locale=='fr'" style="width: 20px;" class="flag-img" src="/flags/4x3/fr.svg" alt="Flag of France">
+                                           <img v-if="$page.props.locale=='en'" style="width: 20px;" class="flag-img" src="/flags/4x3/us.svg" alt="Flag of USA">
+                                        
+                                        
+                                        
+                                        <!--{{ __('Langue') }}-->
+                                                                         
                                       </a>
-                                    <ul class="dropdown-menu">
+                                    <ul class="dropdown-menu" style="width: unset !important;min-width: 5rem;">
                                         <li class="nav-item">
                                             <a href="/fr" class="nav-link">
-                                                {{ __('Français') }}
+                                                <!--{{ __('Français') }}-->
+                                                <img  style="width: 20px;" class="flag-img" src="/flags/4x3/fr.svg" alt="Flag of France">
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="/en" class="nav-link">
-                                                {{ __('Anglais') }}
+                                                <!--{{ __('Anglais') }}-->
+                                                <img  style="width: 20px;" class="flag-img" src="/flags/4x3/us.svg" alt="Flag of USA">
                                             </a>
                                         </li>
                                     </ul>

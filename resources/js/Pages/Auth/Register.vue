@@ -149,8 +149,8 @@
 							                        </div>
 							                        
 							                        <div class="fields">
-							                            <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{ settingOption: value, settingOption: value,placeholder:'Selectionner votre secteur d\'activité' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
-							                            <div v-if="errors.activity_sector" style="color:red;">{{ errors.activity_sector }}</div>
+							                            <Select2 v-model="form.activity_sector_company" :options="activity_sector" :settings="{ settingOption: value, settingOption: value,placeholder:'Selectionner votre secteur d\'activité' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+							                            <div v-if="errors.activity_sector_company" style="color:red;">{{ errors.activity_sector_company }}</div>
 							                        </div>
 							                        
 							                        <div class="fields">
@@ -203,10 +203,23 @@
 							                           <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'Selectionner votre domaine d\'intervention' }"/>
 							                           <div v-if="errors.study_level" style="color:red;">{{ errors.study_level }}</div>
 							                        </div>-->
+							                        
 							                        <div class="fields">
-							                           <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{placeholder:'Selectionner votre domaine d\'intervention' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
-							                           <div v-if="errors.activity_sector" style="color:red;">{{ errors.activity_sector }}</div>
+							                            <input type="text" :placeholder="__('Année d\'expérience')" v-model="form.year_exp"/> 
+							                            <div v-if="errors.year_exp" style="color:red;">{{ errors.year_exp }}</div>
+							                        </div>
+							                        
+							                        <div class="fields">
+							                           <Select2 v-model="form.activity_sector_consult" :options="activity_sector" :settings="{placeholder:'Selectionner votre domaine d\'intervention'}"/>
+							                           <div v-if="errors.activity_sector_consult" style="color:red;">{{ errors.activity_sector_consult }}</div>
 							                         </div>
+							                         
+							                         <div class="fields">
+							                           <Select2 v-model="form.consult_level" :options="consult_level" :settings="{placeholder:'Selectionner votre niveau' }"/>
+							                           <div v-if="errors.consult_level" style="color:red;">{{ errors.consult_level }}</div>
+							                         </div>
+							                         
+							                         
 							                          <div class="fields">
 							                            <label class="fieldlabels" style="margin-top:20px;margin-bottom:30px;">Votre CV</label> 
 							                            <input type="file" @input="form.candidate_cv = $event.target.files[0]"/> 
@@ -247,10 +260,10 @@
 							                           <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'Selectionner votre niveau d\'etude' }"/>
 							                           <div v-if="errors.study_level" style="color:red;">{{ errors.study_level }}</div>
 							                        </div>
-							                         <div class="fields">
-							                           <Select2 v-model="form.activity_sector" :options="activity_sector" :settings="{placeholder:'Selectionner votre domaine de formation' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
-							                           <div v-if="errors.activity_sector" style="color:red;">{{ errors.activity_sector }}</div>
-							                         </div>
+							                         <!--<div class="fields">
+							                           <Select2 v-model="form.activity_sector_student" :options="activity_sector" :settings="{placeholder:'Selectionner votre domaine de formation' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+							                           <div v-if="errors.activity_sector_student" style="color:red;">{{ errors.activity_sector_student }}</div>
+							                         </div>-->
 							                          <div class="fields">
 							                            <label class="fieldlabels" style="margin-top:20px;margin-bottom:30px;">Votre CV</label> 
 							                            <input type="file" @input="form.candidate_cv = $event.target.files[0]"/> 
@@ -405,6 +418,7 @@ export default defineComponent({
 	  
 	  study_level : {},
 	  activity_sector : {},
+	  consult_level:{},
 	  step : 1,
 	  isLoading: false,
       fullPage: true,
@@ -414,6 +428,8 @@ export default defineComponent({
       form: this.$inertia.form({
         //name: '',
         //email: '',
+        year_exp : '',
+        consult_level:'',
         profile_photo:'',
         candidate_cv : '',
         company_name:'',
@@ -425,7 +441,9 @@ export default defineComponent({
         phone_number:'',
         email:'',
         study_level:'',
-        activity_sector:'',
+        activity_sector_company:'',
+        activity_sector_student:'',
+        activity_sector_consult:'',
         user_name : '',
         first_name : '',
         last_name: '',
@@ -448,6 +466,13 @@ export default defineComponent({
 		  
 		  
 		  this.activity_sector = response.data;
+      });
+      
+      
+      axios.get('/consult/level').then(response => {
+		  
+		  
+		  this.consult_level = response.data;
       });
       
       
