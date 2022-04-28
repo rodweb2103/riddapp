@@ -82,6 +82,27 @@
           </jet-button>
         </template>
       </jet-dialog-modal>
+      
+      <!--<jet-dialog-modal id="viewPDF">
+        <template #title>
+        </template>
+
+        <template #content style="width: 700px;">
+          
+          <div class="mt-4">
+	          
+		       <embed v-bind:src="getUrl" frameborder="0" width="100%" height="400px"/>
+	          
+          </div>
+        </template>
+
+        <template #footer>
+          <jet-secondary-button data-dismiss="modal" @click="closeModalPDF">
+            FERMER
+          </jet-secondary-button>
+        </template>
+      </jet-dialog-modal>-->
+      
 	   
       <!--<div class="clearfix mt-4">
         <a @click="openOfferForm" class="btn btn-sm btn-info float-left">Éditer une annonce</a>
@@ -95,7 +116,8 @@
             <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Offres</h3>
-
+                  <!--<pdf src="https://beta.ridd.info/storage/cv/cv_Cedric_Yeo.pdf"></pdf>-->
+                  <!--<embed src="https://beta.ridd.info/storage/cv/cv_Cedric_Yeo.pdf" frameborder="0" width="100%" height="400px">-->
               </div>
               <div class="card-body p-0">
                 <div class="table-responsive">
@@ -104,18 +126,18 @@
                     <tr>
                       <th>Nom du candidat</th>
                       <th>Prénom du candidat</th>
-                      <th>Date de soumission</th>
-                      <th>Action</th>
+                      <!--<th>Date de soumission</th>-->
+                      <th>Consulter CV</th>
                     </tr>
                     </thead>
                     <tbody>
 	                    <tr v-for="data in offerData['data']">
 		                    <td>{{ data.last_name }}</td>
 		                    <td>{{ data.first_name }}</td>
-		                    <td>{{ data.offers_duration }}</td>
+		                    <!--<td>{{ data.offers_duration }}</td>-->
 		                   
 		                    <td>
-			                    <Link :href="`${'/view/cv/candidates/'+data.id}`"><i class="fas fa-file-pdf" style="padding: 10px;"></i></Link>
+			                    <a target="_blank" @click="viewPDFCandidates()" :href="data.cv_candidates"><i class="fas fa-file-pdf" style="padding: 10px;"></i></a>
 			               </td>
 		                    
 	                    </tr>
@@ -175,6 +197,7 @@
 </style>
 <script>
 //import Select2 from 'vue3-select2-component';
+//import pdf from 'vue-pdf'
 import { defineComponent } from "vue"
 import { Head, Link } from '@inertiajs/inertia-vue3';
 
@@ -200,7 +223,8 @@ export default defineComponent({
     JetInputError,
     JetSecondaryButton,
     JetButton,
-    BaseLayout
+    BaseLayout,
+    //pdf
     //Select2
   },
 
@@ -225,6 +249,7 @@ export default defineComponent({
       contract_duration: ['CDD', 'CDI'],
       offerData: {},
       editMode : 0,
+      getUrl:null,
       viewDataOffer : {},
       form :{
 	       
@@ -279,6 +304,18 @@ export default defineComponent({
 	  
 	  scrollToTop() {
         window.scrollTo(0,0);
+      },
+      closeModalPDF(){
+	     
+	     //this.modal.hide() 
+      },
+      viewPDFCandidates(url){
+	      
+	      
+	      let el = document.querySelector('#viewPDF')
+	      this.modal = new bootstrap.Modal(el)
+	      this.modal.show()  
+	      this.getUrl = "https://beta.ridd.info/storage/cv/cv_Cedric_Yeo.pdf";
       },
 	  getResults(page = 1) {
 		    let vm = this;

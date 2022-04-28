@@ -39,7 +39,23 @@
                                 <li><i class="ri-close-fill"></i> Certification practice</li>
                                 <li><i class="ri-close-fill"></i> Full access to single course</li>-->
                             </ul>
-                            <a href="pricing.html" class="default-btn">{{ __('Acheter votre pack') }}</a>
+                            <!--<a href="pricing.html" class="default-btn">{{ __('Acheter votre pack') }}</a>-->
+                            <form @submit.prevent="submitPayment(1)">
+					                  <div class="mt-4 d-flex justify-content-between">
+						                 
+						                 <div class="col-md-3 col-12 text-center">
+	                                            <button  :class="{ 'text-white-50': form.processing && form.pack_id == 1,'default-btn':true }" :disabled="form.processing">
+										              <div v-show="form.processing && form.pack_id == 1" class="spinner-border spinner-border-sm" role="status">
+										                <span class="visually-hidden">Loading...</span>
+										              </div>
+										              <!--<div v-if="!form.processing">{{__('Acheter votre pack') }}</div>-->
+										              <div v-if="form.pack_id != 1">{{__('Acheter votre pack') }}</div>
+		                                         </button>
+                                         </div> 
+						                 
+					                     
+					                  </div>
+					      </form>
                         </div>
                     </div>
 
@@ -61,7 +77,24 @@
                                 <li><i class="ri-close-fill"></i> Certification practice</li>
                                 <li><i class="ri-close-fill"></i> Full access to single course</li>-->
                             </ul>
-                            <a href="pricing.html" class="default-btn">{{ __('Acheter votre pack') }}</a>
+                            <!--<a href="pricing.html" class="default-btn">{{ __('Acheter votre pack') }}</a>-->
+                            <form @submit.prevent="submitPayment(2)">
+					                  <div class="mt-4 d-flex justify-content-between">
+						                 
+						                 
+						                 <div class="col-md-3 col-12 text-center">
+	                                            <button  :class="{ 'text-white-50': form.processing && form.pack_id == 2,'default-btn':true }" :disabled="form.processing">
+										              <div v-show="form.processing && form.pack_id == 2" class="spinner-border spinner-border-sm" role="status">
+										                <span class="visually-hidden">Loading...</span>
+										              </div>
+										              <!--<div v-if="!form.processing  form.pack_id == 2">{{__('Acheter votre pack') }}</div>--> 
+										              <div v-if="form.pack_id != 2">{{__('Acheter votre pack') }}</div>
+		                                         </button>
+                                         </div> 
+						                 
+					                     
+					                  </div>
+					      </form>
                         </div>
                     </div>
 
@@ -81,7 +114,23 @@
                                 <li><i class="ri-check-line"></i> Certification practice</li>
                                 <li><i class="ri-check-line"></i> Full access to single course</li>-->
                             </ul>
-                            <a href="pricing.html" class="default-btn">{{ __('Acheter votre pack') }}</a>
+                            <!--<a href="pricing.html" class="default-btn">{{ __('Acheter votre pack') }}</a>-->
+                            <form @submit.prevent="submitPayment(3)">
+					                  <div class="mt-4 d-flex justify-content-between">
+						                 
+						                 
+						                 <div class="col-md-3 col-12 text-center">
+	                                            <button  :class="{ 'text-white-50': form.processing && form.pack_id == 3,'default-btn':true }" :disabled="form.processing">
+										              <div v-show="form.processing && form.pack_id == 3" class="spinner-border spinner-border-sm" role="status">
+										                <span class="visually-hidden">Loading...</span>
+										              </div>
+										              <div v-if="form.pack_id != 2">{{__('Acheter votre pack') }}</div>
+		                                         </button>
+                                         </div> 
+						                 
+					                     
+					                  </div>
+					      </form>
                         </div>
                     </div>
                 </div>
@@ -138,6 +187,9 @@
 </style>
 <script>
 //import Select2 from 'vue3-select2-component';
+
+//var paydunya = require('paydunya');
+
 import { defineComponent } from "vue"
 import { Head, Link } from '@inertiajs/inertia-vue3';
 
@@ -189,25 +241,10 @@ export default defineComponent({
       offerData: {},
       editMode : 0,
       viewDataOffer : {},
-      form :{
-	       
-	      contract_type:'',
-          contract_duration:'', 
-          study_level:'',
-      }
-      /*form: this.$inertia.form({
-        //password: '',
-        id : 0,
-        offer_title:'',
-        activity_sector:'',
-        location:'',
-        contract_type:'',
-        contract_duration:'',
-        offer_details:'',
-        study_level:'',
-        offer_details:''
+      form: this.$inertia.form({
         
-      })*/
+          pack_id:0
+      })
     }
   },
   mounted(){
@@ -221,6 +258,22 @@ export default defineComponent({
 	  
 	  scrollToTop() {
         window.scrollTo(0,0);
+      },
+      submitPayment(pack_id){
+	      
+	      	//payment_ads
+	      	//alert(pack_id);
+	      	this.form['pack_id'] = pack_id;
+	      	this.form.post(route('payment_ads'), {
+		        preserveScroll: true,
+		        onSuccess: (data) => {
+			        this.form.pack_id = 0
+			        //vm.total_offer = data['total'];
+                    //vm.offerData = data['data'];
+		        },
+		        //onError: () => this.$refs.password.focus(),
+		        onFinish: () => { this.form.pack_id = 0 },
+            });   
       },
 	  getResults(page = 1) {
 		    let vm = this;

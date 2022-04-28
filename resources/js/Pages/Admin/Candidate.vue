@@ -37,7 +37,7 @@
                       <th>TÉLÉPHONE</th>
                       <th>PSEUDO</th>
                       <th>NIVEAU D'ÉTUDE</th>
-                      <th>DOMAINE DE FORMATION</th>
+                      <!--<th>DOMAINE DE FORMATION</th>-->
                     </tr>
                     </thead>
                     <tbody>
@@ -57,9 +57,9 @@
                       <td>
                         {{ data['study_level'] }}
                       </td>
-                      <td>
+                      <!--<td>
                         {{ data['activity_sector'] }}
-                      </td>
+                      </td>-->
                     </tr>
                     <!--<tr>
                       <td><a href="pages/examples/invoice.html">OR1848</a></td>

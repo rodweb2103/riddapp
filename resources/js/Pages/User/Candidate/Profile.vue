@@ -76,13 +76,13 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <strong><i class="fas fa-book mr-1"></i>Domaine de Formation</strong>
+                <!--<strong><i class="fas fa-book mr-1"></i>Domaine de Formation</strong>-->
 
-                <p class="text-muted">
+                <!--<p class="text-muted">
                   {{ $page.props['candidate_details']['activity_sector_company_user']['activity_sector_name'] }}
-                </p>
+                </p>-->
 
-                <hr>
+                <!--<hr>-->
 
                 <strong><i class="fas fa-map-marker-alt mr-1"></i>Adresse</strong>
 

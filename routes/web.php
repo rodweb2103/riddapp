@@ -102,7 +102,29 @@ Route::get('/tribune-ridd',function(){
 })->name('tribune_ridd');
 
 
+Route::get('/news',function(){
+	 
+	 return view('actualites');
+});
 
+Route::get('/news/details',function(){
+	 
+	 return view('actualites_details');
+});
+
+Route::get('/orientations',function(){
+	 
+	 return view('orientations');
+});
+
+Route::get('/orientations/details',function(){
+	 
+	 return view('orientations_details');
+});
+
+
+
+Route::post('payment/success',[UserController::class, 'payment_success']);
 
 
 
@@ -117,15 +139,6 @@ Route::get('/consult/level',[UserController::class, 'consult_level'])->name('con
 Route::get('/contract/types',[UserController::class, 'contract_types'])->name('contract_types');
 
 
-Route::get('/news',function(){
-	 
-	 return view('actualites');
-});
-
-Route::get('/news/details',function(){
-	 
-	 return view('actualites_details');
-});
 
 Route::get('/offers/fee',function(){
 	
@@ -134,11 +147,28 @@ Route::get('/offers/fee',function(){
 })->name('membership');
 
 
+Route::get('/orders',function(){
+	return Inertia::render('User/Employer/Orders');
+});
+
+Route::get('/admin/orders',function(){
+	
+	return Inertia::render('Admin/Orders');
+});
+
+
+Route::post('/ajax/transaction/company',[OfferController::class,'transaction_history_company']);
+Route::post('/ajax/transaction/admin',[OfferController::class,'transaction_history_admin']);
+
+Route::post('/payment',[OfferController::class, 'payment_ads'])->name('payment_ads');
+Route::get('/payment/success',[OfferController::class, 'payment_success'])->name('payment_success');
+
 Route::get('/view/cv/candidates/{id}',function($id){
 	  
 	  return Inertia::render('User/Employer/Candidates',['offer_cand'=>$id]);
-});
-Route::post('/ajax/view/cv/candidates',[OfferController::class, 'ajax_view_candidates'])->name('ajax.view.candidates');
+})->middleware(['subscription'])->name('subscription');
+
+Route::post('/ajax/view/cv/candidates',[OfferController::class, 'ajax_view_candidates'])->middleware(['subscription'])->name('subscription');
 
 Route::post('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
 

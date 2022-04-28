@@ -1,6 +1,6 @@
 <template>
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #000 !important">
     <!-- Brand Logo -->
     <!--<a href="index3.html" class="brand-link">
       <img src="/img/LG-RIDD@2x.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
@@ -100,12 +100,12 @@
 	        </li>
 	        
 	        <li class="nav-item">
-	            <a href="#" class="nav-link">
+	            <Link href="/orders" class="nav-link">
 	              <i class="nav-icon fas fa-th"></i>
 	              <p>
-	                Abonnement
+	                Achats
 	              </p>
-	            </a>
+	            </Link>
 	        </li>
           
           </template>
@@ -170,12 +170,12 @@
 	          </li>
 	          
 	          <li class="nav-item">
-	            <a href="#" class="nav-link">
+	            <Link href="/admin/orders" class="nav-link">
 	              <i class="nav-icon fas fa-th"></i>
 	              <p>
-	                Abonnements
+	                Achats
 	              </p>
-	            </a>
+	            </Link>
 	            <!--<Link  :href="route('admin.accounts.staff')" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>

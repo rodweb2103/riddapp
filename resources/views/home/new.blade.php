@@ -42,7 +42,7 @@
 			  left: 45%;
 			  top: 50%;
 			  height: 100px;
-			  width: 100px;
+			  width: 160px;
 			  z-index: 90000;
 			  right: 50%;
           }
@@ -138,7 +138,7 @@
 	    
 	    <!-- Pre Loader -->
         <div id="preloader">
-            <div id="preloader-area">
+            <div id="preloader-area" class="position-absolute top-50 start-50 translate-middle">
                 <!--<div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
@@ -147,7 +147,7 @@
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>-->
-                 <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 150px;max-width: unset !important;"/>
+                 <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 150px;"/>
             </div>
             <div class="preloader-section preloader-left"></div>
             <div class="preloader-section preloader-right"></div>
@@ -266,7 +266,7 @@
                                 
                                 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="/orientations" class="nav-link">
                                         {{ __('Orientations') }}
                                     </a>
                                 </li>
@@ -371,6 +371,11 @@
                                     <a href="/login" class="default-btn two" style="background:  rgb(240, 128, 0);">{{ __('Se connecter') }}</a>
                                 </div>
                             </div>
+                            <div class="others-options d-flex align-items-center ml-20">
+                                <div class="optional-item">
+                                    <a href="/login" class="default-btn two" style="background: rgb(71,179,21)">{{ __('Créer un compte') }}</a>
+                                </div>
+                            </div>
                             @endguest
                         </div>
                     </nav>
@@ -400,9 +405,9 @@
                                 </div>-->
 
                                 <div class="side-item">
-                                    <a href="route('login')" class="default-btn two">{{ __('Se connecter') }}</a>
+                                    <a href="{{ route('login') }}" class="default-btn two">{{ __('Se connecter') }}</a>
                                     <div class="separator">{{ __('OU') }}</div>
-                                    <a href="route('register')" class="default-btn two">{{ __('Créer un compte') }}</a>
+                                    <a href="{{ route('register') }}" class="default-btn two">{{ __('Créer un compte') }}</a>
                                 </div>
                             </div>
                         </div>

@@ -109,7 +109,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="courses-details-sidebar">
+                        <div class="courses-details-sidebar pt-2">
                             <div class="mt-5"><img :src="offerDetails['profile_photo_url']" alt="Courses" class="rounded mx-auto d-block" style="width: 150px;"/></div>
                             <div class="content">
                                 <h3 class="text-center">{{ offerDetails['company_name'] }}</h3>

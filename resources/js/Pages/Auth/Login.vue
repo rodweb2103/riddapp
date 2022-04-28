@@ -53,14 +53,24 @@
                                             <!--<button type="submit" class="default-btn">
                                                 Login Now
                                             </button>-->
-                                            <jet-button  :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: green;border-width: 0px;padding-top: 7px;">
-									              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
-									                <span class="visually-hidden">Loading...</span>
-									              </div>
-									              <div v-if="!form.processing">{{ __('Connexion') }}</div>
-	                                         </jet-button>
-	                                         {{ __('OU') }}
-	                                         <Link class="btn btn-dark text-uppercase" href="/register" style="margin-top: 6px; background: rgb(240, 128, 0) none repeat scroll 0% 0%; border-width: 0px; padding-top: 7px;">{{ __('Créer un compte') }}</Link>
+                                            
+                                            <div class="row">
+                                            
+                                             <div class="col-md-3 col-12 text-center">
+	                                            <jet-button  :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: green;border-width: 0px;padding-top: 7px;">
+										              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+										                <span class="visually-hidden">Loading...</span>
+										              </div>
+										              <div v-if="!form.processing">{{ __('Connexion') }}</div>
+		                                         </jet-button>
+                                             </div>
+                                             <!--<div class="col-md-1 col-12 text-center">
+	                                            <div class="position-absolute top-40 start-50 translate-middle">{{ __('OU') }}</div>
+                                             </div>
+                                             <div class="col-md-3 col-12 text-center">
+	                                            <Link class="btn btn-dark text-uppercase" href="/register" style="margin-top: 6px; background: rgb(240, 128, 0) none repeat scroll 0% 0%; border-width: 0px; padding-top: 7px;">{{ __('Créer un compte') }}</Link>
+                                             </div>-->
+                                            </div>
                                         </div>
                                         <!--<div class="col-lg-12 col-md-12">
 	                                        

@@ -44,7 +44,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-card">
-                            <a href="single-blog-1.html">
+                            <a href="/news/details">
                                 <img src="assets/images/blog/blog-img1.jpg" alt="Blog">
                             </a>
                             <div class="content">

@@ -259,6 +259,9 @@
               <div class="clearfix mt-4">
                 <a @click="openOfferForm" class="btn btn-sm btn-info float-left">Éditer une annonce</a>
               </div>
+              <div class="alert alert-success" v-if="$page.props.status!==null">
+	              {{ $page.props.status }}
+              </div>
         
         <!-- Main row -->
         <div class="row pt-2">

@@ -4,7 +4,7 @@
        </Head>
   <!-- Pre Loader -->
         <div id="preloader">
-            <div id="preloader-area">
+            <div id="preloader-area" class="position-absolute top-50 start-50 translate-middle">
                 <!--<div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
@@ -13,7 +13,7 @@
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>-->
-                <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 150px;max-width: unset !important;"/>
+                <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 150px;"/>
                 
             </div>
             <div class="preloader-section preloader-left"></div>
@@ -113,18 +113,12 @@
                                     </ul>
                                 </li>
                                 
-                                <li class="nav-item">
-                                      <a href="#" class="nav-link dropdown-toggle" v-if="$page.props.user">
+                                <li class="nav-item" v-if="$page.props.user">
+                                      <a href="#" class="nav-link dropdown-toggle">
                                         {{ __('Bonjour') }}, {{ $page.props.user['user_name'] }}                                   
                                       </a>
                                     <ul class="dropdown-menu">
-                                        <!--<li class="nav-item">
-                                            <a href="blog.html" class="nav-link">
-                                                Francais
-                                            </a>
-                                        </li>-->
-                                        
-                                        <li class="nav-item">
+                                      <li class="nav-item">
                                          <Link style="background: transparent;font-size: 17px;color:#000 !important;font-weight: 500" :href="route('user.dashboard')" v-if="$page.props.is_employer || $page.props.is_candidate || $page.props.is_consult" class="nav-link"> 
 							               {{ __('Mon compte') }}
 							             </Link>
@@ -141,9 +135,10 @@
 								            method="post"
 								            as="button"
 								            class="nav-link"
-								            >{{ __('Déconnexion') }}</Link
+								            v-if="$page.props.user">{{ __('Déconnexion') }}</Link
 		                                 >
                                         </li>
+                                       
                                     </ul>
                                 </li>
 
@@ -160,6 +155,12 @@
 							               {{ __('Se connecter') }}
 							        </Link>
                                     <!--<a href="signup.html" class="default-btn two" style="background: linear-gradient(74deg, #ff7300 43%, #ffc700 99%), rgb(68,111,162);">Se connecter</a>-->
+                                </div>
+                                
+                            </div>
+                            <div class="others-options d-flex align-items-center ml-20" v-if="!$page.props.user">
+                                <div class="optional-item">
+                                    <a href="/login" class="default-btn two" style="background:  green none repeat scroll 0% 0%;">{{ __('Créer un compte') }}</a>
                                 </div>
                             </div>
                             
@@ -193,7 +194,7 @@
                                 <div class="side-item">
                                     <Link :href="route('login')" class="default-btn two">{{ __('Se connecter') }}</Link>
                                     <div class="separator">{{ __('OU') }}</div>
-                                    <Link :href="route('register')" class="default-btn two">{{ __('Créer un compte') }}</Link>
+                                    <Link :href="route('register')" class="default-btn two"  style="background:  rgb(71,179,21);">{{ __('Créer un compte') }}</Link>
                                 </div>
                             </div>
                         </div>

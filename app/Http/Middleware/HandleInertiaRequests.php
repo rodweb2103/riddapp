@@ -48,7 +48,9 @@ class HandleInertiaRequests extends Middleware
 	    
 	    //var_dump($check);exit;
 	    
-	    if(auth()->user()) $user = User::with(['country_user','activity_sector_company_user'])->where("id",auth()->user()->id)->first();
+	    if(auth()->user()) $user = User::with(['country_user','activity_sector_company_user_company','activity_sector_company_user_consult'])->where("id",auth()->user()->id)->first();
+	    
+	    //var_dump("jjjjj");exit;
 	    //$request->session()->forget('status');
         return array_merge(parent::share($request), [
             //

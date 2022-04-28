@@ -288,7 +288,8 @@ class UserController extends Controller
 			         	'phone_number' => $item->phone_number,
 			         	'user_name' => $item->user_name,
 			         	'study_level' => $item->study_level_user->level,
-			         	'activity_sector' => $item->activity_sector_company_user->activity_sector_name	            
+			         	'activity_sector' => ''
+			         	//'activity_sector' => $item->activity_sector_company_user->activity_sector_name	            
 		                //'id' => $item->id_offer,
 		                //'offer_id' => $item->id,
 		                //'title' => $item->title,
@@ -326,7 +327,7 @@ class UserController extends Controller
 	
 	public function get_employers(Request $request){
 		
-	    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user','offers_company'])->whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->paginate(10);
+	    $itemsPaginated = User::with(['country_user','activity_sector_company_user_company','study_level_user','offers_company'])->whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->paginate(10);
 	    
 	   //$grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    
@@ -348,7 +349,7 @@ class UserController extends Controller
 			         	'phone_number' => $item->phone_number,
 			         	'user_name' => $item->user_name,
 			         	//'study_level' => $item->study_level_user->level,
-			         	'activity_sector' => $item->activity_sector_company_user->activity_sector_name,
+			         	'activity_sector' => $item->activity_sector_company_user_company->activity_sector_name,
 			         	'offer_published' => $item->offers_company->count()           
 		                //'id' => $item->id_offer,
 		                //'offer_id' => $item->id,
