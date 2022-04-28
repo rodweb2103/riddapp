@@ -61,6 +61,18 @@
 	    <link rel="stylesheet" href="{{ asset('/css/video-background.css') }}">
 	    <link rel="stylesheet" href="{{ asset('/css/Video-Parallax-Background.css') }}">
 	    <link rel="stylesheet" href="{{ asset('/css/Video-Responsive.css') }}">
+	    
+	    <style type="text/css">
+		    #preloader-area {
+			  position: absolute;
+			  left: 45%;
+			  top: 50%;
+			  height: 100px;
+			  width: 100px;
+			  z-index: 90000;
+			  right: 50%;
+          }
+		    </style>
 
         <!-- Scripts -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
@@ -71,7 +83,6 @@
         @env ('local')
             <script src="http://localhost:3000/browser-sync/browser-sync-client.js"></script>
         @endenv
-        @yield('content')
         
         <script src="{{ asset('/js/bs-init.js') }}"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -83,7 +94,6 @@
 	    <script src="{{ asset('/js/Multi-step-form.js') }}"></script>
 	    <script src="{{ asset('/js/MUSA_form-wizard.js') }}"></script>
 	    <script src="{{ asset('/js/PJansari---Horizontal-Stepper-with-Redial-Progress-Bar.js') }}"></script>
-	    <!--<script src="{{ asset('/js/PJansari--Parallax-Video.js') }}"></script>-->
 	    <script src="{{ asset('/js/slick-animation.min.js') }}"></script>
 	    <script src="{{ asset('/js/slick.min.js') }}"></script>
 	    <script src="{{ asset('/js/step-form.js') }}"></script>

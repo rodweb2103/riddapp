@@ -13,7 +13,7 @@
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>-->
-                 <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 60px;"/>
+                <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 150px;max-width: unset !important;"/>
                 
             </div>
             <div class="preloader-section preloader-left"></div>
@@ -74,8 +74,14 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="/news" class="nav-link">
                                         {{ __('Actualités') }}
+                                    </a>
+                                </li>
+                                
+                                 <li class="nav-item">
+                                    <a href="contact.html" class="nav-link">
+                                        {{ __('Orientations') }}
                                     </a>
                                 </li>
 
@@ -371,7 +377,7 @@ export default defineComponent({
       //document.body.appendChild(fontAwesome)
       
       
-      $('body').addClass('loaded');
+      //$('body').addClass('loaded');
       
       //let fontAwesome2 = document.createElement('script')
       //fontAwesome2.setAttribute('src', '/assets/js/custom.js')

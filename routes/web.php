@@ -117,6 +117,16 @@ Route::get('/consult/level',[UserController::class, 'consult_level'])->name('con
 Route::get('/contract/types',[UserController::class, 'contract_types'])->name('contract_types');
 
 
+Route::get('/news',function(){
+	 
+	 return view('actualites');
+});
+
+Route::get('/news/details',function(){
+	 
+	 return view('actualites_details');
+});
+
 Route::get('/offers/fee',function(){
 	
 	return Inertia::render('Membership');

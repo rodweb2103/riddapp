@@ -37,6 +37,17 @@
         <style>
 	        
 	        
+	      #preloader-area {
+			  position: absolute;
+			  left: 45%;
+			  top: 50%;
+			  height: 100px;
+			  width: 100px;
+			  z-index: 90000;
+			  right: 50%;
+          }
+	        
+	        
 	       .counter-content h3 .odometer {
 		     font-weight: bold;
 		   }
@@ -136,7 +147,7 @@
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>-->
-                 <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 60px;"/>
+                 <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 150px;max-width: unset !important;"/>
             </div>
             <div class="preloader-section preloader-left"></div>
             <div class="preloader-section preloader-right"></div>
@@ -248,8 +259,15 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="/news" class="nav-link">
                                         {{ __('Actualités') }}
+                                    </a>
+                                </li>
+                                
+                                
+                                <li class="nav-item">
+                                    <a href="contact.html" class="nav-link">
+                                        {{ __('Orientations') }}
                                     </a>
                                 </li>
 

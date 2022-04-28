@@ -93,7 +93,15 @@
         <style>
 	        
 	       
-	        
+	       #preloader-area {
+			  position: absolute;
+			  left: 45%;
+			  top: 50%;
+			  height: 100px;
+			  width: 100px;
+			  z-index: 90000;
+			  right: 50%;
+          }
 	       #progressbar{
 		       
 		       padding-left: unset !important;
