@@ -100,9 +100,11 @@
 							                        
 							                        <div class="fields">
 							                        
-													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number" :ignoredCountries="['ci']" enabledCountryCode="true" @validate="validate" v-if="form.account_type == 1"></vue-tel-input>
+													 <!--<vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number" :ignoredCountries="['ci']" enabledCountryCode="true" @validate="validate" v-if="form.account_type == 1"></vue-tel-input>-->
 													 
-													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true" @validate="validate" v-if="form.account_type == 2 || form.account_type == 5"></vue-tel-input>
+													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true" :ignoredCountries="['ci']" @validate="validate" v-if="form.account_type == 1 || form.account_type == 5"></vue-tel-input>
+													 
+													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true"  @validate="validate" v-if="form.account_type == 2"></vue-tel-input>
 													 
 													 
 													 <div v-if="errors.phone_number" style="color:red;">{{ errors.phone_number }}</div>
@@ -222,7 +224,8 @@
 							                         
 							                          <div class="fields">
 							                            <label class="fieldlabels" style="margin-top:20px;margin-bottom:30px;">Votre CV</label> 
-							                            <input type="file" @input="form.candidate_cv = $event.target.files[0]"/> 
+							                            <input type="file" @input="form.candidate_cv = $event.target.files[0]"/>
+							                            <div v-if="errors.candidate_cv" style="color:red;">{{ errors.candidate_cv }}</div>
 							                          </div>
 							                     </div>
 							                     <jet-button class="next action-button" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -266,7 +269,8 @@
 							                         </div>-->
 							                          <div class="fields">
 							                            <label class="fieldlabels" style="margin-top:20px;margin-bottom:30px;">Votre CV</label> 
-							                            <input type="file" @input="form.candidate_cv = $event.target.files[0]"/> 
+							                            <input type="file" @input="form.candidate_cv = $event.target.files[0]"/>
+							                            <div v-if="errors.candidate_cv" style="color:red;">{{ errors.candidate_cv }}</div> 
 							                          </div>
 							                     </div>
 							                     <jet-button class="next action-button" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -305,7 +309,7 @@
 							                        <h2 class="purple-text text-center" style="color:black;" v-if="!isLoading"><strong>{{ __('Création du compte terminée avec succès') }}<br/>{{ __('Veuillez patienter') }}...</strong></h2>
 							                        <h2 class="purple-text text-center" style="color:black;" v-if="isLoading"><strong>{{ __('Création du compte en cours') }}</strong></h2>
 							                        <br>
-							                        <div class="row justify-content-center">
+							                        <div class="row justify-content-center"  v-if="!isLoading">
 							                           <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
 							                        </div>
 							                        <br><br>

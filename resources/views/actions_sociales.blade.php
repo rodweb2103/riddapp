@@ -292,6 +292,20 @@
                         </div>-->
                     </div>
                 </div>
+                    <div class="row">
+	                    
+	                    <div class="col-lg-4 col-md-6">
+		               
+		               <div class="courses-item">
+		                       
+		                      <div class="play-btn-area-two">
+		                            <a href="https://www.dropbox.com/s/a57ha1f3pfy6fge/VID-20210618-WA0068.mp4?dl=0" class="play-btn">
+		                                <i class="flaticon-play-button-arrowhead"></i>
+		                            </a>
+                              </div> 
+	                    </div>
+		            
+		            </div>
             </div>
             </div>
         </div>

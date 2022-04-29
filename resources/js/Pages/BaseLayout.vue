@@ -160,7 +160,7 @@
                             </div>
                             <div class="others-options d-flex align-items-center ml-20" v-if="!$page.props.user">
                                 <div class="optional-item">
-                                    <a href="/login" class="default-btn two" style="background:  green none repeat scroll 0% 0%;">{{ __('Créer un compte') }}</a>
+                                    <Link href="/register" class="default-btn two" style="background:  green none repeat scroll 0% 0%;">{{ __('Créer un compte') }}</Link>
                                 </div>
                             </div>
                             
@@ -206,7 +206,7 @@
         <footer class="footer-area" style="background: var(--bgColor);">
             <div class="container pt-100 pb-70">
                  <div class="row">
-                    <div class="col-lg-3 col-sm-6">
+                    <div class="col-lg-4 col-sm-6">
                         <div class="footer-widget">
                             <div class="footer-logo">
                                 <a href="index.html">
@@ -234,75 +234,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget ps-5">
-                            <h3>{{ __('Services') }}</h3>
-                            <ul class="footer-list">
-	                            <li><a href="#">{{ __('Offres') }}</a></li>
-		                        <li><a href="#">{{ __('Activités') }}</a></li>
-		                        <li><a href="#">{{ __('Actualités') }}</a></li>
-                                <!--<li>
-                                    <a href="about.html">
-                                        About Us
-                                    </a>
-                                </li> 
-                                <li>
-                                    <a href="signup.html">
-                                        Instructor registration
-                                    </a>
-                                </li> 
-                                <li>
-                                    <a href="instructors.html">
-                                        Instructors
-                                    </a>
-                                </li> 
-                                <li>
-                                    <a href="event.html">
-                                        Our Event
-                                    </a>
-                                </li> 
-                                <li>
-                                    <a href="courses-list.html">
-                                        Courses List
-                                    </a>
-                                </li>-->
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget ps-5">
-                            <h3>{{ __('Qui sommes nous ?') }}</h3>
-                            <ul class="footer-list">
-	                            <li><a href="#">{{ __('RIDD') }}</a></li>
-		                        <li><a href="#">{{ __('Equipe') }}</a></li>
-                                <!--<li>
-                                    <a href="index.html">
-                                        Home
-                                    </a>
-                                </li> 
-                                <li>
-                                    <a href="courses.html">
-                                        Courses
-                                    </a>
-                                </li> 
-                                <li>
-                                    <a href="blog.html">
-                                        Our Blog
-                                    </a>
-                                </li> 
-                                <li>
-                                    <a href="terms-condition.html">
-                                        Terms &amp; conditions
-                                    </a>
-                                </li> 
-                                <li>
-                                    <a href="privacy-policy.html">
-                                        Privacy Policy
-                                    </a>
-                                </li>-->
-                            </ul>
-                        </div>
-                    </div>
+                    
                     <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget ps-5">
                             <h3>{{ __('Nos contacts') }}</h3>
@@ -329,6 +261,81 @@
                                     </div>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-sm-6">
+                        <div class="footer-widget ps-5">
+                            <h3>{{ __('Newsletter') }}</h3>
+                            <!--<h1>Souscrivez à votre newsletter afin d'être au parfum de toutes les activités du RIDD</h1>-->
+				            
+				            <div class="newsletter-area pb-100">
+					                <div class="row">
+					                    <div class="col-lg-11">
+					                        <form class="newsletter-form" data-toggle="validator" method="POST" novalidate="true">
+					                            <input type="email" class="form-control" :placeholder="__('Entrer votre adresse e-mail')" name="EMAIL" required="" autocomplete="off">
+					                            <button  class="subscribe-btn disabled" type="submit" style="pointer-events: all; cursor: pointer;background: rgb(240, 128, 0) !important;">
+					                                {{ __('S\'abonner') }}  <i class="flaticon-paper-plane"></i>
+					                            </button>
+					                            <!--<div id="validator-newsletter" class="form-result"></div>-->
+					                        </form>
+					                    </div>
+				            </div>
+				            
+                            <!--<ul class="footer-contact">-->
+	                            <!--<li>
+	                                 <span>ARE YOU IMPRESSED FOR AMAZING SERVICES?</span>
+				                     <h2>Subscribe our newsletter</h2>-->
+	                                 <!--<div class="newsletter-area section-bg ptb-100">
+				            <div class="container">
+				                <div class="row">
+				                    <div class="col-lg-5">
+				                        <div class="section-title mt-rs-20">
+				                            <span>ARE YOU IMPRESSED FOR AMAZING SERVICES?</span>
+				                            <h2>Subscribe our newsletter</h2>
+				                        </div>
+				                    </div>
+				                    <div class="col-lg-7">
+				                        <form class="newsletter-form" data-toggle="validator" method="POST" novalidate="true">
+				                            <input type="email" class="form-control" placeholder="Enter Your Email Address" name="EMAIL" required="" autocomplete="off">
+				                            <button class="subscribe-btn disabled" type="submit" style="pointer-events: all; cursor: pointer;">
+				                                Subscribe Now  <i class="flaticon-paper-plane"></i>
+				                            </button>
+				                            <div id="validator-newsletter" class="form-result"></div>
+				                        </form>
+				                    </div>
+				                </div>
+				            </div>-->
+	                            <!--</li>
+                            </ul>-->
+                            
+                            
+                            
+
+                        </div>
+                            
+                            <!--<ul class="footer-contact">
+                                <li>
+                                    <i class="ri-map-pin-2-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Location') }}:</h4>
+                                        <span>Côte d'Ivoire, Marcory Remblais</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="ri-mail-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Email') }}:</h4>
+                                        <span><a href="mailto:hello@ledu.com">contact@ridd.ci</a></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="ri-phone-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Phone') }}:</h4>
+                                        <span><a href="tel:098765432150">+2250779379838</a></span>
+                                    </div>
+                                </li>
+                            </ul>-->
                         </div>
                     </div>
                 </div>

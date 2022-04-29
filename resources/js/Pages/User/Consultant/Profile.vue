@@ -72,14 +72,14 @@
             
             <div class="card card-primary" style="padding: unset !important;">
               <div class="card-header">
-                <h3 class="card-title">About Me</h3>
+                <h3 class="card-title">Mes infos</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <strong><i class="fas fa-book mr-1"></i>Domaine d'intervention</strong>
 
                 <p class="text-muted">
-                  {{ $page.props['candidate_details']['activity_sector_company_user']['activity_sector_name'] }}
+                  {{ $page.props['candidate_details']['activity_sector_company_user_consult']['activity_sector_name'] }}
                 </p>
 
                 <hr>

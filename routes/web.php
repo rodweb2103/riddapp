@@ -483,6 +483,7 @@ Route::get('/annonces/{id}', function (Request $request,$id) {
 	    
 	     "id" => $offer_details[0]->id,
 	     "id_offer" => $offer_details[0]->id_offer,
+	     "contract_type" => $offer_details[0]->contract_type,
 	     "company_id" => $offer_details[0]->company->id,
 	     "title" => $offer_details[0]->title,
 	     "offers_details" => $offer_details[0]->offers_details,

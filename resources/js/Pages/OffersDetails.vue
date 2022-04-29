@@ -7,6 +7,9 @@
                 <div class="inner-title">
 	                <!--{{ offerDetails }}-->
 	                {{ $page.props.flash }}
+	                
+	                <!--{{ $page.props }}-->
+	                
                     <h3>{{ offerDetails['title'] }}</h3>
                     <!--<div class="rating">
                         <i class="ri-star-fill"></i>4k+ rating
@@ -66,10 +69,16 @@
 	                                                
 	                                                {{ offerDetails['study_level'] }}
 	                                                
+	                                                
                                                 </p>
                                             </div>
                                             
-                                            <form @submit.prevent="submitCV" v-if="$page.props['auth']['user'] && $page.props['is_employer'] != 1 && $page.props.offer_is_bidded == 0">
+                                            <!--{{ $page.props.offerDetails.contract_type }}
+                                            {{ $page.props['is_consult'] }}
+                                            
+                                            {{ $page.props['auth']['user'] && ((($page.props.offerDetails.contract_type == 1 || $page.props.offerDetails.contract_type == 2) && $page.props['is_candidate'] == 1) || ($page.props.offerDetails.contract_type == 3 && $page.props['is_consult'] == 1)) && $page.props.offer_is_bidded == 0 }}-->
+                                            
+                                <form @submit.prevent="submitCV" v-if="$page.props['auth']['user'] && ( (($page.props.offerDetails.contract_type == 1 || $page.props.offerDetails.contract_type == 2) && $page.props['is_candidate'] == 1) || ($page.props.offerDetails.contract_type == 3 && $page.props['is_consult'] == 1)) && $page.props.offer_is_bidded == 0">
                                             
                                               <button :disabled="formCV.processing" class="default-btn two" style="background: rgb(71,179,21) none repeat scroll 0% 0%;" href="https://beta.ridd.info/login">
                                                   <div v-show="formCV.processing" class="spinner-border spinner-border-sm" role="status">
@@ -82,6 +91,7 @@
                                             </form>
                                             <div v-if="$page.props.offer_is_bidded == 1 && $page.props.status==null">Vous avez déjà postulé à cette offre</div>
                                             <div v-if="$page.props.offer_is_bidded == 1 && $page.props.status!=null">{{ $page.props.status }}</div>
+                                            
                                             
                                             <Link v-if="!$page.props['auth']['user'] && $page.props['is_employer'] != 1" href="/login" class="default-btn two" style="background: rgb(240, 128, 0) none repeat scroll 0% 0%">{{ __('Se connecter') }}</Link>
                                             

@@ -730,25 +730,45 @@ class UserController extends Controller
     }
     public function validate_step2(Request $request){
 	    
-	    $request->validate([
+	    
+	    $array_type_validation = array(
+		    
 		    //'user_type' => 'required',
 		    'first_name' => 'required',
 		    'last_name' => 'required',
 		    'email' => 'required|unique:users',
-		    'phone_number' => 'required',
+		    'phone_number' => 'required_if:account_type,1,2,5',
 		    //'ccode' => 'required',
 		    'city' => 'required'
-        ],[
+		    
+	    );
+	    
+	    $array_type_validation_message = array(
+		    
 		      'user_type.required'=> trans('Le type d\'utlisateur est requis'), // custom message
 		      'first_name.required'=> trans('Le prénom est requis'), // custom message
 		      'last_name.required'=> trans('Le nom est requis'), // custom message,
 		      'email.required'=> trans('Le courriel est requis'), // custom message,
-		      'phone_number.required' => trans('Le numéro de téléphone est requis'),
+		      'phone_number.required_if' => trans('Le numéro de téléphone est requis'),
 		      'city.required' => trans('La ville est requise'),
 		      'email.unique' => trans('Le courriel a déjà été utilisé')
-		      //'ccode.required' => 'Le pays est requis'
-		      //'password_confirmation.same'=> 'Les mots de passe doivent être identiques', // custom message,
-         ]);
+	    );
+	    
+	    if ($request->file('profile_photo')!=null){
+	    //if($request->file('profile_photo')->isValid()){
+		    
+		   
+		    $array_type_validation['profile_photo'] = 'image|mimes:jpeg,png,jpg,gif,svg|max:2048';
+		    $array_type_validation_message['image'] = trans('Une image valide est requise');
+		    $array_type_validation_message['mimes'] = trans('L\'extension du fichier est invalide. Les extensions acceptés sont (jpeg,png,jpg,gif,svg)');
+		    $array_type_validation_message['max'] = trans('La taille de l\'image ne doit pas excéder 2Mo');
+	    }
+	    
+	    
+	    
+	    
+	    
+	    $request->validate($array_type_validation,$array_type_validation_message);
         
         return redirect()->back();
 	
@@ -769,7 +789,8 @@ class UserController extends Controller
 		    'company_location' => 'required_if:account_type,==,2',
 		    'consult_level' => 'required_if:account_type,==,5',
 		    'year_exp' => 'required_if:account_type,==,5',
-		    'policy' => 'required'
+		    'policy' => 'required',
+		    "candidate_cv" => "required_if:account_type,1,5|mimes:pdf|max:2000"
 		    //'email' => 'required',
 		    //'phone_number' => 'required_if:user_type,==,',
 		    //'country' => 'required',
@@ -785,7 +806,10 @@ class UserController extends Controller
 		      'year_exp.required_if' => trans('Veuillez spécifier votre année d\'experience'),
 		      //'activity_sector_student.required_if' => trans('Le domaine de formation est requis'),
 		      'activity_sector_company.required_if' => trans('Le secteur d\'activité est requis'),
-		      'activity_sector_consult.required_if' => trans('Le domaine d\'intervention est requis')
+		      'activity_sector_consult.required_if' => trans('Le domaine d\'intervention est requis'),
+		      'candidate_cv.required_if' => trans('Le CV est requis'),
+		      'candidate_cv.mimes' => trans('Le fichier est uploadé est invalide'),
+		      'candidate_cv.max' => trans('La taille du fichier ne doit pas excéder 2Mo')
 		      //'company_name.company_website'=> 'Le nom de l\'entreprise est requis',
 		      //'last_name.required'=> 'Le nom est requis', // custom message,
 		      //'email.required'=> 'Le courriel est requis', // custom message,
@@ -823,6 +847,14 @@ class UserController extends Controller
 		  
 		  $user->password = Hash::make($request->input('password'));
 		  
+		  if($request->file('profile_photo')!=null){
+		      
+		      $name = $request->file('profile_photo')->getClientOriginalName();
+              $path = $request->file('profile_photo')->store('public/profile');
+              $user->profile_photo_path = $path;
+		  }
+		  
+		  
 		  if($request->input('account_type') == 1)  {
 			  
 			  
@@ -830,6 +862,14 @@ class UserController extends Controller
 			   $user->study_level = $request->input('study_level');
 			   $user->user_name = $request->input('user_name');
 			   $user->phone_number = $request->input('phone_number');
+			   
+			   
+			   $path = \Storage::disk('public')->putFileAs('cv',$request->file('candidate_cv'),'cv_'.$request->input('first_name').'_'.$request->input('last_name').'.pdf');
+	           $user->cv_profile = $path;
+	           //$user->save();
+	    
+	           //$url = config('app.url').\Storage::url('profile/'.basename($path));
+			   
 			   //$user->country = $request->input('user_name');
 	      }
 		  
@@ -845,6 +885,8 @@ class UserController extends Controller
 	      
 	      if($request->input('account_type') == 5){
 		      
+		      $path = \Storage::disk('public')->putFileAs('cv',$request->file('candidate_cv'),'cv_'.$request->input('first_name').'_'.$request->input('last_name').'.pdf');
+	          $user->cv_profile = $path;
 		      $user->activity_sector_consult = $request->input('activity_sector_consult');
 		  }
 	      

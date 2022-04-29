@@ -198,7 +198,7 @@
     "Français":"French",
     "Anglais":"English",
     "Rejoignez notre réseau et bénéficiez de nombreuses opportunités.":"Join our network and benefit from many opportunities.",
-    "Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.":"The Ivorian Network of Diaspora Graduates (RIDD) is an organization born on November 15, 2017 at the initiative of young Ivorian graduates from the diaspora.",
+    "Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.":"The Ivorian Network of Diaspora Graduates (RIDD) is an organization born on November 15, 2017 at the initiative of young Ivorian graduates from the diaspora. Its aim is to contribute to creating a framework conducive to the return of graduates from the Ivorian diaspora, to promote Ivorian students trained abroad and to promote young entrepreneurship on national and international territory.",
     "Rejoindre":"Join us",
     "Mission":"Assignment",
     "Notre ADN, notre raison d'être et les objectifs à atteindre se résument à":"Our objectives to be achieved are summed up in",
@@ -399,5 +399,12 @@
     "Le projet « CAFE DU RIDD » s’inscrit dans le cadre du renforcement des capacités de ses membres au plan national et international et les porteurs projets. En effet, le RIDD étant une organisation non gouvernementale ; elle a pour but de participer à transmettre, guider, orienter et aider toute personne désireuse de poursuivre les études, créer un cadre de retour des cerveaux et faire la promotion des Ivoiriens à l’extérieur.":"The « CAFE DU RIDD » project is part of the capacity building of its members at the national and international level and the project leaders. Indeed, the RIDD being a non-governmental organization; it aims to participate in transmitting, guiding, directing and helping anyone wishing to pursue studies, create a framework for brain return and promote Ivorians abroad.",
     "Cette plateforme que représente le café du RIDD, permet à ses membres d’acquérir des connaissances et approfondir leurs compétences pour amorcer leur autonomisation et être outiller pour faire face aux défis qui se présentent au niveau de la jeunesse ivoirienne. Une bonne formation rend plus compétitif, d’où la nécessité pour les membres du réseau d’acquérir des techniques adéquate pour participer au développement du pays.":"This platform represented by the RIDD café, allows its members to acquire knowledge and deepen their skills to begin their empowerment and be equipped to face the challenges that arise at the level of Ivorian youth. Good training makes you more competitive, hence the need for members of the network to acquire adequate techniques to participate in the development of the country.",
     "Vivier de compétences au service de la Côte d'Ivoire":"Pool of skills at the service of Côte d'Ivoire",
-    "Accéder aux offres":"Go to offers"
+    "Accéder aux offres":"Go to offers",
+    "Le CV est requis":"CV is required",
+    "Le fichier est uploadé est invalide":"Invalid file uploaded",
+    "La taille du fichier ne doit pas excéder 2Mo":"File size should not exceed 2MB",
+    "Une image valide est requise":"Valid image is required",
+    "L'extension du fichier est invalide. Les extensions acceptés sont (jpeg,png,jpg,gif,svg)":"Invalid extension only (jpeg,png,jpg,gif,svg) are accepted",
+    "S'abonner":"Subscribe",
+    "Entrer votre adresse e-mail":"Enter Your Email Address"
 }

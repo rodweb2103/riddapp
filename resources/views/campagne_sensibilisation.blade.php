@@ -6,6 +6,13 @@
 		  
 		      background-image: url('/img/banniere-campagne.png') !important;
 		  }
+		  
+		  
+		  .play-btn-area-two {
+             background-image: url('/img/banner-default.jpg');
+             padding: 90px 0;
+             border-radius: unset !important;
+          }
 	    
 	    </style>
 	    
@@ -468,6 +475,7 @@
 	                
 	                
 	                @endforeach
+	                
                     <!--<div class="col-lg-4 col-md-6">
                         <div class="courses-item">
 	                        <a href="assets/images/courses/courses-img2.jpg" class="fancybox" data-pswp-width="2500"
@@ -609,6 +617,24 @@
                         </div>-->
                     </div>
                 </div>
+                    
+                    
+                    <div class="row">
+	                    
+	                    <div class="col-lg-4 col-md-6">
+		               
+		               <div class="courses-item">
+		                       
+		                      <div class="play-btn-area-two">
+		                            <a href="https://www.dropbox.com/s/z1axg9ltxxpa2zc/campagne.mp4?dl=0" class="play-btn">
+		                                <i class="flaticon-play-button-arrowhead"></i>
+		                            </a>
+                              </div> 
+	                    </div>
+		            
+		            </div>
+	                    
+                    </div>
             </div>
         </div>
         </div>
