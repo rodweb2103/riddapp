@@ -106,7 +106,7 @@
 			    <div class="col-4">  
 					    <!--<Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%',dropdownParent:'#openOffer'}"/>-->
 					    <select v-model="form.study_level" class="form-control">
-						    <option selected disabled value>--Durée du contrat--</option>
+						    <option selected disabled value>--Niveau d'étude--</option>
 						    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
 					    </select>
 					    <jet-input-error :message="form.errors.study_level" />

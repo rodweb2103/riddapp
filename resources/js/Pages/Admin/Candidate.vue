@@ -2,6 +2,147 @@
   <app-layout title="Gestion compte employeur">
   
      <div class="container-fluid">
+	     
+	     
+	     <jet-dialog-modal id="openOffer" maxWidth="lg">
+        <template #title>
+          Éditer un compte candidat
+        </template>
+
+        <template #content>
+          
+          <div class="mt-4">
+	          
+	          
+	       <form id="msform">
+		      <div class="row"> 
+		       
+		        <div class="col-6">
+				  <div class="mb-3">
+					<input type="hidden"  v-model="form.id"/>
+				    <input type="text" placeholder="Nom" v-model="form.last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
+				    <jet-input-error :message="form.errors.last_name" style="display: block !important"/>
+				  </div>
+		        </div>
+		        <div class="col-6">
+				  <div class="mb-3">
+					<input type="hidden"  v-model="form.id"/>
+				    <input type="text" placeholder="Prénom" v-model="form.first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
+				    <jet-input-error :message="form.errors.first_name" style="display: block !important"/>
+				  </div>
+		        </div>
+		        
+		        
+		        
+		        
+		      </div>
+		        
+		      
+		      <div class="row"> 
+			      
+			   
+			   <div class="col-4">
+				  <div class="mb-3">
+				    <input type="text" placeholder="Adresse e-mail" v-model="form.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
+				    <jet-input-error :message="form.errors.email" style="display: block !important"/>
+				  </div>
+		        </div>
+		        
+		        <div class="col-4">
+				  <div class="mb-3">
+				     <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Téléphone"}' mode="international" :autoDefaultCountry="true"  v-model="form.phone_number"  enabledCountryCode="true"></vue-tel-input>
+				    <jet-input-error :message="form.errors.phone_number" v-model="form.phone_number" style="display: block !important"/>
+				  </div>
+		        </div>
+		        
+		        
+		       
+			      
+			   <div class="col-4">
+				  <div class="mb-3">
+					<select class="form-select" aria-label="Default select example" v-model="form.account_type">
+                           <option selected disabled value="">--{{ __('Type de compte') }}--</option>
+                           <option value="1">{{ __('Candidat') }}</option>
+                           <option value="5">{{ __('Consultant') }}</option>
+                    </select>
+                    <!--<div v-if="form.errors.account_type" style="color:red;">{{ form.errors.account_type }}</div>-->
+                    <jet-input-error v-if="form.errors.account_type" :message="form.errors.account_type" style="display: block !important"/>
+				</div>
+			      
+		      </div>
+		      </div>
+			  
+			  <div class="row">
+								
+				
+		       
+		     		        
+		        <div class="col-12" v-if="form.account_type == 1">
+				  <div class="mb-3">
+					<select v-model="form.study_level" class="form-control">
+						    <option selected disabled value>--Niveau d'étude--</option>
+						    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+					</select>
+				    <jet-input-error :message="form.errors.study_level" style="display: block !important"/>
+				    
+				  </div>
+		        </div>
+		        
+		       
+		        
+		        <div class="col-7" v-if="form.account_type == 5">
+				  <div class="mb-3">
+					<select v-model="form.activity_sector" class="form-control">
+						    <option selected disabled value>--Domaine d'intervention--</option>
+						    <option :value="ct['id']" v-for="ct in activity_sector">{{ ct['text'] }}</option>
+					</select>
+				    <jet-input-error :message="form.errors.activity_sector" style="display: block !important"/>
+				    
+				  </div>
+		        </div>
+		        
+		        <div class="col-5" v-if="form.account_type == 5">
+				  <div class="mb-3">
+					<select v-model="form.consult_level" class="form-control">
+						    <option selected disabled value>--Niveau--</option>
+						    <option :value="ct['id']" v-for="ct in consult_level">{{ ct['text'] }}</option>
+					</select>
+				    <jet-input-error :message="form.errors.consult_level" style="display: block !important"/>
+				  </div>
+		        </div>
+		   			  
+			  </div>
+			
+			  
+           </form>
+	       
+          </div>
+        </template>
+
+        <template #footer>
+          <jet-secondary-button data-dismiss="modal" @click="closeModal">
+            Annuler
+          </jet-secondary-button>
+          
+          <jet-button class="btn btn-primary" @click="createCandidate" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Confirmer
+          </jet-button>
+          
+          
+        </template>
+      </jet-dialog-modal>
+	     
+	     
+	     <div class="clearfix mt-4">
+                <a @click="openOfferForm" class="btn btn-sm btn-info float-left">Éditer un compte candidat</a>
+         </div>
+         <div class="alert alert-success" v-if="$page.props.status!==null">
+	              {{ $page.props.status }}
+         </div>
        
         <!-- Main row -->
         <div class="row pt-3">
@@ -37,6 +178,7 @@
                       <th>TÉLÉPHONE</th>
                       <th>PSEUDO</th>
                       <th>NIVEAU D'ÉTUDE</th>
+                      <th>PROFIL</th>
                       <!--<th>DOMAINE DE FORMATION</th>-->
                     </tr>
                     </thead>
@@ -57,6 +199,7 @@
                       <td>
                         {{ data['study_level'] }}
                       </td>
+                      <td>{{ data['account_type'] == 1 ? 'Étudiant' : 'Consultant' }}</td>
                       <!--<td>
                         {{ data['activity_sector'] }}
                       </td>-->
@@ -180,18 +323,19 @@ export default defineComponent({
       contract_duration: ['CDD', 'CDI'],
       offerData: {},
       editMode : 0,
+      consult_level:'',
       viewDataOffer : {},
       form: this.$inertia.form({
         //password: '',
-        id : 0,
-        offer_title:'',
-        activity_sector:'',
-        location:'',
-        contract_type:'',
-        contract_duration:'',
-        offer_details:'',
+        account_type:'',
+        phone_number:'',
+        email : '',
+        first_name:'',
+        last_name:'',
+        account_type:'',
         study_level:'',
-        offer_details:''
+        activity_sector:'',
+        consult_level:''
         
       })
     }
@@ -200,6 +344,23 @@ export default defineComponent({
 	  
 	  //alert("");
 	  this.getResults();
+	  
+	  axios.get('/study/level').then(response => {
+		  
+		  this.study_level = response.data;
+      });
+      
+      axios.get('/consult/level').then(response => {
+		  
+		  
+		  this.consult_level = response.data;
+      });
+      
+      axios.get('/activity/sector').then(response => {
+		  
+		  
+		  this.activity_sector = response.data;
+      });
 	   
       
       
@@ -215,6 +376,16 @@ export default defineComponent({
 	                vm.total_offer = response.data['total'];
                     vm.offerData = response.data['data'];
             });
+      },
+      openOfferForm(editMode = 0) {
+	      //this.form.password = '';
+	      let el = document.querySelector('#openOffer')
+	      this.modal = new bootstrap.Modal(el)
+	      this.modal.show()
+	      this.editMode = editMode;
+	      
+	
+	      //setTimeout(() => this.$refs.password.focus(), 250)
       },
       openDeleteOffer(id){
 	      
@@ -239,11 +410,11 @@ export default defineComponent({
 		  
           this.modal2.hide()
 	  },
-	  removeOffer(id){
-		  this.form['id'] = this.id_delete;
-		  this.form.post(route('candidate.unbid.offer'), {
+	  createCandidate(){
+		  
+		  this.form.post(route('candidate.create'), {
 	        preserveScroll: true,
-	        onSuccess: () => { this.closeModal2();this.getResults();this.id_delete = 0;},
+	        onSuccess: () => { this.closeModal();this.getResults();this.id_delete = 0;},
 	        //onError: () => this.$refs.password.focus(),
 	        onFinish: () => {}/*this.form.reset()*/,
           });

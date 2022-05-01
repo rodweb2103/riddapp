@@ -138,6 +138,7 @@ Route::get('/activity/sector',[UserController::class, 'activity_sector'])->name(
 Route::get('/consult/level',[UserController::class, 'consult_level'])->name('consult_level');
 Route::get('/contract/types',[UserController::class, 'contract_types'])->name('contract_types');
 
+Route::post('/candidate/create',[UserController::class, 'candidate_create'])->name('candidate.create');
 
 
 Route::get('/offers/fee',function(){
@@ -251,13 +252,13 @@ Route::get('/admin/accounts/staff',function(){
 
 Route::get('/account',function(){
 	
-	if (Auth::user()->hasRole('Candidate') || Auth::user()->hasRole('Consultant')) {
+	if (Auth::user()->hasRole('Student') || Auth::user()->hasRole('Consultant')) {
 	   return Inertia::render('User/Candidate/Dashboard');
 	}else{
 	   return Inertia::render('User/Employer/Dashboard');
 	}
     //return Inertia::render('User/Dashboard');
-})->middleware(['auth:sanctum','role:Candidate|Employer|Consultant'])->name('user.dashboard');
+})->middleware(['auth:sanctum','role:Student|Employer|Consultant'])->name('user.dashboard');
 
 
 Route::post('/account/profile/image/upload',[UserController::class, 'profile_image_upload'])->name('profile.image.upload');
@@ -267,7 +268,7 @@ Route::post('/account/profile/update',[UserController::class, 'profile_update'])
 Route::get('/account/profile',function(){
 	
 	//return Inertia::render('User/Profile');
-	if (Auth::user()->hasRole('Candidate')) {
+	if (Auth::user()->hasRole('Student')) {
 	   return Inertia::render('User/Candidate/Profile');
 	
 	}else if(Auth::user()->hasRole('Employer')){
@@ -280,7 +281,7 @@ Route::get('/account/profile',function(){
 		
 	}
     //return Inertia::render('User/Dashboard');
-})->middleware(['auth:sanctum','role:Candidate|Employer|Consultant','verified'])->name('user.dashboard');
+})->middleware(['auth:sanctum','role:Student|Employer|Consultant','verified'])->name('user.dashboard');
 
 //Route::get('/offers',function(){
 //    return Inertia::render('User/Offers');
@@ -537,7 +538,7 @@ Route::get('/offre/details', function () {
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', function () {
         
-        if (Auth::user()->hasRole('Candidate') || Auth::user()->hasRole('Employer')) {
+        if (Auth::user()->hasRole('Student') || Auth::user()->hasRole('Employer')) {
 	       return redirect('/account/profile');
            //return Inertia::render('Dashboard');
         }

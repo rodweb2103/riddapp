@@ -80,10 +80,13 @@ class User extends Authenticatable implements MustVerifyEmail
 	    return $this->belongsTo(StudyLevel::class,'study_level','id');
     }
     
-    //public function activity_sector_company_user(){
+    
+    
+    
+    public function activity_sector_company_user(){
 	    
-	//    return $this->belongsTo(ActivitySector::class,'activity_sector_student','id');
-    //}
+	    return $this->belongsTo(ActivitySector::class,'activity_sector_student','id');
+    }
     
     public function activity_sector_company_user_consult(){
 	    
@@ -104,5 +107,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsToMany(Offers::class,'offers_bid','user_id','offer_id')->withPivot('offer_status','offer_date');
     }
+    
+    
     
 }

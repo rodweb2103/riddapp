@@ -12,6 +12,7 @@ use App\Models\ConsultLevel;
 use App\Models\ContractType;
 use Spatie\Permission\Models\Role;
 use Illuminate\Validation\Rule;
+use App\Notifications\NewUserAdded;
 
 class UserController extends Controller
 {
@@ -27,11 +28,76 @@ class UserController extends Controller
     }
     
     
+    public function candidate_create(Request $request){
+	    
+	    //exit;
+	      
+	    $array_type_validation = array(
+		    
+		    'first_name' => 'required',
+		    'last_name' => 'required',
+		    'email' => 'required|unique:users',
+		    'study_level' => 'required_if:account_type,1',
+		    'activity_sector' => 'required_if:account_type,5',
+		    'consult_level' => 'required_if:account_type,5',
+		    'account_type' => 'required'
+		   		    
+	    );
+	    
+	    $array_type_validation_message = array(
+		    
+		      'first_name.required'=> trans('Le prénom est requis'), // custom message
+		      'last_name.required'=> trans('Le nom est requis'), // custom message,
+		      'email.required'=> trans('Le courriel est requis'), // custom message,
+		      'study_level.required_if' => trans('Le niveau d\'étude est requis'),
+		      'activity_sector.required_if' => trans('Le domaine d\'intervention est requis'),
+		      'consult_level.required_if' => trans('Le niveau du consultant est requis'),
+		      'account_type.required' => trans('Le type de compte est requis'),
+		      'email.unique' => trans('Le courriel a déjà été utilisé')
+	    );
+	   	    
+	    
+	    
+	      $request->validate($array_type_validation,$array_type_validation_message);
+		  
+		  $user = new User;
+		  
+		  $user->email = $request->input('email');
+		  $user->first_name = $request->input('first_name');
+		  $user->last_name = $request->input('last_name');
+		  $user->phone_number = $request->input('phone_number');
+		  $user->city = "";
+		  //$user->user_name = $request->input('user_name');
+		  $user->country = 53;
+		  
+		  
+		  if($request->input('account_type') == 1){
+	         $role = Role::where('name', '=', 'Student')->firstOrFail();
+	         $user->study_level = $request->input('study_level');
+	         
+	         
+	      
+	      }else if($request->input('account_type') == 5){
+		     $role = Role::where('name', '=', 'Consultant')->firstOrFail();
+		     $user->activity_sector_consult = $request->input('activity_sector');
+	      }
+	      
+	      $pass = \Str::random(6);
+	      $user->password = Hash::make($pass);
+	      $user->assignRole($role);
+	      $user->save();
+	      //$user->sendEmailVerificationNotification();
+	      $user->notify(new NewUserAdded($user,$pass));
+	      //\Mail::to($user->email)->send(new VerifyMail($user));
+	      return redirect()->back()->with('status','Le compte a été crée avec succès !');
+    }
+    
+    
     public function ajax_staff_create(Request $request){
 	    
 	    $request->validate([
 		    //'activity_sector' => 'required',
-		    'user_name' => 'required',
+		    //'user_name' => 'required',
 		    'first_name' => 'required',
 		    'last_name' => 'required',
 		    'email' => 'required|email|unique:users',
@@ -45,8 +111,8 @@ class UserController extends Controller
 		      'email.unique' => trans('Le courriel a déjà été utilisé'),
 		      'first_name.required'=> trans('Le prénom est requis'), // custom message
 		      'last_name.required'=> trans('Le nom est requis'), // custom message,
-		      'user_name.required'=> trans('Le nom d\'utlisateur est requis'), // custom message
-		      'user_name.unique'=> trans('Le nom d\'utlisateur existe déjà'), // custom message
+		      //'user_name.required'=> trans('Le nom d\'utlisateur est requis'), // custom message
+		      //'user_name.unique'=> trans('Le nom d\'utlisateur existe déjà'), // custom message
 		      'password.required'=> trans('Le mot de passe est requis'), // custom message,
 		      'password_confirmation.required'=> trans('Le mot de passe confirmation est requis'), // custom message,
 		      'password_confirmation.same'=> trans('Les mots de passe doivent être identiques'), // custom message,
@@ -61,7 +127,7 @@ class UserController extends Controller
 		  $user->email = $request->input('email');
 		  $user->first_name = $request->input('first_name');
 		  $user->last_name = $request->input('last_name');
-		  $user->user_name = $request->input('user_name');
+		  //$user->user_name = $request->input('user_name');
 		  $user->password = Hash::make($request->input('password'));
 		  $role = Role::where('name', '=', 'Staff')->firstOrFail();
 		  $user->assignRole($role);
@@ -135,7 +201,7 @@ class UserController extends Controller
     
     public function new_candidate(Request $request){
 	    
-	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->paginate(8);
+	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Student"); })->paginate(8);
 	    //$grandTotal =  User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    $itemsTransformed = $itemsPaginated->map(function($item) {
 			        //var_dump($item->company->profile_photo_path);exit;
@@ -255,7 +321,7 @@ class UserController extends Controller
     
     public function admin_stats(Request $request){
 	    
-	    $candidates = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get();
+	    $candidates = User::whereHas("roles", function($q) use($request) { $q->where("name","Student"); })->selectRaw('COUNT(*) AS nb')->get();
 	    $employers = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get();
 	    $offres = Offers::all();
 	    
@@ -266,7 +332,7 @@ class UserController extends Controller
     public function get_candidates(Request $request){
 	    
 	    //exit;
-	    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user'])->whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->paginate(10);
+	    $itemsPaginated = User::with(['country_user','activity_sector_company_user','study_level_user','activity_sector_company_user_consult','roles'])->whereHas("roles", function($q) use($request) { $q->where("name","Student")->orWhere("name","Consultant"); })->paginate(10);
 	    
 	    //$grandTotal = User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    
@@ -276,7 +342,7 @@ class UserController extends Controller
 			        //var_dump($item->company->profile_photo_path);exit;
 			        //$url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
 			        
-			        //var_dump($item->study_level_user);exit;
+			        //var_dump($item->roles[0]->name);exit;
 			        
 		            return [
 			         	
@@ -287,8 +353,9 @@ class UserController extends Controller
 			         	'city' => $item->city,
 			         	'phone_number' => $item->phone_number,
 			         	'user_name' => $item->user_name,
-			         	'study_level' => $item->study_level_user->level,
-			         	'activity_sector' => ''
+			         	'study_level' => @$item->study_level_user->level,
+			         	'activity_sector' => @$item->activity_sector_company_user_consult->activity_sector_name,
+			         	'account_type' => $item->roles[0]->id
 			         	//'activity_sector' => $item->activity_sector_company_user->activity_sector_name	            
 		                //'id' => $item->id_offer,
 		                //'offer_id' => $item->id,
@@ -513,7 +580,7 @@ class UserController extends Controller
     public function profile_update(Request $request){
 	    
 	    
-	    if(\Auth::user()->hasRole('Admin') || \Auth::user()->hasRole('Candidate')){
+	    if(\Auth::user()->hasRole('Admin') || \Auth::user()->hasRole('Student')){
 	    
 		    $request->validate([
 			    
@@ -892,7 +959,7 @@ class UserController extends Controller
 	      
 	      if($request->input('account_type') == 1){
 	      
-	         $role = Role::where('name', '=', 'Candidate')->firstOrFail();
+	         $role = Role::where('name', '=', 'Student')->firstOrFail();
 	      }else if($request->input('account_type') == 2) {
 		      
 		     $role = Role::where('name', '=', 'Employer')->firstOrFail();
