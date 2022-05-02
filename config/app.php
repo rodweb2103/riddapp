@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
+use Carbon\Carbon;
+
+$now = new \DateTime();
+$tz = $now->getTimezone();
+$tz = $tz->getName();
 
 return [
 
@@ -68,8 +73,8 @@ return [
     | ahead and set this to a sensible default for you out of the box.
     |
     */
-
-    'timezone' => 'UTC',
+    'timezone' => $tz,
+    //'timezone' => 'UTC+2',
 
     /*
     |--------------------------------------------------------------------------

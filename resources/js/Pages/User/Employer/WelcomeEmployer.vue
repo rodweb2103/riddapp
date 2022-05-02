@@ -257,7 +257,7 @@
         
         <!-- /.card-body -->
               <div class="clearfix mt-4">
-                <a @click="openOfferForm" class="btn btn-sm btn-info float-left">Éditer une annonce</a>
+                <a @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green;">Éditer une annonce</a>
               </div>
               <div class="alert alert-success" v-if="$page.props.status!==null">
 	              {{ $page.props.status }}
@@ -311,11 +311,11 @@
 			                    
 		                    </td>
 		                    <td>
-			                    <a href="#" @click="loadOffer(data.id)"><i class="fas fa-eye" style="padding: 10px;"></i></a>
-			                    <a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 10px;"></i></a>
-			                    <Link :href="`${'/view/cv/candidates/'+data.id}`"><i class="fas fa-file-pdf" style="padding: 10px;"></i></Link>
+			                    <a href="#" @click="loadOffer(data.id)"><i class="fas fa-eye"></i></a>
+			                    <a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 5px;"></i></a>
+			                    <Link :href="`${'/view/cv/candidates/'+data.id}`"><i class="fas fa-file-pdf" style="padding: 5px;"></i></Link>
 			               </td>
-			               <td>{{ data.candidates }}</td>
+			               <td class="text-center">{{ data.candidates }}</td>
 		                    
 	                    </tr>
                     <!--<tr>

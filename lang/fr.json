@@ -374,6 +374,10 @@
     "Le secteur d'activité est requis":"Le secteur d'activité est requis",
     "Le domaine d'intervention est requis":"Le domaine d'intervention est requis",
     "Le domaine de formation est requis":"Le domaine de formation est requis",
-    "Témoignages":"Témoignages"
-    
+    "Témoignages":"Témoignages",
+    "Whoops! Something went wrong.":"Une erreur s'est produite",
+    "Verify Email Address" : "Vérifier votre addresse e-mail",
+    "Click the button below to verify your email address.":"Cliquer afin de vérifier votre addresse e-mail",
+    "If you’re having trouble clicking the \":actionText\" button, copy and paste the URL below\ninto your web browser:": "Si vous ne parvenez pas à cliquer sur le bouton \":actionText\", copiez et collez l'URL ci-dessous\ndans votre navigateur web:",
+    "All rights reserved.": "Tout droits reservés."    
 }

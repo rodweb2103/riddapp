@@ -128,7 +128,7 @@ Le Premier Ministre Patrick Achi avait présidé le 19 juillet 2021 à Abidjan l
 	                        
 	                        <div class="row">
 						      <div class="col-12">
-					             <img src="https://beta.ridd.info/img/bannieres/ezgif.com-gif-maker.gif" alt="Team Images">
+					             <img src="https://beta.ridd.info/img/bannieres/ezgif.com-gif-maker(1).gif" alt="Team Images">
 						      </div>
 					          <div class="col-12 mt-4">
 					            <img src="https://beta.ridd.info/img/bannieres/banner-gauto.png" alt="Team Images">

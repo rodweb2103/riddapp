@@ -50,6 +50,8 @@ class HandleInertiaRequests extends Middleware
 	    
 	    if(auth()->user()) $user = User::with(['country_user','activity_sector_company_user_company','activity_sector_company_user_consult'])->where("id",auth()->user()->id)->first();
 	    
+	    //ar_dump(auth()->user()->hasRole('Candidate') || auth()->user()->hasRole('Consultant') );exit;
+	    
 	    //var_dump("jjjjj");exit;
 	    //$request->session()->forget('status');
         return array_merge(parent::share($request), [
@@ -60,15 +62,15 @@ class HandleInertiaRequests extends Middleware
 			            base_path('lang/'. app()->getLocale() .'.json')
 			        );
 			    },
-			    'offer_is_bidded' => auth()->user() ? auth()->user()->hasRole('Candidate') || auth()->user()->hasRole('Consultant') ? count($check):-1 : 0,
+			    'offer_is_bidded' => auth()->user() ? auth()->user()->hasRole('Student') || auth()->user()->hasRole('Consultant') ? count($check):-1 : 0,
 			    'locale' => app()->getLocale(),
                 'status' => fn () => $request->session()->get('status'),
                 'appName' => config('app.name'),
                 'is_admin' => auth()->user() ? auth()->user()->hasRole('Admin') ? 1 : 0 : 0,
                 'is_employer' => auth()->user() ? auth()->user()->hasRole('Employer') ? 1 : 0 : 0,
-                'is_candidate' => auth()->user() ? auth()->user()->hasRole('Candidate') ? 1 : 0 : 0,
+                'is_candidate' => auth()->user() ? auth()->user()->hasRole('Student') ? 1 : 0 : 0,
                 'is_consult' => auth()->user() ? auth()->user()->hasRole('Consultant') ? 1 : 0 : 0,
-                'candidate_details' => auth()->user() ? auth()->user()->hasRole('Candidate') || auth()->user()->hasRole('Consultant')  ? @$user : [] : [],
+                'candidate_details' => auth()->user() ? auth()->user()->hasRole('Student') || auth()->user()->hasRole('Consultant')  ? @$user : [] : [],
                 'file_cv' => basename(@$user->cv_profile),
 	            'auth.user' => fn () => $request->user()
 	                ? $request->user()->only('id', 'name', 'email')

@@ -3,21 +3,8 @@
 
 
 <!-- Inner Banner -->
-        <div class="inner-banner inner-banner-bg8">
-            <div class="container">
-                <div class="inner-title text-center">
-                    <!--<h3>Coming Soon</h3>
-                    <ul>
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li>Coming Soon</li>
-                    </ul>-->
-                </div>
-            </div>
-        </div>
+        
         <!-- Inner Banner End -->
-
         <!-- Start Coming Soon Area -->
         <div class="coming-soon-area ptb-100">
             <div class="d-table">

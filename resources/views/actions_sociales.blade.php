@@ -6,6 +6,12 @@
 		  
 		      background-image: url('/img/banniere-gradient.png') !important;
 		  }
+		  
+		  .play-btn-area-two {
+             background-image: url('/img/banner-default.jpg');
+             padding: 90px 0;
+             border-radius: unset !important;
+          }
 	    
 	    </style>
 	    
@@ -299,7 +305,7 @@
 		               <div class="courses-item">
 		                       
 		                      <div class="play-btn-area-two">
-		                            <a href="https://www.dropbox.com/s/a57ha1f3pfy6fge/VID-20210618-WA0068.mp4?dl=0" class="play-btn">
+		                            <a href="https://www.dropbox.com/s/z1axg9ltxxpa2zc/campagne.mp4?dl=0" class="play-btn">
 		                                <i class="flaticon-play-button-arrowhead"></i>
 		                            </a>
                               </div> 

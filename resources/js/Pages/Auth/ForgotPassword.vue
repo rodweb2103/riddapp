@@ -20,7 +20,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 ">
                                             <div class="form-group">
-                                                <input type="text" v-model="form.email" name="name" id="name" class="form-control"  data-error="Username Or Email Address*" placeholder="Username Or Email Address*">
+                                                <input type="text" v-model="form.email" name="name" id="name" class="form-control"  data-error="Username Or Email Address*" :placeholder="__('Adresse e-mail')">
                                             </div>
                                         </div>
 

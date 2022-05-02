@@ -89,8 +89,8 @@
                                               
                                               
                                             </form>
-                                            <div v-if="$page.props.offer_is_bidded == 1 && $page.props.status==null">Vous avez déjà postulé à cette offre</div>
-                                            <div v-if="$page.props.offer_is_bidded == 1 && $page.props.status!=null">{{ $page.props.status }}</div>
+                                            <div style="color:green;" v-if="$page.props.offer_is_bidded == 1 && $page.props.status==null">Vous avez déjà postulé à cette offre</div>
+                                            <div  style="color:green;" v-if="$page.props.offer_is_bidded == 1 && $page.props.status!=null">{{ $page.props.status }}</div>
                                             
                                             
                                             <Link v-if="!$page.props['auth']['user'] && $page.props['is_employer'] != 1" href="/login" class="default-btn two" style="background: rgb(240, 128, 0) none repeat scroll 0% 0%">{{ __('Se connecter') }}</Link>

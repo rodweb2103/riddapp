@@ -35,10 +35,7 @@
 
                                         <div class="col-lg-12 form-condition">
                                             <div class="agree-label">
-                                                <!--<input type="checkbox" id="chb1">
-                                                <label for="chb1">
-                                                    Remember Me <a class="forget" href="forgot-password.html">Forgot Password?</a>
-                                                </label>-->
+                                                
                                                 <jet-checkbox id="remember_me" name="remember" v-model:checked="form.remember" style="margin-left: unset !important;" />
 	                                            <label for="remember_me">
 	                                                  {{ __('Se souvenir de moi') }}
@@ -50,9 +47,7 @@
                                         </div>
         
                                         <div class="col-lg-12 col-md-12">
-                                            <!--<button type="submit" class="default-btn">
-                                                Login Now
-                                            </button>-->
+                                           
                                             
                                             <div class="row">
                                             
@@ -64,17 +59,9 @@
 										              <div v-if="!form.processing">{{ __('Connexion') }}</div>
 		                                         </jet-button>
                                              </div>
-                                             <!--<div class="col-md-1 col-12 text-center">
-	                                            <div class="position-absolute top-40 start-50 translate-middle">{{ __('OU') }}</div>
-                                             </div>
-                                             <div class="col-md-3 col-12 text-center">
-	                                            <Link class="btn btn-dark text-uppercase" href="/register" style="margin-top: 6px; background: rgb(240, 128, 0) none repeat scroll 0% 0%; border-width: 0px; padding-top: 7px;">{{ __('Créer un compte') }}</Link>
-                                             </div>-->
+                                             
                                             </div>
                                         </div>
-                                        <!--<div class="col-lg-12 col-md-12">
-	                                        
-                                        </div>-->
                                     </div>
                                 </form>
                             </div>

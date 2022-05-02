@@ -865,7 +865,7 @@ class UserController extends Controller
 		    'consult_level' => 'required_if:account_type,==,5',
 		    'year_exp' => 'required_if:account_type,==,5',
 		    'policy' => 'required',
-		    "candidate_cv" => "required_if:account_type,1,5|mimes:pdf|max:2000"
+		    "candidate_cv" => "required_if:account_type,1,5|nullable|mimes:pdf|max:2000"
 		    //'email' => 'required',
 		    //'phone_number' => 'required_if:user_type,==,',
 		    //'country' => 'required',

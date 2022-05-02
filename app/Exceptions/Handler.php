@@ -41,6 +41,8 @@ class Handler extends ExceptionHandler
         });
     }
     
+    
+    
     public function render($request, Throwable $e)
 	{
 	    $response = parent::render($request, $e);

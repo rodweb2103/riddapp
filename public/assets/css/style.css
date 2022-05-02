@@ -51,6 +51,7 @@ Default CSS
   --whiteColor: #ffffff;
   --fontSize: 16px;
   --transition: 0.5s;
+  --headerFonts : 'Montserrat';
 }
 
 .separator {
@@ -84,6 +85,12 @@ body {
   font-family: var(--bodyFonts);
   background: #fff;
   font-family: 'Montserrat' !important;
+}
+
+#preloader .preloader-section {
+  
+  background-color: white !important;
+  
 }
 
 p {
@@ -126,7 +133,7 @@ h1, /*h2,*/ h3, h4, h5, h6 {
   /*color: var(--titleColor);*/
   color: orange;
   line-height: 1.4;
-  font-family: var(--headerFonts);
+  font-family: var(--headerFonts) !important;
 }
 
 h3 {

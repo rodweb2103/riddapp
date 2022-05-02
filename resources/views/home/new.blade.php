@@ -381,7 +381,7 @@
                             </div>
                             <div class="others-options d-flex align-items-center ml-20">
                                 <div class="optional-item">
-                                    <a href="/login" class="default-btn two" style="background: rgb(71,179,21)">{{ __('Créer un compte') }}</a>
+                                    <a href="/login" class="default-btn two" style="background: green">{{ __('Créer un compte') }}</a>
                                 </div>
                             </div>
                             @endguest

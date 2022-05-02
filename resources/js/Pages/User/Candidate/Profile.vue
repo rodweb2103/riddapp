@@ -51,12 +51,14 @@
           <div class="col-md-3">
             <!-- Profile Image -->
             <!--{{ $page.props['candidate_details'] }}-->
-            <div class="card card-primary card-outline">
+            <div class="card card-primary card-outline" style="border-top: 3px solid orange;">
               <div class="card-body box-profile">
                 <div class="text-center">
 	             
                   <!--<img class="profile-user-img img-fluid img-circle" @click="loadImage" :src="imageSrcProfile" alt="User profile picture">-->
-                  
+                 
+                 
+                 
                   
                   <i @click="loadImage" class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="imageSrcProfile==''"></i>
                   <img v-if="imageSrcProfile!=''" class="profile-user-img img-fluid img-circle" @click="loadImage" :src="imageSrcProfile" alt="User profile picture">
@@ -71,7 +73,7 @@
             </div>
             
             <div class="card card-primary" style="padding: unset !important;">
-              <div class="card-header">
+              <div class="card-header" style="background-color: orange;color:000 !important;">
                 <h3 class="card-title">About Me</h3>
               </div>
               <!-- /.card-header -->
@@ -211,7 +213,7 @@
                       <div class="form-group row">
                         <div class="offset-sm-3 col-sm-10">
                           <!--<button type="submit" class="btn btn-danger">Mettre à jour</button>-->
-                           <jet-button class="btn btn-primary"  :class="{ 'text-white-50': formUser.processing }" :disabled="formUser.processing">
+                           <jet-button style="background-color: green;" class="btn"  :class="{ 'text-white-50': formUser.processing }" :disabled="formUser.processing">
 				            <div v-show="formUser.processing" class="spinner-border spinner-border-sm" role="status">
 				              <span class="visually-hidden">Loading...</span>
 				            </div>

@@ -138,7 +138,7 @@
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                     </div>
 	                
-	                <div class="row" style="margin-top: 51px;">
+	                <div class="row pb-3" style="margin-top: 51px;">
 		                    <div class="col-12">
 			                    <img src="https://beta.ridd.info/img/bannieres/banner-yayo2-large.png" alt="Team Images">
 		                    </div>

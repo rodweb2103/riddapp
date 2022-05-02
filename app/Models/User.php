@@ -81,8 +81,6 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     
     
-    
-    
     public function activity_sector_company_user(){
 	    
 	    return $this->belongsTo(ActivitySector::class,'activity_sector_student','id');
@@ -105,7 +103,7 @@ class User extends Authenticatable implements MustVerifyEmail
     
     public function offers()
     {
-        return $this->belongsToMany(Offers::class,'offers_bid','user_id','offer_id')->withPivot('offer_status','offer_date');
+        return $this->belongsToMany(Offers::class,'offers_bid','user_id','offer_id')->withPivot('offer_status','offer_date')->orderBy('offers_bid.offer_date','DESC');
     }
     
     
