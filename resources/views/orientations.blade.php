@@ -65,7 +65,7 @@
                                     <!--<li><i class="ri-time-fill"></i> 11:00 AM</li>-->
                                 </ul>
                                 <h3><a href="#">Bourses universitaires en Chimie, Biologie et Santé</a></h3>
-                                <p>Les bourses universitaires en Chimie, Biologie et Santé sont offertes par l’université Grenoble Alpes, et ce, pour tous les étudiants internationaux...</p>
+                                <p>Les bourses universitaires en Chimie, Biologie et Santé sont offertes par l’université Grenoble Alpes, et ce, pour tous les étudiants...</p>
                             </div>
                         </div>
                     </div>
@@ -102,8 +102,8 @@
                                     <li><i class="ri-map-pin-fill"></i> Allemagne</li>
                                     <!--<li><i class="ri-time-fill"></i> 08:00 AM</li>-->
                                 </ul>
-                                <h3><a href="#">Bourses universitaires de la Fondation Heinrich Böll</a></h3>
-                                <p>Les bourses universitaires de la Fondation Heinrich Böll sont offertes par la Fondation Heinrich Böll et ce pour tous les étudiants internationaux...</p>
+                                <h3><a href="#">Bourses Fondation Heinrich Böll</a></h3>
+                                <p>Les bourses universitaires de la Fondation Heinrich Böll sont offertes par la Fondation Heinrich Böll et ce pour tous les étudiants...</p>
                             </div>
                         </div>
                     </div>
@@ -141,7 +141,7 @@
                                     <!--<li><i class="ri-time-fill"></i> 10:00 AM</li>-->
                                 </ul>
                                 <h3><a href="#">Bourses universitaires à l’Université de Droit</a></h3>
-                                <p>Si vous décrochez une place dans l’Université de Droit, vous pouvez faire des études au Royaume-Uni gratuitement et obtenir un diplôme en licence.</p>
+                                <p>Si vous décrochez une place dans l’Université de Droit, vous pouvez faire des études au Royaume-Uni gratuitement et obtenir un diplôme...</p>
                             </div>
                         </div>
                     </div>

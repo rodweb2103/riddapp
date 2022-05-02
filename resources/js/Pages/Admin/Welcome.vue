@@ -144,13 +144,13 @@
           <div class="col-md-12 pt-5">
             <div class="card">
               <div class="card-header">
-                <h5 class="card-title">Monthly Recap Report</h5>
+                <!--<h5 class="card-title">Rapport des ventes</h5>-->
 
                 <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                  <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
-                  </button>
-                  <div class="btn-group">
+                  </button>-->
+                  <!--<div class="btn-group">
                     <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
                       <i class="fas fa-wrench"></i>
                     </button>
@@ -161,61 +161,64 @@
                       <a class="dropdown-divider"></a>
                       <a href="#" class="dropdown-item">Separated link</a>
                     </div>
-                  </div>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                  </div>-->
+                  <!--<button type="button" class="btn btn-tool" data-card-widget="remove">
                     <i class="fas fa-times"></i>
-                  </button>
+                  </button>-->
                 </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
-	                  
-	                <div class="card bg-gradient-info">
+	                  <!--bg-gradient-info-->
+	                <div class="card">
 			              <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
 			                <h3 class="card-title">
 			                  <i class="fas fa-th mr-1"></i>
-			                  Sales Graph
+			                  Montant des ventes
 			                </h3>
 			
-			                <div class="card-tools">
+			                <!--<div class="card-tools">
 			                  <button type="button" class="btn bg-info btn-sm" data-card-widget="collapse">
 			                    <i class="fas fa-minus"></i>
 			                  </button>
 			                  <button type="button" class="btn bg-info btn-sm" data-card-widget="remove">
 			                    <i class="fas fa-times"></i>
 			                  </button>
-			                </div>
+			                </div>-->
 			              </div>
 			              <div class="card-body"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-			                <canvas class="chart chartjs-render-monitor" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 575px;" width="1150" height="500"></canvas>
+			                <!--<canvas class="chart chartjs-render-monitor" id="line-chart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 575px;" width="1150" height="500"></canvas>-->
+			                <Line
+							    :chart-options="salesChartOptions"
+							    :chart-data="salesChartData"
+							    :chart-id="'line-chart'"
+							    :height="200"
+							    :width="100"
+							    
+							  />
 			              </div>
 			              <!-- /.card-body -->
-			              <div class="card-footer bg-transparent">
+			              <!--<div class="card-footer bg-transparent">
 			                <div class="row">
 			                  <div class="col-4 text-center">
 			                    <div style="display:inline;width:60px;height:60px;"><canvas style="width: 60px; height: 60px;" width="120" height="120"></canvas><input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; appearance: none;"></div>
 			
 			                    <div class="text-white">Mail-Orders</div>
 			                  </div>
-			                  <!-- ./col -->
 			                  <div class="col-4 text-center">
 			                    <div style="display:inline;width:60px;height:60px;"><canvas style="width: 60px; height: 60px;" width="120" height="120"></canvas><input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; appearance: none;"></div>
 			
 			                    <div class="text-white">Online</div>
 			                  </div>
-			                  <!-- ./col -->
 			                  <div class="col-4 text-center">
 			                    <div style="display:inline;width:60px;height:60px;"><canvas style="width: 60px; height: 60px;" width="120" height="120"></canvas><input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: bold 12px Arial; text-align: center; color: rgb(57, 204, 204); padding: 0px; appearance: none;"></div>
 			
 			                    <div class="text-white">In-Store</div>
 			                  </div>
-			                  <!-- ./col -->
 			                </div>
-			                <!-- /.row -->
-			              </div>
-			              <!-- /.card-footer -->
+			              </div>-->
 			            </div>
 	                  
                   </div>
@@ -248,7 +251,7 @@
                     <h3 class="card-title">Nouveaux recruteurs</h3>
 
                     <div class="card-tools">
-                      <span class="badge badge-danger">{{ employerData['total'] }} New Members</span>
+                      <!--<span class="badge badge-danger">{{ employerData['total'] }} New Members</span>-->
                       <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -261,7 +264,7 @@
                   <!-- /.card-header -->
                   <div class="card-body p-0">
                     <ul class="users-list clearfix">
-	                   <div  v-if="employerData['total_all'] == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+	                   <div  v-if="total_employer == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
 	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
 	                      <div style="font-size: 20px;" class="mt-4">Aucun compte recruteur trouvé</div>
 	                  </div>
@@ -325,7 +328,7 @@
                     <h3 class="card-title">Nouveaux Candidats</h3>
 
                     <div class="card-tools">
-                      <span class="badge badge-danger">{{ candidateData['total'] }} New Members</span>
+                      <!--<span class="badge badge-danger">{{ candidateData['total'] }} New Members</span>-->
                       <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -339,7 +342,7 @@
                     <ul class="users-list clearfix">
 	                    
 	                    
-	                  <div  v-if="candidateData['total'] == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+	                  <div  v-if="total_candidate == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
 	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
 	                      <div style="font-size: 20px;" class="mt-4">Aucun compte candidat trouvé</div>
 	                  </div>
@@ -388,8 +391,8 @@
                     <!-- /.users-list -->
                   </div>
                   <!-- /.card-body -->
-                  <div class="card-footer text-center">
-                    <Link href="/admin/candidate" v-if="candidateData['total'] > 0">Voir tout les candidats</Link>
+                  <div class="card-footer text-center" v-if="total_candidate > 0">
+                    <Link href="/admin/candidate">Voir tout les candidats</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>
@@ -435,7 +438,7 @@
 	                      <span class="badge badge-success" v-if="offer['publish_status'] == 1">Publié</span>
                       </td>
                       <td>
-                          {{ offer['offer_date'] }}
+                          {{ offer['offer_duration'] }}
                       </td>
                     </tr>
                     <!--<tr>
@@ -492,7 +495,7 @@
                 <!-- /.table-responsive -->
               </div>
               <!-- /.card-body -->
-              <div class="card-footer clearfix">
+              <div class="card-footer clearfix" v-if="total_offer > 0">
                 <!--<a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
                 <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">V</a>-->
                 <div class="card-footer text-center">
@@ -508,27 +511,27 @@
           <div class="col-md-4">
             <!-- Info Boxes Style 2 -->
             <div class="info-box mb-3 bg-warning">
-              <span class="info-box-icon"><i class="fas fa-tag"></i></span>
+              <span class="info-box-icon"><i class="fas fa-user-graduate"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Candidats</span>
-                <span class="info-box-number">{{ statsData['candidates'] }}</span>
+                <span class="info-box-number">{{ total_candidate }}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
             <div class="info-box mb-3 bg-success">
-              <span class="info-box-icon"><i class="far fa-heart"></i></span>
+              <span class="info-box-icon"><i class="fas fa-building"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Recruteurs</span>
-                <span class="info-box-number">{{ statsData['employers'] }}</span>
+                <span class="info-box-number">{{ total_employer }}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
             <div class="info-box mb-3 bg-danger">
-              <span class="info-box-icon"><i class="fas fa-cloud-download-alt"></i></span>
+              <span class="info-box-icon"><i class="fas fa-clipboard-list"></i></span>
 
               <div class="info-box-content">
                 <span class="info-box-text">Annonces publiées</span>
@@ -556,7 +559,7 @@
                     <h3 class="card-title">Comptes staff</h3>
 
                     <div class="card-tools">
-                      <span class="badge badge-danger">{{ staffData['total_all'] }} New Members</span>
+                      <!--<span class="badge badge-danger">{{ staffData['total_all'] }} New Members</span>-->
                       <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
                         <i class="fas fa-minus"></i>
                       </button>
@@ -568,7 +571,7 @@
                   <!-- /.card-header -->
                   <div class="card-body p-0">
                     <ul class="users-list clearfix">
-	                  <div  v-if="staffData['total_all'] == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
+	                  <div  v-if="total_staff == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
 	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
 	                      <div style="font-size: 20px;" class="mt-4">Aucun compte staff trouvé</div>
 	                  </div>
@@ -618,7 +621,7 @@
                     <!-- /.users-list -->
                   </div>
                   <!-- /.card-body -->
-                  <div class="card-footer text-center">
+                  <div class="card-footer text-center" v-if="total_staff > 0">
                     <!--<a href="javascript:">Voir tout les comptes staff</a>-->
                     <Link href="/admin/accounts/staff">Voir tout les comptes staff</Link>
                   </div>
@@ -697,13 +700,19 @@
 </style>
 
 <script>
+import { Line } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale,PointElement,LineElement } from 'chart.js'
+
 import { defineComponent } from "vue"
 import { Head, Link } from '@inertiajs/inertia-vue3';
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale,PointElement,LineElement)
 
 export default defineComponent({
   components: {
     Head,
     Link,
+    Line
   },
 
   props: {
@@ -729,6 +738,60 @@ export default defineComponent({
       candidateData:{},
       statsData:{},
       staffData:{},
+      total_staff:0,
+      total_employer:0,
+      total_candidate:0,
+      total_offer:0,
+      salesChartOptions : {
+	    maintainAspectRatio: false,
+	    responsive: true,
+	    legend: {
+	      display: false,
+	      
+	    },
+	    scales: {
+	      xAxes: [{
+	        gridLines: {
+	          display: false
+	        },
+	      }],
+	      yAxes: [{
+	        gridLines: {
+	          display: false
+	        }
+	      }]
+	    }
+      },
+      salesChartData: {
+            labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet'],
+		    datasets: [
+		      {
+		        label: 'Montant des achats / mois',
+		        backgroundColor: '#fff',
+		        borderColor: '#000',//Color about lines
+		        pointRadius: false,
+		        pointColor: '#3b8bba',
+		        pointStrokeColor: '#fff',
+		        pointHighlightFill: '#fff',
+		        pointHighlightStroke: '#fff',
+		        data: [28, 48, 40, 19, 86, 27, 90]
+		      }/*,
+		      {
+		        label: 'Electronics',
+		        backgroundColor: 'rgba(210, 214, 222, 1)',
+		        borderColor: 'rgba(210, 214, 222, 1)',
+		        pointRadius: false,
+		        pointColor: 'rgba(210, 214, 222, 1)',
+		        pointStrokeColor: '#c1c7d1',
+		        pointHighlightFill: '#fff',
+		        pointHighlightStroke: 'rgba(220,220,220,1)',
+		        data: [65, 59, 80, 81, 56, 55, 40]
+		      }*/
+		    ]
+      },
+      chartOptions: {
+        responsive: true
+      },
       form: this.$inertia.form({
         //password: '',
         id : 0,
@@ -775,7 +838,7 @@ export default defineComponent({
                 .then(response => {
 	                
 	                //console.log(response.data);
-	                //vm.total_offer = response.data['total'];
+	                vm.total_employer = response.data['total'];
                     vm.employerData = response.data;
             });
       },
@@ -785,7 +848,7 @@ export default defineComponent({
                 .then(response => {
 	                
 	                //console.log(response.data);
-	                //vm.total_offer = response.data['total'];
+	                vm.total_candidate = response.data['total'];
                     vm.candidateData = response.data;
             });
       },
@@ -795,7 +858,7 @@ export default defineComponent({
                 .then(response => {
 	                
 	                console.log(response.data);
-	                //vm.total_offer = response.data['total'];
+	                vm.total_offer = response.data['total'];
                     vm.offerData = response.data;
             });
       },
@@ -806,7 +869,7 @@ export default defineComponent({
             .then(response => {
                 
                 console.log(response.data);
-                //vm.total_offer = response.data['total'];
+                vm.total_staff = response.data['total'];
                 vm.staffData = response.data;
         });
 	     

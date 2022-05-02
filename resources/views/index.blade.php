@@ -742,7 +742,7 @@
         <!-- Courses Area End -->
 
         <!-- Play Area -->
-        <div class="play-area ptb-100">
+        <div class="play-area ptb-10 testim">
             <div class="container">
                 <div class="title text-center mb-45">
                     <!--<h2> We worked with <span>250+ </span> leading universities and companies</h2>-->

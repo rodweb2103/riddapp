@@ -331,10 +331,10 @@
                       </td>
                       <td>
 	                      
-	                      <a href="#" @click="loadOffer(data.id_offer)"><i class="fas fa-info-circle" style="padding: 10px;"></i></a>
-			              <a href="#" @click="openDeleteOffer(data.id_offer)"><i class="fas fa-trash" style="color:red;padding: 10px;"></i></a>
-			              <a href="#" @click="loadUnpublishOffer(data.id_offer)" v-if="data['publish_status'] == 1"><i class="fas fa-eye-slash" style="color:red;padding: 10px;"></i></a>
-			              <a href="#" @click="loadPublishOffer(data.id_offer)" v-if="data['publish_status'] == 0"><i class="fas fa-eye" style="color:green;padding: 10px;"></i></a>
+	                      <a href="#" @click="loadOffer(data.id_offer)"><i class="fas fa-info-circle" style="padding: 5px;"></i></a>
+			              <a href="#" @click="openDeleteOffer(data.id_offer)"><i class="fas fa-trash" style="color:red;padding: 5px;"></i></a>
+			              <a href="#" @click="loadUnpublishOffer(data.id_offer)" v-if="data['publish_status'] == 1"><i class="fas fa-eye-slash" style="color:red;padding: 5px;"></i></a>
+			              <a href="#" @click="loadPublishOffer(data.id_offer)" v-if="data['publish_status'] == 0"><i class="fas fa-eye" style="color:green;padding: 5px;"></i></a>
 	                      
                       </td>
                     </tr>

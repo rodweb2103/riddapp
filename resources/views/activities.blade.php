@@ -13,8 +13,8 @@
 	        
             <div class="container">
                 <div class="inner-title text-center">
-                    <!--<h3>Prochaine activité</h3>
-                    <ul>
+                    <h3>Nos activités</h3>
+                    <!--<ul>
                         <li>
                             <a href="index.html">Aucune</a>
                         </li>

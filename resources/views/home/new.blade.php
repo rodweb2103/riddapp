@@ -37,6 +37,14 @@
         <style>
 	        
 	        
+	        .testim .owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  height: 110px !important;
+}
+
+	        
+	        
 	      #preloader-area {
 			  position: absolute;
 			  left: 45%;

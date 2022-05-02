@@ -112,12 +112,12 @@
 				    <jet-input-error :message="form.errors.email" />
 				  </div>
 		        </div>
-		        <div class="col-12">
+		        <!--<div class="col-12">
 				  <div class="mb-3">
 				    <input type="text" placeholder="Pseudo" v-model="form.user_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
 				    <jet-input-error :message="form.errors.user_name" />
 				  </div>
-		        </div>
+		        </div>-->
 		        
 		        <div class="col-12">
 				  <div class="mb-3">
@@ -133,7 +133,7 @@
 				  </div>
 		        </div>
 		        
-		        <div class="col-12">
+		        <!--<div class="col-12">
 				  <div class="mb-3">
 				    <input type="password" placeholder="Mot de passe" v-model="form.password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
 				    <jet-input-error :message="form.errors.password" />
@@ -145,7 +145,7 @@
 				    <input type="password" placeholder="Mot de passe confirmation" v-model="form.password_confirmation" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
 				    <jet-input-error :message="form.errors.password_confirmation" />
 				  </div>
-		        </div>
+		        </div>-->
 		        
 		      </div>
 			  
@@ -203,7 +203,7 @@
                       <th>NOM</th>
                       <th>PRÉNOM</th>
                       <th>EMAIL</th>
-                      <th>PSEUDO</th>
+                      <!--<th>PSEUDO</th>-->
                       <th>ACTION</th>
                     </tr>
                     </thead>
@@ -214,9 +214,9 @@
                       <td>
                         {{ data['email'] }}
                       </td>
-                      <td>
+                      <!--<td>
                         {{ data['user_name'] }}
-                      </td>
+                      </td>-->
                       <td>
 	                      
 	                      <a href="#" @click="warningUnSuspend(data.id)" v-if="data.is_suspended == 1"><i class="fas fa-lock" style="padding: 10px;"></i></a>

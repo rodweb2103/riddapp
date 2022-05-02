@@ -88,9 +88,17 @@
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href="assets/images/favicon.png">
+        <link rel="icon" type="image/png" href="/img/favicon.png">
         
         <style>
+	        
+	        
+	        
+	       .owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  height: 95px !important;
+}
 	        
 	       
 	       #preloader-area {

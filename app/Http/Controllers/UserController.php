@@ -13,6 +13,7 @@ use App\Models\ContractType;
 use Spatie\Permission\Models\Role;
 use Illuminate\Validation\Rule;
 use App\Notifications\NewUserAdded;
+use App\Notifications\NewStaffAdded;
 
 class UserController extends Controller
 {
@@ -101,8 +102,8 @@ class UserController extends Controller
 		    'first_name' => 'required',
 		    'last_name' => 'required',
 		    'email' => 'required|email|unique:users',
-		    'password' => 'required',
-		    'password_confirmation' => 'required|same:password'
+		    //'password' => 'required',
+		    //'password_confirmation' => 'required|same:password'
 		    //'study_level' => 'required'
          ],[
 		      //'activity_sector.required'=> 'Le secteur d\'activité est requis', // custom message
@@ -113,9 +114,9 @@ class UserController extends Controller
 		      'last_name.required'=> trans('Le nom est requis'), // custom message,
 		      //'user_name.required'=> trans('Le nom d\'utlisateur est requis'), // custom message
 		      //'user_name.unique'=> trans('Le nom d\'utlisateur existe déjà'), // custom message
-		      'password.required'=> trans('Le mot de passe est requis'), // custom message,
-		      'password_confirmation.required'=> trans('Le mot de passe confirmation est requis'), // custom message,
-		      'password_confirmation.same'=> trans('Les mots de passe doivent être identiques'), // custom message,
+		      //'password.required'=> trans('Le mot de passe est requis'), // custom message,
+		      //'password_confirmation.required'=> trans('Le mot de passe confirmation est requis'), // custom message,
+		      //'password_confirmation.same'=> trans('Les mots de passe doivent être identiques'), // custom message,
 		      //'study_level.required'=> 'Le niveau d\'étude est requis' // custom message
          ]);
          
@@ -128,12 +129,19 @@ class UserController extends Controller
 		  $user->first_name = $request->input('first_name');
 		  $user->last_name = $request->input('last_name');
 		  //$user->user_name = $request->input('user_name');
-		  $user->password = Hash::make($request->input('password'));
+		  //$user->password = Hash::make($request->input('password'));
+		  
+		  $pass = \Str::random(6);
+		  $user->password = Hash::make($pass);
+		  
+		  
 		  $role = Role::where('name', '=', 'Staff')->firstOrFail();
 		  $user->assignRole($role);
 	      $user->save();
 	      
-	      return redirect()->back();
+	      $user->notify(new NewStaffAdded($user,$pass));
+	      
+	      return redirect()->back()->with('status','Le compte staff a été crée avec succès !');
 	      
 		  //$user->city = $request->input('city');
 		  //$user->profile_photo = $request->input('user_name');
@@ -201,7 +209,7 @@ class UserController extends Controller
     
     public function new_candidate(Request $request){
 	    
-	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Student"); })->paginate(8);
+	    $itemsPaginated = User::whereHas("roles", function($q) use($request) { $q->where("name","Student")->orWhere('name','Consultant'); })->paginate(8);
 	    //$grandTotal =  User::whereHas("roles", function($q) use($request) { $q->where("name","Candidate"); })->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    $itemsTransformed = $itemsPaginated->map(function($item) {
 			        //var_dump($item->company->profile_photo_path);exit;
