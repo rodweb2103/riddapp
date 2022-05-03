@@ -13,6 +13,10 @@ import VueTelInput from 'vue-tel-input';
 import 'vue-tel-input/dist/vue-tel-input.css';
 import Select2 from 'vue3-select2-component';
 import LaravelVuePagination from 'laravel-vue-pagination';
+
+import VueSweetalert2 from 'vue-sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
 //import { createI18n } from 'vue-i18n'
 
 
@@ -282,6 +286,7 @@ createInertiaApp({
 				 },
             })
             .use(VueTelInput)
+            .use(VueSweetalert2)
             .component('Select2', Select2)
             .component('Pagination', LaravelVuePagination)
             .mixin({ methods: { route } })

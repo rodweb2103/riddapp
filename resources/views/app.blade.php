@@ -92,6 +92,15 @@
         
         <style>
 	        
+	        .page-item.active .page-link {
+		        
+		        background-color: green !important;
+	        }
+	        
+	        .page-link {
+		      
+		      color: green;
+		    }
 	        
 	        
 	       .owl-carousel .owl-item img {

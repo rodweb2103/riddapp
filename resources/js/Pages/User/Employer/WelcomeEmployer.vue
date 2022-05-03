@@ -4,6 +4,28 @@
    <div class="container-fluid">
 	   
 	   
+	   <jet-dialog-modal id="chatAdmin">
+        <template #title>
+          Centre de support
+        </template>
+
+        <template #content>
+          
+          <div class="mt-4">
+	          
+		         {{ data_support }}    
+	          
+          </div>
+        </template>
+
+        <template #footer>
+          <jet-secondary-button  @click="closeModal3">
+            Fermer
+          </jet-secondary-button>
+        </template>
+      </jet-dialog-modal>
+	   
+	   
 	   <jet-dialog-modal id="deleteOffer">
         <template #title>
           Supprimer une annonce
@@ -23,7 +45,7 @@
             Non
           </jet-secondary-button>
           
-          <jet-button class="btn btn-primary" @click="deleteOffer()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+          <jet-button style="background-color: green;" class="btn" @click="deleteOffer()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
@@ -198,7 +220,7 @@
             Annuler
           </jet-secondary-button>
           
-          <jet-button class="btn btn-primary" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+          <jet-button class="btn" style="background-color: green;" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
@@ -304,16 +326,18 @@
 		                    <td>{{ data.title }}</td>
 		                    <td>{{ data.offers_details }}</td>
 		                    
-		                    <td>
+		                    <td class="text-center">
 			                    
 			                    <span class="badge badge-success" v-if="data.publish_status == 1">Publié</span>
 			                    <span class="badge badge-warning" v-if="data.publish_status == 0">En attente</span>
+			                    <span class="badge badge-danger" v-if="data.publish_status == -1">Rejeté</span>
 			                    
 		                    </td>
 		                    <td>
 			                    <a href="#" @click="loadOffer(data.id)"><i class="fas fa-eye"></i></a>
-			                    <a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 5px;"></i></a>
-			                    <Link :href="`${'/view/cv/candidates/'+data.id}`"><i class="fas fa-file-pdf" style="padding: 5px;"></i></Link>
+			                    <a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 2px;"></i></a>
+			                    <a href="#" v-if="data.publish_status == -1" @click="openChatAdmin(data)"><i class="fas fa-comment" style="color:grey;padding:2px;"></i></a>
+			                    <Link :href="`${'/view/cv/candidates/'+data.id}`" v-if="data.publish_status != -1 && data.candidates > 0 && data.publish_status != 0"><i class="fas fa-file-pdf"></i></Link>
 			               </td>
 			               <td class="text-center">{{ data.candidates }}</td>
 		                    
@@ -379,7 +403,7 @@
                 </div>
                 <!-- /.table-responsive -->
               </div>
-              <Pagination :data="offerData" @pagination-change-page="getResults" />
+              <Pagination :data="offerData" align="center" class="mt-2" @pagination-change-page="getResults" />
               
               <!-- /.card-footer -->
             </div>
@@ -463,7 +487,9 @@ export default defineComponent({
     return {
       modal: null,
       modal2: null,
+      modal2: null,
       id_delete : 0,
+      data_support:'',
       activity_sector : {},
       study_level : {},
       contract_type: {},
@@ -486,8 +512,10 @@ export default defineComponent({
       })
     }
   },
+  updated(){
+	  //this.getResults();
+  },
   mounted(){
-	  
 	  
 	  this.getResults();
 	  
@@ -524,6 +552,14 @@ export default defineComponent({
 	                //console.log(response.data);
                     vm.offerData = response.data;
             });
+      },
+      openChatAdmin(data){
+	      
+	      this.data_support = data.admin_notes;
+	      let el3 = document.querySelector('#chatAdmin')
+	      this.modal3 = new bootstrap.Modal(el3)
+	      this.modal3.show()
+	      
       },
       openDeleteOffer(id){
 	      
@@ -595,6 +631,10 @@ export default defineComponent({
 	  closeModal2(){
 		  
           this.modal2.hide()
+	  },
+	  closeModal3(){
+		  
+          this.modal3.hide()
 	  },
 	  editOffer(){
 		  

@@ -11,6 +11,30 @@ use Inertia\Inertia;
 class OfferController extends Controller
 {
     //
+    public function reject_offer(Request $request){
+	    
+	    $request->validate([
+		    //'activity_sector' => 'required',
+		    'admin_notes' => 'required_if:choice,==,2',
+		    
+		    //'study_level' => 'required'
+         ],[
+		      //'activity_sector.required'=> 'Le secteur d\'activité est requis', // custom message
+		      'admin_notes.required_if'=> trans('Veuillez expliquer la raison du rejet de cette annonce afin que le recruteur soit informé'), // custom message
+		      
+		      //'study_level.required'=> 'Le niveau d\'étude est requis' // custom message
+         ]);
+	    
+	    \DB::table("offers")->where("id",$request->input('id'))->update(array(
+		       
+		        "publish_status" => -1,
+		        "admin_notes" => $request->input('admin_notes')
+	    ));
+	    
+	    return redirect()->back()->with('status','Annonce rejetée.');
+    }
+    
+    
     public function post_cv(Request $request){
 	   
 	       \DB::table("offers_bid")->insert(array(
@@ -350,7 +374,8 @@ class OfferController extends Controller
 		                "location" => $item->location,
 		                "study_level" => $item->study_level_job->id,
 		                "profile_details"=> $item->profile_details,
-		                'candidates'=>$item->candidate_offers->count()
+		                'candidates'=>$item->candidate_offers->count(),
+		                'admin_notes' => strval($item->admin_notes)
 		                //"activity_sector" => $item->activity_sector_job->id
 		            ];
             })->toArray();

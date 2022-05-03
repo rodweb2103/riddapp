@@ -4,7 +4,7 @@
      <div class="container-fluid">
 	    
 	    
-	    <jet-dialog-modal id="deleteOffer" maxWidth="lg">
+	    <!--<jet-dialog-modal id="deleteOffer" maxWidth="lg">
         <template #title>
           Supprimer une annonce
         </template>
@@ -83,7 +83,7 @@
             Confirmer
           </jet-button>
         </template>
-       </jet-dialog-modal>
+       </jet-dialog-modal>-->
 	     
 	     
 	    <jet-dialog-modal id="openOffer" maxWidth="lg">
@@ -220,7 +220,17 @@
 					  <div class="mb-3">
 					    
 					    <textarea class="form-control" placeholder="Détails sur le profil recherché" v-model="form.profile_details" rows="5" style="margin-bottom: 0px;" disabled></textarea>
-					    <jet-input-error :message="form.errors.profile_details" />
+					    <jet-input-error :message="form.errors.profile_details"/>
+					  </div>
+				 </div>
+				 
+				 
+				 <div class="col-12">
+			  
+					  <div class="mb-3">
+					    
+					    <textarea class="form-control" placeholder="Notes explicatives sur le rejet de cette annonce" v-model="form.admin_notes" rows="5" style="margin-bottom: 0px;"></textarea>
+					    <jet-input-error :message="form.errors.admin_notes" style="display: block"/>
 					  </div>
 				 </div>
 				 
@@ -230,6 +240,8 @@
 					    <Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%'}"/>
 					    <jet-input-error :message="form.errors.contract_type" />
 				 </div>-->
+			  
+			  
 			  
 			  
 			  </div>
@@ -247,6 +259,26 @@
         </template>
 
         <template #footer>
+          <jet-secondary-button data-dismiss="modal" @click="closeModal" :disabled="form.processing">
+            Fermer
+          </jet-secondary-button>
+          <jet-secondary-button :disabled="form.processing" @click="loadPublishOffer(form.id,1)"  data-dismiss="modal" v-if="form.publish_status == 0 || form.publish_status == -1"  style="background-color: green;color:#fff">
+            <div v-show="form.processing && form.choice == 1" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>Publier
+          </jet-secondary-button>
+          <jet-secondary-button :disabled="form.processing"  v-if="form.publish_status != -1" data-dismiss="modal" @click="rejectOffer(form.id,2)" style="background-color: #ffc107;color:#000;">
+            <div v-show="form.processing && form.choice == 2" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            Rejeter
+          </jet-secondary-button>
+          
+          <jet-secondary-button :disabled="form.processing" @click="loadUnpublishOffer(form.id,3)" v-if="form.publish_status == 1 || form.publish_status == -1" style="background-color: red;color:#fff" data-dismiss="modal">
+            <div v-show="form.processing && form.choice == 3" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>Retirer
+          </jet-secondary-button>
           <!--<jet-secondary-button data-dismiss="modal" @click="closeModal">
             Annuler
           </jet-secondary-button>
@@ -283,7 +315,9 @@
           <div class="col-md-12">
             <!-- /.card -->
             <!-- /.row -->
-
+            <div class="alert alert-success" v-if="$page.props.status!==null">
+	              {{ $page.props.status }}
+            </div>
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
@@ -321,6 +355,7 @@
                       <td>
 	                    <span class="badge badge-warning" v-if="data['publish_status'] == 0">Non publié</span>
 	                    <span class="badge badge-success" v-if="data['publish_status'] == 1">Publié</span>
+	                    <span class="badge badge-danger" v-if="data['publish_status'] == -1">Rejeté</span>
                         <!--<div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>-->
                       </td>
                       <td>
@@ -331,10 +366,10 @@
                       </td>
                       <td>
 	                      
-	                      <a href="#" @click="loadOffer(data.id_offer)"><i class="fas fa-info-circle" style="padding: 5px;"></i></a>
-			              <a href="#" @click="openDeleteOffer(data.id_offer)"><i class="fas fa-trash" style="color:red;padding: 5px;"></i></a>
-			              <a href="#" @click="loadUnpublishOffer(data.id_offer)" v-if="data['publish_status'] == 1"><i class="fas fa-eye-slash" style="color:red;padding: 5px;"></i></a>
-			              <a href="#" @click="loadPublishOffer(data.id_offer)" v-if="data['publish_status'] == 0"><i class="fas fa-eye" style="color:green;padding: 5px;"></i></a>
+	                      <a href="#" @click="loadOffer(data.id_offer)"><i class="fas fa-info-circle" style="padding:5px;"></i></a>
+			              <a href="#" @click="openDeleteOffer(data.id_offer)"><i class="fas fa-trash" style="color:red;padding:5px;"></i></a>
+			              <!--<a href="#" @click="loadUnpublishOffer(data.id_offer)" v-if="data['publish_status'] == 1"><i class="fas fa-eye-slash" style="color:red;"></i></a>
+			              <a href="#" @click="loadPublishOffer(data.id_offer)" v-if="data['publish_status'] == 0"><i class="fas fa-eye" style="color:green;"></i></a>-->
 	                      
                       </td>
                     </tr>
@@ -460,11 +495,13 @@ export default defineComponent({
       contract_duration: ['CDD', 'CDI'],
       offerData: {},
       editMode : 0,
+      choice : 0,
       viewDataOffer : {},
       form: this.$inertia.form({
         //password: '',
         id : 0,
         offer_title:'',
+        choice : 0,
         activity_sector:'',
         profile_details:'',
         location:'',
@@ -472,12 +509,15 @@ export default defineComponent({
         contract_duration:'',
         offer_details:'',
         study_level:'',
-        offer_details:''
+        offer_details:'',
+        publish_status:0,
+        admin_notes:""
         
       })
     }
   },
   mounted(){
+	  
 	  
 	  
 	  this.getResults();
@@ -529,6 +569,7 @@ export default defineComponent({
 	     
 	     
 	     this.form.offer_title=filteredResult['title'];
+	     this.form.publish_status=filteredResult['publish_status'];
          this.form.profile_details=filteredResult['profile_details'];
          this.form.location=filteredResult['location'];
          this.form.contract_type=filteredResult['contract_type'];
@@ -562,21 +603,109 @@ export default defineComponent({
 		  
           this.modal2.hide()
 	  },
+	  rejectOffer(id){
+		  
+		  
+		  this.form['id'] = id;
+		  this.form.choice = 2;
+		  this.$swal.fire({
+			  title: 'Confirmez vous le rejet de cette annonce ?',
+			  text: "",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Oui',
+			  cancelButtonText:'Non'
+			}).then((result) => {
+			  if (result.isConfirmed) {
+				  
+				 this.form.post(route('employer.reject.offer'), {
+			        preserveScroll: true,
+			        onSuccess: () => {this.modal.hide();this.getResults();},
+			        //onError: () => this.$refs.password.focus(),
+			        onFinish: () => {}/*this.form.reset()*/,
+                });
+			    /*Swal.fire(
+			      'Deleted!',
+			      'Your file has been deleted.',
+			      'success'
+			    )*/
+			  }
+		  });
+		  
+	  },
 	  loadUnpublishOffer(id){
 		  
 		  this.form['id'] = id;
-		  let el = document.querySelector('#unpubOffer')
-	      this.modalunpub = new bootstrap.Modal(el)
-	      this.modalunpub.show()
+		  this.form.choice = 3;
+		  
+		  this.$swal.fire({
+			  title: 'Confirmez vous la retrait de cette annonce ?',
+			  text: "",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Oui',
+			  cancelButtonText:'Non'
+			}).then((result) => {
+			  if (result.isConfirmed) {
+				  
+				 this.form.post(route('employer.unpublish.offer'), {
+			        preserveScroll: true,
+			        onSuccess: () => {this.modal.hide();this.getResults();},
+			        //onError: () => this.$refs.password.focus(),
+			        onFinish: () => {}/*this.form.reset()*/,
+                });
+			    /*Swal.fire(
+			      'Deleted!',
+			      'Your file has been deleted.',
+			      'success'
+			    )*/
+			  }
+		  });
+		  
+		  //let el = document.querySelector('#unpubOffer')
+	      //this.modalunpub = new bootstrap.Modal(el)
+	      //this.modalunpub.show()
 		  
 	  },
 	  loadPublishOffer(id){
 		  
-		  
+		  this.form.choice = 1;
 		  this.form['id'] = id;
-          let el = document.querySelector('#pubOffer')
-	      this.modalpub = new bootstrap.Modal(el)
-	      this.modalpub.show()
+          //this.$swal('Hello Vue world!!!');
+          
+          this.$swal.fire({
+			  title: 'Confirmez vous la publication de cette annonce ?',
+			  text: "",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Oui',
+			  cancelButtonText:'Non'
+			}).then((result) => {
+			  if (result.isConfirmed) {
+				  
+				 this.form.post(route('employer.publish.offer'), {
+			        preserveScroll: true,
+			        onSuccess: () => { this.modal.hide();this.getResults();},
+			        //onError: () => this.$refs.password.focus(),
+			        onFinish: () => {}/*this.form.reset()*/,
+                });
+			    /*Swal.fire(
+			      'Deleted!',
+			      'Your file has been deleted.',
+			      'success'
+			    )*/
+			  }
+		  })
+          
+          //let el = document.querySelector('#pubOffer')
+	      //this.modalpub = new bootstrap.Modal(el)
+	      //this.modalpub.show()
 		  
 	  },
 	  unpublishOffer(){

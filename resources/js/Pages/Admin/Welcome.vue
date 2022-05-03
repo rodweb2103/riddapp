@@ -239,7 +239,7 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
-          <div class="col-md-8">
+          <div class="col-md-9">
             <!-- /.card -->
             <div class="row">
              
@@ -270,8 +270,8 @@
 	                  </div>
                       <li v-for="data in employerData['data']">
                         <!--<img :src="data['profile_url']" alt="User Image">-->
-                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''">
-                        <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i>
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 73% !important;">
+                        <div><i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i></div>
                         <a class="users-list-name" href="#">{{ data['company_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
                       </li>
@@ -347,7 +347,7 @@
 	                      <div style="font-size: 20px;" class="mt-4">Aucun compte candidat trouvé</div>
 	                  </div>
                       <li v-for="data in candidateData['data']">
-                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''">
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 73% !important;">
                         <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i>
                         <a class="users-list-name" href="#">{{ data['first_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
@@ -508,7 +508,7 @@
           </div>
           <!-- /.col -->
 
-          <div class="col-md-4">
+          <div class="col-md-3">
             <!-- Info Boxes Style 2 -->
             <div class="info-box mb-3 bg-warning">
               <span class="info-box-icon"><i class="fas fa-user-graduate"></i></span>
@@ -577,7 +577,7 @@
 	                  </div>
                       <li v-for="data in staffData['data']">
                         <!--<img :src="data['profile_photo']" alt="User Image">-->
-                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''">
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 73% !important;">
                         <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i>
                         <a class="users-list-name" href="#">{{ data['user_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->

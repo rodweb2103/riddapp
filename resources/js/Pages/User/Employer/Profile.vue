@@ -84,7 +84,7 @@
                   <!-- /.tab-pane -->
                   <!-- /.tab-pane -->
                   <div class="tab-pane active" id="settings">
-                    <form class="form-horizontal" @submit.prevent="updateProfile">
+                    <form class="form-horizontal" @submit.prevent="updateProfile" id="msform">
                       <!--<div class="form-group row">
                         <label for="inputName" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Pseudo</label>
                         <div class="col-sm-9">
@@ -220,6 +220,11 @@
  
  .profile-user-img {
 	 border: unset !important;
+ }
+ 
+ #msform input{
+	 
+	 margin-bottom: unset !important;
  }
 
 </style>

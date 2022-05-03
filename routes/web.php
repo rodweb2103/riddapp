@@ -198,6 +198,7 @@ Route::post('/delete/offer',[OfferController::class, 'delete_offer'])->name('emp
 
 Route::post('/publish/offer',[OfferController::class, 'publish_offer'])->name('employer.publish.offer');
 Route::post('/unpublish/offer',[OfferController::class, 'unpublish_offer'])->name('employer.unpublish.offer');
+Route::post('/reject/offer',[OfferController::class, 'reject_offer'])->name('employer.reject.offer');
 
 
 Route::post('/remove/offer',[OfferController::class, 'unbid_offer'])->name('candidate.unbid.offer');
