@@ -409,5 +409,7 @@
     "Entrer votre adresse e-mail":"Enter Your Email Address",
     "Nouveau mot de passe":"New password",
     "Confirmer le mot de passe":"Confirm your password",
-    "Mettre à jour":"Update password"
+    "Mettre à jour":"Update password",
+    "Selectionner votre domaine d'intervention":"Select your area field",
+    "Selectionner votre niveau":"Select your level"
 }

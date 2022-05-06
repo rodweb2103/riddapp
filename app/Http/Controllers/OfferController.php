@@ -347,6 +347,7 @@ class OfferController extends Controller
                         $query->where('company_id', $request->company_id);
 
               })
+              ->where("publish_status",1)
               ->orderBy('publish_date','DESC')->paginate(10);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -837,6 +838,7 @@ class OfferController extends Controller
                         $query->where('company_id', $request->company_id);
 
               })
+              ->where('publish_status',1)
               ->orderBy('publish_date','DESC')->paginate(10);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()

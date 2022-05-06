@@ -338,6 +338,7 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
+	                  <th><input type="checkbox"/></th>
                       <th>ID</th>
                       <th>Titre annonce</th>
                       <th>Infos annonces</th>
@@ -349,6 +350,7 @@
                     </thead>
                     <tbody>
                     <tr v-for="data in offerData['data']">
+	                  <td><input type="checkbox"/></td>
                       <td>{{ data['id'] }}</td>
                       <td>{{ data['title'] }}</td>
                       <td>{{ data['offers_details'] }}</td>

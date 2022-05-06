@@ -786,7 +786,7 @@ class UserController extends Controller
 		    'password_confirmation' => 'required|same:password'
          ],[
 		      'user_name.required'=> trans('Le nom d\'utlisateur est requis'), // custom message
-		      'user_name.unique'=> trans('La nom d\'utlisateur existe déjà'), // custom message
+		      'user_name.unique'=> trans('Le nom d\'utlisateur existe déjà'), // custom message
 		      'password.required'=> trans('Le mot de passe est requis'), // custom message,
 		      'password_confirmation.required'=> trans('Le mot de passe confirmation est requis'), // custom message,
 		      'password_confirmation.same'=> trans('Les mots de passe doivent être identiques'), // custom message,

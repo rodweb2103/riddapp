@@ -16,7 +16,7 @@
 							      <div class="row justify-content-center">
 							         <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
 							            <div class="px-0 pt-4 pb-0 mt-3 mb-3">
-							               <h2 id="heading">{{ __('Informations de votre compte') }}</h2>
+							               <h2 id="heading">{{ __('Informations de votre compte') }}====</h2>
 							               <p></p>
 							               
 							                  <ul id="progressbar">
@@ -151,7 +151,7 @@
 							                        </div>
 							                        
 							                        <div class="fields">
-							                            <Select2 v-model="form.activity_sector_company" :options="activity_sector" :settings="{ settingOption: value, settingOption: value,placeholder:'Selectionner votre secteur d\'activité' }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
+							                            <Select2 v-model="form.activity_sector_company" :options="activity_sector" :settings="{ settingOption: value, settingOption: value,placeholder:__('Selectionner votre secteur d\'activité') }" @change="myChangeEvent($event)" @select="mySelectEvent($event)" />
 							                            <div v-if="errors.activity_sector_company" style="color:red;">{{ errors.activity_sector_company }}</div>
 							                        </div>
 							                        
@@ -206,18 +206,21 @@
 							                           <div v-if="errors.study_level" style="color:red;">{{ errors.study_level }}</div>
 							                        </div>-->
 							                        
+							                        
+							                        
 							                        <div class="fields">
 							                            <input type="text" :placeholder="__('Année d\'expérience')" v-model="form.year_exp"/> 
 							                            <div v-if="errors.year_exp" style="color:red;">{{ errors.year_exp }}</div>
 							                        </div>
 							                        
+							                        
 							                        <div class="fields">
-							                           <Select2 v-model="form.activity_sector_consult" :options="activity_sector" :settings="{placeholder:'Selectionner votre domaine d\'intervention'}"/>
+							                           <Select2 v-model="form.activity_sector_consult" :options="activity_sector" :settings="{placeholder:__('Selectionner votre domaine d\'intervention')}"/>
 							                           <div v-if="errors.activity_sector_consult" style="color:red;">{{ errors.activity_sector_consult }}</div>
 							                         </div>
 							                         
 							                         <div class="fields">
-							                           <Select2 v-model="form.consult_level" :options="consult_level" :settings="{placeholder:'Selectionner votre niveau' }"/>
+							                           <Select2 v-model="form.consult_level" :options="consult_level" :settings="{placeholder:__('Selectionner votre niveau')}"/>
 							                           <div v-if="errors.consult_level" style="color:red;">{{ errors.consult_level }}</div>
 							                         </div>
 							                         
@@ -260,7 +263,7 @@
 							                           </div>
 							                        </div>
 							                         <div class="fields">
-							                           <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'Selectionner votre niveau d\'etude' }"/>
+							                           <Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:__('Selectionner votre niveau d\'etude') }"/>
 							                           <div v-if="errors.study_level" style="color:red;">{{ errors.study_level }}</div>
 							                        </div>
 							                         <!--<div class="fields">
@@ -427,6 +430,8 @@ export default defineComponent({
 	  isLoading: false,
       fullPage: true,
       isValid : false,
+      //settings_field_consult
+	  //settings_level_consult
 	  //myValue: '',
       //myOptions: ['op1', 'op2', 'op3'],
       form: this.$inertia.form({
