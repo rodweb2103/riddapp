@@ -216,9 +216,9 @@
                         </div>
                       </div>-->
                       <div class="form-group row">
-                        <div class="offset-sm-3 col-sm-10">
+                        <div class="col-sm-5 offset-md-2">
                           <!--<button type="submit" class="btn btn-danger">Mettre à jour</button>-->
-                           <jet-button class="btn btn-primary"  :class="{ 'text-white-50': formUser.processing }" :disabled="formUser.processing">
+                           <jet-button class="btn btn-primary"  :class="{ 'text-white-50': formUser.processing }" :disabled="formUser.processing" style="background-color: green !important;">
 				            <div v-show="formUser.processing" class="spinner-border spinner-border-sm" role="status">
 				              <span class="visually-hidden">Loading...</span>
 				            </div>

@@ -67,17 +67,24 @@ class OfferController extends Controller
     public function payment_success(Request $request){
 	    
 	    
-	     \Paydunya\Setup::setMasterKey("nspFhp5T-Vf5E-VWKu-alXu-jDhnt40NJytu");
-		 \Paydunya\Setup::setPublicKey("test_public_653mKzyXPZfSpBXUzn0jQl2Wkx1");
-		 \Paydunya\Setup::setPrivateKey("test_private_lNdxaYw8SsuvMfDJ7idyTgOAMez");
-		 \Paydunya\Setup::setToken("AyBH0tNqqIWFxZ56koUs");
-		 \Paydunya\Setup::setMode("test");
+	    
+	     
+	    
+	     \Paydunya\Setup::setMasterKey(env('MASTER_KEY'));
+		 \Paydunya\Setup::setPublicKey(env('PUBLIC_KEY'));
+		 \Paydunya\Setup::setPrivateKey(env('PRIVATE_KEY'));
+		 \Paydunya\Setup::setToken(env('TOKEN'));
+		 \Paydunya\Setup::setMode(env('MODE'));
 	    
 	     
 	    
 	     //var_dump($request->input('token'));exit;
 	     $invoice = new \Paydunya\Checkout\CheckoutInvoice();
-	     if ($invoice->confirm($request->input('token'))) {
+	     
+	     
+	     if($request->has('token')){
+	     
+	       if ($invoice->confirm($request->input('token'))) {
 		     
 		     $pack_duration = \DB::table("pack_ads")->where("id",$request->input('pack_id'))->get();
 		     //var_dump($invoice->getStatus());exit;
@@ -123,6 +130,7 @@ class OfferController extends Controller
 		     
 		     
 		 }
+	     }
 	     //\Storage::put('payment.txt', print_r($request->all(), true));
     }
     
@@ -130,11 +138,18 @@ class OfferController extends Controller
 	    
 	    
 	      
-		 \Paydunya\Setup::setMasterKey("nspFhp5T-Vf5E-VWKu-alXu-jDhnt40NJytu");
+		 /*\Paydunya\Setup::setMasterKey("nspFhp5T-Vf5E-VWKu-alXu-jDhnt40NJytu");
 		 \Paydunya\Setup::setPublicKey("test_public_653mKzyXPZfSpBXUzn0jQl2Wkx1");
 		 \Paydunya\Setup::setPrivateKey("test_private_lNdxaYw8SsuvMfDJ7idyTgOAMez");
 		 \Paydunya\Setup::setToken("AyBH0tNqqIWFxZ56koUs");
-		 \Paydunya\Setup::setMode("test"); 
+		 \Paydunya\Setup::setMode("test");*/
+		 
+		 
+		 \Paydunya\Setup::setMasterKey(env('MASTER_KEY'));
+		 \Paydunya\Setup::setPublicKey(env('PUBLIC_KEY'));
+		 \Paydunya\Setup::setPrivateKey(env('PRIVATE_KEY'));
+		 \Paydunya\Setup::setToken(env('TOKEN'));
+		 \Paydunya\Setup::setMode(env('MODE')); 
 		 
 		 
 		 \Paydunya\Checkout\Store::setName("RIDD - Réseau Ivoirien des Diplômés de la Diaspora"); // Seul le nom est requis
@@ -347,7 +362,7 @@ class OfferController extends Controller
                         $query->where('company_id', $request->company_id);
 
               })
-              ->where("publish_status",1)
+              //->where("publish_status",1)
               ->orderBy('publish_date','DESC')->paginate(10);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()

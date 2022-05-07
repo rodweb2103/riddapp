@@ -36,6 +36,12 @@
         
         <style>
 	        
+	        footer-widget .social-link li a i {
+		  font-size: 20px !important;
+		  width: 42px !important;
+		  height: 42px !important;
+		  line-height: 40px !important;
+  }
 	        
 	        .testim .owl-carousel .owl-item img {
   display: block;
@@ -324,7 +330,7 @@
                                 @auth
                                  <li class="nav-item">
                                       <a href="#" class="nav-link dropdown-toggle">
-                                        {{ __('Bonjour') }}, {{ \Auth::user()->user_name }}                                  
+                                        {{ __('Bonjour') }}, {{ \Auth::user()->first_name }}                                  
                                       </a>
                                       
                                       
@@ -336,7 +342,7 @@
                                             </a>
                                         </li>-->
                                         <li class="nav-item">
-                                        @if(\Auth::user()->hasRole('Employer') || \Auth::user()->hasRole('Student') || \Auth::user()->hasRole('Consultant'))
+                                        @if(\Auth::user()->hasRole('Employer') || \Auth::user()->hasRole('Student') || \Auth::user()->hasRole('Consultant') || \Auth::user()->hasRole('Staff'))
 	                                         <a href="{{ route('user.dashboard') }}" class="nav-link" style="background: transparent;font-size: 17px;color:#000 !important;font-weight: 500"> 
 								               {{ __('Mon compte') }}
 								             </a>
@@ -432,14 +438,44 @@
                  <div class="row">
                     <div class="col-lg-4 col-sm-6">
                         <div class="footer-widget">
-                            <div class="footer-logo">
+                            <!--<div class="footer-logo">
                                 <a href="index.html">
                                     <img src="/img/LG-RIDD@2x.png" alt="Images" style="width: 100px;">
                                 </a>
-                            </div>
-                            <p>{{ __('Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.') }}</p>
-                            <ul class="social-link">
-                                <li class="social-title">{{ __('Suivez nous') }}:</li>
+                            </div>-->
+                            <!--<p>{{ __('Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.') }}</p>-->
+                            
+                            <div class="footer-widget ps-5">
+                            <h3>{{ __('Nos contacts') }}</h3>
+                            <ul class="footer-contact">
+                                <li>
+                                    <i class="ri-map-pin-2-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Location') }}:</h4>
+                                        <span>Côte d'Ivoire</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="ri-mail-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Email') }}:</h4>
+                                        <span><a href="mailto:hello@ledu.com">hello@ridd.com</a></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="ri-phone-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Phone') }}:</h4>
+                                        <span><a href="tel:098765432150">0000000000000</a></span>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            
+                            
+                        </div>
+                            
+                            <!--<ul class="social-link">
                                 <li>
                                     <a href="https://www.facebook.com/" target="_blank">
                                         <i class="ri-facebook-fill"></i>
@@ -455,34 +491,86 @@
                                         <i class="ri-instagram-line"></i>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul>-->
                         </div>
                     </div>
+                    
                     <!--<div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget ps-5">
-                            <h3>{{ __('Services') }}</h3>
-                            <ul class="footer-list">
-	                            <li><a href="#">{{ __('Offres') }}</a></li>
-		                        <li><a href="#">{{ __('Activités') }}</a></li>
-		                        <li><a href="#">{{ __('Actualités') }}</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>-->
-                    <!--<div class="col-lg-3 col-sm-6">
-                        <div class="footer-widget ps-5">
-                            <h3>{{ __('Qui sommes nous ?') }}</h3>
-                            <ul class="footer-list">
-	                            <li><a href="#">RIDD</a></li>
-		                        <li><a href="#">{{ __('Equipe') }}</a></li>
-                                
-                            </ul>
-                        </div>
-                    </div>-->
-                    <div class="col-lg-3 col-sm-6">
                         <div class="footer-widget ps-5">
                             <h3>{{ __('Nos contacts') }}</h3>
                             <ul class="footer-contact">
+                                <li>
+                                    <i class="ri-map-pin-2-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Location') }}:</h4>
+                                        <span>Côte d'Ivoire</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="ri-mail-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Email') }}:</h4>
+                                        <span><a href="mailto:hello@ledu.com">hello@ridd.com</a></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="ri-phone-fill"></i>
+                                    <div class="content">
+                                        <h4>{{ __('Phone') }}:</h4>
+                                        <span><a href="tel:098765432150">0000000000000</a></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>-->
+                    
+                    
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="footer-widget ps-5">
+                            <h3>{{ __('Moyens de paiement') }}</h3>
+                            <!--<h1>Souscrivez à votre newsletter afin d'être au parfum de toutes les activités du RIDD</h1>-->
+				            
+				            <div class="newsletter-area pb-100">
+					                <div class="row">
+					                    
+					                    <div class="col-lg-12">
+						                   <img src="/img/bouton-payment.png"/>
+					                   </div>
+				            </div>
+				            
+                            <!--<ul class="footer-contact">-->
+	                            <!--<li>
+	                                 <span>ARE YOU IMPRESSED FOR AMAZING SERVICES?</span>
+				                     <h2>Subscribe our newsletter</h2>-->
+	                                 <!--<div class="newsletter-area section-bg ptb-100">
+				            <div class="container">
+				                <div class="row">
+				                    <div class="col-lg-5">
+				                        <div class="section-title mt-rs-20">
+				                            <span>ARE YOU IMPRESSED FOR AMAZING SERVICES?</span>
+				                            <h2>Subscribe our newsletter</h2>
+				                        </div>
+				                    </div>
+				                    <div class="col-lg-7">
+				                        <form class="newsletter-form" data-toggle="validator" method="POST" novalidate="true">
+				                            <input type="email" class="form-control" placeholder="Enter Your Email Address" name="EMAIL" required="" autocomplete="off">
+				                            <button class="subscribe-btn disabled" type="submit" style="pointer-events: all; cursor: pointer;">
+				                                Subscribe Now  <i class="flaticon-paper-plane"></i>
+				                            </button>
+				                            <div id="validator-newsletter" class="form-result"></div>
+				                        </form>
+				                    </div>
+				                </div>
+				            </div>-->
+	                            <!--</li>
+                            </ul>-->
+                            
+                            
+                            
+
+                        </div>
+                            
+                            <!--<ul class="footer-contact">
                                 <li>
                                     <i class="ri-map-pin-2-fill"></i>
                                     <div class="content">
@@ -504,27 +592,26 @@
                                         <span><a href="tel:098765432150">+2250779379838</a></span>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul>-->
                         </div>
                     </div>
-                    
-                    
-                    <div class="col-lg-5 col-sm-6">
+                    <div class="col-lg-4 col-sm-6">
                         <div class="footer-widget ps-5">
                             <h3>{{ __('Newsletter') }}</h3>
                             <!--<h1>Souscrivez à votre newsletter afin d'être au parfum de toutes les activités du RIDD</h1>-->
 				            
 				            <div class="newsletter-area pb-100">
 					                <div class="row">
-					                    <div class="col-lg-11">
+					                    <div class="col-lg-12">
 					                        <form class="newsletter-form" data-toggle="validator" method="POST" novalidate="true">
 					                            <input type="email" class="form-control" placeholder="{{ __('Entrer votre adresse e-mail') }}" name="EMAIL" required="" autocomplete="off">
-					                            <button class="subscribe-btn disabled" type="submit" style="pointer-events: all; cursor: pointer;background: rgb(240, 128, 0) !important;">
+					                            <button  class="subscribe-btn disabled" type="submit" style="pointer-events: all; cursor: pointer;background: rgb(240, 128, 0) !important;">
 					                                {{ __('S\'abonner') }}  <i class="flaticon-paper-plane"></i>
 					                            </button>
 					                            <!--<div id="validator-newsletter" class="form-result"></div>-->
 					                        </form>
 					                    </div>
+					                    
 				            </div>
 				            
                             <!--<ul class="footer-contact">-->
@@ -585,8 +672,61 @@
                         </div>
                     </div>
                     
-                    
                 </div>
+                 <div class="row">
+	                 <div class="col-12 text-center">
+		                 <div class="footer-widget">
+                            <!--<div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="/img/LG-RIDD@2x.png" alt="Images" style="width: 100px;">
+                                </a>
+                            </div>-->
+                            <!--<p>{{ __('Le Réseau Ivoirien des Diplômés de la Diaspora (RIDD) est une organisation née le 15 Novembre 2017 à l’initiative des jeunes ivoiriens diplômés dee la diaspora.') }}</p>-->
+                            
+                            <div class="footer-widget ps-5">
+                            
+                            
+                            <ul class="social-link mt-3">
+                                <li class="social-title">{{ __('Nous suivre') }}:</li>
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pinterest.com/" target="_blank">
+                                        <i class="ri-instagram-line"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                            
+                            <!--<ul class="social-link">
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pinterest.com/" target="_blank">
+                                        <i class="ri-instagram-line"></i>
+                                    </a>
+                                </li>
+                            </ul>-->
+                        </div>
+	                 </div>
+                 </div>
             </div>
             <div class="copyright-area">
                 <div class="container">

@@ -245,7 +245,7 @@ Route::get('/admin/candidate',function(){
 
 Route::get('/admin/offers',function(){
     return Inertia::render('Admin/Offers');
-})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.offers');
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin|Staff'])->name('admin.offers');
 
 Route::get('/admin/accounts/staff',function(){
     return Inertia::render('Admin/Staff');
@@ -276,13 +276,16 @@ Route::get('/account/profile',function(){
 	   
 	   return Inertia::render('User/Employer/Profile');
 	
-	}else{
+	}else if(Auth::user()->hasRole('Consultant')){
 	
 	   return Inertia::render('User/Consultant/Profile');
 		
+	}else{
+		
+		return Inertia::render('User/Staff/Profile');
 	}
     //return Inertia::render('User/Dashboard');
-})->middleware(['auth:sanctum','role:Student|Employer|Consultant','verified'])->name('user.dashboard');
+})->middleware(['auth:sanctum','role:Student|Employer|Consultant|Staff','verified'])->name('user.dashboard');
 
 //Route::get('/offers',function(){
 //    return Inertia::render('User/Offers');
@@ -401,8 +404,10 @@ Route::post('/admin/forgot-password', function (Request $request) {
 $limiter = config('fortify.limiters.login');
 Route::post('/login', [LoginController::class, 'store'])
         ->middleware(array_filter([
+	        'susp',
             'guest',
             'is_user',
+            
             $limiter ? 'throttle:'.$limiter : null,
         ]))->name("user.login");
 

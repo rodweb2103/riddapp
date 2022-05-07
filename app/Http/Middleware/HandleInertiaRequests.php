@@ -70,6 +70,7 @@ class HandleInertiaRequests extends Middleware
                 'is_employer' => auth()->user() ? auth()->user()->hasRole('Employer') ? 1 : 0 : 0,
                 'is_candidate' => auth()->user() ? auth()->user()->hasRole('Student') ? 1 : 0 : 0,
                 'is_consult' => auth()->user() ? auth()->user()->hasRole('Consultant') ? 1 : 0 : 0,
+                'is_staff' => auth()->user() ? auth()->user()->hasRole('Staff') ? 1 : 0 : 0,
                 'candidate_details' => auth()->user() ? auth()->user()->hasRole('Student') || auth()->user()->hasRole('Consultant')  ? @$user : [] : [],
                 'file_cv' => basename(@$user->cv_profile),
 	            'auth.user' => fn () => $request->user()

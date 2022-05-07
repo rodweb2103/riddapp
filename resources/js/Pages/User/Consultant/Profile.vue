@@ -51,7 +51,7 @@
           <div class="col-md-3">
             <!-- Profile Image -->
             <!--{{ $page.props['candidate_details'] }}-->
-            <div class="card card-primary card-outline">
+            <div class="card card-primary card-outline" style="border-top: 3px solid orange;">
               <div class="card-body box-profile">
                 <div class="text-center">
 	             
@@ -71,7 +71,7 @@
             </div>
             
             <div class="card card-primary" style="padding: unset !important;">
-              <div class="card-header">
+              <div class="card-header" style="background-color: orange;color:000 !important;">
                 <h3 class="card-title">Mes infos</h3>
               </div>
               <!-- /.card-header -->
@@ -209,7 +209,7 @@
                       <div class="form-group row">
                         <div class="offset-sm-3 col-sm-10">
                           <!--<button type="submit" class="btn btn-danger">Mettre à jour</button>-->
-                           <jet-button class="btn btn-primary"  :class="{ 'text-white-50': formUser.processing }" :disabled="formUser.processing">
+                           <jet-button class="btn btn-primary"  :class="{ 'text-white-50': formUser.processing }" :disabled="formUser.processing" style="background-color: green !important;">
 				            <div v-show="formUser.processing" class="spinner-border spinner-border-sm" role="status">
 				              <span class="visually-hidden">Loading...</span>
 				            </div>

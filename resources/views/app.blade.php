@@ -92,6 +92,12 @@
         
         <style>
 	        
+	        .footer-widget .social-link li a i {
+		  font-size: 20px !important;
+		  width: 42px !important;
+		  height: 42px !important;
+		  line-height: 40px !important;
+  }
 	        .page-item.active .page-link {
 		        
 		        background-color: green !important;
