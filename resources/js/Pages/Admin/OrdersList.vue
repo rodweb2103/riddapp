@@ -14,7 +14,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Achats entreprise</h3>
+                <h3 class="card-title">{{ __('Achats entreprise') }}</h3>
 
                 <!--<div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -31,10 +31,10 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>ID Annonce</th>
-                      <th>Entreprise</th>
-                      <th>Pack</th>
-                      <th>Date transaction</th>
+                      <th>{{ __('ID Annonce') }}</th>
+                      <th>{{ __('Entreprise') }}</th>
+                      <th>{{ __('Pack') }}</th>
+                      <th>{{ __('Date transaction') }}</th>
                     </tr>
                     </thead>
                     <tbody>

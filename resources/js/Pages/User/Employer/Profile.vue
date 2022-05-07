@@ -47,7 +47,7 @@
         <div class="row pt-5">
           <div class="col-md-3">
             <!-- Profile Image -->
-            <div class="card card-primary card-outline">
+            <div class="card card-primary card-outline" style="border-top: 3px solid orange !important;">
               <div class="card-body box-profile">
                 <div class="text-center">
 	             
@@ -65,6 +65,40 @@
               </div>
               <!-- /.card-body -->
             </div>
+            
+            <div class="card card-primary" style="padding: unset !important;">
+              <div class="card-header" style="background-color: orange;color:000 !important;">
+                <h3 class="card-title">{{ __('Mon abonnement') }}</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <!--<strong><i class="fas fa-book mr-1"></i>Domaine de Formation</strong>-->
+
+                <!--<p class="text-muted">
+                  {{ $page.props['candidate_details']['activity_sector_company_user']['activity_sector_name'] }}
+                </p>-->
+
+                <!--<hr>-->
+
+                <strong><i class="fas fa-map-marker-alt mr-1"></i>Pack</strong>
+
+                
+
+                <hr>
+                
+                
+                <strong><i class="fas fa-map-marker-alt mr-1"></i>{{ __("Date d'expiration") }}</strong>
+
+                
+
+                <hr>
+
+                <!--<strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
+
+                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>-->
+              </div>
+              <!-- /.card-body -->
+            </div>
             <!-- /.card -->
 
             <!-- About Me Box -->
@@ -77,7 +111,7 @@
                 <!--<ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
                 </ul>-->
-                <label>Éditer vos informations personnelles</label>
+                <label>{{ __('Éditer vos informations personnelles') }} </label>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
@@ -92,7 +126,7 @@
                         </div>
                       </div>-->
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Email</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __('Email') }}</label>
                         <div class="col-sm-9">
                           <input type="email" class="form-control" id="inputEmail" placeholder="" v-model="formUser.email">
                           <div v-if="formUser.errors.email" style="color:red;">{{ formUser.errors.email }}</div>
@@ -100,7 +134,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nom de l'entreprise</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Nom de l'entreprise") }}</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.company_name">
                            <div v-if="formUser.errors.company_name" style="color:red;">{{ formUser.errors.company_name }}</div>
@@ -108,7 +142,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Adresse géographique</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Adresse géographique") }}</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.company_location">
                            <div v-if="formUser.errors.company_location" style="color:red;">{{ formUser.errors.company_location }}</div>
@@ -116,7 +150,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Détails sur l'entreprise</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Détails sur l'entreprise") }}</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.company_about">
                            <div v-if="formUser.errors.company_about" style="color:red;">{{ formUser.errors.company_about }}</div>
@@ -124,7 +158,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Site web entreprise</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Site web entreprise") }}</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.company_website">
                            <div v-if="formUser.errors.company_website" style="color:red;">{{ formUser.errors.company_website }}</div>
@@ -133,7 +167,7 @@
                       
                        
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nom du mandataire</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Nom du mandataire") }}</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.last_name">
                            <div v-if="formUser.errors.last_name" style="color:red;">{{ formUser.errors.last_name }}</div>
@@ -141,7 +175,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Prénom du mandataire</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Prénom du mandataire") }}</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.first_name">
                            <div v-if="formUser.errors.first_name" style="color:red;">{{ formUser.errors.first_name }}</div>
@@ -149,7 +183,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Mot de passe</label>
+                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Mot de passe") }}</label>
                         <div class="col-sm-9">
                           <input type="password" class="form-control" id="inputName2" placeholder="" v-model="formUser.password">
                         </div>
@@ -189,7 +223,7 @@
 				              <span class="visually-hidden">Loading...</span>
 				            </div>
 				
-				            Mettre à jour
+				            {{ __("Mettre à jour") }}
 				          </jet-button>
                         </div>
                       </div>

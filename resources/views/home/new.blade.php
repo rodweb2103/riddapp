@@ -336,7 +336,7 @@
                                             </a>
                                         </li>-->
                                         <li class="nav-item">
-                                        @if(\Auth::user()->hasRole('Employer') || \Auth::user()->hasRole('Candidate') || \Auth::user()->hasRole('Consultant'))
+                                        @if(\Auth::user()->hasRole('Employer') || \Auth::user()->hasRole('Student') || \Auth::user()->hasRole('Consultant'))
 	                                         <a href="{{ route('user.dashboard') }}" class="nav-link" style="background: transparent;font-size: 17px;color:#000 !important;font-weight: 500"> 
 								               {{ __('Mon compte') }}
 								             </a>

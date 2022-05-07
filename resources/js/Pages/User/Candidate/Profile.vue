@@ -138,7 +138,7 @@
                 <!--<ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
                 </ul>-->
-                <label>Éditer vos informations personnelles</label>
+                <label>{{ __("Éditer vos informations personnelles") }}</label>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">
@@ -154,7 +154,7 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Email</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Email") }}</label>
                         <div class="col-sm-9">
                           <input type="email" class="form-control" id="inputEmail" placeholder="" v-model="formUser.email">
                            <div v-if="formUser.errors.email" style="color:red;">{{ formUser.errors.email }}</div>
@@ -162,7 +162,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nom</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Nom") }}</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.last_name">
                            <div v-if="formUser.errors.last_name" style="color:red;">{{ formUser.errors.last_name }}</div>
@@ -170,7 +170,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Prénom</label>
+                        <label for="inputEmail" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Prénom") }}</label>
                         <div class="col-sm-9">
                           <input type="text" class="form-control" id="inputEmail" placeholder="" v-model="formUser.first_name">
                            <div v-if="formUser.errors.first_name" style="color:red;">{{ formUser.errors.first_name }}</div>
@@ -178,7 +178,7 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Mot de passe</label>
+                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Mot de passe") }}</label>
                         <div class="col-sm-9">
                           <input type="password" class="form-control" id="inputName2" placeholder="" v-model="formUser.password">
                         </div>
@@ -218,7 +218,7 @@
 				              <span class="visually-hidden">Loading...</span>
 				            </div>
 				
-				            Mettre à jour
+				            {{ __("Mettre à jour") }}
 				          </jet-button>
                         </div>
                       </div>

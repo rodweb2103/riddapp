@@ -7,21 +7,21 @@
 	    
 	     <jet-dialog-modal id="unsuspendAccount">
 	        <template #title>
-	          Activer un compte
+	          {{ __('Activer un compte') }}
 	        </template>
 	
 	        <template #content>
 	          
 	          <div class="mt-4">
 		          
-			         Confirmez vous l'activation de ce compte ?    
+			         {{ __('Confirmez vous l\'activation de ce compte ?') }} 
 		          
 	          </div>
 	        </template>
 	
 	        <template #footer>
 	          <jet-secondary-button data-dismiss="modal" @click="closeModal4">
-	            Non
+	            {{ __('Non') }}
 	          </jet-secondary-button>
 	          
 	          <jet-button class="btn btn-primary" @click="unsuspendAccount()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -29,28 +29,28 @@
 	              <span class="visually-hidden">Loading...</span>
 	            </div>
 	
-	            Oui
+	            {{ __('Oui') }}
 	          </jet-button>
 	        </template>
         </jet-dialog-modal>
 	    
 	    <jet-dialog-modal id="suspendAccount">
 	        <template #title>
-	          Suspendre un compte
+	          {{ __('Suspendre un compte') }}
 	        </template>
 	
 	        <template #content>
 	          
 	          <div class="mt-4">
 		          
-			         Confirmez vous la suspension de ce compte ?    
+			         {{ __('Confirmez vous la suspension de ce compte ?') }}   
 		          
 	          </div>
 	        </template>
 	
 	        <template #footer>
 	          <jet-secondary-button data-dismiss="modal" @click="closeModal">
-	            Non
+	            {{ __('Non') }}
 	          </jet-secondary-button>
 	          
 	          <jet-button class="btn btn-primary" @click="suspendAccount()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -58,28 +58,28 @@
 	              <span class="visually-hidden">Loading...</span>
 	            </div>
 	
-	            Oui
+	            {{ __('Oui') }}
 	          </jet-button>
 	        </template>
         </jet-dialog-modal>
         
         <jet-dialog-modal id="deleteAccount">
 	        <template #title>
-	          Supprimer un compte
+	          {{ __('Supprimer un compte') }}
 	        </template>
 	
 	        <template #content>
 	          
 	          <div class="mt-4">
 		          
-			         Confirmez vous la suppression de ce compte ?    
+			         {{ __('Confirmez vous la suppression de ce compte ?') }}   
 		          
 	          </div>
 	        </template>
 	
 	        <template #footer>
 	          <jet-secondary-button data-dismiss="modal" @click="closeModal2">
-	            Non
+	            {{ __('Non') }}
 	          </jet-secondary-button>
 	          
 	          <jet-button class="btn btn-primary" @click="deleteAccount()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -87,14 +87,14 @@
 	              <span class="visually-hidden">Loading...</span>
 	            </div>
 	
-	            Oui
+	            {{ __('Oui') }}
 	          </jet-button>
 	        </template>
         </jet-dialog-modal>
 	     
 	    <jet-dialog-modal id="openOffer" maxWidth="lg">
         <template #title>
-          Éditer un compte staff
+          {{ __('Éditer un compte staff') }}
         </template>
 
         <template #content>
@@ -108,7 +108,7 @@
 		       
 		        <div class="col-12">
 				  <div class="mb-3">
-				    <input type="text" placeholder="Courriel" v-model="form.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
+				    <input type="text" :placeholder="__('Email')" v-model="form.email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
 				    <jet-input-error :message="form.errors.email" />
 				  </div>
 		        </div>
@@ -121,14 +121,14 @@
 		        
 		        <div class="col-12">
 				  <div class="mb-3">
-				    <input type="text" placeholder="Nom" v-model="form.first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
+				    <input type="text" :placeholder="__('Nom')" v-model="form.first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
 				    <jet-input-error :message="form.errors.first_name" />
 				  </div>
 		        </div>
 		        
 		        <div class="col-12">
 				  <div class="mb-3">
-				    <input type="text" placeholder="Prénom" v-model="form.last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
+				    <input type="text" :placeholder="__('Prénom')" v-model="form.last_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="margin-bottom: 0px;">
 				    <jet-input-error :message="form.errors.last_name" />
 				  </div>
 		        </div>
@@ -155,7 +155,7 @@
 
         <template #footer>
           <jet-secondary-button data-dismiss="modal" @click="closeModal3">
-            Annuler
+            {{ __('Annuler') }}
           </jet-secondary-button>
           
           <jet-button class="btn btn-primary" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -163,7 +163,7 @@
               <span class="visually-hidden">Loading...</span>
             </div>
 
-            Confirmer
+            {{ __('Confirmer') }}
           </jet-button>
           
           
@@ -171,7 +171,7 @@
       </jet-dialog-modal>
        
         <div class="clearfix mt-4">
-           <a @click="openOfferForm" class="btn btn-sm btn-info float-left">Éditer une compte staff</a>
+           <a @click="openOfferForm" class="btn btn-sm btn-info float-left">{{ __('Éditer un compte staff') }}</a>
         </div>
         <!-- Main row -->
         <div class="row pt-3">
@@ -183,7 +183,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Liste des comptes staff</h3>
+                <h3 class="card-title">{{ __('Liste des comptes staff') }}</h3>
 
                 <div class="card-tools">
                   <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -200,9 +200,9 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>NOM</th>
-                      <th>PRÉNOM</th>
-                      <th>EMAIL</th>
+                      <th>{{ __('NOM') }}</th>
+                      <th>{{ __('PRÉNOM') }}</th>
+                      <th>{{ __('EMAIL') }}</th>
                       <!--<th>PSEUDO</th>-->
                       <th>ACTION</th>
                     </tr>

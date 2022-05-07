@@ -10,10 +10,10 @@
         </a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="/" class="nav-link">Accueil</a>
+        <a href="/" class="nav-link">{{ __("Accueil") }}</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <Link href="/annonces" class="nav-link">Offres</Link>
+        <Link href="/annonces" class="nav-link">{{ __("Offres") }}</Link>
       </li>
     </ul>
     <!-- Right navbar links -->

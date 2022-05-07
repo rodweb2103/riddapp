@@ -94,7 +94,7 @@
 	            <Link  href="/account" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>
-	                   Offres
+	                   {{ __("Offres") }}
 	                </p>
 				 </Link>
 	        </li>
@@ -103,7 +103,7 @@
 	            <Link href="/orders" class="nav-link">
 	              <i class="nav-icon fas fa-th"></i>
 	              <p>
-	                Achats
+	                {{ __("Achats") }}
 	              </p>
 	            </Link>
 	        </li>
@@ -117,7 +117,7 @@
 	           <Link  href="/account" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>
-	                   Offres
+	                  {{ __("Offres") }}
 	                </p>
 				 </Link>
 	        </li>
@@ -130,7 +130,7 @@
 	             <Link  :href="route('admin.candidate')" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>
-	                   Candidats
+	                   {{ __("Candidats") }}
 	                </p>
 				 </Link>
 	            <!--<a :href="route('admin.candidate')" class="nav-link">
@@ -150,7 +150,7 @@
 	            <Link  :href="route('admin.employer')" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>
-	                   Recruteurs
+	                   {{ __("Recruteurs") }}
 	                </p>
 				 </Link>
 	          </li>
@@ -164,7 +164,7 @@
 	            <Link  :href="route('admin.offers')" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>
-	                   Offres
+	                   {{ __("Offres") }}
 	                </p>
 				 </Link>
 	          </li>
@@ -173,7 +173,7 @@
 	            <Link href="/admin/orders" class="nav-link">
 	              <i class="nav-icon fas fa-th"></i>
 	              <p>
-	                Achats
+	                {{ __("Achats") }}
 	              </p>
 	            </Link>
 	            <!--<Link  :href="route('admin.accounts.staff')" class="nav-link">
@@ -194,7 +194,7 @@
 	            <Link  :href="route('admin.accounts.staff')" class="nav-link">
 					<i class="nav-icon fas fa-th"></i>
 					<p>
-	                   Comptes staff
+	                   {{ __("Comptes staff") }}
 	                </p>
 				 </Link>
 	          </li>

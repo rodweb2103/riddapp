@@ -7,7 +7,7 @@
 	   
 	    <jet-dialog-modal id="openOffer">
 	        <template #title>
-	          Détails annonce
+	          {{ __("Détails annonce") }}
 	        </template>
 	
 	        <template #content>
@@ -32,21 +32,21 @@
 	
 	        <template #footer>
 	          <jet-button data-dismiss="modal" @click="closeModal">
-	            Fermer
+	            {{ __("Fermer") }}
 	          </jet-button>
 	        </template>
          </jet-dialog-modal>
          
          <jet-dialog-modal id="deleteOffer">
 	        <template #title>
-	          Retirer son offre
+	          {{ __("Retirer son offre") }}
 	        </template>
 	
 	        <template #content>
 	          
 	          <div class="mt-4 text-center">
 		          
-		             Confirmez vous le retrait de votre offre ?
+		             {{ __("Confirmez vous le retrait de votre offre ?") }}
 		              
 		          
 	          </div>
@@ -54,7 +54,7 @@
 	
 	        <template #footer>
 	          <jet-secondary-button data-dismiss="modal" @click="closeModal2">
-	            Non
+	            {{ __("Non") }}
 	          </jet-secondary-button>
 	          
 	          <!--<jet-button @click="removeOffer">
@@ -65,7 +65,7 @@
 		              <span class="visually-hidden">Loading...</span>
 		            </div>
 		
-		            Oui
+		            {{ __("Oui") }}
              </jet-button>
 	        </template>
          </jet-dialog-modal>
@@ -82,7 +82,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Mes Offres</h3>
+                <h3 class="card-title">{{ __("Mes Offres") }}</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -99,12 +99,12 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>ID Annonce</th>
-                      <th>Titre Annonce</th>
-                      <th>Entreprise</th>
-                      <th>Libellé Annonce</th>
-                      <th>Offre soumise il y'a</th>
-                      <th>Statut Offre</th>
+                      <th>{{ __("ID Annonce") }}</th>
+                      <th>{{ __("Titre Annonce") }}</th>
+                      <th>{{ __("Entreprise") }}</th>
+                      <th>{{ __("Libellé Annonce") }}</th>
+                      <th>{{ __("Offre soumise il y'a") }}</th>
+                      <th>{{ __("Statut Offre") }}</th>
                       <th>Action</th>
                     </tr>
                     </thead>
@@ -117,9 +117,9 @@
 		                    <td>{{ data.offer_date }}</td>
 		                    <td>
 			                    
-			                    <span class="badge badge-success" v-if="data.offer_status == 1">Accepté</span>
-			                    <span class="badge badge-danger" v-if="data.offer_status == 2">Rejeté</span>
-			                    <span class="badge badge-warning" v-if="data.offer_status == 0">En attente</span>
+			                    <span class="badge badge-success" v-if="data.offer_status == 1">{{ __("Accepté") }}</span>
+			                    <span class="badge badge-danger" v-if="data.offer_status == 2">{{ __("Rejeté") }}</span>
+			                    <span class="badge badge-warning" v-if="data.offer_status == 0">{{ __("En attente") }}</span>
 			                    
 		                    </td>
 		                    <td>

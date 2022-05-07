@@ -176,7 +176,7 @@
 			              <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
 			                <h3 class="card-title">
 			                  <i class="fas fa-th mr-1"></i>
-			                  Montant des ventes
+			                  {{ __("Montant des ventes") }}
 			                </h3>
 			
 			                <!--<div class="card-tools">
@@ -248,7 +248,7 @@
                 <!-- USERS LIST -->
                 <div class="card" style="height: 420px;">
                   <div class="card-header">
-                    <h3 class="card-title">Nouveaux recruteurs</h3>
+                    <h3 class="card-title">{{ __("Nouveaux recruteurs") }}</h3>
 
                     <div class="card-tools">
                       <!--<span class="badge badge-danger">{{ employerData['total'] }} New Members</span>-->
@@ -266,7 +266,7 @@
                     <ul class="users-list clearfix">
 	                   <div  v-if="total_employer == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
 	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
-	                      <div style="font-size: 20px;" class="mt-4">Aucun compte recruteur trouvé</div>
+	                      <div style="font-size: 20px;" class="mt-4">{{ __("Aucun compte recruteur trouvé") }}</div>
 	                  </div>
                       <li v-for="data in employerData['data']">
                         <!--<img :src="data['profile_url']" alt="User Image">-->
@@ -315,7 +315,7 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer text-center">
-                    <Link href="/admin/employer" v-if="employerData['total'] > 0">Voir tout les recruteurs</Link>
+                    <Link href="/admin/employer" v-if="employerData['total'] > 0">{{ __("Voir tout les recruteurs") }}</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>
@@ -325,7 +325,7 @@
                 <!-- USERS LIST -->
                 <div class="card" style="height: 420px;">
                   <div class="card-header">
-                    <h3 class="card-title">Nouveaux Candidats</h3>
+                    <h3 class="card-title">{{ __("Nouveaux Candidats") }}</h3>
 
                     <div class="card-tools">
                       <!--<span class="badge badge-danger">{{ candidateData['total'] }} New Members</span>-->
@@ -344,7 +344,7 @@
 	                    
 	                  <div  v-if="total_candidate == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
 	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
-	                      <div style="font-size: 20px;" class="mt-4">Aucun compte candidat trouvé</div>
+	                      <div style="font-size: 20px;" class="mt-4">{{ __("Aucun compte candidat trouvé") }}</div>
 	                  </div>
                       <li v-for="data in candidateData['data']">
                         <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 73% !important;">
@@ -392,7 +392,7 @@
                   </div>
                   <!-- /.card-body -->
                   <div class="card-footer text-center" v-if="total_candidate > 0">
-                    <Link href="/admin/candidate">Voir tout les candidats</Link>
+                    <Link href="/admin/candidate">{{ __("Voir tout les candidats") }}</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>
@@ -405,7 +405,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Dernières Offres</h3>
+                <h3 class="card-title">{{ __("Dernières Offres") }}</h3>
 
                 <div class="card-tools">
                   <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -422,10 +422,10 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>ID</th>
-                      <th>Annonce</th>
-                      <th>Statut</th>
-                      <th>Date publication</th>
+                      <th>{{ __("ID") }}</th>
+                      <th>{{ __("Annonce") }}</th>
+                      <th>{{ __("Statut") }}</th>
+                      <th>{{ __("Date publication") }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -434,8 +434,9 @@
                       <td>{{ offer['offers_details'] }}</td>
                       <td><!--<span class="badge badge-success">Shipped</span>-->
                           
-                          <span class="badge badge-warning" v-if="offer['publish_status'] == 0">Non publié</span>
-	                      <span class="badge badge-success" v-if="offer['publish_status'] == 1">Publié</span>
+                          <span class="badge badge-warning" v-if="offer['publish_status'] == 0">{{ __("Non publié") }}</span>
+	                      <span class="badge badge-success" v-if="offer['publish_status'] == 1">{{ __("Publié") }}</span>
+	                      <span class="badge badge-danger" v-if="offer['publish_status'] == -1">{{ __("Rejété") }}</span>
                       </td>
                       <td>
                           {{ offer['offer_duration'] }}
@@ -499,7 +500,7 @@
                 <!--<a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
                 <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">V</a>-->
                 <div class="card-footer text-center">
-                    <Link href="/admin/offers">Voir toutes les annonces</Link>
+                    <Link href="/admin/offers">{{ __("Voir toutes les annonces") }}</Link>
                 </div>
               </div>
               <!-- /.card-footer -->
@@ -514,7 +515,7 @@
               <span class="info-box-icon"><i class="fas fa-user-graduate"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Candidats</span>
+                <span class="info-box-text">{{ __("Candidats") }}</span>
                 <span class="info-box-number">{{ total_candidate }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -524,7 +525,7 @@
               <span class="info-box-icon"><i class="fas fa-building"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Recruteurs</span>
+                <span class="info-box-text">{{ __("Recruteurs") }}</span>
                 <span class="info-box-number">{{ total_employer }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -534,7 +535,7 @@
               <span class="info-box-icon"><i class="fas fa-clipboard-list"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Annonces publiées</span>
+                <span class="info-box-text">{{ __("Annonces publiées") }}</span>
                 <span class="info-box-number">{{ statsData['offres'] }}</span>
               </div>
               <!-- /.info-box-content -->
@@ -556,7 +557,7 @@
                 <!-- USERS LIST -->
                 <div class="card" style="height: 420px;">
                   <div class="card-header">
-                    <h3 class="card-title">Comptes staff</h3>
+                    <h3 class="card-title">{{ __("Comptes staff") }}</h3>
 
                     <div class="card-tools">
                       <!--<span class="badge badge-danger">{{ staffData['total_all'] }} New Members</span>-->
@@ -573,7 +574,7 @@
                     <ul class="users-list clearfix">
 	                  <div  v-if="total_staff == 0" class="d-flex flex-column align-items-center justify-content-center" style="height: 300px;">
 	                      <i  style="font-size: 100px;" class="fas fa-exclamation-triangle"></i>
-	                      <div style="font-size: 20px;" class="mt-4">Aucun compte staff trouvé</div>
+	                      <div style="font-size: 20px;" class="mt-4">{{ __("Aucun compte staff trouvé") }}</div>
 	                  </div>
                       <li v-for="data in staffData['data']">
                         <!--<img :src="data['profile_photo']" alt="User Image">-->
@@ -623,7 +624,7 @@
                   <!-- /.card-body -->
                   <div class="card-footer text-center" v-if="total_staff > 0">
                     <!--<a href="javascript:">Voir tout les comptes staff</a>-->
-                    <Link href="/admin/accounts/staff">Voir tout les comptes staff</Link>
+                    <Link href="/admin/accounts/staff">{{ __("Voir tout les comptes staff") }}</Link>
                   </div>
                   <!-- /.card-footer -->
                 </div>

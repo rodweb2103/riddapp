@@ -13,7 +13,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Liste des recruteurs</h3>
+                <h3 class="card-title">{{ __("Liste des recruteurs") }}</h3>
 
                 <div class="card-tools">
                   <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -30,14 +30,14 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>NOM</th>
-                      <th>PRÉNOM</th>
-                      <th>PAYS</th>
-                      <th>VILLE</th>
-                      <th>TÉLÉPHONE</th>
-                      <th>PSEUDO</th>
-                      <th>SECTEUR D'ACTIVITÉ</th>
-                      <th>OFFRES PUBLIÉES</th>
+                      <th>{{ __("NOM") }}</th>
+                      <th>{{ __("PRÉNOM") }}</th>
+                      <th>{{ __("PAYS") }}</th>
+                      <th>{{ __("VILLE") }}</th>
+                      <th>{{ __("TÉLÉPHONE") }}</th>
+                      <th>{{ __("PSEUDO") }}</th>
+                      <th>{{ __("SECTEUR D'ACTIVITÉ") }}</th>
+                      <th>{{ __("OFFRES PUBLIÉES") }}</th>
                     </tr>
                     </thead>
                     <tbody>

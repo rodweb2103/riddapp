@@ -6,7 +6,7 @@
 	   
 	   <jet-dialog-modal id="chatAdmin">
         <template #title>
-          Centre de support
+          {{ __("Centre de support") }}
         </template>
 
         <template #content>
@@ -20,7 +20,7 @@
 
         <template #footer>
           <jet-secondary-button  @click="closeModal3">
-            Fermer
+            {{ __("Fermer") }}
           </jet-secondary-button>
         </template>
       </jet-dialog-modal>
@@ -28,21 +28,21 @@
 	   
 	   <jet-dialog-modal id="deleteOffer">
         <template #title>
-          Supprimer une annonce
+          {{ __("Supprimer une annonce") }}
         </template>
 
         <template #content>
           
           <div class="mt-4">
 	          
-		         Confirmez vous la suppression de cette annonce ?    
+		         {{ __("Confirmez vous la suppression de cette annonce ?") }}   
 	          
           </div>
         </template>
 
         <template #footer>
           <jet-secondary-button data-dismiss="modal" @click="closeModal2">
-            Non
+            {{ __("Non") }}
           </jet-secondary-button>
           
           <jet-button style="background-color: green;" class="btn" @click="deleteOffer()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -50,14 +50,14 @@
               <span class="visually-hidden">Loading...</span>
             </div>
 
-            Oui
+            {{ __("Oui") }}
           </jet-button>
         </template>
       </jet-dialog-modal>
 	   
 	   <jet-dialog-modal id="openOffer" maxWidth="lg">
         <template #title>
-          Éditer une annonce
+          {{ __("Éditer une annonce") }}
         </template>
 
         <template #content>
@@ -102,8 +102,8 @@
 					 
 					    <!--<Select2 v-model="form.contract_type" :options="contract_type" :settings="{placeholder:'--Type de contrat--',width:'100%',dropdownParent:'#openOffer'}"/>-->
 					    <select v-model="form.contract_type" class="form-control">
-						    <option selected disabled value>--Type d'offre--</option>
-						    <option :value="ct['id']" v-for="ct in contract_type">{{ ct['text'] }}</option>
+						    <option selected disabled value>--{{ __("Type d'offre") }}--</option>
+						    <option :value="ct['id']" v-for="ct in contract_type">{{ __(""+ct['text']+"") }}</option>
 					    </select>
 					    <jet-input-error :message="form.errors.contract_type" />
 				 </div>
@@ -118,8 +118,8 @@
 					    </select>-->
 					    <!--<Select2 v-model="form.contract_duration" :options="contract_duration" :settings="{placeholder:'--Durée du contrat--',width:'100%',dropdownParent:'#openOffer'}"/>-->
 					    <select v-model="form.contract_duration" class="form-control">
-						    <option selected disabled value>--Durée du contrat--</option>
-						    <option :value="ct" v-for="ct in contract_duration">{{ ct }}</option>
+						    <option selected disabled value>--{{ __("Durée du contrat") }}--</option>
+						    <option :value="ct" v-for="ct in contract_duration">{{ __(""+ct+"") }}</option>
 					    </select>
 					    <jet-input-error :message="form.errors.contract_duration" />
 					  </div>
@@ -128,8 +128,8 @@
 			    <div class="col-4">  
 					    <!--<Select2 v-model="form.study_level" :options="study_level" :settings="{placeholder:'--Niveau d\'étude--',width:'100%',dropdownParent:'#openOffer'}"/>-->
 					    <select v-model="form.study_level" class="form-control">
-						    <option selected disabled value>--Niveau d'étude--</option>
-						    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+						    <option selected disabled value>--{{ __("Niveau d'étude") }}--</option>
+						    <option :value="ct['id']" v-for="ct in study_level">{{ __(""+ct['text']+"") }}</option>
 					    </select>
 					    <jet-input-error :message="form.errors.study_level" />
 			    </div>
@@ -158,7 +158,7 @@
 			  
 					  <div class="mb-3">
 					    
-					    <textarea class="form-control" placeholder="Localisation" v-model="form.location" rows="5" style="margin-bottom: 0px;"></textarea>
+					    <textarea class="form-control" :placeholder="__('Localisation')" v-model="form.location" rows="5" style="margin-bottom: 0px;"></textarea>
 					    <jet-input-error :message="form.errors.location" />
 					  </div>
 				 </div>
@@ -176,7 +176,7 @@
 			    <div class="col-12">
 				  <div class="mb-3">
 				    <!--<input type="password" class="form-control" id="exampleInputPassword1">-->
-				    <textarea class="form-control" placeholder="Détails de l'offre" v-model="form.offer_details" rows="10" style="margin-bottom: 0px;"></textarea>
+				    <textarea class="form-control" :placeholder="__('Détails de l\'offre')" v-model="form.offer_details" rows="10" style="margin-bottom: 0px;"></textarea>
 				    <jet-input-error :message="form.errors.offer_details" />
 				  </div>
 			    </div>
@@ -188,7 +188,7 @@
 			  
 					  <div class="mb-3">
 					    
-					    <textarea class="form-control" placeholder="Détails sur le profil recherché" v-model="form.profile_details" rows="5" style="margin-bottom: 0px;"></textarea>
+					    <textarea class="form-control" :placeholder="__('Détails sur le profil recherché')" v-model="form.profile_details" rows="5" style="margin-bottom: 0px;"></textarea>
 					    <jet-input-error :message="form.errors.profile_details" />
 					  </div>
 				 </div>
@@ -217,7 +217,7 @@
 
         <template #footer>
           <jet-secondary-button data-dismiss="modal" @click="closeModal">
-            Annuler
+            {{ __("Annuler") }}
           </jet-secondary-button>
           
           <jet-button class="btn" style="background-color: green;" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -225,7 +225,7 @@
               <span class="visually-hidden">Loading...</span>
             </div>
 
-            Confirmer
+            {{ __("Confirmer") }}
           </jet-button>
           <!--<jet-button v-if="editMode == 0" class="btn btn-primary" @click="createOffer" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
@@ -279,7 +279,7 @@
         
         <!-- /.card-body -->
               <div class="clearfix mt-4">
-                <a @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green;">Éditer une annonce</a>
+                <a @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green;">{{ __("Éditer une annonce") }}</a>
               </div>
               <div class="alert alert-success" v-if="$page.props.status!==null">
 	              {{ $page.props.status }}
@@ -295,7 +295,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Offres</h3>
+                <h3 class="card-title">{{ __("Offres") }}</h3>
 
                 <!--<div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -312,12 +312,12 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>ID Annonce</th>
-                      <th>Titre Annonce</th>
-                      <th>Libellé Annonce</th>
-                      <th>Statut annonce</th>
-                      <th>Action</th>
-                      <th>Candidats</th>
+                      <th>{{ __("ID Annonce") }}</th>
+                      <th>{{ __("Titre Annonce") }}</th>
+                      <th>{{ __("Libellé Annonce") }}</th>
+                      <th>{{ __("Statut annonce") }}</th>
+                      <th>{{ __("Action") }}</th>
+                      <th>{{ __("Candidats") }}</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -328,9 +328,9 @@
 		                    
 		                    <td class="text-center">
 			                    
-			                    <span class="badge badge-success" v-if="data.publish_status == 1">Publié</span>
-			                    <span class="badge badge-warning" v-if="data.publish_status == 0">En attente</span>
-			                    <span class="badge badge-danger" v-if="data.publish_status == -1">Rejeté</span>
+			                    <span class="badge badge-success" v-if="data.publish_status == 1">{{ __("Publié") }}</span>
+			                    <span class="badge badge-warning" v-if="data.publish_status == 0">{{ __("En attente") }}</span>
+			                    <span class="badge badge-danger" v-if="data.publish_status == -1">{{ __("Rejeté") }}</span>
 			                    
 		                    </td>
 		                    <td>

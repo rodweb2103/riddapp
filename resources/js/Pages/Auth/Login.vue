@@ -53,10 +53,10 @@
                                             
                                              <div class="col-md-3 col-12 text-center">
 	                                            <jet-button  :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: green;border-width: 0px;padding-top: 7px;">
-										              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+										              
+										              <div><div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
 										                <span class="visually-hidden">Loading...</span>
-										              </div>
-										              <div v-if="!form.processing">{{ __('Connexion') }}</div>
+										              </div>{{ __('Connexion') }}</div>
 		                                         </jet-button>
                                              </div>
                                              

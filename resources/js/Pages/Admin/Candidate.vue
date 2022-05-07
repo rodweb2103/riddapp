@@ -6,7 +6,7 @@
 	     
 	     <jet-dialog-modal id="openOffer" maxWidth="lg">
         <template #title>
-          Éditer un compte candidat
+          {{ __("Éditer un compte candidat") }}
         </template>
 
         <template #content>
@@ -80,8 +80,8 @@
 		        <div class="col-12" v-if="form.account_type == 1">
 				  <div class="mb-3">
 					<select v-model="form.study_level" class="form-control">
-						    <option selected disabled value>--Niveau d'étude--</option>
-						    <option :value="ct['id']" v-for="ct in study_level">{{ ct['text'] }}</option>
+						    <option selected disabled value>--{{ __('Niveau d\'étude') }}--</option>
+						    <option :value="ct['id']" v-for="ct in study_level">{{ __(ct['text']) }}</option>
 					</select>
 				    <jet-input-error :message="form.errors.study_level" style="display: block !important"/>
 				    
@@ -93,8 +93,8 @@
 		        <div class="col-7" v-if="form.account_type == 5">
 				  <div class="mb-3">
 					<select v-model="form.activity_sector" class="form-control">
-						    <option selected disabled value>--Domaine d'intervention--</option>
-						    <option :value="ct['id']" v-for="ct in activity_sector">{{ ct['text'] }}</option>
+						    <option selected disabled value>--{{__('Domaine d\'intervention') }}--</option>
+						    <option :value="ct['id']" v-for="ct in activity_sector">{{ __(ct['text']) }}</option>
 					</select>
 				    <jet-input-error :message="form.errors.activity_sector" style="display: block !important"/>
 				    
@@ -104,8 +104,8 @@
 		        <div class="col-5" v-if="form.account_type == 5">
 				  <div class="mb-3">
 					<select v-model="form.consult_level" class="form-control">
-						    <option selected disabled value>--Niveau--</option>
-						    <option :value="ct['id']" v-for="ct in consult_level">{{ ct['text'] }}</option>
+						    <option selected disabled value>--{{ __('Niveau') }}--</option>
+						    <option :value="ct['id']" v-for="ct in consult_level">{{ __(ct['text']) }}</option>
 					</select>
 				    <jet-input-error :message="form.errors.consult_level" style="display: block !important"/>
 				  </div>
@@ -121,7 +121,7 @@
 
         <template #footer>
           <jet-secondary-button data-dismiss="modal" @click="closeModal">
-            Annuler
+            {{ __("Annuler") }}
           </jet-secondary-button>
           
           <jet-button class="btn btn-primary" @click="createCandidate" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
@@ -129,7 +129,7 @@
               <span class="visually-hidden">Loading...</span>
             </div>
 
-            Confirmer
+            {{ __("Confirmer") }}
           </jet-button>
           
           
@@ -138,7 +138,7 @@
 	     
 	     
 	     <div class="clearfix mt-4">
-                <a @click="openOfferForm" class="btn btn-sm btn-info float-left">Éditer un compte candidat</a>
+                <a @click="openOfferForm" class="btn btn-sm btn-info float-left">{{ __("Éditer un compte candidat") }}</a>
          </div>
          <div class="alert alert-success" v-if="$page.props.status!==null">
 	              {{ $page.props.status }}
@@ -154,7 +154,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Liste des candidats</h3>
+                <h3 class="card-title">{{ __("Liste des candidats") }}</h3>
 
                 <div class="card-tools">
                   <!--<button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -171,14 +171,14 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
-                      <th>NOM</th>
-                      <th>PRÉNOM</th>
-                      <th>PAYS</th>
-                      <th>VILLE</th>
-                      <th>TÉLÉPHONE</th>
-                      <th>PSEUDO</th>
-                      <th>NIVEAU D'ÉTUDE</th>
-                      <th>PROFIL</th>
+                      <th>{{ __("NOM") }}</th>
+                      <th>{{ __("PRÉNOM") }}</th>
+                      <th>{{ __("PAYS") }}</th>
+                      <th>{{ __("VILLE") }}</th>
+                      <th>{{ __("TÉLÉPHONE") }}</th>
+                      <th>{{ __("PSEUDO") }}</th>
+                      <th>{{ __("NIVEAU D'ÉTUDE") }}</th>
+                      <th>{{ __("PROFIL") }}</th>
                       <!--<th>DOMAINE DE FORMATION</th>-->
                     </tr>
                     </thead>
@@ -199,7 +199,7 @@
                       <td>
                         {{ data['study_level'] }}
                       </td>
-                      <td>{{ data['account_type'] == 1 ? 'Étudiant' : 'Consultant' }}</td>
+                      <td>{{ data['account_type'] == 1 ? __('Étudiant') : __('Consultant') }}</td>
                       <!--<td>
                         {{ data['activity_sector'] }}
                       </td>-->

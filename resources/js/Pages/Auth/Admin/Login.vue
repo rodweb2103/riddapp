@@ -1,7 +1,84 @@
 <template>
   <Head title="Connexion" />
   
-  <header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 930.27px;background: #000;padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
+        
+          <div class="user-area pt-100 pb-70" style="height: auto;background: #000;padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
+	        <!--<div><img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 90px;height:90px;"></div>-->
+	        
+            <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center container">
+	           
+	            <div class="row"><div class="col-12"><img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 150px;height:150px;"></div></div>
+                <div class="row mt-4">
+	                <!--<div><img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 90px;height:90px;"></div>-->
+                    <div class="col-lg-6">
+                        <div class="user-img">
+                            <img src="/img/student-pc.jpg" alt="faq" />
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="user-all-form">
+                            <div class="contact-form" style="background-color: rgba(35, 35, 35, 0.85);">
+                                <h3 class="user-title" style="color:#fff;">{{ __('Connexion') }}</h3>
+                                <form @submit.prevent="submit">
+	                                <jet-validation-errors class="mb-3" />
+	                                <div v-if="status" class="alert alert-success" role="alert">
+								           {{ status }}
+								    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 ">
+                                            <div class="form-group">
+                                                <input type="email" v-model="form.email" name="name" id="name" class="form-control" :placeholder="__('Adresse e-mail')">
+                                                <jet-input-error :message="form.errors.email" style="display: block !important"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <input class="form-control" type="password" name="Password" :placeholder="__('Mot de passe')" v-model="form.password">
+                                                <jet-input-error :message="form.errors.password" style="display: block !important"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 form-condition">
+                                            <div class="agree-label">
+                                                
+                                                <jet-checkbox id="remember_me" name="remember" v-model:checked="form.remember" style="margin-left: unset !important;" />
+	                                            <label for="remember_me" style="color:#fff;">
+	                                                  {{ __('Se souvenir de moi') }}
+	                                                  <Link v-if="canResetPassword" :href="route('password.request')" class="forget">
+							                              {{ __('Mot de passe oublié?') }}
+							                          </Link>
+	                                            </label>
+                                            </div>
+                                        </div>
+        
+                                        <div class="col-lg-12 col-md-12">
+                                           
+                                            
+                                            <div class="row">
+                                            
+                                             <div class="col-md-3 col-12 text-center">
+	                                            <jet-button  :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: green;border-width: 0px;padding-top: 7px;">
+										              
+										              <div><div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+										                <span class="visually-hidden">Loading...</span>
+										              </div>{{ __('Connexion') }}</div>
+		                                         </jet-button>
+                                             </div>
+                                             
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+  
+  <!--<header class="d-xxl-flex order-2 align-items-xxl-start header-blue" style="height: 930.27px;background: #000;padding-bottom: 0px;transform-style: preserve-3d;padding-top: 5px;">
 	      
         <div class="container hero" style="height: 710px;">
             <div class="row justify-content-center" style="height: 666px;">
@@ -27,15 +104,12 @@
                                             <div class="mb-3"><input class="form-control form-control-user" type="password" id="exampleInputPassword" placeholder="Mot de passe" name="password" v-model="form.password"></div>
                                             <div class="mb-3">
                                                 <div class="custom-control custom-checkbox small">
-                                                    <!--<div class="form-check">-->
-	                                                    <!--<input class="form-check-input custom-control-input" type="checkbox" id="formCheck-1">-->
+                                                    
 	                                                    <jet-checkbox class="form-check-input custom-control-input" id="remember_me" name="remember" v-model:checked="form.remember" />
 	                                                    <label class="form-check-label custom-control-label text-white" for="remember_me">Se souvenir de moi</label>
-	                                                    <!--</div>-->
                                                 </div>
                                             </div>
-                                            <!--<button class="btn btn-primary btn-lg d-block btn-user w-100" type="submit" style="margin-top: 6px;background: rgb(255,115,0);border-width: 0px;padding-top: 7px;">Connexion
-                                            </button>-->
+                                            
                                              <div class="mb-0">
 	                                            <jet-button class="mx-auto btn btn-primary btn-lg d-block btn-user w-100" :class="{ 'text-white-50': form.processing }" :disabled="form.processing"  style="margin-top: 6px;background: rgb(255,115,0);border-width: 0px;padding-top: 7px;">
 									              <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
@@ -45,18 +119,12 @@
 	                                            </jet-button>
                                              </div>
                                         </form>
-                                        <!--<div class="text-center" style="margin-top: 11px;"><a class="small" href="forgot-password.html">Mot de passe oublié ?</a></div>-->
                                         <div class="text-center" style="margin-top: 11px;">
                                         <Link  :href="route('admin.password.request')" class="small text-white">
 							              Mot de passe oublié?
 							            </Link>
                                         </div>
-                                        <!--<div class="text-center">
-	                                        <Link v-if="canResetPassword" href="/register" class="small text-white">
-							                   Créer un compte
-							                </Link>
                                         
-                                        </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +133,7 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header>-->
 
   <!--<jet-authentication-card>
     <template #logo>
@@ -131,6 +199,7 @@ import JetCheckbox from '@/Jetstream/Checkbox.vue'
 import JetLabel from '@/Jetstream/Label.vue'
 import JetValidationErrors from '@/Jetstream/ValidationErrors.vue'
 import { Head, Link } from '@inertiajs/inertia-vue3';
+import BaseLayout from '@/Pages/BaseLayout.vue'
 
 export default defineComponent({
   components: {
@@ -143,6 +212,7 @@ export default defineComponent({
     JetLabel,
     JetValidationErrors,
     Link,
+    BaseLayout
   },
 
   props: {
