@@ -57,6 +57,11 @@ class Offers extends Model
         //dd($this->belongsToMany(User::class,'offers_bid','user_id', 'offer_id')->withPivot('offer_status','offer_date')->toSql());exit;
         return $this->belongsToMany(User::class,'offers_bid','offer_id','user_id');
     }
+    
+    //public function offers_duration_company(){
+	    
+	    
+    //}
    
    
    /*SQLSTATE[42S22]: Column not found: 1054 Unknown column 'offers_bid.offers_id' in 'field list' (SQL: select `users`.*, `offers_bid`.`offers_id` as `pivot_offers_id`, `offers_bid`.`user_id` as `pivot_user_id`, `offers_bid`.`offer_status` as `pivot_offer_status`, `offers_bid`.`offer_date` as `pivot_offer_date` from `users` inner join `offers_bid` on `users`.`id` = `offers_bid`.`user_id` where `offers_bid`.`offers_id` in (8, 9, 10, 12, 13, 16, 17, 18, 19, 20))*/

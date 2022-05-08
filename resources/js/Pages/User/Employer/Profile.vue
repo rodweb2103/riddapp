@@ -45,6 +45,7 @@
       </jet-dialog-modal>
 	   
         <div class="row pt-5">
+	        
           <div class="col-md-3">
             <!-- Profile Image -->
             <div class="card card-primary card-outline" style="border-top: 3px solid orange !important;">
@@ -80,16 +81,17 @@
 
                 <!--<hr>-->
 
-                <strong><i class="fas fa-map-marker-alt mr-1"></i>Pack</strong>
+                <strong><i class="fas fa-money-bill"></i>Pack</strong>
 
-                
+                <div>{{ $page.props['subscription']['pack_name'] }}</div>
 
                 <hr>
                 
                 
-                <strong><i class="fas fa-map-marker-alt mr-1"></i>{{ __("Date d'expiration") }}</strong>
+                <strong><i class="fas fa-calendar"></i>{{ __("Période restante") }}</strong>
 
-                
+                <div v-if="$page.props['subscription']['pack_duration'] < 0" style="color:red;font-weight: 	bold;"><i class="fas fa-exclamation-circle"></i>{{ __('Pack expiré') }}</div>
+                <div v-if="$page.props['subscription']['pack_duration'] > 0">{{ $page.props['subscription']['pack_end_subscription'] }}</div>
 
                 <hr>
 
@@ -105,13 +107,14 @@
             <!-- /.card -->
           </div>
           <!-- /.col -->
+          
           <div class="col-md-9">
             <div class="card">
               <div class="card-header p-2">
                 <!--<ul class="nav nav-pills">
                   <li class="nav-item"><a class="nav-link active" href="#settings" data-toggle="tab">Settings</a></li>
                 </ul>-->
-                <label>{{ __('Éditer vos informations personnelles') }} </label>
+                <label>{{ __('Éditer vos informations personnelles') }}</label>
               </div><!-- /.card-header -->
               <div class="card-body">
                 <div class="tab-content">

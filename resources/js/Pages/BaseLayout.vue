@@ -545,7 +545,7 @@ export default defineComponent({
       //document.body.appendChild(fontAwesome)
       
       
-      //$('body').addClass('loaded');
+      $('body').addClass('loaded');
       
       //let fontAwesome2 = document.createElement('script')
       //fontAwesome2.setAttribute('src', '/assets/js/custom.js')

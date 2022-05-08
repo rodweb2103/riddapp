@@ -437,7 +437,7 @@ export default defineComponent({
             });*/
             this.scrollToTop();
             vm.loading = true;
-            axios.post('/company/offers?page=' + page,{'contract_type':vm.form.contract_type,'contract_duration':vm.form.contract_duration,'study_level':vm.form.study_level,'company_id':this.$page.props.id})
+            axios.post('/view/company/offers?page=' + page,{'contract_type':vm.form.contract_type,'contract_duration':vm.form.contract_duration,'study_level':vm.form.study_level,'company_id':this.$page.props.id})
                 .then(response => {
 	                
 	                vm.loading = false;

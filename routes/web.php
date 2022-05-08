@@ -123,8 +123,35 @@ Route::get('/orientations/details',function(){
 });
 
 
+Route::get('/expired',function(){
+	
+	
+	$pack_subscription = @\DB::table("pack_ads_user_suscribe")->join('pack_ads','pack_ads_user_suscribe.pack_id','=','pack_ads.id')->where("user_id",auth()->user()->id)->selectRaw("pack_ads.pack_name,(end_subscription - UNIX_TIMESTAMP()) AS duration, FROM_UNIXTIME(end_subscription,'%Y-%m-%d') AS end_subscription")->get();
+	    
+	if(count($pack_subscription) > 0){
+		    
+		     //return redirect('/expired');
+		    //return redirect('/offers/fee');
+	//}else{
+		    
+		    if($pack_subscription[0]->duration < 0){
+			    
+			    return Inertia::render('Expired',['status'=>'Vous ne disposer pas de pack valide.<p>Veuillez souscrire à un pack afin de visualiser les CV des candidats</p>']);
+			    
+			    //return redirect('/expired')->with('status','Votre pack n\'est plus valide.<p>Veuillez le renouveller afin de visualiser les CV des candidats</p>');
+		    }
+	}else{
+		
+		   return Inertia::render('Expired',['status'=>'Vous ne disposer pas de pack valide.<p>Veuillez souscrire à un pack afin de visualiser les CV des candidats</p>']);
+		   //return redirect('/account');
+	}  
+	
+	
+	
+});
 
-Route::post('payment/success',[UserController::class, 'payment_success']);
+Route::post('payment/success',[OfferController::class, 'payment_success'])->name('payment_success');
+Route::get('payment/pack/success',[OfferController::class, 'payment_pack_success'])->name('payment_pack_success');
 
 
 
@@ -162,10 +189,9 @@ Route::post('/ajax/transaction/company',[OfferController::class,'transaction_his
 Route::post('/ajax/transaction/admin',[OfferController::class,'transaction_history_admin']);
 
 Route::post('/payment',[OfferController::class, 'payment_ads'])->name('payment_ads');
-Route::get('/payment/success',[OfferController::class, 'payment_success'])->name('payment_success');
+//Route::get('/payment/success',[OfferController::class, 'payment_success'])->name('payment_success');
 
 Route::get('/view/cv/candidates/{id}',function($id){
-	  
 	  return Inertia::render('User/Employer/Candidates',['offer_cand'=>$id]);
 })->middleware(['subscription'])->name('subscription');
 
@@ -174,6 +200,7 @@ Route::post('/ajax/view/cv/candidates',[OfferController::class, 'ajax_view_candi
 Route::post('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');
 
 Route::post('/company/offers',[OfferController::class, 'company_my_list_offer'])->name('company.list.offer');
+Route::post('/view/company/offers',[OfferController::class, 'company_my_list_offer_view'])->name('company.list.offer.view');
 
 Route::get('/ajax/recruiters/offers/{id}',[OfferController::class, 'ajax_recruiter_offers'])->name('ajax_recruiter_offers');
 Route::get('/recruiters/offers/{id}',function($id){

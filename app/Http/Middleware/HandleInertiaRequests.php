@@ -50,6 +50,23 @@ class HandleInertiaRequests extends Middleware
 	    
 	    if(auth()->user()) $user = User::with(['country_user','activity_sector_company_user_company','activity_sector_company_user_consult'])->where("id",auth()->user()->id)->first();
 	    
+	    
+	    @$pack_subscription = \DB::table("pack_ads_user_suscribe")->join('pack_ads','pack_ads_user_suscribe.pack_id','=','pack_ads.id')->where("user_id",auth()->user()->id)->selectRaw("pack_ads.pack_name,(end_subscription - UNIX_TIMESTAMP()) AS duration, FROM_UNIXTIME(end_subscription,'%Y-%m-%d') AS end_subscription")->get();
+	    
+	    $pack_name = "";
+	    $pack_duration = "";
+	    $pack_end_subscription = "";
+	    
+	    if(count($pack_subscription) > 0){
+		    
+		    
+		    $pack_name = $pack_subscription[0]->pack_name;
+	        $pack_duration = $pack_subscription[0]->duration;
+	        $pack_end_subscription = $pack_subscription[0]->end_subscription;
+		    
+	    }
+	    
+	    
 	    //ar_dump(auth()->user()->hasRole('Candidate') || auth()->user()->hasRole('Consultant') );exit;
 	    
 	    //var_dump("jjjjj");exit;
@@ -62,6 +79,7 @@ class HandleInertiaRequests extends Middleware
 			            base_path('lang/'. app()->getLocale() .'.json')
 			        );
 			    },
+			    'subscription'=> array("pack_name"=>$pack_name,"pack_duration"=>$pack_duration,"pack_end_subscription"=>$pack_end_subscription),
 			    'offer_is_bidded' => auth()->user() ? auth()->user()->hasRole('Student') || auth()->user()->hasRole('Consultant') ? count($check):-1 : 0,
 			    'locale' => app()->getLocale(),
                 'status' => fn () => $request->session()->get('status'),

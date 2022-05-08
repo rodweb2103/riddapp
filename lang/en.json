@@ -499,6 +499,8 @@
     "Supprimer un compte":"Delete account",
     "Confirmez vous la suppression de ce compte ?":"Are you sure to delete this account ?",
     "Éditer un compte staff":"Edit staff account",
-    "Liste des comptes staff":"Staff account list"
+    "Liste des comptes staff":"Staff account list",
+    "Période restante":"Remaining period",
+    "Pack expiré":"Subscription ended"
     
 }
