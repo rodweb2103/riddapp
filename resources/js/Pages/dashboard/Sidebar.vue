@@ -128,7 +128,7 @@
               
 	          <li class="nav-item" v-if="$page.props.is_admin == 1">
 	             <Link  :href="route('admin.candidate')" class="nav-link">
-					<i class="nav-icon fas fa-th"></i>
+					<i class="fas fa-user nav-icon "></i>
 					<p>
 	                   {{ __("Candidats") }}
 	                </p>
@@ -148,7 +148,7 @@
 	              </p>
 	            </a>-->
 	            <Link  :href="route('admin.employer')" class="nav-link">
-					<i class="nav-icon fas fa-th"></i>
+					<i class="fas fa-building nav-icon "></i>
 					<p>
 	                   {{ __("Recruteurs") }}
 	                </p>
@@ -171,7 +171,7 @@
 	          
 	          <li class="nav-item" v-if="$page.props.is_admin == 1">
 	            <Link href="/admin/orders" class="nav-link">
-	              <i class="nav-icon fas fa-th"></i>
+	              <i class="fas fa-money-bill nav-icon "></i>
 	              <p>
 	                {{ __("Achats") }}
 	              </p>
@@ -192,7 +192,7 @@
 	              </p>
 	            </a>-->
 	            <Link  :href="route('admin.accounts.staff')" class="nav-link">
-					<i class="nav-icon fas fa-th"></i>
+					<i class="fas fa-headset nav-icon"></i>
 					<p>
 	                   {{ __("Comptes staff") }}
 	                </p>

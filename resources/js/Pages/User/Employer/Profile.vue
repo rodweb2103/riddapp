@@ -88,7 +88,7 @@
                 <hr>
                 
                 
-                <strong><i class="fas fa-calendar"></i>{{ __("Période restante") }}</strong>
+                <strong><i class="fas fa-calendar"></i>{{ __("Fin de Période") }}</strong>
 
                 <div v-if="$page.props['subscription']['pack_duration'] < 0" style="color:red;font-weight: 	bold;"><i class="fas fa-exclamation-circle"></i>{{ __('Pack expiré') }}</div>
                 <div v-if="$page.props['subscription']['pack_duration'] > 0">{{ $page.props['subscription']['pack_end_subscription'] }}</div>

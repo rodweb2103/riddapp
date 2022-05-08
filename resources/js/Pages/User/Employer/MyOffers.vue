@@ -127,7 +127,7 @@
 	                        </div>
 	                    </div>
 	                </div>
-	                <Pagination :data="offerData" @pagination-change-page="getResults" align="center" v-if="loading == false"/>
+	                <Pagination :data="offerData" @pagination-change-page="getResults" align="center" class="mt-2" v-if="loading == false"/>
 	                
 	                
 	                

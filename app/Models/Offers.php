@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 
 use App\Models\ActivitySector;
 use App\Models\StudyLevel;
+use App\Models\PackAdsHistory;
   
 
 class Offers extends Model
@@ -57,6 +58,13 @@ class Offers extends Model
         //dd($this->belongsToMany(User::class,'offers_bid','user_id', 'offer_id')->withPivot('offer_status','offer_date')->toSql());exit;
         return $this->belongsToMany(User::class,'offers_bid','offer_id','user_id');
     }
+    
+    public function offers_duration_company(){
+	   
+	    return $this->belongsTo(PackAds::class,'pack_id','id');
+	}
+    
+    //pack_ads_history
     
     //public function offers_duration_company(){
 	    

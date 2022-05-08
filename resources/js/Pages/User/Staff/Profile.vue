@@ -34,7 +34,7 @@
             Annuler
           </jet-secondary-button>
           
-          <jet-button class="btn btn-primary" @click="uploadImage()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+          <jet-button class="btn btn-primary" style="background-color: green !important;" @click="uploadImage()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
@@ -87,7 +87,7 @@
                   <!-- /.tab-pane -->
 
                   <div class="tab-pane active" id="settings">
-                    <form class="form-horizontal">
+                    <form class="form-horizontal" @submit.prevent="updateProfile">
                       <!--<div class="form-group row">
                         <label for="inputName" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Pseudo</label>
                         <div class="col-sm-9">
@@ -135,7 +135,13 @@
                       </div>-->
                       <div class="form-group row">
                         <div class="offset-sm-3 col-sm-10">
-                          <button type="submit" class="btn btn-danger">Mettre à jour</button>
+                          <jet-button class="btn btn-primary"  :class="{ 'text-white-50': formUser.processing }" :disabled="formUser.processing" style="background-color: green !important;">
+				            <div v-show="formUser.processing" class="spinner-border spinner-border-sm" role="status">
+				              <span class="visually-hidden">Loading...</span>
+				            </div>
+				
+				            {{ __("Mettre à jour") }}
+				          </jet-button>
                         </div>
                       </div>
                     </form>

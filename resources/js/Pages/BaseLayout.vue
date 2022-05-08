@@ -122,7 +122,7 @@
                                          <Link style="background: transparent;font-size: 17px;color:#000 !important;font-weight: 500" :href="route('user.dashboard')" v-if="$page.props.is_employer || $page.props.is_candidate || $page.props.is_consult || $page.props.is_staff" class="nav-link"> 
 							               {{ __('Mon compte') }}
 							             </Link>
-							             <Link style="background: transparent;font-size: 17px;color:#000 !important;font-weight: 500" :href="route('admin.dashboard')" v-if="$page.props.admin" class="nav-link"> 
+							             <Link style="background: transparent;font-size: 17px;color:#000 !important;font-weight: 500" :href="route('admin.dashboard')" v-if="$page.props.is_admin" class="nav-link"> 
 							               {{ __('Administration') }}
 							             </Link>
                                         </li>

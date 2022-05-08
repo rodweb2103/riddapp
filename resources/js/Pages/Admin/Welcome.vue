@@ -270,7 +270,7 @@
 	                  </div>
                       <li v-for="data in employerData['data']">
                         <!--<img :src="data['profile_url']" alt="User Image">-->
-                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 73% !important;">
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 65% !important;">
                         <div><i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i></div>
                         <a class="users-list-name" href="#">{{ data['company_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
@@ -347,7 +347,7 @@
 	                      <div style="font-size: 20px;" class="mt-4">{{ __("Aucun compte candidat trouvé") }}</div>
 	                  </div>
                       <li v-for="data in candidateData['data']">
-                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 73% !important;">
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 65% !important;">
                         <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i>
                         <a class="users-list-name" href="#">{{ data['first_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
@@ -578,9 +578,9 @@
 	                  </div>
                       <li v-for="data in staffData['data']">
                         <!--<img :src="data['profile_photo']" alt="User Image">-->
-                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 73% !important;">
+                        <img :src="data['profile_url']" alt="User Image" v-if="data['profile_url']!=''" style="max-width: 65% !important;">
                         <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="data['profile_url']==''"></i>
-                        <a class="users-list-name" href="#">{{ data['user_name'] }}</a>
+                        <a class="users-list-name text-center" href="#">{{ data['first_name'] }}</a>
                         <!--<span class="users-list-date">Today</span>-->
                       </li>
                       <!--<li>

@@ -37,7 +37,7 @@
             Annuler
           </jet-secondary-button>
           
-          <jet-button class="btn btn-primary" @click="uploadImage()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+          <jet-button class="btn btn-primary" style="background-color: green !important;" @click="uploadImage()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>

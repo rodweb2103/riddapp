@@ -189,7 +189,7 @@
                 </div>
                 <!-- /.table-responsive -->
               </div>
-              <Pagination :data="offerData" @pagination-change-page="getResults" />
+              <Pagination :data="offerData" @pagination-change-page="getResults" align="center" class="mt-2"/>
              
             </div>
             <!-- /.card -->

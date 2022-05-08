@@ -204,15 +204,38 @@ class OfferController extends Controller
 	    //$itemsPaginated = User::with(["offers" => function($q){
 		//    $q->where('offer_id', '=', 18);
 		//}])->paginate(10);
+		
+		//$page = 1;
+		
+		$pack_info = \DB::table("pack_ads_history")->join('pack_ads','pack_ads_history.pack_id','=','pack_ads.id')->where("user_id",\Auth::user()->id)->get();
+		$pack_limit = $pack_info[0]->ads_number;	    
 	    
-	    $itemsPaginated = User::join('offers_bid','offers_bid.user_id','=','users.id')->join('offers','offers.id','=','offers_bid.offer_id')->where("offers.id_offer",$request->input('offer_cand'))->selectRaw('first_name,last_name,offers_bid.id,offers_bid.offer_date,cv_profile')->paginate(10);
+	    //$user = new User;
+	    
+	    /*$itemsPaginated = User::join('offers_bid','offers_bid.user_id','=','users.id')->join('offers','offers.id','=','offers_bid.offer_id')->where("offers.id_offer",$request->input('offer_cand'))->selectRaw('first_name,last_name,offers_bid.id,offers_bid.offer_date,cv_profile')/*->groupBy('first_name,last_name,offers_bid.id,offers_bid.offer_date,cv_profile')->paginate(10);*/
+	    
+	    
+	    /*$itemsTransformed = \DB::table(function ($query) use ($user,$request) {
+            $user->join('offers_bid','offers_bid.user_id','=','users.id')->join('offers','offers.id','=','offers_bid.offer_id')
+                ->where("offers.id_offer",$request->input('offer_cand'))->selectRaw('first_name,last_name,offers_bid.id,offers_bid.offer_date,cv_profile')
+                
+                ->take(10);
+        })->paginate(10);*/
+        
+        //$pack_limit = 1;
+        
+        $itemsPaginated = \DB::table(function ($query) use($request,$pack_limit) {
+            $test = $query->from('users')->join('offers_bid','offers_bid.user_id','=','users.id')->join('offers','offers.id','=','offers_bid.offer_id')->where("offers.id_offer",$request->input('offer_cand'))->selectRaw('first_name,last_name,offers_bid.id,offers_bid.offer_date,cv_profile')->take($pack_limit);
+        
+        })->paginate(10);
+        
+        //$itemsTransformed = \DB::table('users as u')->paginate(10);
 	    
 	    
 	    $itemsTransformed = $itemsPaginated
 		        ->getCollection()
 		        ->map(function($item) {
 			        //$url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
-			        
 			        //var_dump($item->activity_sector_job);exit;
 			        //var_dump($item->pivot);exit;
 			        
@@ -232,6 +255,7 @@ class OfferController extends Controller
               
             $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
 			        $itemsTransformed,
+			        //$itemsPaginated->total() < $pack_limit ? $itemsPaginated->total() : $pack_limit,
 			        $itemsPaginated->total(),
 			        $itemsPaginated->perPage(),
 			        $itemsPaginated->currentPage(), [

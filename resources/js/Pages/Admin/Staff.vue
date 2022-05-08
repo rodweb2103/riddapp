@@ -158,7 +158,7 @@
             {{ __('Annuler') }}
           </jet-secondary-button>
           
-          <jet-button class="btn btn-primary" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+          <jet-button class="btn btn-primary" style="background-color: green !important;" @click="checkSaving" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
@@ -171,7 +171,7 @@
       </jet-dialog-modal>
        
         <div class="clearfix mt-4">
-           <a @click="openOfferForm" class="btn btn-sm btn-info float-left">{{ __('Éditer un compte staff') }}</a>
+           <a @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green !important;">{{ __('Éditer un compte staff') }}</a>
         </div>
         <!-- Main row -->
         <div class="row pt-3">
@@ -276,7 +276,7 @@
                     </tbody>
                   </table>
                 </div>
-                <Pagination :data="offerData" @pagination-change-page="getResults" />
+                <Pagination :data="offerData" @pagination-change-page="getResults" align="center" class="mt-2" />
                 <!-- /.table-responsive -->
               </div>
               

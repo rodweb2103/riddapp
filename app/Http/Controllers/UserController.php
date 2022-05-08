@@ -757,6 +757,11 @@ class UserController extends Controller
 	    
 	    //var_dump($url);exit;
 	    
+	    if(auth()->user()->hasRole('Admin')){
+		    
+		    return redirect('/admin/profile')->with('status',$url);
+	    }
+	    
 	    return redirect('/account/profile')->with('status',$url);
 	    
         //$user = new User;
