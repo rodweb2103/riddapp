@@ -28,14 +28,14 @@
 	   
 	   <jet-dialog-modal id="deleteOffer">
         <template #title>
-          {{ __("Supprimer une annonce") }}
+          {{ __("Supprimer annonce") }}
         </template>
 
         <template #content>
           
           <div class="mt-4">
 	          
-		         {{ __("Confirmez vous la suppression de cette annonce ?") }}   
+		         {{ __("Confirmez vous la suppression des annonces selectionnées ?") }}   
 	          
           </div>
         </template>
@@ -45,8 +45,8 @@
             {{ __("Non") }}
           </jet-secondary-button>
           
-          <jet-button style="background-color: green;" class="btn" @click="deleteOffer()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
-            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+          <jet-button style="background-color: green;" class="btn" @click="deleteOffer()" :class="{ 'text-white-50': form2.processing }" :disabled="form2.processing">
+            <div v-show="form2.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
 
@@ -280,6 +280,7 @@
         <!-- /.card-body -->
               <div class="clearfix mt-4">
                 <a @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green;">{{ __("Éditer une annonce") }}</a>
+                <a @click="openDeleteOffer" class="btn btn-sm btn-info float-left" style="background-color: red;">{{ __("Supprimer une annonce") }}</a>
               </div>
               <div class="alert alert-success" v-if="$page.props.status!==null">
 	              {{ $page.props.status }}
@@ -312,6 +313,7 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
+	                  <th><input type="checkbox" @click="selectRows($event)"/></th>
                       <th>{{ __("ID Annonce") }}</th>
                       <th>{{ __("Titre Annonce") }}</th>
                       <th>{{ __("Libellé Annonce") }}</th>
@@ -322,6 +324,7 @@
                     </thead>
                     <tbody>
 	                    <tr v-for="data in offerData['data']">
+		                    <td><input type="checkbox" v-model="form2.cv_rows" :value="data.id_offer" @click="selectRow($event,data.id_offer)"/></td>
 		                    <td>{{ data.id }}</td>
 		                    <td>{{ data.title }}</td>
 		                    <td>{{ data.offers_details }}</td>
@@ -334,8 +337,8 @@
 			                    
 		                    </td>
 		                    <td>
-			                    <a href="#" @click="loadOffer(data.id)"><i class="fas fa-eye"></i></a>
-			                    <a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 2px;"></i></a>
+			                    <a href="#" @click="loadOffer(data.id)"><i class="fas fa-eye" style="padding: 2px;"></i></a>
+			                    <!--<a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 2px;"></i></a>-->
 			                    <a href="#" v-if="data.publish_status == -1" @click="openChatAdmin(data)"><i class="fas fa-comment" style="color:grey;padding:2px;"></i></a>
 			                    <Link :href="`${'/view/cv/candidates/'+data.id}`" v-if="data.publish_status != -1 && data.candidates > 0 && data.publish_status != 0"><i class="fas fa-file-pdf"></i></Link>
 			               </td>
@@ -509,7 +512,10 @@ export default defineComponent({
         study_level:'',
         offer_details:''
         
-      })
+      }),
+      form2: this.$inertia.form({
+	      cv_rows: []
+	  })
     }
   },
   updated(){
@@ -544,6 +550,39 @@ export default defineComponent({
   },
   methods:{
 	  
+	  selectRows(event){
+		  
+		  if (event.target.checked) {
+			  
+			  for(var key in this.offerData['data']){
+				  
+				  this.form2['cv_rows'].push(this.offerData['data'][key]["id_offer"]);
+			  }
+	      
+	      }else{
+		      
+		      
+		      this.form2['cv_rows'] = [];
+	      }
+	  },
+	  selectRow(event,id){
+		  
+		  if (event.target.checked) {
+			  
+				  
+				  this.form2['cv_rows'].push(id);
+	      
+	      }else{
+		      
+		      
+		      const index = this.form2['cv_rows'].indexOf(id);
+		      if (index > -1) {
+				  this.form2['cv_rows'].splice(index, 1); // 2nd parameter means remove one item only
+				  //this.form['cv_id'] = [];
+			  }
+		      
+	      }
+	  },
 	  getResults(page = 1) {
 		    let vm = this;
             axios.post('/company/offers?page=' + page)
@@ -650,8 +689,8 @@ export default defineComponent({
           });
       },
 	  deleteOffer(id){
-		  this.form['id'] = this.id_delete;
-		  this.form.post(route('employer.delete.offer'), {
+		  //this.form['id'] = this.id_delete;
+		  this.form2.post(route('employer.delete.offer'), {
 	        preserveScroll: true,
 	        onSuccess: () => { this.closeModal2();this.getResults();this.id_delete = 0;},
 	        //onError: () => this.$refs.password.focus(),

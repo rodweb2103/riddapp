@@ -54,31 +54,64 @@
    <div class="container-fluid">
 	   
 	   
-	   <jet-dialog-modal id="deleteOffer">
+	   <jet-dialog-modal id="selectCV">
         <template #title>
-          Supprimer une annonce
+          Selection CV
         </template>
 
         <template #content>
           
           <div class="mt-4">
 	          
-		         Confirmez vous la suppression de cette annonce ?    
+		         <p style="color:#000;">Confirmez vous la selection CV selectionné(s) ? </p>
+		         <p style="color:#000;">Cette opération est irréversible</p>   
+	          
+          </div>
+        </template>
+
+        <template #footer>
+          <jet-secondary-button data-dismiss="modal" @click="closeModal">
+            Non
+          </jet-secondary-button>
+          
+          <jet-button class="btn btn-primary" @click="postSelectCV()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+            <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+
+            Oui
+          </jet-button>
+        </template>
+      </jet-dialog-modal>
+      
+      
+      <jet-dialog-modal id="rejectCV">
+        <template #title>
+          {{ __("Rejeter un CV") }}
+        </template>
+
+        <template #content>
+          
+          <div class="mt-4">
+	          
+		         <p style="color:#000;">{{ __("Confirmez vous le rejet de CV selectionné(s) ?") }}</p>   
+		         
+		         <p style="color:#000;">{{ __("Cette opération est irréversible") }}</p>
 	          
           </div>
         </template>
 
         <template #footer>
           <jet-secondary-button data-dismiss="modal" @click="closeModal2">
-            Non
+            {{ __("Non") }}
           </jet-secondary-button>
           
-          <jet-button class="btn btn-primary" @click="deleteOffer()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
+          <jet-button style="background-color: green;" class="btn" @click="postRejectCV()" :class="{ 'text-white-50': form.processing }" :disabled="form.processing">
             <div v-show="form.processing" class="spinner-border spinner-border-sm" role="status">
               <span class="visually-hidden">Loading...</span>
             </div>
 
-            Oui
+            {{ __("Oui") }}
           </jet-button>
         </template>
       </jet-dialog-modal>
@@ -112,7 +145,8 @@
         <div class="row pt-2">
           <!-- Left col -->
           <div class="col-md-12">
-            
+            <button v-if="$page.props['is_employer'] == 1" @click="openSelectCV" :disabled="form.cv_id.length == 0" class="btn btn-primary" style="background-color: #fff !important;"><i class="fas fa-user-check" style="color:green;padding:10px;"></i></button>
+            <button v-if="$page.props['is_employer'] == 1" @click="openRejectCV" class="btn btn-primary" :disabled="form.cv_id.length == 0" style="background-color: #fff !important;"><i class="fas fa-user-slash" style="color:red;padding:10px;"></i></button>
             <div class="card">
               <div class="card-header border-transparent">
                 <h3 class="card-title">Offres</h3>
@@ -124,21 +158,29 @@
                   <table class="table m-0">
                     <thead>
                     <tr>
+	                  <th><input type="checkbox" @click="selectAllCV($event)" v-if="$page.props['is_employer'] == 1"/></th>
                       <th>Nom du candidat</th>
                       <th>Prénom du candidat</th>
-                      <!--<th>Date de soumission</th>-->
+                      <th>Date de soumission</th>
                       <th>Consulter CV</th>
                     </tr>
                     </thead>
                     <tbody>
 	                    <tr v-for="data in offerData['data']">
+		                    <td><input v-if="$page.props['is_employer'] == 1" type="checkbox" :disabled="data.offer_status!=0" v-model="form.cv_id" :value="data.id_offer"  @click="selectCV($event,data.id_offer)"/></td>
 		                    <td>{{ data.last_name }}</td>
 		                    <td>{{ data.first_name }}</td>
-		                    <!--<td>{{ data.offers_duration }}</td>-->
+		                    <td>{{ data.offers_duration }}</td>
 		                   
 		                    <td>
 			                    <a target="_blank" @click="viewPDFCandidates()" :href="data.cv_candidates"><i class="fas fa-file-pdf" style="padding: 10px;"></i></a>
+			                    <span v-if="data.offer_status == 1" style="color:green;">Candidature acceptée</span>
+			                    <span v-if="data.offer_status == -1" style="color:red;">Candidature rejetée</span>
 			               </td>
+			               <!--<td>
+				               <a href="#" @click="openSelectCV"><i class="fas fa-user-check" style="color:green;padding:10px;"></i></a><a href="#" @click="openRejectCV"><i class="fas fa-user-slash" style="color:red;padding:10px;"></i></a>
+			               </td>-->
+			               
 		                    
 	                    </tr>
                     
@@ -251,25 +293,11 @@ export default defineComponent({
       editMode : 0,
       getUrl:null,
       viewDataOffer : {},
-      form :{
-	       
-	      contract_type:'',
-          contract_duration:'', 
-          study_level:'',
-      }
-      /*form: this.$inertia.form({
+      form: this.$inertia.form({
         //password: '',
-        id : 0,
-        offer_title:'',
-        activity_sector:'',
-        location:'',
-        contract_type:'',
-        contract_duration:'',
-        offer_details:'',
-        study_level:'',
-        offer_details:''
+        cv_id:[]
         
-      })*/
+      })
     }
   },
   mounted(){
@@ -302,12 +330,63 @@ export default defineComponent({
   },
   methods:{
 	  
+	  selectAllCV(event){
+		  
+		  if (event.target.checked) {
+			  
+			  for(var key in this.offerData['data']){
+				  
+				  if(this.offerData['data'][key]["offer_status"] == 0) this.form['cv_id'].push(this.offerData['data'][key]["id_offer"]);
+			  }
+	      
+	      }else{
+		      
+		      
+		      this.form['cv_id'] = [];
+	      }
+	  },
+	  selectCV(event,id){
+		  
+		  if (event.target.checked) {
+			  
+				  
+				  this.form['cv_id'].push(id);
+	      
+	      }else{
+		      
+		      
+		      const index = this.form['cv_id'].indexOf(id);
+		      if (index > -1) {
+				  this.form['cv_id'].splice(index, 1); // 2nd parameter means remove one item only
+				  //this.form['cv_id'] = [];
+			  }
+		      
+	      }
+	  },
 	  scrollToTop() {
         window.scrollTo(0,0);
       },
       closeModalPDF(){
 	     
 	     //this.modal.hide() 
+      },
+      closeModal2(){
+	      this.modal2.hide();
+      },
+      closeModal(){
+	      this.modal.hide();
+      },
+      openSelectCV(){
+	     
+	      let el = document.querySelector('#selectCV')
+	      this.modal = new bootstrap.Modal(el)
+	      this.modal.show()  
+      },
+      openRejectCV(){
+	     
+	      let el = document.querySelector('#rejectCV')
+	      this.modal2 = new bootstrap.Modal(el)
+	      this.modal2.show()  
       },
       viewPDFCandidates(url){
 	      
@@ -316,6 +395,34 @@ export default defineComponent({
 	      this.modal = new bootstrap.Modal(el)
 	      this.modal.show()  
 	      this.getUrl = "https://beta.ridd.info/storage/cv/cv_Cedric_Yeo.pdf";
+      },
+      postSelectCV(){
+	      
+	      this.form.post('/ajax/select/cv')
+                .then(response => {
+	                
+	                vm.loading = false;
+	                //console.log(response.data);
+	                //vm.total_offer = response.data['total'];
+                    //vm.offerData = response.data;
+          });
+          this.getResults();
+          this.modal.hide() 
+	      
+      },
+      postRejectCV(){
+	      
+	      this.form.post('/ajax/reject/cv')
+                .then(response => {
+	                
+	                vm.loading = false;
+	                //console.log(response.data);
+	                //vm.total_offer = response.data['total'];
+                    //vm.offerData = response.data;
+          });
+          this.getResults();
+          this.modal2.hide() 
+	      
       },
 	  getResults(page = 1) {
 		    let vm = this;

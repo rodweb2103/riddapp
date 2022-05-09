@@ -195,6 +195,10 @@ Route::get('/view/cv/candidates/{id}',function($id){
 	  return Inertia::render('User/Employer/Candidates',['offer_cand'=>$id]);
 })->middleware(['subscription'])->name('subscription');
 
+
+Route::post('/ajax/select/cv',[OfferController::class, 'ajax_select_cv'])->middleware(['subscription'])->name('subscription');
+Route::post('/ajax/reject/cv',[OfferController::class, 'ajax_reject_cv'])->middleware(['subscription'])->name('subscription');
+
 Route::post('/ajax/view/cv/candidates',[OfferController::class, 'ajax_view_candidates'])->middleware(['subscription'])->name('subscription');
 
 Route::post('/offers',[OfferController::class, 'list_offer'])->name('employer.list.offer');

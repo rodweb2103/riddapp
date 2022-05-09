@@ -464,7 +464,7 @@ class UserController extends Controller
 	
 	public function get_offers(Request $request){
 		
-		$itemsPaginated = Offers::with(['company','contract_type_offer_job','activity_sector_job','study_level_job'])->orderByRaw('publish_date DESC')->paginate(10);
+		$itemsPaginated = Offers::with(['company','contract_type_offer_job','study_level_job','candidate_offers'])->orderByRaw('publish_date DESC')->paginate(10);
 	    
 	    //$grandTotal = Offers::with('company')->orderByRaw('publish_date DESC')->selectRaw('COUNT(*) AS nb')->get()[0]->nb;
 	    //$itemsPaginated->additional(['extra'=> $grandTotal]);
@@ -494,7 +494,9 @@ class UserController extends Controller
 		                "contract_duration" => $item->contract_duration,
 		                "location" => $item->location,
 		                "study_level" => $item->study_level_job->id,
-		                "profile_details"=> $item->profile_details
+		                "profile_details"=> $item->profile_details,
+		                'candidates'=>$item->candidate_offers->count(),
+		                'admin_notes' => strval($item->admin_notes)
 		            ];
         })->toArray();
         
