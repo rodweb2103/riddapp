@@ -44,14 +44,27 @@ class HandleInertiaRequests extends Middleware
 			            base_path('lang/'. app()->getLocale() .'.json')
 			        ));exit;*/
 	    
-	    $check = @\DB::table("offers_bid")->where("offer_id",$request->session()->get('id_offer'))->where("user_id",auth()->user()->id)->get();
+	    //var_dump($request->session()->get('id_offer'));
 	    
+	    //var_dump($request->route('id'));
+	    
+	    
+	    $id_offer = @\DB::table("offers")->where("id_offer",$request->route('id'))->get()[0]->id;
+	    
+	    $check = @\DB::table("offers_bid")->where("offer_id",$id_offer)->where("user_id",auth()->user()->id)->get();
 	    //var_dump($check);exit;
 	    
 	    if(auth()->user()) $user = User::with(['country_user','activity_sector_company_user_company','activity_sector_company_user_consult'])->where("id",auth()->user()->id)->first();
 	    
 	    
 	    @$pack_subscription = \DB::table("pack_ads_user_suscribe")->join('pack_ads','pack_ads_user_suscribe.pack_id','=','pack_ads.id')->where("user_id",auth()->user()->id)->selectRaw("pack_ads.pack_name,(end_subscription - UNIX_TIMESTAMP()) AS duration, FROM_UNIXTIME(end_subscription,'%Y-%m-%d') AS end_subscription")->get();
+	    
+	    $check_valid_user_offer = @\DB::table("offers")->where("id",$id_offer)->where("company_id",auth()->user()->id)->get();
+	    
+	    //var_dump(auth()->user()->id);
+	    //var_dump($request->session()->get('id_offer'));
+	    //var_dump(count($check_valid_user_offer));
+	    //exit;
 	    
 	    $pack_name = "";
 	    $pack_duration = "";
@@ -84,6 +97,7 @@ class HandleInertiaRequests extends Middleware
 			    'locale' => app()->getLocale(),
                 'status' => fn () => $request->session()->get('status'),
                 'appName' => config('app.name'),
+                'can_edit_offer' => count($check_valid_user_offer),
                 'is_admin' => auth()->user() ? auth()->user()->hasRole('Admin') ? 1 : 0 : 0,
                 'is_employer' => auth()->user() ? auth()->user()->hasRole('Employer') ? 1 : 0 : 0,
                 'is_candidate' => auth()->user() ? auth()->user()->hasRole('Student') ? 1 : 0 : 0,

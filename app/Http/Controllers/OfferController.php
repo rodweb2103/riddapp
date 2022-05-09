@@ -335,7 +335,7 @@ class OfferController extends Controller
     public function company_my_list_offer_view(Request $request){
 	    
 	    
-	    $itemsPaginated = Offers::with(['company','contract_type_offer_job','study_level_job','candidate_offers'])->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
+	    /*$itemsPaginated = Offers::with(['company','contract_type_offer_job','activity_sector_job','study_level_job'])->join('pack_ads_user_suscribe','pack_ads_user_suscribe.user_id','=','offers.company_id')->join('pack_ads','pack_ads.id','=','pack_ads_user_suscribe.pack_id')->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
 
                         $query->where('contract_type', $request->contract_type);
 
@@ -353,7 +353,8 @@ class OfferController extends Controller
                         $query->where('company_id', $request->company_id);
 
               })
-              ->where("publish_status",1)
+              ->where('publish_status',1)
+              ->whereRaw('(DATEDIFF(DATE(NOW()),DATE(publish_date)) <= pack_ads.ads_duration)')
               ->orderBy('publish_date','DESC')->paginate(10);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -361,7 +362,7 @@ class OfferController extends Controller
 			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
 			        
 			        //var_dump($item->activity_sector_job);exit;
-			        //var_dump($item->pivot);exit;
+			        
 			        
 		            return [
 		                'id_offer' => $item->id,
@@ -380,9 +381,79 @@ class OfferController extends Controller
 		                "contract_duration" => $item->contract_duration,
 		                "location" => $item->location,
 		                "study_level" => $item->study_level_job->id,
+		                "profile_details"=> $item->profile_details
+		                //"activity_sector" => $item->activity_sector_job->id
+		            ];
+            })->toArray();
+              
+            $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
+			        $itemsTransformed,
+			        $itemsPaginated->total(),
+			        $itemsPaginated->perPage(),
+			        $itemsPaginated->currentPage(), [
+			            'path' => \Request::url(),
+			            'query' => [
+			                'page' => $itemsPaginated->currentPage()
+			            ]
+			        ]
+		    );*/
+	    
+	    
+	    $itemsPaginated = Offers::with(['company','contract_type_offer_job','study_level_job','candidate_offers'])->join('pack_ads_user_suscribe','pack_ads_user_suscribe.user_id','=','offers.company_id')->join('pack_ads','pack_ads.id','=','pack_ads_user_suscribe.pack_id')->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
+
+                        $query->where('contract_type', $request->contract_type);
+
+                 })->when($request->has('contract_duration') && $request->contract_duration!='', function ($query) use ($request) {
+
+                        $query->where('contract_duration', $request->contract_duration);
+
+                 })->when($request->has('study_level') && $request->study_level!='', function ($query) use ($request) {
+
+                        $query->where('study_level', $request->study_level);
+
+              })
+              ->when($request->has('company_id') && $request->company_id!='', function ($query) use ($request) {
+
+                        $query->where('company_id', $request->company_id);
+
+              })
+              //->where("publish_status",1)
+              ->where('publish_status',1)
+              ->whereRaw('(DATEDIFF(DATE(NOW()),DATE(publish_date)) <= pack_ads.ads_duration)')
+              ->orderBy('publish_date','DESC')->paginate(10);
+		      $itemsTransformed = $itemsPaginated
+		        ->getCollection()
+		        ->map(function($item) {
+			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
+			        
+			        //var_dump($item->activity_sector_job);exit;
+			        //var_dump($item->pivot);exit;
+			        
+			        
+			       
+			        
+		            return [
+		                'id_offer' => $item->id,
+		                'id' => $item->id_offer,
+		                //'title' => $item->title,
+		                'title' => Str::of($item->title)->limit(20),
+		                'offers_details' => Str::of($item->offers_details)->limit(60),
+		                'offers_details_more' => $item->offers_details,
+		                'publish_status' => $item->publish_status,
+		                'company_name' => $item->company->company_name,
+		                'company_location' => $item->company->company_location,
+		                'company_about' => $item->company->company_about,
+		                'company_website' => $item->company->company_website,
+		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->diffForHumans(),
+		                'company_profile_photo' => $url,
+		                'contract_type' => $item->contract_type_offer_job->id,
+		                "contract_duration" => $item->contract_duration,
+		                "location" => $item->location,
+		                "study_level" => $item->study_level_job->id,
 		                "profile_details"=> $item->profile_details,
 		                'candidates'=>$item->candidate_offers->count(),
-		                'admin_notes' => strval($item->admin_notes)
+		                'admin_notes' => strval($item->admin_notes),
+		                'url_profile'=> $item->company->profile_photo_path,
 		                //"activity_sector" => $item->activity_sector_job->id
 		            ];
             })->toArray();
@@ -511,6 +582,7 @@ class OfferController extends Controller
 
               })
               //->where("publish_status",1)
+              ->where("company_id",auth()->user()->id)
               ->orderBy('publish_date','DESC')->paginate(10);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -677,6 +749,9 @@ class OfferController extends Controller
 			        $url = config('app.url').\Storage::url('profile/'.basename($item->company->profile_photo_path));
 			        
 			        //var_dump($item->activity_sector_job);exit;
+			        
+			        
+			        
 			        
 			        
 		            return [
@@ -903,6 +978,38 @@ class OfferController extends Controller
     
     public function create_offer(Request $request){
 	    
+	    
+	    
+	    
+	     //if(auth()->user()->hasRole('Employer')){
+	    
+		    $pack_subscription = @\DB::table("pack_ads_user_suscribe")->join('pack_ads','pack_ads_user_suscribe.pack_id','=','pack_ads.id')->where("user_id",auth()->user()->id)->selectRaw("pack_ads.pack_name,(end_subscription - UNIX_TIMESTAMP()) AS duration, FROM_UNIXTIME(end_subscription,'%Y-%m-%d') AS end_subscription,ads_number")->get();
+		    if(count($pack_subscription) == 0){
+			    
+			     return redirect('/expired');
+			    //return redirect('/offers/fee');
+		    }else{
+			    
+			    if($pack_subscription[0]->duration < 0){
+				    
+				    return redirect()->back()->with('status','<p>Vous ne disposer pas de pack valide.</p><p>Veuillez souscrire à un pack afin de créer une annonce</p>');
+			    }
+			    
+			    
+			    $count_offers = \DB::table("offers")->where("company_id",auth()->user()->id)->get();
+		        if(count($count_offers) >= $pack_subscription[0]->ads_number){
+			        
+			         return redirect()->back()->with('status','Votre quota de création d\'annonces est atteint!');
+		        }
+			    
+			    
+		    } 
+		    
+		    
+		    
+		    
+		//} 
+	    
 	     $request->validate([
 		    //'activity_sector' => 'required',
 		    'contract_duration' => 'required',
@@ -986,7 +1093,7 @@ class OfferController extends Controller
     }*/
 	    
 	        
-	        $itemsPaginated = Offers::with(['company','contract_type_offer_job','activity_sector_job','study_level_job'])->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
+	        $itemsPaginated = Offers::with(['company','contract_type_offer_job','activity_sector_job','study_level_job'])->join('pack_ads_user_suscribe','pack_ads_user_suscribe.user_id','=','offers.company_id')->join('pack_ads','pack_ads.id','=','pack_ads_user_suscribe.pack_id')->when($request->has('contract_type') && $request->contract_type!='' , function ($query) use ($request) {
 
                         $query->where('contract_type', $request->contract_type);
 
@@ -1005,6 +1112,7 @@ class OfferController extends Controller
 
               })
               ->where('publish_status',1)
+              ->whereRaw('(DATEDIFF(DATE(NOW()),DATE(publish_date)) <= pack_ads.ads_duration)')
               ->orderBy('publish_date','DESC')->paginate(10);
 		      $itemsTransformed = $itemsPaginated
 		        ->getCollection()
@@ -1017,7 +1125,7 @@ class OfferController extends Controller
 		            return [
 		                'id_offer' => $item->id,
 		                'id' => $item->id_offer,
-		                'title' => $item->title,
+		                'title' => Str::of($item->title)->limit(20),
 		                'offers_details' => Str::of($item->offers_details)->limit(60),
 		                'offers_details_more' => $item->offers_details,
 		                'publish_status' => $item->publish_status,
@@ -1027,14 +1135,24 @@ class OfferController extends Controller
 		                'company_website' => $item->company->company_website,
 		                'offer_duration' =>  \Carbon\Carbon::parse($item->publish_date)->diffForHumans(),
 		                'company_profile_photo' => $url,
+		                'url_profile'=> $item->company->profile_photo_path,
 		                'contract_type' => $item->contract_type_offer_job->id,
 		                "contract_duration" => $item->contract_duration,
 		                "location" => $item->location,
 		                "study_level" => $item->study_level_job->id,
-		                "profile_details"=> $item->profile_details
+		                "profile_details"=> $item->profile_details,
+		                "ads_top" => $item->ads_top
 		                //"activity_sector" => $item->activity_sector_job->id
 		            ];
             })->toArray();
+            
+            
+            usort($itemsTransformed, function($a, $b) {
+                return $b['ads_top'] <=> $a['ads_top'];
+            });
+            
+            
+            //var_dump(json_encode($itemsTransformed));exit;
               
             $itemsTransformedAndPaginated = new \Illuminate\Pagination\LengthAwarePaginator(
 			        $itemsTransformed,

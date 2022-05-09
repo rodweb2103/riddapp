@@ -28,6 +28,19 @@ class UserController extends Controller
 	    return ConsultLevel::selectRaw('id,level AS text')->get();   
     }
     
+    public function top_recruiters(Request $request){
+	    
+	    $results = \DB::table("pack_ads_user_suscribe")->join('users','users.id','pack_ads_user_suscribe.user_id')->join('pack_ads','pack_ads.id','=','pack_ads_user_suscribe.pack_id')->whereRaw("pack_ads.ads_highlight > 0")->selectRaw("users.profile_photo_path,users.company_name,users.id")->orderByRaw("RAND()")->limit(10)->get();
+	    
+	    $users_array = array();
+	    foreach($results as $v){
+		    
+		    $url = $v->profile_photo_path != "" ?config('app.url').\Storage::url('profile/'.basename($v->profile_photo_path)) : "";
+		    $users_array[] = array("url"=>$url,"name"=>$v->company_name,"id"=>$v->id);
+	    }
+	    
+	    return $users_array;
+    }
     
     public function candidate_create(Request $request){
 	    
@@ -985,7 +998,18 @@ class UserController extends Controller
 	      
 	      $user->assignRole($role);
 	      $user->save();
+	      \Auth::login($user);
 	      $user->sendEmailVerificationNotification();
+	      
+	      \DB::table("pack_ads_user_suscribe")->insert(array(
+		      
+		       "pack_id" => 4,
+		       "user_id" => $user->id,
+		       "end_subscription" => \DB::raw("UNIX_TIMESTAMP() + (".(3 * 24 * 3600).")")
+	      ));
+	      
+	      
+	      //$user->sendEmailVerificationNotification();
 	      
 	      return redirect()->back();
 		  

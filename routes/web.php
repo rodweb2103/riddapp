@@ -122,6 +122,7 @@ Route::get('/orientations/details',function(){
 	 return view('orientations_details');
 });
 
+Route::get('/top/recruiters',[UserController::class, 'top_recruiters'])->name('top_recruiters');
 
 Route::get('/expired',function(){
 	
@@ -215,7 +216,7 @@ Route::get('/recruiters/offers/{id}',function($id){
     
     //var_dump($url);exit;
     
-	return Inertia::render('User/Employer/MyOffers',['id'=>$id,'photo'=>$url,'compant_name_offer'=>$offer_details[0]->company_name]);
+	return Inertia::render('User/Employer/MyOffers',['id'=>$id,'photo'=>$url,'compant_name_offer'=>$offer_details[0]->company_name,'photo_url'=>$offer_details[0]->profile_photo_path]);
 	
 })/*->middleware(['auth:sanctum',config('jetstream.auth_session')])*/->name('recruiter_offers');
 
@@ -471,6 +472,8 @@ Route::post('/email/verification-notification', function (Request $request) {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+	
+	//var_dump($request->all());exit;
     $request->fulfill();
     return redirect('/dashboard');
 })->middleware(['auth', 'signed'])->name('verification.verify');
@@ -559,6 +562,7 @@ Route::get('/annonces/{id}', function (Request $request,$id) {
 	     "company_about" => $offer_details[0]->company->company_about,
 	     "company_location" => $offer_details[0]->company->company_location,
 	     "profile_photo_url" => $url,
+	     "photo_url_tmp" => $offer_details[0]->company->profile_photo_path,
 	     "study_level" => $offer_details[0]->study_level_job->level,
 	     "company_activity_sector" => $offer_details[0]->company->activity_sector_company_user_company->activity_sector_name
     );

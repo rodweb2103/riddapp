@@ -1,5 +1,7 @@
 <template>
-    
+    <Head>
+		<title>Annonces recruteurs</title>
+   </Head>
     <BaseLayout>
     <!-- Inner Banner -->
         <div class="inner-banner inner-banner-bg" >
@@ -99,9 +101,10 @@
 	                        <div class="event-item box-shadow">
 	                            <div class="event-img">
 	                                <a href="event-details.html">
-	                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 70%;"/>
+	                                    <!--<img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 70%;"/>-->
 	                                    
-	                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 70%;"/>
+	                                    <img :src="data['company_profile_photo']"  v-if="data['url_profile']!='' && data['url_profile']!=null" style="width: 70%;"/>
+	                                    <img src="/img/user.jpg"  v-if="data['url_profile']=='' || data['url_profile']== null" style="width: 70%;"/>
 	                                    
 	                                    
 	                                    
@@ -129,13 +132,24 @@
 	                
 	                
 	                <h2 style="font-size: 35px;margin-top:30px;">{{ __('Les recruteurs du moment') }}</h2>
-	                
 	                <div class="row g-0 d-xxl-flex people mt-1">
+                                <!--<div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
-                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>-->
+                                
+                                <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;" v-for="rec in recruiters">
+	                                <Link :href="`${'/recruiters/offers/'+rec.id}`">
+	                                <img v-if="rec.url!=''" class="rounded-circle d-xxl-flex" :src="rec.url" style="width: 130px;height: 130px;max-width: 150px;min-width: auto;min-height: auto;">
+	                                <img v-if="rec.url==''" class="rounded-circle d-xxl-flex" src="/img/user.jpg" style="width: 130px;height: 130px;max-width: 150px;min-width: auto;min-height: auto;">
+	                                <div class="text-center">{{ rec.name }}</div>
+	                                </Link>
+	                           
+	                           
+	                           </div>
+                                
+                                
                     </div>
 	                
 	                <div class="row pb-3" style="margin-top: 51px;">
@@ -388,6 +402,7 @@ export default defineComponent({
       contract_duration: ['CDD', 'CDI'],
       offerData: {},
       editMode : 0,
+      recruiters:[],
       viewDataOffer : {},
       form :{
 	       
@@ -412,7 +427,7 @@ export default defineComponent({
   },
   mounted(){
 	  
-	  
+	  this.getTopRecruiters();
 	  this.getResults();
 	  
 	  axios.get('/activity/sector').then(response => {
@@ -443,6 +458,18 @@ export default defineComponent({
 	  scrollToTop() {
         window.scrollTo(0,0);
       },
+      getTopRecruiters() {
+	     let vm = this;
+	     axios.get('/top/recruiters')
+                .then(response => {
+	                
+	                vm.loading = false;
+	                vm.recruiters =  response.data;
+	                //console.log(response.data);
+	                //vm.total_offer = response.data['total'];
+                    //vm.offerData = response.data;
+         });
+	  },
 	  getResults(page = 1) {
 		    let vm = this;
 		    /*this.form.post('/offers?page='+page, {

@@ -19,9 +19,10 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <!--<img src="/assets/img/avatar5.png" v-if="$page.props['image_profile']==''" class="img-circle elevation-2" alt="User Image">-->
-          <i class="fas fa-user-circle img-circle elevation-2" style="font-size: 30px;color:#fff;" v-if="$page.props['image_profile']==''"></i>
+          <!--<i class="fas fa-user-circle img-circle elevation-2" style="font-size: 30px;color:#fff;" v-if="$page.props['image_profile']==''"></i>-->
           
           <img :src="$page.props['image_profile']" v-if="$page.props['image_profile']!=''" class="img-circle elevation-2" alt="User Image">
+          <img src="/img/user.jpg" v-if="$page.props['image_profile']==''" class="img-circle elevation-2" alt="User Image">
           
         </div>
         <div class="info" style="width: 200px;">

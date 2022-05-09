@@ -4,7 +4,7 @@
      <div class="container-fluid">
 	    
 	    
-	    <!--<jet-dialog-modal id="deleteOffer" maxWidth="lg">
+	    <jet-dialog-modal id="deleteOffer" maxWidth="lg">
         <template #title>
           Supprimer une annonce
         </template>
@@ -83,7 +83,7 @@
             Confirmer
           </jet-button>
         </template>
-       </jet-dialog-modal>-->
+       </jet-dialog-modal>
 	     
 	     
 	    <jet-dialog-modal id="openOffer" maxWidth="lg">
@@ -375,7 +375,7 @@
 	                      
                       </td>-->
                       <td>
-			                    <a href="#" @click="loadOffer(data.id)"><i class="fas fa-eye"></i></a>
+			                    <a href="#" @click="loadOffer(data.id_offer)"><i class="fas fa-eye"></i></a>
 			                    <!--<a href="#" @click="openDeleteOffer(data.id)"><i class="fas fa-trash" style="color:red;padding: 2px;"></i></a>-->
 			                    <a href="#" @click="openDeleteOffer(data.id_offer)" v-if="$page.props.is_admin == 1"><i class="fas fa-trash" style="color:red;padding:5px;"></i></a>
 			                    <Link :href="`${'/view/cv/candidates/'+data.id}`" v-if="data.candidates > 0"><i class="fas fa-file-pdf"></i></Link>
@@ -572,6 +572,8 @@ export default defineComponent({
       },
       loadOffer(id){
 	      //this.viewDataOffer = data;
+	      
+	     //alert(id);
 	     this.form.errors = {};
 	     const filteredResult = this.offerData['data'].find((e) => e.id_offer == id);
 	     

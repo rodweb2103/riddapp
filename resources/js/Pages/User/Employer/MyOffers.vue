@@ -1,12 +1,21 @@
 <template>
-    
+    <Head>
+		<title>Annonces recruteur - {{ $page.props.compant_name_offer }}</title>
+   </Head>
     <BaseLayout>
     <!-- Inner Banner -->
         <div class="inner-banner inner-banner-bg" >
             <div class="container">
                 <div class="inner-title text-center">
 	                <div>
-	                  <img :src="$page.props.photo" alt="Team Images" style="width: 120px;border-radius: 100px;">
+	                  <img :src="$page.props.photo" alt="Team Images" style="width: 120px;border-radius: 100px;" v-if="$page.props.photo_url!='' && $page.props.photo_url!=null">
+	                  <img src="/img/user.jpg" alt="Team Images" style="width: 120px;border-radius: 100px;" v-if="$page.props.photo_url=='' || $page.props.photo_url==null">
+	                   <!--<i class="fas fa-user-circle img-circle elevation-2 mr-3" style="font-size: 90px;color:#fff;" v-if="$page.props.photo_url=='' || $page.props.photo_url== null"></i>-->
+	                  
+	                  
+	                  <!--<i class="fas fa-user-circle img-circle elevation-2 mr-3" style="font-size: 50px;" v-if="data['url_profile']=='' || data['url_profile']== null"></i>
+	                                    <img :src="data['company_profile_photo']"  v-if="data['url_profile']!='' && data['url_profile']!=null" style="width: 70%;"/>-->
+	                  
 	                </div>
                     <h3 class="mt-2">{{ $page.props.compant_name_offer }}</h3>
                     
@@ -102,9 +111,11 @@
 	                        <div class="event-item box-shadow">
 	                            <div class="event-img">
 	                                <a href="event-details.html">
-	                                    <img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 70%;"/>
+	                                    <!--<img src="assets/images/events/event-img1.jpg" alt="Events" v-if="data['company_profile_photo']==''" style="width: 70%;"/>
 	                                    
-	                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 70%;"/>
+	                                    <img :src="data['company_profile_photo']" alt="Events" v-if="data['company_profile_photo']!=''" style="width: 70%;"/>-->
+	                                    <img :src="data['company_profile_photo']"  v-if="data['url_profile']!='' && data['url_profile']!=null" style="width: 70%;"/>
+	                                    <img src="/img/user.jpg"  v-if="data['url_profile']=='' || data['url_profile']== null" style="width: 70%;"/>
 	                                    
 	                                    
 	                                    

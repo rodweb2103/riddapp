@@ -1,5 +1,7 @@
 <template>
-  
+   <Head>
+		<title>Détails annonces</title>
+   </Head>
   <BaseLayout>
   <!-- Inner Banner -->
         <div class="inner-banner" style="background-image: url('/img/banniere-gradient.png') !important">
@@ -95,8 +97,7 @@
                                             
                                             <Link v-if="!$page.props['auth']['user'] && $page.props['is_employer'] != 1" href="/login" class="default-btn two" style="background: rgb(240, 128, 0) none repeat scroll 0% 0%">{{ __('Se connecter') }}</Link>
                                             
-                                            
-                                            <Link v-if="$page.props['auth']['user'] && $page.props['is_employer'] == 1" href="/account" class="default-btn two" style="background: rgb(240, 128, 0) none repeat scroll 0% 0%">{{ __('Modifier cette annonce') }}</Link>
+                                            <Link v-if="$page.props['auth']['user'] && $page.props['is_employer'] == 1 && $page.props.can_edit_offer > 0" href="/account" class="default-btn two" style="background: rgb(240, 128, 0) none repeat scroll 0% 0%">{{ __('Modifier cette annonce') }}</Link>
                                             
                                             <!--<div class="courses-details-into">
                                                 <h3>What you'll learn</h3>
@@ -120,7 +121,10 @@
                     </div>
                     <div class="col-lg-4">
                         <div class="courses-details-sidebar pt-2">
-                            <div class="mt-5"><img :src="offerDetails['profile_photo_url']" alt="Courses" class="rounded mx-auto d-block" style="width: 150px;"/></div>
+                            <div class="mt-5">
+	                            <img :src="offerDetails['profile_photo_url']" alt="Courses" class="rounded mx-auto d-block" style="width: 150px;" v-if="offerDetails['photo_url_tmp']!=null && offerDetails['photo_url_tmp']!=''"/>
+	                            <img src="/img/user.jpg" alt="Courses" class="rounded mx-auto d-block" style="width: 150px;" v-if="offerDetails['photo_url_tmp']==null || offerDetails['photo_url_tmp']==''"/>
+	                        </div>
                             <div class="content">
                                 <h3 class="text-center">{{ offerDetails['company_name'] }}</h3>
                                 <!--<span>This course includes:</span>-->

@@ -1,5 +1,7 @@
 <template>
-    
+    <Head>
+		<title>Abonnement PACK</title>
+   </Head>
     <BaseLayout>
         <!-- Inner Banner -->
         <div class="inner-banner inner-banner-bg">

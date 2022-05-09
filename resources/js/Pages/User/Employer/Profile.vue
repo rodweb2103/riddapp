@@ -55,8 +55,9 @@
 	             
 	              
 	              <!--<img v-if="imageSrcProfile==''" class="profile-user-img img-fluid img-circle" @click="loadImage" src="/assets/img/avatar5.png" alt="User profile picture">-->
-	              <i @click="loadImage" class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="imageSrcProfile==''"></i>
+	              <!--<i @click="loadImage" class="fas fa-user-circle img-circle elevation-2" style="font-size: 70px;" v-if="imageSrcProfile==''"></i>-->
                   <img v-if="imageSrcProfile!=''" class="profile-user-img img-fluid img-circle" @click="loadImage" :src="imageSrcProfile" alt="User profile picture">
+                  <img v-if="imageSrcProfile==''" class="profile-user-img img-fluid img-circle" @click="loadImage" src="/img/user.jpg" alt="User profile picture">
                   
                 </div>
 
