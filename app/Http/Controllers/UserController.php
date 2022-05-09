@@ -344,9 +344,12 @@ class UserController extends Controller
 	    
 	    $candidates = User::whereHas("roles", function($q) use($request) { $q->where("name","Student"); })->selectRaw('COUNT(*) AS nb')->get();
 	    $employers = User::whereHas("roles", function($q) use($request) { $q->where("name","Employer"); })->selectRaw('COUNT(*) AS nb')->get();
-	    $offres = Offers::all();
 	    
-	    return array('candidates'=>$candidates[0]->nb,'employers'=>$employers[0]->nb,'offres'=>count($offres));
+	    $data_stats = \DB::table("offers")->selectRaw("COUNT(*) AS nb_offers,SUM(case when publish_status = 1 then 1 else 0 end) AS published,SUM(case when publish_status = -1 then 1 else 0 end) AS rejected")->get();
+	    
+	    //$offres = Offers::all();
+	    
+	    return array('candidates'=>$candidates[0]->nb,'employers'=>$employers[0]->nb,'offres'=>$data_stats);
 	    
     }
     

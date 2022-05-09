@@ -267,6 +267,9 @@ Route::post('/admin/delete/offer',[OfferController::class, 'delete_offer'])->nam
 Route::post('/admin/profile/image/upload',[UserController::class, 'profile_image_upload'])->name('admin.image.upload');
 
 
+Route::post('/admin/ajax/stats/offers',[OfferController::class, 'offers_stats'])->name('admin.ajax.stats');
+
+
 Route::get('/admin/employer',function(){
     return Inertia::render('Admin/Employer');
 })->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.employer');

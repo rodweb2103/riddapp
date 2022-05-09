@@ -12,6 +12,13 @@ class OfferController extends Controller
 {
     //
     
+    public function offers_stats(Request $request){
+	    
+	    
+	    //$data_stats = \DB::select("offers")->selectRaw("COUNT(*) AS nb_offers,SUM(case when publish_status = 1 then 1 else 0 end) AS published,SUM(case when publish_status = -1 then 1 else 0 end) AS rejected")->get();
+	    
+	    //return $data_stats;
+    }
     
     public function ajax_select_cv(Request $request){
 	    
