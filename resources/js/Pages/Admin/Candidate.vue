@@ -140,7 +140,7 @@
 	     <div class="clearfix mt-4">
                 <a @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green !important">{{ __("Éditer un compte candidat") }}</a>
          </div>
-         <div class="alert alert-success" v-if="$page.props.status!==null">
+         <div class="alert alert-success" v-if="$page.props.status!==null && $page.props.status!=='null'">
 	              {{ $page.props.status }}
          </div>
        

@@ -46,6 +46,11 @@
 	   
         <div class="row pt-5">
 	        
+	        
+	      <div class="alert alert-success" v-if="$page.props.status!==null && $page.props.status!=='null'">
+	              {{ $page.props.status }}
+          </div>
+	        
           <div class="col-md-3">
             <!-- Profile Image -->
             <div class="card card-primary card-outline" style="border-top: 3px solid orange !important;">

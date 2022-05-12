@@ -91,7 +91,7 @@
 	                    
 	                </div>
 	                
-	                <div class="row">
+	                <div class="row" style="height: 700px;">
 		                <div class="d-flex justify-content-center mt-5" v-if="loading == true">
 		                    <div class="spinner-border text-primary" role="status" id="main">
 							  <span class="sr-only">Loading...</span>
@@ -132,12 +132,18 @@
 	                
 	                
 	                <h2 style="font-size: 35px;margin-top:30px;">{{ __('Les recruteurs du moment') }}</h2>
-	                <div class="row g-0 d-xxl-flex people mt-1">
+	                <div class="row g-0 d-xxl-flex people mt-1" style="height: 150px;">
                                 <!--<div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-left: 0px;padding-right: 0px;"><Link href="/recruiters/offers/9"><img class="rounded-circle d-xxl-flex" src="/img/LG-RIDD@2x.png" style="width: 150px;height: 150px;max-width: 150px;min-width: auto;min-height: auto;"></Link></div>-->
+                                
+                                
+                                
+ 
+                                
+                                <div v-if="recruiters.length == 0" class="text-center mt-4">Aucun recruteur trouvé</div>
                                 
                                 <div class="col-sm-auto col-md-2 col-lg-2 col-xl-2 col-xxl-2 item" style="padding-right: 0px;padding-left: 0px;" v-for="rec in recruiters">
 	                                <Link :href="`${'/recruiters/offers/'+rec.id}`">

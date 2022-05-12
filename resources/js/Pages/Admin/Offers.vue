@@ -312,12 +312,13 @@
         <!-- Main row -->
         <div class="row pt-3">
           <!-- Left col -->
+          <div class="alert alert-success" v-if="$page.props.status!==null">
+	              {{ $page.props.status }}
+          </div>
           <div class="col-md-12">
             <!-- /.card -->
             <!-- /.row -->
-            <div class="alert alert-success" v-if="$page.props.status!==null">
-	              {{ $page.props.status }}
-            </div>
+            
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">

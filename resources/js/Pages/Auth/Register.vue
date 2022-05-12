@@ -77,7 +77,7 @@
 							                        <div class="fields">
 								                        <select class="form-select" aria-label="Default select example" v-model="form.account_type" style="margin-bottom: 25px;">
 								                           <option selected disabled value="">--{{ __('Selectionner le type de compte') }}--</option>
-								                           <option value="1">{{ __('Candidat') }}</option>
+								                           <option value="1">{{ __('Diplômé') }}</option>
 								                           <option value="2">{{ __('Recruteur') }}</option>
 								                           <option value="5">{{ __('Consultant') }}</option>
 								                        </select>
@@ -102,9 +102,9 @@
 							                        
 													 <!--<vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number" :ignoredCountries="['ci']" enabledCountryCode="true" @validate="validate" v-if="form.account_type == 1"></vue-tel-input>-->
 													 
-													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true" :ignoredCountries="['ci']" @validate="validate" v-if="form.account_type == 1 || form.account_type == 5"></vue-tel-input>
+													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="ci" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true" :ignoredCountries="['ci']" @validate="validate" v-if="form.account_type == 1 || form.account_type == 5"></vue-tel-input>
 													 
-													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="fr" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true"  @validate="validate" v-if="form.account_type == 2"></vue-tel-input>
+													 <vue-tel-input :dropdownOptions='{showDialCodeInSelection:true,showFlags:true,showDialCodeInList:true,showSearchBox:true}' :inputOptions='{placeholder:"Entrer le numéro de téléphone"}' defaultCountry="ci" mode="international" :autoDefaultCountry="false"  v-model="form.phone_number"  enabledCountryCode="true"  @validate="validate" v-if="form.account_type == 2"></vue-tel-input>
 													 
 													 
 													 <div v-if="errors.phone_number" style="color:red;">{{ errors.phone_number }}</div>

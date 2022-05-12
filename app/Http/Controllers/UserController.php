@@ -195,7 +195,8 @@ class UserController extends Controller
 	    
 	    //\DB::table("users")->where("id",$request->input('id'))->delete();
 	    
-	    return redirect()->back();
+	    return redirect()->back()->with('status','Compte staff supprimé');
+	    //return redirect()->back();
 	    
     }
     
@@ -207,7 +208,8 @@ class UserController extends Controller
 		    "is_suspended" => 0
 	    ));
 	    
-	    return redirect()->back();
+	    return redirect()->back()->with('status','Compte staff activé');
+	    //return redirect()->back();
     }
     
     public function ajax_staff_suspend(Request $request){
@@ -216,7 +218,9 @@ class UserController extends Controller
 		    "is_suspended" => 1
 	    ));
 	    
-	    return redirect()->back();
+	    return redirect()->back()->with('status','Compte staff suspendu');
+	    
+	    //return redirect()->back();
 	    
     }
     
@@ -605,8 +609,9 @@ class UserController extends Controller
     
     public function profile_update(Request $request){
 	    
+	    //exit;
 	    
-	    if(\Auth::user()->hasRole('Admin') || \Auth::user()->hasRole('Student')){
+	    if(\Auth::user()->hasRole('Admin') || \Auth::user()->hasRole('Student') || \Auth::user()->hasRole('Consultant')){
 	    
 		    $request->validate([
 			    
@@ -641,9 +646,9 @@ class UserController extends Controller
 	         if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
 	         $user->save();
 	     
-	     }else{
+	    }else{
 		     
-		     
+		     //exit;
 		     $request->validate([
 			    
 			    
@@ -686,13 +691,16 @@ class UserController extends Controller
 	         $user->company_about = $request->input('company_about');
 	         $user->company_website = $request->input('company_website');
 	         if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
-	         $user->save();
+	         //$user->save();
+	         //exit;
 		     
 		     
 	     }
-         
+	     //die();
+	     //var_dump("hhhhhh");
+	     //echo "jjjjjjjj";
          //exit;
-         return redirect()->back();
+         return redirect()->back()->with('status','Profile mis à jour');
     }
     
     public function profile_pdf_upload(Request $request){
@@ -738,7 +746,7 @@ class UserController extends Controller
 	    $url = config('app.url').\Storage::url('profile/'.basename($path));
 	    
 	    
-	    return redirect('/account/profile')->with('status',basename($path));
+	    return redirect('/account/profile')->with('status','CV mis à jour.');
 	    
 	    
     }

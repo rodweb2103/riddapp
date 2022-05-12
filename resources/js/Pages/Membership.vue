@@ -27,7 +27,7 @@
                         <div class="pricing-card">
                             <div class="top-content">
                                 <h3>STANDARD</h3>
-                                <h2 style="font-size: 20px;">76€<sub>/ {{ __('Mois') }}</sub></h2>
+                                <h2 style="font-size: 20px;">76€<sub>/ {{ __('Mois') }} ( 50 000 FCFA )</sub></h2>
                             </div>
                             <ul>
                                 <li><i class="ri-check-line"></i> 3 {{ __('annonces à poster') }}</li>
@@ -65,7 +65,7 @@
                         <div class="pricing-card">
                             <div class="top-content">
                                 <h3>PROFESSIONNEL</h3>
-                                <h2 style="font-size: 20px;">230€<sub>/ {{ __('Mois') }}</sub></h2>
+                                <h2 style="font-size: 20px;">230€<sub>/ {{ __('Mois') }} (150 000 FCFA)</sub></h2>
                             </div>
                             <ul>
                                 <li><i class="ri-check-line"></i> 5 {{ __('annonces à poster') }}</li>
@@ -104,7 +104,7 @@
                         <div class="pricing-card">
                             <div class="top-content">
                                 <h3>PREMIUM</h3>
-                                <h2 style="font-size: 20px;">460€<sub>/ {{ __('Mois') }}</sub></h2>
+                                <h2 style="font-size: 20px;">460€<sub>/ {{ __('Mois') }} ( 300 000 FCFA )</sub></h2>
                             </div>
                             <ul>
                                 <li><i class="ri-check-line"></i> 5 {{ __('annonces à poster') }}</li>

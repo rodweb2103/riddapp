@@ -74,6 +74,9 @@
         
         <!-- Main row -->
         <div class="row pt-5">
+	      <div class="alert alert-success" v-if="$page.props.status!==null && $page.props.status!=='null'">
+	              {{ $page.props.status }}
+          </div>
           <!-- Left col -->
           <div class="col-md-12">
             <!-- /.card -->
@@ -82,7 +85,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Mes Offres</h3>
+                <h3 class="card-title">Mes Candidtatures</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">

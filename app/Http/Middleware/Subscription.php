@@ -34,27 +34,14 @@ class Subscription
 				    
 				    return redirect('/expired')->with('status','Vous ne disposer pas de pack valide.<p>Veuillez souscrire à un pack afin de visualiser les CV des candidats</p>');
 			    }
+			    
+			    
 		    } 
+		    
+		    
+		    
 		} 
 	    
-	    //dd(session()->get('my_locale'));exit;
-	    //var_dump(session()->get('my_locale'));
-	    //var_dump(session_save_path());
-	    //var_dump(\Session::get('my_locale'));
-	    //exit;
-	    /*if(session()->has('locale')){
-	        //app()->setLocale(session('locale'));
-	        var_dump("dhdhd");exit;
-	        $this->app->setLocale(session('my_locale', config('app.locale')));
-	    }
-	    else{
-		    
-		    var_dump("dhdhd");exit;
-	       $this->app->setLocale(config('app.locale'));
-	    }*/
-	    
-	    //$this->app->setLocale(session('my_locale', config('app.locale')));
-	        //app()->setLocale(config('app.locale'));
 	
 	    return $next($request);
 	}

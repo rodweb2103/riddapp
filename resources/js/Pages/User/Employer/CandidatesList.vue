@@ -144,6 +144,11 @@
         <!-- Main row -->
         <div class="row pt-2">
           <!-- Left col -->
+          
+          <div class="alert alert-success" v-if="$page.props.status!==null && $page.props.status!=='null'">
+	              {{ $page.props.status }}
+          </div>
+          
           <div class="col-md-12">
             <button v-if="$page.props['is_employer'] == 1" @click="openSelectCV" :disabled="form.cv_id.length == 0" class="btn btn-primary" style="background-color: #fff !important;"><i class="fas fa-user-check" style="color:green;padding:10px;"></i></button>
             <button v-if="$page.props['is_employer'] == 1" @click="openRejectCV" class="btn btn-primary" :disabled="form.cv_id.length == 0" style="background-color: #fff !important;"><i class="fas fa-user-slash" style="color:red;padding:10px;"></i></button>

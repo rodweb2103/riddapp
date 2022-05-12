@@ -64,7 +64,7 @@
           
           <div class="mt-4">
 	          
-	          
+	       
 	          
 	       <form id="msform">
 		      <div class="row"> 
@@ -282,7 +282,7 @@
                 <button @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green;">{{ __("Éditer une annonce") }}</button>
                 <button :disabled="form2.cv_rows.length == 0" @click="openDeleteOffer" class="btn btn-sm btn-info float-left" style="background-color: red;">{{ __("Supprimer une annonce") }}</button>
               </div>
-              <div class="alert alert-success" v-if="$page.props.status!==null">
+              <div class="alert alert-success" v-if="$page.props.status!==null && $page.props.status!=='null'">
 	              {{ $page.props.status }}
               </div>
         
@@ -329,7 +329,7 @@
 		                    <td>{{ data.title }}</td>
 		                    <td>{{ data.offers_details }}</td>
 		                    
-		                    <td class="text-center">
+		                    <td>
 			                    
 			                    <span class="badge badge-success" v-if="data.publish_status == 1">{{ __("Publié") }}</span>
 			                    <span class="badge badge-warning" v-if="data.publish_status == 0">{{ __("En attente") }}</span>
@@ -342,7 +342,7 @@
 			                    <a href="#" v-if="data.publish_status == -1" @click="openChatAdmin(data)"><i class="fas fa-comment" style="color:grey;padding:2px;"></i></a>
 			                    <Link :href="`${'/view/cv/candidates/'+data.id}`" v-if="data.publish_status != -1 && data.candidates > 0 && data.publish_status != 0"><i class="fas fa-file-pdf"></i></Link>
 			               </td>
-			               <td class="text-center">{{ data.candidates }}</td>
+			               <td>{{ data.candidates }}</td>
 		                    
 	                    </tr>
                     <!--<tr>
@@ -683,7 +683,7 @@ export default defineComponent({
          //this.form['id'] = id;
          this.form.post(route('employer.edit.offer'), {
 	        preserveScroll: true,
-	        onSuccess: () => { this.closeModal(); this.form.reset();this.editOffer=0;},
+	        onSuccess: () => { this.closeModal(); this.form.reset();this.editOffer=0;this.getResults();},
 	        //onError: () => this.$refs.password.focus(),
 	        onFinish: () => {}/*this.form.reset()*/,
           });
@@ -692,7 +692,7 @@ export default defineComponent({
 		  //this.form['id'] = this.id_delete;
 		  this.form2.post(route('employer.delete.offer'), {
 	        preserveScroll: true,
-	        onSuccess: () => { this.closeModal2();this.getResults();this.id_delete = 0;},
+	        onSuccess: () => { this.closeModal2();this.getResults();this.id_delete = 0;this.getResults();},
 	        //onError: () => this.$refs.password.focus(),
 	        onFinish: () => {}/*this.form.reset()*/,
           });
@@ -708,7 +708,7 @@ export default defineComponent({
 			 
 	     this.form.post(route('employer.edit.offer'), {
 	        preserveScroll: true,
-	        onSuccess: () => { this.closeModal(); this.form.reset();this.editOffer=0;},
+	        onSuccess: () => { this.closeModal();this.form.reset();this.editOffer=0;this.getResults();},
 	        //onError: () => this.$refs.password.focus(),
 	        onFinish: () => {}/*this.form.reset()*/,
           });

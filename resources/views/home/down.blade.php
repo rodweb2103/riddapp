@@ -70,15 +70,16 @@
 	    
 	    <!-- Pre Loader -->
         <div id="preloader">
-            <div id="preloader-area">
+            <div id="preloader-area" class="position-absolute top-50 start-50 translate-middle" style="height: 100px;width: 160px;z-index: 90000;right: 50%;">
+                <!--<div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
                 <div class="spinner"></div>
-                <div class="spinner"></div>
-                <div class="spinner"></div>
+                <div class="spinner"></div>-->
+                 <img src="/img/LG-RIDD@2x.png" class="logo-one" alt="logo" style="width: 150px;"/>
             </div>
             <div class="preloader-section preloader-left"></div>
             <div class="preloader-section preloader-right"></div>

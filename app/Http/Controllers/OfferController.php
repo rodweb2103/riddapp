@@ -911,13 +911,15 @@ class OfferController extends Controller
 	    
 	   \DB::table("offers")->whereIn("id",$request->input('cv_rows'))->delete();
 	   \DB::table("offers_bid")->whereIn("offer_id",$request->input('cv_rows'))->delete();
-	   return redirect()->back();
+	   return redirect()->back()->with('status','Offre supprimé');
+	   //return redirect()->back();
     }
     
     public function unbid_offer(Request $request){
 	   
 	   \DB::table("offers_bid")->where("offer_id",$request->input('id'))->delete();
-	   return redirect()->back();   
+	   return redirect()->back()->with('status','Candidature retirée');
+	   //return redirect()->back();   
     }
     
     
@@ -1340,7 +1342,8 @@ class OfferController extends Controller
 		       "publish_status" => 1
 	      ));
 	      
-	      return redirect()->back();
+	      return redirect()->back()->with('status','Offre publiée');
+	      //return redirect()->back();
     }
     
     /*public function delete_offer(Request $request){
@@ -1359,7 +1362,8 @@ class OfferController extends Controller
 		      
 		       "publish_status" => 0
 	     ));
-	     return redirect()->back();
+	     return redirect()->back()->with('status','Offre retiré');
+	     //return redirect()->back();
     }
     
 }
