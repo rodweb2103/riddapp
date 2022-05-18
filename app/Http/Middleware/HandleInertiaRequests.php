@@ -68,6 +68,7 @@ class HandleInertiaRequests extends Middleware
 	    //exit;
 	    
 	    $pack_name = "";
+	    $pack_id = "";
 	    $pack_duration = "";
 	    $pack_end_subscription = "";
 	    
