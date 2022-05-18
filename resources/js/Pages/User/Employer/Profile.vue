@@ -87,18 +87,21 @@
 
                 <!--<hr>-->
 
-                <strong><i class="fas fa-money-bill"></i>Pack</strong>
-
+                <strong><i class="fas fa-money-bill"></i><span class="ml-2">Pack</span></strong>
                 <div>{{ $page.props['subscription']['pack_name'] }}</div>
 
                 <hr>
                 
                 
-                <strong><i class="fas fa-calendar"></i>{{ __("Fin de Période") }}</strong>
+                <strong><i class="fas fa-calendar"></i><span class="ml-2">{{ __("Fin de Période") }}</span></strong>
 
                 <div v-if="$page.props['subscription']['pack_duration'] < 0" style="color:red;font-weight: 	bold;"><span><i class="fas fa-exclamation-circle"></i>{{ __('Pack expiré') }}</span> <span><Link v-if="$page.props['subscription']['pack_duration'] < 0" href="/offers/fee" style="color:green;">Souscrire à un pack</Link></span></div>
                
-                <div v-if="$page.props['subscription']['pack_duration'] > 0">{{ $page.props['subscription']['pack_end_subscription'] }}</div>
+                <div v-if="$page.props['subscription']['pack_duration'] > 0 && $page.props['subscription']['id']!=4">{{ $page.props['subscription']['pack_end_subscription'] }}</div>
+                
+                <div v-if="$page.props['subscription']['pack_duration'] > 0 && $page.props['subscription']['id']==4">Votre période de gratuité prend fin <br/>le <span style="color:red;">{{ $page.props['subscription']['pack_end_subscription'] }}</span></div>
+                
+                
 
                 <hr>
 

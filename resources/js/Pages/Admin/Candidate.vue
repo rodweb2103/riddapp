@@ -199,7 +199,7 @@
                       <td>
                         {{ data['study_level'] }}
                       </td>
-                      <td>{{ data['account_type'] == 1 ? __('Étudiant') : __('Consultant') }}</td>
+                      <td>{{ data['account_type'] == 1 ? __('Diplômé') : __('Consultant') }}</td>
                       <!--<td>
                         {{ data['activity_sector'] }}
                       </td>-->

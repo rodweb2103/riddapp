@@ -176,7 +176,7 @@
 			              <div class="card-header border-0 ui-sortable-handle" style="cursor: move;">
 			                <h3 class="card-title">
 			                  <i class="fas fa-th mr-1"></i>
-			                  {{ __("Montant des ventes") }}
+			                  {{ __("Montant des achats de pack") }}
 			                </h3>
 			
 			                <!--<div class="card-tools">

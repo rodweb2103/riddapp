@@ -17,7 +17,7 @@
                             @endguest
                             
                             @auth
-                               <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/register" style="background: rgb(71,179,21);border-style: none;color: rgb(255,255,255);">{{ __('Accéder aux offres') }}</a>
+                               <a class="btn btn-lg" role="button" data-bss-disabled-mobile="true" data-bss-hover-animate="pulse" href="/annonces" style="background: rgb(71,179,21);border-style: none;color: rgb(255,255,255);">{{ __('Accéder aux offres') }}</a>
                             @endauth
                             <!--<div class="banner-form-area" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
                                 <form class="banner-form" data-toggle="validator" method="POST">

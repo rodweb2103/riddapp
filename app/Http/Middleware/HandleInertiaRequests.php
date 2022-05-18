@@ -56,14 +56,15 @@ class HandleInertiaRequests extends Middleware
 	    
 	    if(auth()->user()) $user = User::with(['country_user','activity_sector_company_user_company','activity_sector_company_user_consult'])->where("id",auth()->user()->id)->first();
 	    
+	    //var_dump(auth()->user()->id);exit;
 	    
-	    @$pack_subscription = \DB::table("pack_ads_user_suscribe")->join('pack_ads','pack_ads_user_suscribe.pack_id','=','pack_ads.id')->where("user_id",auth()->user()->id)->selectRaw("pack_ads.pack_name,(end_subscription - UNIX_TIMESTAMP()) AS duration, FROM_UNIXTIME(end_subscription,'%Y-%m-%d') AS end_subscription")->get();
+	    @$pack_subscription = \DB::table("pack_ads_user_suscribe")->join('pack_ads','pack_ads_user_suscribe.pack_id','=','pack_ads.id')->where("user_id",auth()->user()->id)->selectRaw("pack_ads.pack_name,(pack_ads_user_suscribe.end_subscription - UNIX_TIMESTAMP()) AS duration, FROM_UNIXTIME(pack_ads_user_suscribe.end_subscription,'%d/%m/%Y') AS end_subscription,pack_ads.id")->get();
 	    
 	    $check_valid_user_offer = @\DB::table("offers")->where("id",$id_offer)->where("company_id",auth()->user()->id)->get();
 	    
 	    //var_dump(auth()->user()->id);
 	    //var_dump($request->session()->get('id_offer'));
-	    //var_dump(count($check_valid_user_offer));
+	    //var_dump($pack_subscription);
 	    //exit;
 	    
 	    $pack_name = "";
@@ -72,7 +73,7 @@ class HandleInertiaRequests extends Middleware
 	    
 	    if(count($pack_subscription) > 0){
 		    
-		    
+		    $pack_id = $pack_subscription[0]->id;
 		    $pack_name = $pack_subscription[0]->pack_name;
 	        $pack_duration = $pack_subscription[0]->duration;
 	        $pack_end_subscription = $pack_subscription[0]->end_subscription;
@@ -92,7 +93,7 @@ class HandleInertiaRequests extends Middleware
 			            base_path('lang/'. app()->getLocale() .'.json')
 			        );
 			    },
-			    'subscription'=> array("pack_name"=>$pack_name,"pack_duration"=>$pack_duration,"pack_end_subscription"=>$pack_end_subscription),
+			    'subscription'=> array("pack_name"=>$pack_name,"pack_duration"=>$pack_duration,"pack_end_subscription"=>$pack_end_subscription,"id"=>$pack_id),
 			    'offer_is_bidded' => auth()->user() ? auth()->user()->hasRole('Student') || auth()->user()->hasRole('Consultant') ? count($check):-1 : 0,
 			    'locale' => app()->getLocale(),
                 'status' => fn () => $request->session()->get('status'),
