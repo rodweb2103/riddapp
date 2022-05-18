@@ -185,6 +185,16 @@
 				 </Link>-->
 	          </li>
 	          
+	          <!--<li class="nav-item" v-if="$page.props.is_admin == 1">
+	            <Link href="/admin/newsletter" class="nav-link">
+	              <i class="fas fa-mail-bulk nav-icon"></i>
+	              <p>
+	                {{ __("Newsletter") }}
+	              </p>
+	            </Link>
+	            
+	          </li>-->
+	          
 	          <li class="nav-item" v-if="$page.props.is_admin == 1">
 	            <!--<a href="pages/widgets.html" class="nav-link">
 	              <i class="nav-icon fas fa-th"></i>

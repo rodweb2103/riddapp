@@ -96,7 +96,8 @@
                 
                 <strong><i class="fas fa-calendar"></i>{{ __("Fin de Période") }}</strong>
 
-                <div v-if="$page.props['subscription']['pack_duration'] < 0" style="color:red;font-weight: 	bold;"><i class="fas fa-exclamation-circle"></i>{{ __('Pack expiré') }}</div>
+                <div v-if="$page.props['subscription']['pack_duration'] < 0" style="color:red;font-weight: 	bold;"><span><i class="fas fa-exclamation-circle"></i>{{ __('Pack expiré') }}</span> <span><Link v-if="$page.props['subscription']['pack_duration'] < 0" href="/offers/fee" style="color:green;">Souscrire à un pack</Link></span></div>
+               
                 <div v-if="$page.props['subscription']['pack_duration'] > 0">{{ $page.props['subscription']['pack_end_subscription'] }}</div>
 
                 <hr>
@@ -191,10 +192,20 @@
                         </div>
                       </div>
                       
+                      
                       <div class="form-group row">
-                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Mot de passe") }}</label>
+                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Ancien mot de passe</label>
                         <div class="col-sm-9">
-                          <input type="password" class="form-control" id="inputName2" placeholder="" v-model="formUser.password">
+                          <input type="password" class="form-control" id="inputName2" placeholder="Ancien mot de passe" v-model="formUser.old_password">
+                          <div v-if="formUser.errors.old_password" style="color:red;">{{ formUser.errors.old_password }}</div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nouveau mot de passe</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="inputName2" placeholder="Nouveau mot de passe" v-model="formUser.new_password">
+                          <div v-if="formUser.errors.new_password" style="color:red;">{{ formUser.errors.new_password }}</div>
                         </div>
                       </div>
                       <!--<div class="form-group row">
@@ -278,7 +289,7 @@
 
 //import 'babel-polyfill';
 import myUpload from 'vue-image-crop-upload';
-import { defineComponent,ref } from "vue"
+import { defineComponent,ref} from "vue"
 import AppLayout from "@/Layouts/AppLayout.vue"
 //import Welcome from "@/Pages/Welcome.vue"
 //import Welcome from "@/Jetstream/Welcome.vue"
@@ -292,7 +303,7 @@ import JetInput from '@/Jetstream/Input.vue'
 import JetInputError from '@/Jetstream/InputError.vue'
 import JetSecondaryButton from '@/Jetstream/SecondaryButton.vue'
 import JetButton from '@/Jetstream/Button.vue'
-
+import { Head,Link } from '@inertiajs/inertia-vue3';
 
 export default defineComponent({
   components: {
@@ -305,6 +316,7 @@ export default defineComponent({
     JetInputError,
     JetSecondaryButton,
     JetButton,
+    Link
     //Welcome
   },
   data() {
@@ -323,7 +335,8 @@ export default defineComponent({
 	    last_name : this.$page.props['user']['last_name'],
 	    user_name : this.$page.props['user']['user_name'],
 	    email : this.$page.props['user']['email'],
-	    password : '',
+	    old_password : '',
+	    new_password : ''
 	    //password_confirmation : '',
         //password: '',
         //id : 0,

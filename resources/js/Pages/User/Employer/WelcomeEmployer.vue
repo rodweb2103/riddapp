@@ -279,7 +279,7 @@
         
         <!-- /.card-body -->
               <div class="clearfix mt-4">
-                <button @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green;">{{ __("Éditer une annonce") }}</button>
+                <button @click="openOfferForm" class="btn btn-sm btn-info float-left" style="background-color: green;">{{ __("Créer une annonce") }}</button>
                 <button :disabled="form2.cv_rows.length == 0" @click="openDeleteOffer" class="btn btn-sm btn-info float-left" style="background-color: red;">{{ __("Supprimer une annonce") }}</button>
               </div>
               <div class="alert alert-success" v-if="$page.props.status!==null && $page.props.status!=='null'">

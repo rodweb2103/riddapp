@@ -105,10 +105,19 @@
                           <input type="email" class="form-control" id="inputEmail" placeholder="Email" v-model="formUser.email">
                         </div>
                       </div>
-                      <div class="form-group row">
-                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Mot de passe</label>
+                       <div class="form-group row">
+                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Ancien mot de passe</label>
                         <div class="col-sm-9">
-                          <input type="password" class="form-control" id="inputName2" placeholder="Name">
+                          <input type="password" class="form-control" id="inputName2" placeholder="Ancien mot de passe" v-model="formUser.old_password">
+                          <div v-if="formUser.errors.old_password" style="color:red;">{{ formUser.errors.old_password }}</div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nouveau mot de passe</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="inputName2" placeholder="Nouveau mot de passe" v-model="formUser.new_password">
+                          <div v-if="formUser.errors.new_password" style="color:red;">{{ formUser.errors.new_password }}</div>
                         </div>
                       </div>
                       <!--<div class="form-group row">
@@ -220,7 +229,8 @@ export default defineComponent({
 	    last_name : this.$page.props['user']['last_name'],
 	    user_name : this.$page.props['user']['user_name'],
 	    email : this.$page.props['user']['email'],
-	    password : '',
+	    old_password : '',
+	    new_password : ''
 	    //password_confirmation : '',
         //password: '',
         //id : 0,

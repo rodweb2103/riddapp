@@ -80,7 +80,7 @@
                                 </li>
                                 
                                  <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">
+                                    <a href="/orientations" class="nav-link">
                                         {{ __('Orientations') }}
                                     </a>
                                 </li>

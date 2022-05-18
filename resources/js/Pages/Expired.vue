@@ -3,11 +3,11 @@
   
     <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center container">
   
-	    <div><i class="fas fa-frown" style="font-size: 90px;"></i></div>
-	    <div class="container-fluid text-center error" v-html="$page.props['status']">
+	    <div><i class="fas fa-frown" style="font-size: 90px;color:orange"></i></div>
+	    <div class="container-fluid text-center error mt-4" v-html="$page.props['status']">
 		    
 	    </div>
-	    <Link href="/offers/fee" class="btn btn-primary" style="background-color:green !important">Je renouvelle mon pack</Link>
+	    <Link href="/offers/fee" class="btn btn-primary mt-4" style="background-color:green !important">Je renouvelle mon pack</Link>
     </div>
   </app-layout>
 </template>

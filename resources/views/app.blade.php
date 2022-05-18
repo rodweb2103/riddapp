@@ -25,7 +25,7 @@
         <link rel="stylesheet" href="{{ asset('/assets/css/responsive.css') }}">
         <!-- Theme Dark CSS -->
         <link rel="stylesheet" href="{{ asset('/assets/css/theme-dark.css') }}">
-        
+        <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
         <!--<link rel="stylesheet" href="{{ mix('css/app.css') }}">-->
         <link rel="stylesheet" href="{{ asset('/fonts/ionicons.min.css') }}">
 	    <link rel="stylesheet" href="{{ asset('/fonts/simple-line-icons.min.css') }}">

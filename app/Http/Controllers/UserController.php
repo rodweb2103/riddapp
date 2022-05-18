@@ -28,6 +28,24 @@ class UserController extends Controller
 	    return ConsultLevel::selectRaw('id,level AS text')->get();   
     }
     
+    public function newsletter_image(Request $request){
+	      
+	      //$file = $request->file('upload');
+	      //$path = $request->file('upload')->store('public/mailing');
+	      //$type = pathinfo($file, PATHINFO_EXTENSION);
+	      //$base64 = 'data:image/' . $type . ';base64,' . base64_encode($file);
+	      
+	      $image = base64_encode(file_get_contents($request->file('upload')->path()));
+	      return response()->json(array("url"=>$image));
+	      //$fileName = "mailing".uniqid().".txt"
+	      //$request->upload->move(storage_path('mailing'),);
+	      //URL::asset('storage/'.$fileName);
+	      //$extension = $request->file->extension();
+          //$fileName = 'mailing' . round(microtime(true) * 1000) . '.' . $extension;
+	      //$request->upload->storeAs('public/mailing', 'file.txt');
+	    
+    }
+    
     public function top_recruiters(Request $request){
 	    
 	    $results = \DB::table("pack_ads_user_suscribe")->join('users','users.id','pack_ads_user_suscribe.user_id')->join('pack_ads','pack_ads.id','=','pack_ads_user_suscribe.pack_id')->whereRaw("pack_ads.ads_highlight > 0")->selectRaw("users.profile_photo_path,users.company_name,users.id")->orderByRaw("RAND()")->limit(10)->get();
@@ -610,10 +628,12 @@ class UserController extends Controller
     public function profile_update(Request $request){
 	    
 	    //exit;
-	    
+	    $user = auth()->user();
+	    $array_fields = array();
+	    $array_message = array();
 	    if(\Auth::user()->hasRole('Admin') || \Auth::user()->hasRole('Student') || \Auth::user()->hasRole('Consultant')){
-	    
-		    $request->validate([
+	        
+	        $array_fields = [
 			    
 			    
 			        'email' => [
@@ -625,10 +645,12 @@ class UserController extends Controller
 	                'user_name' => [
 					        'required',
 					        Rule::unique('users')->ignore(auth()->user()->id),
-	                ],
+	                ]
 			    
 			    
-	         ],[
+	        ];
+	        
+	        $array_message = [
 			      'email.required'=> trans('Le courriel est requis'), // custom message
 			      'email.unique'=> trans('La courriel existe déjà'), // custom message
 			      'user_name.unique' => trans('Le pseudo a déjà été utilisé'),
@@ -636,20 +658,45 @@ class UserController extends Controller
 			      'first_name.required' => trans('Le prénom est requis'),
 			      'last_name.required' => trans('Le nom est requis')
 			      
-	         ]);
+	        ];
+	        
+	        
+	         if($request->input('old_password')!="" || $request->input('new_password')!=""){
+		         
+		         $array_fields['old_password'] = [
+				        'required',
+				        function ($attribute, $value, $fail) use ($user) {
+				            if (!Hash::check($value, $user->password)) {
+				                $fail('Votre mot de passe n\'a pas été mis à jour, car le mot de passe actuel fourni ne correspond pas.');
+				            }
+				        }
+				 ];
+				 
+				 $array_fields['new_password'] = [
+				        'required','different:old_password'
+				 ];
+				 
+				 $array_message["new_password.required"] = "Le nouveau mot de passe est requis";
+				 //$array_message["new_password.min"] = "Le nouveau mot de passe doit contenir au moins 6 caractères";
+				 $array_message["new_password.different"] = "Le nouveau mot de passe doit être différent de l'ancien";
+	         }
+	        
+		     $request->validate($array_fields,$array_message);
 	         
 	         $user = User::where("id",$request->input('id'))->first();
 	         $user->email = $request->input('email');
 	         $user->user_name = $request->input('user_name');
 	         $user->first_name = $request->input('first_name');
 	         $user->last_name = $request->input('last_name');
-	         if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
+	         if($request->input('new_password')!="" && $request->input('old_password')!="") $user->password = Hash::make($request->input('new_password'));
 	         $user->save();
 	     
 	    }else{
 		     
 		     //exit;
-		     $request->validate([
+		     
+		     $user = auth()->user();
+		     $array_fields = [
 			    
 			    
 			        'email' => [
@@ -667,7 +714,9 @@ class UserController extends Controller
 	                ],
 			    
 			    
-	         ],[
+	        ];
+	        
+	        $array_message = [
 			      'email.required'=> trans('Le courriel est requis'), // custom message
 			      'email.unique'=> trans('La courriel existe déjà'), // custom message
 			      'user_name.unique' => trans('Le pseudo a déjà été utilisé'),
@@ -678,7 +727,49 @@ class UserController extends Controller
 			      'company_location.required' => trans('L\'adresse géographique est requise'),
 			      'company_about.required' => trans('Les détails sur l\'entreprise sont requises')
 			      
-	         ]);
+	         ];
+	        
+	        
+	         /*if($request->input('old_password')!=""){
+		         
+		         $array_fields['current_password'] = [
+				        'required',
+				        function ($attribute, $value, $fail) use ($user) {
+				            if (!Hash::check($value, $user->password)) {
+				                $fail('Your password was not updated, since the provided current password does not match.');
+				            }
+				        }
+				 ];
+				 
+				 $array_fields['new_password'] = [
+				        'required', 'min:6', 'confirmed', 'different:current_password'
+				 ];
+	         }
+		     
+		     
+		     $request->validate($array_fields,$array_message);*/
+		     
+		     if($request->input('old_password')!="" || $request->input('new_password')!=""){
+		         
+		         $array_fields['old_password'] = [
+				        'required',
+				        function ($attribute, $value, $fail) use ($user) {
+				            if (!Hash::check($value, $user->password)) {
+				                $fail('Votre mot de passe n\'a pas été mis à jour, car le mot de passe actuel fourni ne correspond pas.');
+				            }
+				        }
+				 ];
+				 
+				 $array_fields['new_password'] = [
+				        'required','different:old_password'
+				 ];
+				 
+				 $array_message["new_password.required"] = "Le nouveau mot de passe est requis";
+				 //$array_message["new_password.min"] = "Le nouveau mot de passe doit contenir au moins 6 caractères";
+				 $array_message["new_password.different"] = "Le nouveau mot de passe doit être différent de l'ancien";
+	         }
+	        
+		     $request->validate($array_fields,$array_message);
 	         
 	         $user = User::where("id",$request->input('id'))->first();
 	         $user->email = $request->input('email');
@@ -690,8 +781,11 @@ class UserController extends Controller
 	         $user->company_location = $request->input('company_location');
 	         $user->company_about = $request->input('company_about');
 	         $user->company_website = $request->input('company_website');
-	         if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
-	         //$user->save();
+	         
+	         if($request->input('new_password')!="" && $request->input('old_password')!="") $user->password = Hash::make($request->input('new_password'));
+	         
+	         //if($request->input('password')!="") $user->password = Hash::make($request->input('password'));
+	         $user->save();
 	         //exit;
 		     
 		     

@@ -254,6 +254,14 @@ Route::get('/admin',function(){
 })->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.dashboard');
 
 
+/*Route::get('/admin/newsletter',function(){
+	
+    return Inertia::render('Admin/NewsLetter');
+
+})->middleware(['auth:sanctum',config('jetstream.auth_session'),'role:Admin'])->name('admin.dashboard');*/
+
+Route::post('/admin/image/upload/newsletter',[UserController::class, 'newsletter_image'])->name('newsletter_image');
+
 Route::get('/admin/ajax/new/candidate',[UserController::class, 'new_candidate'])->name('new_candidates');
 Route::get('/admin/ajax/new/employer',[UserController::class, 'new_employer'])->name('new_employer');
 Route::get('/admin/ajax/stats',[UserController::class, 'admin_stats'])->name('admin_stats');

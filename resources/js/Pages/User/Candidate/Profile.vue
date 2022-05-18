@@ -182,9 +182,18 @@
                       </div>
                       
                       <div class="form-group row">
-                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">{{ __("Mot de passe") }}</label>
+                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Ancien mot de passe</label>
                         <div class="col-sm-9">
-                          <input type="password" class="form-control" id="inputName2" placeholder="" v-model="formUser.password">
+                          <input type="password" class="form-control" id="inputName2" placeholder="Ancien mot de passe" v-model="formUser.old_password">
+                          <div v-if="formUser.errors.old_password" style="color:red;">{{ formUser.errors.old_password }}</div>
+                        </div>
+                      </div>
+                      
+                      <div class="form-group row">
+                        <label for="inputName2" class="col-sm-3 col-form-label" style="font-weight: unset !important;">Nouveau mot de passe</label>
+                        <div class="col-sm-9">
+                          <input type="password" class="form-control" id="inputName2" placeholder="Nouveau mot de passe" v-model="formUser.new_password">
+                          <div v-if="formUser.errors.new_password" style="color:red;">{{ formUser.errors.new_password }}</div>
                         </div>
                       </div>
                       <!--<div class="form-group row">
@@ -306,7 +315,8 @@ export default defineComponent({
 	    first_name : this.$page.props['user']['first_name'],
 	    last_name : this.$page.props['user']['last_name'],
 	    email : this.$page.props['user']['email'],
-	    password : '',
+	    old_password : '',
+	    new_password : ''
 	    //password_confirmation : '',
         //password: '',
         //id : 0,

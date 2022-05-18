@@ -356,7 +356,14 @@
                                         <li class="nav-item">
                                         <form method="POST" action='/logout' id="frm">
 	                                        @csrf
-	                                        <a class="nav-link" href="#" onclick="logoutUser()">{{ __('Déconnexion') }}</a>
+	                                        <!--<a class="nav-link" href="#" onclick="logoutUser()">{{ __('Déconnexion') }}</a>-->
+	                                        <a style="background: transparent;font-size: 17px;color:#000;font-weight: 500"
+								            href="#"
+								            
+								            class="nav-link"
+								            >{{ __('Déconnexion') }}</a
+		                                 >
+                                        </li>
                                         </form>
                                         <!--<Link  :href="route('logout')" class="nav-link">
 							               Se deconnecter
